@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 1 Lecture Deck</title>
+    <link rel="icon" href="data:," />
+
+    <style>
+      /* ===========================================
+         THEME
+         =========================================== */
+      :root {
+        --bit-green: #006c39;
+        --bit-green-soft: #0a8a4d;
+        --bit-gold: #ffc000;
+        --bit-blue: #0f4a7b;
+        --bit-brown: #9f4b22;
+        --bit-ink: #20252b;
+        --bit-muted: #5e6a73;
+        --bit-line: #dbe4e8;
+        --bit-surface: #ffffff;
+        --bit-surface-soft: #ffffff;
+        --bit-shadow: none;
+        --cover-overlay: linear-gradient(
+          135deg,
+          rgba(0, 108, 57, 0.18) 0%,
+          rgba(0, 108, 57, 0.88) 62%,
+          rgba(0, 108, 57, 0.95) 100%
+        );
+        --closing-overlay: linear-gradient(
+          245deg,
+          rgba(0, 108, 57, 0.9) 35%,
+          rgba(0, 108, 57, 0.68) 68%,
+          rgba(0, 108, 57, 0.15) 100%
+        );
+        --font-body: "Microsoft YaHei", "Noto Sans SC", "PingFang SC", sans-serif;
+        --font-cn: "Microsoft YaHei", "Noto Sans SC", "PingFang SC", sans-serif;
+        --title-size: clamp(1.65rem, 4vw, 3.5rem);
+        --subtitle-size: clamp(1rem, 1.6vw, 1.35rem);
+        --body-size: clamp(0.78rem, 1.08vw, 1.08rem);
+        --small-size: clamp(0.68rem, 0.9vw, 0.92rem);
+        --slide-padding: clamp(1rem, 2.2vw, 2.4rem);
+        --content-gap: clamp(0.7rem, 1.1vw, 1.3rem);
+        --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        --duration-normal: 0.55s;
+      }
+
+      /* ===========================================
+         RESET
+         =========================================== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html, body {
+          height: 100%;
+          overflow-x: hidden;
+          scrollbar-width: none;
+      }
+
+      html::-webkit-scrollbar,
+      body::-webkit-scrollbar {
+          display: none;
+      }
+
+      html {
+          scroll-snap-type: y mandatory;
+          scroll-behavior: smooth;
+      }
+
+      .slide {
+          width: 100vw;
+          height: 100vh;
+          height: 100dvh;
+          overflow: hidden;
+          scroll-snap-align: start;
+          display: flex;
+          flex-direction: column;
+          position: relative;
+      }
+
+      .slide-content {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          max-height: 100%;
+          overflow: hidden;
+          padding: var(--slide-padding);
+      }
+
+      :root {
+          --title-size: clamp(1.5rem, 5vw, 4rem);
+          --h2-size: clamp(1.25rem, 3.5vw, 2.5rem);
+          --h3-size: clamp(1rem, 2.5vw, 1.75rem);
+          --body-size: clamp(0.75rem, 1.5vw, 1.125rem);
+          --small-size: clamp(0.65rem, 1vw, 0.875rem);
+          --slide-padding: clamp(1rem, 4vw, 4rem);
+          --content-gap: clamp(0.5rem, 2vw, 2rem);
+          --element-gap: clamp(0.25rem, 1vw, 1rem);
+      }
+
+      .card, .container, .content-box {
+          max-width: min(90vw, 1000px);
+          max-height: min(80vh, 700px);
+      }
+
+      .feature-list, .bullet-list {
+          gap: clamp(0.4rem, 1vh, 1rem);
+      }
+
+      .feature-list li, .bullet-list li {
+          font-size: var(--body-size);
+          line-height: 1.4;
+      }
+
+      .grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+          gap: clamp(0.5rem, 1.5vw, 1rem);
+      }
+
+      img, .image-container {
+          max-width: 100%;
+          max-height: min(50vh, 400px);
+          object-fit: contain;
+      }
+
+      @media (max-height: 700px) {
+          :root {
+              --slide-padding: clamp(0.75rem, 3vw, 2rem);
+              --content-gap: clamp(0.4rem, 1.5vw, 1rem);
+              --title-size: clamp(1.25rem, 4.5vw, 2.5rem);
+              --h2-size: clamp(1rem, 3vw, 1.75rem);
+          }
+      }
+
+      @media (max-height: 600px) {
+          :root {
+              --slide-padding: clamp(0.5rem, 2.5vw, 1.5rem);
+              --content-gap: clamp(0.3rem, 1vw, 0.75rem);
+              --title-size: clamp(1.1rem, 4vw, 2rem);
+              --body-size: clamp(0.7rem, 1.2vw, 0.95rem);
+          }
+
+          .nav-dots, .keyboard-hint, .decorative {
+              display: none;
+          }
+      }
+
+      @media (max-height: 500px) {
+          :root {
+              --slide-padding: clamp(0.4rem, 2vw, 1rem);
+              --title-size: clamp(1rem, 3.5vw, 1.5rem);
+              --h2-size: clamp(0.9rem, 2.5vw, 1.25rem);
+              --body-size: clamp(0.65rem, 1vw, 0.85rem);
+          }
+      }
+
+      @media (max-width: 600px) {
+          :root {
+              --title-size: clamp(1.25rem, 7vw, 2.5rem);
+          }
+
+          .grid {
+              grid-template-columns: 1fr;
+          }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+          *, *::before, *::after {
+              animation-duration: 0.01ms !important;
+              transition-duration: 0.2s !important;
+          }
+
+          html {
+              scroll-behavior: auto;
+          }
+      }
+
+      /* ===========================================
+         BASE PRESENTATION STYLES
+         =========================================== */
+      body {
+        font-family: var(--font-body);
+        color: var(--bit-ink);
+        background: #f3f5f5;
+      }
+
+      .progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: rgba(0, 0, 0, 0.06);
+        z-index: 1000;
+      }
+
+      .progress-bar::after {
+        content: "";
+        display: block;
+        height: 100%;
+        width: var(--progress, 0%);
+        background: linear-gradient(90deg, var(--bit-green), var(--bit-gold));
+        transition: width 0.18s linear;
+      }
+
+      .nav-dots {
+        position: fixed;
+        right: clamp(0.45rem, 1vw, 0.9rem);
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        z-index: 1000;
+      }
+
+      .nav-dot {
+        width: 0.72rem;
+        height: 0.72rem;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        background: rgba(0, 108, 57, 0.16);
+        box-shadow: inset 0 0 0 1px rgba(0, 108, 57, 0.18);
+        transition:
+          transform 0.22s ease,
+          background 0.22s ease;
+      }
+
+      .nav-dot.active {
+        background: var(--bit-green);
+        transform: scale(1.18);
+      }
+
+      .keyboard-hint {
+        position: fixed;
+        right: clamp(0.8rem, 1.8vw, 1.6rem);
+        bottom: clamp(0.65rem, 1.5vw, 1.2rem);
+        z-index: 1000;
+        padding: 0.38rem 0.68rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.88);
+        color: var(--bit-muted);
+        font-size: clamp(0.64rem, 0.8vw, 0.78rem);
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07);
+        transition:
+          opacity 0.22s ease,
+          transform 0.22s ease;
+      }
+
+      body.hide-keyboard-hint .keyboard-hint {
+        opacity: 0;
+        transform: translateY(8px);
+        pointer-events: none;
+      }
+
+      .progress-bar,
+      .nav-dots,
+      .keyboard-hint {
+        display: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .slide.visible .reveal {
+        opacity: 1;
+        transform: none;
+      }
+
+      .reveal:nth-child(1) {
+        transition-delay: 0.05s;
+      }
+
+      .reveal:nth-child(2) {
+        transition-delay: 0.12s;
+      }
+
+      .reveal:nth-child(3) {
+        transition-delay: 0.18s;
+      }
+
+      .reveal:nth-child(4) {
+        transition-delay: 0.24s;
+      }
+
+      .reveal:nth-child(5) {
+        transition-delay: 0.3s;
+      }
+
+      /* ===========================================
+         SHARED TEMPLATE CHROME
+         =========================================== */
+      .deck-slide {
+        background: var(--bit-surface);
+      }
+
+      .deck-frame-art {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+        object-fit: cover;
+        display: block;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .bit-mark {
+        position: absolute;
+        left: 80.69%;
+        top: 5.06%;
+        width: 16.15%;
+        height: 6.31%;
+        object-fit: contain;
+        opacity: 0.98;
+        z-index: 1;
+      }
+
+      .deck-number {
+        position: absolute;
+        left: 2.61%;
+        top: 0;
+        width: 8.6%;
+        height: 12.73%;
+        display: grid;
+        place-items: center;
+        color: white;
+        font-size: clamp(1.55rem, 2.35vw, 2.5rem);
+        font-weight: 700;
+        z-index: 1;
+      }
+
+      .deck-header {
+        position: absolute;
+        left: 13.18%;
+        right: 18.4%;
+        top: 4.95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.18rem;
+        z-index: 1;
+      }
+
+      .deck-title {
+        font-family: var(--font-body);
+        font-size: clamp(1.15rem, 2.15vw, 2rem);
+        font-weight: 700;
+        letter-spacing: 0.005em;
+        color: #151515;
+      }
+
+      .deck-subtitle {
+        display: none;
+      }
+
+      .deck-body {
+        position: absolute;
+        left: 6.8%;
+        right: 6.2%;
+        top: 15.2%;
+        bottom: 11.4%;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(0.65rem, 1.1vw, 1rem);
+        z-index: 1;
+      }
+
+      .deck-motto {
+        position: absolute;
+        left: 5.1%;
+        bottom: 1.95%;
+        height: 9.1%;
+        display: flex;
+        align-items: center;
+        color: white;
+        font-family: "STKaiti", "KaiTi", serif;
+        font-weight: 700;
+        font-size: clamp(1.15rem, 2vw, 1.8rem);
+        letter-spacing: 0.12em;
+        z-index: 1;
+      }
+
+      .deck-index {
+        position: absolute;
+        left: 92.14%;
+        top: 92.63%;
+        width: 4.52%;
+        height: 4.95%;
+        color: white;
+        display: grid;
+        place-items: center;
+        font-size: clamp(1.15rem, 1.7vw, 1.65rem);
+        font-weight: 700;
+        z-index: 1;
+      }
+
+      .deck-topbar,
+      .deck-divider,
+      .deck-logo,
+      .deck-footer {
+        display: none !important;
+      }
+
+      .surface {
+        background: var(--bit-surface);
+        border: 1px solid var(--bit-line);
+        border-radius: 0.2rem;
+        box-shadow: var(--bit-shadow);
+      }
+
+      .tiny-note {
+        font-size: clamp(0.67rem, 0.82vw, 0.82rem);
+        color: var(--bit-muted);
+        line-height: 1.4;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        border: 1px solid rgba(0, 108, 57, 0.16);
+        padding: 0.28rem 0.72rem;
+        font-size: clamp(0.66rem, 0.82vw, 0.82rem);
+        font-weight: 700;
+        color: var(--bit-green);
+        background: rgba(0, 108, 57, 0.06);
+      }
+
+      /* ===========================================
+         COVER
+         =========================================== */
+      .cover-slide {
+        color: white;
+        background: #006c39;
+      }
+
+      .cover-watermark {
+        display: none;
+      }
+
+      .cover-lines {
+        position: absolute;
+        bottom: 0;
+        width: 49.4%;
+        opacity: 1;
+      }
+
+      .cover-lines.left {
+        left: 0;
+      }
+
+      .cover-lines.right {
+        right: 0;
+        transform: scaleX(-1);
+      }
+
+      .cover-wordmark {
+        position: absolute;
+        left: 50%;
+        top: 37.46%;
+        width: min(17.6vw, 15rem);
+        transform: translateX(-50%);
+      }
+
+      .cover-main {
+        position: absolute;
+        left: 5.42%;
+        right: 5.52%;
+        top: 51.05%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .cover-title {
+        font-family: var(--font-body);
+        font-size: clamp(2.9rem, 5.2vw, 5rem);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: 0.01em;
+      }
+
+      .cover-subtitle {
+        display: none;
+      }
+
+      .cover-rule {
+        display: none;
+      }
+
+      .cover-speaker-icon {
+        position: absolute;
+        left: 31.49%;
+        top: 73.39%;
+        width: 2.66%;
+        height: 4.72%;
+      }
+
+      .cover-speaker,
+      .cover-date {
+        position: absolute;
+        color: white;
+        font-family: var(--font-body);
+        letter-spacing: 0.08em;
+        white-space: nowrap;
+      }
+
+      .cover-speaker {
+        left: 35.5%;
+        top: 73.53%;
+        width: 38.05%;
+        font-size: clamp(1.2rem, 2.05vw, 1.6rem);
+      }
+
+      .cover-date {
+        left: 34.24%;
+        top: 86.96%;
+        width: 31.62%;
+        text-align: center;
+        font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+      }
+
+      /* ===========================================
+         CONTENTS
+         =========================================== */
+      .contents-splash-slide {
+        background: #ffffff;
+        color: #111111;
+      }
+
+      .contents-splash-layout {
+        position: relative;
+        display: grid;
+        grid-template-columns: 38.5% 11.5% 50%;
+        height: 100%;
+        width: 100%;
+        gap: 0;
+      }
+
+      .contents-photo-panel {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%),
+          url("template_assets/contents-bg-green.png") center center / cover no-repeat;
+      }
+
+      .contents-side-title {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.9rem;
+      }
+
+      .contents-side-title span {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        letter-spacing: 0.08em;
+        line-height: 1;
+        font-weight: 700;
+      }
+
+      .contents-side-title .cn {
+        color: var(--bit-green);
+        font-size: clamp(2rem, 4vw, 3.6rem);
+      }
+
+      .contents-side-title .en {
+        color: #111111;
+        font-size: clamp(2rem, 4vw, 3.7rem);
+      }
+
+      .contents-splash-list {
+        position: relative;
+        display: grid;
+        align-content: center;
+        display: grid;
+        gap: clamp(1.25rem, 5vh, 3rem);
+        padding-right: 0.6rem;
+      }
+
+      .contents-splash-row {
+        display: grid;
+        grid-template-columns: clamp(3rem, 4.7vw, 4.25rem) 1fr;
+        align-items: center;
+        column-gap: clamp(0.9rem, 1.7vw, 1.45rem);
+      }
+
+      .contents-splash-badge {
+        width: clamp(3rem, 4.7vw, 4.25rem);
+        height: clamp(3rem, 4.7vw, 4.25rem);
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: #c86405;
+        color: #ffffff;
+        font-family: "Century Gothic", "Microsoft YaHei", sans-serif;
+        font-weight: 700;
+        font-size: clamp(1.4rem, 2.2vw, 2.2rem);
+      }
+
+      .contents-splash-label {
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 700;
+        font-size: clamp(1.7rem, 3vw, 3.1rem);
+        line-height: 1.04;
+        color: #111111;
+      }
+
+      /* ===========================================
+         PIPELINE SLIDE
+         =========================================== */
+      .pipeline-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: clamp(0.55rem, 0.9vw, 0.85rem);
+      }
+
+      .phase-card {
+        padding: clamp(0.75rem, 1vw, 0.95rem);
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        background: linear-gradient(180deg, rgba(246, 250, 248, 0.95), #ffffff);
+      }
+
+      .phase-card h3 {
+        font-size: clamp(0.88rem, 1.02vw, 1rem);
+        color: var(--bit-green);
+      }
+
+      .phase-card p {
+        font-size: clamp(0.73rem, 0.88vw, 0.86rem);
+        line-height: 1.38;
+        color: var(--bit-muted);
+      }
+
+      .phase-box {
+        min-height: 6.35rem;
+        border-radius: 1rem;
+        padding: 0.72rem;
+        border: 1px solid rgba(0, 108, 57, 0.11);
+        background: var(--bit-surface-soft);
+      }
+
+      .artifact-row {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 0.7rem;
+      }
+
+      .artifact {
+        padding: 0.72rem 0.75rem;
+        border-radius: 1rem;
+        border: 1px dashed rgba(15, 74, 123, 0.24);
+        background: rgba(15, 74, 123, 0.04);
+        font-size: clamp(0.7rem, 0.85vw, 0.82rem);
+        line-height: 1.36;
+        color: var(--bit-blue);
+        text-align: center;
+      }
+
+      .arrow-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .arrow-strip div {
+        height: 0.2rem;
+        background: linear-gradient(90deg, rgba(0, 108, 57, 0.2), rgba(0, 108, 57, 0.75));
+        position: relative;
+        border-radius: 999px;
+      }
+
+      .arrow-strip div::after {
+        content: "";
+        position: absolute;
+        right: -0.05rem;
+        top: 50%;
+        width: 0.48rem;
+        height: 0.48rem;
+        border-top: 2px solid rgba(0, 108, 57, 0.88);
+        border-right: 2px solid rgba(0, 108, 57, 0.88);
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      /* ===========================================
+         TABLE / DATA SLIDES
+         =========================================== */
+      .mode-table {
+        display: grid;
+        grid-template-columns: 1.15fr 1.45fr 1.1fr;
+        gap: 0.55rem;
+      }
+
+      .mode-table > div {
+        padding: 0.78rem 0.85rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(0, 108, 57, 0.1);
+        background: linear-gradient(180deg, rgba(246, 250, 248, 0.9), #ffffff);
+        min-height: 4.3rem;
+      }
+
+      .mode-head {
+        font-size: clamp(0.74rem, 0.9vw, 0.84rem);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--bit-green);
+        font-weight: 700;
+        margin-bottom: 0.35rem;
+      }
+
+      .mode-main {
+        font-size: clamp(0.82rem, 0.97vw, 0.94rem);
+        line-height: 1.35;
+      }
+
+      .quote-line {
+        padding: 0.8rem 1rem;
+        border-radius: 1rem;
+        background: rgba(255, 192, 0, 0.08);
+        border: 1px solid rgba(255, 192, 0, 0.2);
+        font-size: clamp(0.78rem, 0.92vw, 0.9rem);
+        color: #6d5600;
+      }
+
+      /* ===========================================
+         OPERATOR / FLOW SLIDES
+         =========================================== */
+      .operator-shell {
+        display: grid;
+        grid-template-columns: 1.25fr 0.95fr;
+        gap: 1rem;
+        height: 100%;
+      }
+
+      .operator-track,
+      .operator-notes,
+      .flow-shell,
+      .graph-shell,
+      .agent-shell,
+      .artifact-shell,
+      .sections-shell,
+      .principles-shell {
+        padding: clamp(0.85rem, 1.15vw, 1rem);
+      }
+
+      .operator-track {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .operator-flow {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.8rem;
+        align-items: center;
+      }
+
+      .operator-node {
+        min-height: 9rem;
+        border-radius: 1.1rem;
+        background: linear-gradient(180deg, rgba(0, 108, 57, 0.08), rgba(0, 108, 57, 0.02));
+        border: 1px solid rgba(0, 108, 57, 0.14);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.45rem;
+        text-align: center;
+        padding: 0.85rem;
+      }
+
+      .operator-node h3 {
+        font-size: clamp(0.92rem, 1.1vw, 1.05rem);
+      }
+
+      .operator-node p {
+        font-size: clamp(0.72rem, 0.86vw, 0.82rem);
+        color: var(--bit-muted);
+        line-height: 1.35;
+      }
+
+      .pipe-symbol {
+        font-size: clamp(1.9rem, 3vw, 2.8rem);
+        color: var(--bit-green);
+        font-weight: 300;
+        text-align: center;
+      }
+
+      .operator-bullets {
+        display: grid;
+        gap: 0.68rem;
+      }
+
+      .operator-bullets li {
+        list-style: none;
+        padding-left: 1rem;
+        position: relative;
+        font-size: clamp(0.76rem, 0.92vw, 0.9rem);
+        line-height: 1.4;
+        color: var(--bit-muted);
+      }
+
+      .operator-bullets li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.5rem;
+        width: 0.34rem;
+        height: 0.34rem;
+        border-radius: 50%;
+        background: var(--bit-gold);
+      }
+
+      .flow-shell {
+        display: grid;
+        grid-template-columns: 1.15fr 0.95fr;
+        gap: 1rem;
+        height: 100%;
+      }
+
+      .flow-top {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.65rem;
+        align-items: stretch;
+      }
+
+      .flow-card {
+        padding: 0.75rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(15, 74, 123, 0.12);
+        background: rgba(15, 74, 123, 0.04);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.28rem;
+      }
+
+      .flow-card strong {
+        font-size: clamp(0.82rem, 0.94vw, 0.9rem);
+      }
+
+      .flow-card span {
+        font-size: clamp(0.67rem, 0.82vw, 0.8rem);
+        line-height: 1.36;
+        color: var(--bit-muted);
+      }
+
+      .flow-loop {
+        position: relative;
+        border-radius: 1.1rem;
+        border: 1px solid rgba(0, 108, 57, 0.12);
+        background: linear-gradient(180deg, rgba(246, 250, 248, 0.92), #ffffff);
+        padding: 1rem;
+        min-height: 16rem;
+      }
+
+      .loop-steps {
+        display: grid;
+        gap: 0.7rem;
+      }
+
+      .loop-step {
+        display: grid;
+        grid-template-columns: 2rem 1fr;
+        gap: 0.72rem;
+        align-items: start;
+      }
+
+      .loop-step span {
+        display: grid;
+        place-items: center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background: var(--bit-green);
+        color: white;
+        font-weight: 700;
+        font-size: 0.8rem;
+      }
+
+      .loop-step strong {
+        display: block;
+        margin-bottom: 0.14rem;
+        font-size: clamp(0.78rem, 0.92vw, 0.88rem);
+      }
+
+      .loop-step p {
+        font-size: clamp(0.68rem, 0.82vw, 0.8rem);
+        color: var(--bit-muted);
+        line-height: 1.35;
+      }
+
+      /* ===========================================
+         GRAPH / AGENT / ARTIFACT SLIDES
+         =========================================== */
+      .graph-shell {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 1rem;
+        height: 100%;
+      }
+
+      .graph-canvas {
+        position: relative;
+        min-height: 17rem;
+        border-radius: 1.1rem;
+        border: 1px solid rgba(0, 108, 57, 0.12);
+        background:
+          radial-gradient(circle at center, rgba(0, 108, 57, 0.05), rgba(255, 255, 255, 0) 60%),
+          linear-gradient(180deg, rgba(246, 250, 248, 0.92), #ffffff);
+        overflow: hidden;
+      }
+
+      .graph-node {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.55rem 0.75rem;
+        border-radius: 999px;
+        background: white;
+        border: 1px solid rgba(15, 74, 123, 0.16);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.05);
+        font-size: clamp(0.68rem, 0.84vw, 0.8rem);
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .graph-node.core {
+        inset: 50% auto auto 50%;
+        transform: translate(-50%, -50%);
+        width: min(13rem, 42%);
+        min-height: 4.4rem;
+        border-radius: 1.3rem;
+        background: rgba(0, 108, 57, 0.95);
+        color: white;
+        border: none;
+      }
+
+      .graph-link {
+        position: absolute;
+        background: rgba(0, 108, 57, 0.22);
+        transform-origin: left center;
+        height: 2px;
+      }
+
+      .agent-shell {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 1rem;
+        height: 100%;
+      }
+
+      .agent-loop {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 0.55rem;
+        align-items: stretch;
+      }
+
+      .agent-step {
+        border-radius: 1rem;
+        border: 1px solid rgba(0, 108, 57, 0.12);
+        background: linear-gradient(180deg, rgba(246, 250, 248, 0.92), #ffffff);
+        padding: 0.85rem 0.65rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.35rem;
+      }
+
+      .agent-step b {
+        font-size: clamp(0.78rem, 0.92vw, 0.88rem);
+        color: var(--bit-green);
+      }
+
+      .agent-step span {
+        font-size: clamp(0.68rem, 0.8vw, 0.78rem);
+        line-height: 1.33;
+        color: var(--bit-muted);
+      }
+
+      .agent-bullets {
+        display: grid;
+        gap: 0.68rem;
+        align-content: center;
+      }
+
+      .agent-bullets div {
+        padding: 0.78rem 0.82rem;
+        border-radius: 0.95rem;
+        border: 1px solid rgba(15, 74, 123, 0.14);
+        background: rgba(15, 74, 123, 0.04);
+        font-size: clamp(0.72rem, 0.86vw, 0.82rem);
+        line-height: 1.36;
+      }
+
+      .artifact-shell {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 1rem;
+        height: 100%;
+      }
+
+      .artifact-ladder {
+        display: grid;
+        gap: 0.7rem;
+      }
+
+      .ladder-step {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 0.7rem;
+        align-items: stretch;
+      }
+
+      .ladder-stage,
+      .ladder-output {
+        padding: 0.75rem 0.8rem;
+        border-radius: 0.95rem;
+        border: 1px solid rgba(0, 108, 57, 0.12);
+        background: linear-gradient(180deg, rgba(246, 250, 248, 0.92), #ffffff);
+      }
+
+      .ladder-stage strong,
+      .ladder-output strong {
+        display: block;
+        margin-bottom: 0.2rem;
+        font-size: clamp(0.78rem, 0.9vw, 0.88rem);
+      }
+
+      .ladder-stage p,
+      .ladder-output p {
+        font-size: clamp(0.68rem, 0.82vw, 0.8rem);
+        line-height: 1.36;
+        color: var(--bit-muted);
+      }
+
+      .artifact-aside {
+        display: grid;
+        gap: 0.75rem;
+        align-content: center;
+      }
+
+      .artifact-aside div {
+        padding: 0.84rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(255, 192, 0, 0.22);
+        background: rgba(255, 192, 0, 0.1);
+        color: #6b5100;
+        font-size: clamp(0.72rem, 0.84vw, 0.82rem);
+        line-height: 1.4;
+      }
+
+      /* ===========================================
+         SECTIONS / PRINCIPLES
+         =========================================== */
+      .sections-shell {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.8rem;
+        align-content: center;
+      }
+
+      .section-card {
+        padding: 0.9rem 0.95rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(0, 108, 57, 0.12);
+        background: linear-gradient(180deg, rgba(246, 250, 248, 0.92), #ffffff);
+        min-height: 8.4rem;
+      }
+
+      .section-card strong {
+        display: block;
+        font-size: clamp(0.88rem, 1vw, 0.96rem);
+        color: var(--bit-green);
+        margin-bottom: 0.26rem;
+      }
+
+      .section-card span {
+        display: block;
+        font-size: clamp(0.72rem, 0.84vw, 0.8rem);
+        color: var(--bit-muted);
+        line-height: 1.38;
+      }
+
+      .principles-shell {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 0.72rem;
+        align-content: center;
+      }
+
+      .principle {
+        padding: 0.92rem 0.8rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(15, 74, 123, 0.14);
+        background: rgba(15, 74, 123, 0.04);
+        display: flex;
+        flex-direction: column;
+        gap: 0.46rem;
+        min-height: 10.5rem;
+      }
+
+      .principle-num {
+        width: 2rem;
+        height: 2rem;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--bit-gold);
+        color: white;
+        font-weight: 700;
+      }
+
+      .principle strong {
+        font-size: clamp(0.78rem, 0.9vw, 0.86rem);
+        line-height: 1.3;
+      }
+
+      .principle p {
+        font-size: clamp(0.68rem, 0.8vw, 0.78rem);
+        color: var(--bit-muted);
+        line-height: 1.38;
+      }
+
+      /* ===========================================
+         CLOSING
+         =========================================== */
+      .closing-slide {
+        color: white;
+        background: #006c39;
+      }
+
+      .closing-wordmark {
+        position: absolute;
+        right: 4.8%;
+        top: 7.31%;
+        width: min(18.1vw, 14rem);
+      }
+
+      .closing-main {
+        position: absolute;
+        left: 37.76%;
+        right: 5.52%;
+        top: 43.11%;
+        text-align: right;
+      }
+
+      .closing-main h2 {
+        font-size: clamp(4.2rem, 8.2vw, 6.6rem);
+        font-weight: 400;
+      }
+
+      .closing-main p {
+        display: none;
+      }
+
+      /* ===========================================
+         RESPONSIVE ADJUSTMENTS
+         =========================================== */
+      @media (max-width: 980px) {
+        .pipeline-grid,
+        .artifact-row,
+        .mode-table,
+        .operator-shell,
+        .flow-shell,
+        .graph-shell,
+        .agent-shell,
+        .artifact-shell,
+        .sections-shell,
+        .principles-shell {
+          grid-template-columns: 1fr;
+        }
+
+        .agent-loop {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .closing-main {
+          left: 32%;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .bit-mark,
+        .deck-logo {
+          display: none;
+        }
+
+        .deck-body {
+          left: 4.6%;
+          right: 4.6%;
+          top: 16%;
+        }
+
+        .cover-main {
+          top: 46%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress-bar" aria-hidden="true"></div>
+    <nav class="nav-dots" aria-label="Slide navigation"></nav>
+    <div class="keyboard-hint">Arrow keys, Space, wheel, or swipe</div>
+
+    <section class="slide cover-slide">
+      <img class="cover-lines decorative left" src="template_assets/cover-lines-white.png" alt="" />
+      <img class="cover-lines decorative right" src="template_assets/cover-lines-white.png" alt="" />
+      <img class="cover-wordmark" src="template_assets/cover-wordmark-white.png" alt="Beijing Institute of Technology" />
+
+      <div class="cover-main">
+        <h1 class="cover-title">Lab 1: LangChain Pipeline</h1>
+      </div>
+      <div class="cover-rule" aria-hidden="true"></div>
+      <img class="cover-speaker-icon" src="template_assets/cover-speaker-icon.svg" alt="" />
+      <div class="cover-speaker">Speaker：Roma Khajiev</div>
+      <div class="cover-date">2026年4月12日 Sunday</div>
+    </section>
+
+    <section class="slide deck-slide contents-splash-slide">
+      <img class="bit-mark" src="template_assets/bit-wordmark-color.png" alt="Beijing Institute of Technology" />
+      <div class="deck-number">1</div>
+      <div class="deck-header">
+        <div>
+          <h2 class="deck-title reveal">Contents</h2>
+        </div>
+      </div>
+      <div class="deck-body">
+        <div class="contents-splash-layout">
+          <div class="contents-photo-panel" aria-hidden="true"></div>
+          <div class="contents-side-title" aria-hidden="true">
+            <span class="cn">目录|</span>
+            <span class="en">CONTENTS</span>
+          </div>
+          <div class="contents-splash-list">
+            <div class="contents-splash-row">
+              <div class="contents-splash-badge">1</div>
+              <div class="contents-splash-label">Introduction</div>
+            </div>
+            <div class="contents-splash-row">
+              <div class="contents-splash-badge">2</div>
+              <div class="contents-splash-label">Pipeline Story</div>
+            </div>
+            <div class="contents-splash-row">
+              <div class="contents-splash-badge">3</div>
+              <div class="contents-splash-label">How It Works</div>
+            </div>
+            <div class="contents-splash-row">
+              <div class="contents-splash-badge">4</div>
+              <div class="contents-splash-label">Use Cases</div>
+            </div>
+            <div class="contents-splash-row">
+              <div class="contents-splash-badge">5</div>
+              <div class="contents-splash-label">Conclusion</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deck-index">2</div>
+    </section>
+
+    <section class="slide deck-slide">
+      <img class="bit-mark" src="template_assets/bit-wordmark-color.png" alt="Beijing Institute of Technology" />
+      <div class="deck-number">1</div>
+      <div class="deck-header">
+        <div>
+          <h2 class="deck-title reveal">The Full Pipeline</h2>
+          <p class="deck-subtitle reveal">One notebook-friendly story from raw faculty pages to a tool-using answer loop.</p>
+        </div>
+      </div>
+      <div class="deck-body">
+        <div class="pipeline-grid reveal">
+          <div class="phase-card surface">
+            <h3>Source</h3>
+            <div class="phase-box">
+              <strong>BIT professor pages</strong>
+              <p>Fetch the faculty listing, keep the first five profiles as the stable working set, inspect one concrete example.</p>
+            </div>
+          </div>
+          <div class="phase-card surface">
+            <h3>Extract</h3>
+            <div class="phase-box">
+              <strong>Page-by-page OCR</strong>
+              <p>Run one multimodal call per poster slice so every note is readable, local, and easy to debug.</p>
+            </div>
+          </div>
+          <div class="phase-card surface">
+            <h3>Prepare</h3>
+            <div class="phase-box">
+              <strong>Graph-ready text</strong>
+              <p>Merge page notes, recover any missing header fields, and produce one transient payload per professor.</p>
+            </div>
+          </div>
+          <div class="phase-card surface">
+            <h3>Store</h3>
+            <div class="phase-box">
+              <strong>Parallel KG generation</strong>
+              <p>Batch independent professor pipelines, generate graph JSON, and load the combined result into Neo4j.</p>
+            </div>
+          </div>
+          <div class="phase-card surface">
+            <h3>Answer</h3>
+            <div class="phase-box">
+              <strong>MCP-backed agent</strong>
+              <p>Expose Neo4j tools through MCP, let the agent pick tools, run Cypher, and answer with a visible trace.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="arrow-strip reveal" aria-hidden="true">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <div class="artifact-row reveal">
+          <div class="artifact">detail URLs</div>
+          <div class="artifact">page notes (.md)</div>
+          <div class="artifact">graph input preview</div>
+          <div class="artifact">graph.json / graph.html</div>
+          <div class="artifact">Neo4j graph state</div>
+          <div class="artifact">answer + tool trace</div>
+        </div>
+      </div>
+      <div class="deck-index">03 / 12</div>
+    </section>
+
+    <section class="slide deck-slide">
+      <img class="bit-mark" src="template_assets/bit-wordmark-color.png" alt="Beijing Institute of Technology" />
+      <div class="deck-number">2</div>
+      <div class="deck-header">
+        <div>
+          <h2 class="deck-title reveal">When to Use Each Mode</h2>
+          <p class="deck-subtitle reveal">Lab 1 combines deterministic code with three LangChain interaction patterns.</p>
+        </div>
+      </div>
+      <div class="deck-body">
+        <div class="mode-table reveal">
+          <div class="surface">
+            <div class="mode-head">Mode</div>
+            <div class="mode-main"><strong>Plain Python</strong></div>
+          </div>
+          <div class="surface">
+            <div class="mode-head">Task Type</div>
+            <div class="mode-main">Deterministic work: crawling, parsing HTML, file I/O, Neo4j verification.</div>
+          </div>
+          <div class="surface">
+            <div class="mode-head">Used in Lab 1</div>
+            <div class="mode-main">Steps 1–2, 5–6, 9–10</div>
+          </div>
+
+          <div class="surface">
+            <div class="mode-head">Mode</div>
+            <div class="mode-main"><strong>`model.invoke()`</strong></div>
+          </div>
+          <div class="surface">
+            <div class="mode-head">Task Type</div>
+            <div class="mode-main">Mixed-modality extraction where the prompt carries page context and an image slice.</div>
+          </div>
+          <div class="surface">
+            <div class="mode-head">Used in Lab 1</div>
+            <div class="mode-main">Step 7 OCR</div>
+          </div>
+
+          <div class="surface">
+            <div class="mode-head">Mode</div>
+            <div class="mode-main"><strong>LCEL chain</strong></div>
+          </div>
+          <div class="surface">
+            <div class="mode-head">Task Type</div>
+            <div class="mode-main">Text-to-text pipeline composition, batching, and bounded parallel professor runs.</div>
+          </div>
+          <div class="surface">
+            <div class="mode-head">Used in Lab 1</div>
+            <div class="mode-main">Steps 8–9</div>
+          </div>
+
+          <div class="surface">
+            <div class="mode-head">Mode</div>
+            <div class="mode-main"><strong>`create_agent()`</strong></div>
+          </div>
+          <div class="surface">
+            <div class="mode-head">Task Type</div>
+            <div class="mode-main">Tool-using loops that inspect schema, choose Cypher, and stop when the answer is grounded.</div>
+          </div>
+          <div class="surface">
+            <div class="mode-head">Used in Lab 1</div>
+            <div class="mode-main">Steps 11–12</div>
+          </div>
+        </div>
+
+        <div class="quote-line reveal">
+          Key rule: use LLMs only where reasoning adds value. Keep deterministic work deterministic.
+        </div>
+      </div>
+      <div class="deck-index">04 / 12</div>
+    </section>
+
+    <section class="slide deck-slide">
+      <img class="bit-mark" src="template_assets/bit-wordmark-color.png" alt="Beijing Institute of Technology" />
+      <div class="deck-number">3</div>
+      <div class="deck-header">
+        <div>
+          <h2 class="deck-title reveal">The Pipe Operator</h2>
+          <p class="deck-subtitle reveal">LCEL keeps the transformation readable: prompt -> model -> parser.</p>
+        </div>
+      </div>
+      <div class="deck-body">
+        <div class="operator-shell">
+          <div class="operator-track surface reveal">
+            <div class="operator-flow">
+              <div class="operator-node">
+                <h3>ChatPromptTemplate</h3>
+                <p>Frames the input question or extraction request.</p>
+              </div>
+              <div class="pipe-symbol">|</div>
+              <div class="operator-node">
+                <h3>ChatOpenAI</h3>
+                <p>Runs the model call with one shared configuration.</p>
+              </div>
+            </div>
+            <div class="pipe-symbol">|</div>
+            <div class="operator-flow">
+              <div class="operator-node" style="grid-column: 2 / span 1;">
+                <h3>StrOutputParser</h3>
+                <p>Returns plain text that later steps can reuse or store.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="operator-notes surface reveal">
+            <div class="pill">Why LCEL Here</div>
+            <ul class="operator-bullets" style="margin-top: 0.85rem;">
+              <li>Swap one component without rewriting the pipeline around it.</li>
+              <li>Batch the same runnable across professors with a single interface.</li>
+              <li>Keep chain boundaries visible when students read the notebook.</li>
+              <li>Use direct model calls only for multimodal OCR, not for every step.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="deck-index">05 / 12</div>
+    </section>
+
+    <section class="slide deck-slide">
+      <img class="bit-mark" src="template_assets/bit-wordmark-color.png" alt="Beijing Institute of Technology" />
+      <div class="deck-number">4</div>
+      <div class="deck-header">
+        <div>
+          <h2 class="deck-title reveal">Image + Context -> Model -> Notes</h2>
+          <p class="deck-subtitle reveal">Each OCR call sees one page slice plus the running profile context from earlier pages.</p>
+        </div>
+      </div>
+      <div class="deck-body">
+        <div class="flow-shell">
+          <div class="surface flow-shell reveal" style="grid-template-columns: 1fr; gap: 0.9rem;">
+            <div class="flow-top">
+              <div class="flow-card">
+                <strong>HumanMessage</strong>
+                <span>Text instruction + image URL for page N</span>
+              </div>
+              <div class="flow-card">
+                <strong>System rules</strong>
+                <span>Preserve headings, bullets, and visible structure</span>
+              </div>
+              <div class="flow-card">
+                <strong>Model call</strong>
+                <span>OCR-oriented multimodal invocation</span>
+              </div>
+              <div class="flow-card">
+                <strong>Page notes</strong>
+                <span>Readable markdown for one slice</span>
+              </div>
+            </div>
+            <div class="quote-line">The notebook keeps extraction intentionally local: one page, one note, one inspection point.</div>
+          </div>
+
+          <div class="flow-loop surface reveal">
+            <div class="pill">Running Context Loop</div>
+            <div class="loop-steps" style="margin-top: 0.85rem;">
+              <div class="loop-step">
+                <span>1</span>
+                <div>
+                  <strong>Page 1</strong>
+                  <p>Extract the top identity block and initial profile facts.</p>
+                </div>
+              </div>
+              <div class="loop-step">
+                <span>2</span>
+                <div>
+                  <strong>`profile_so_far`</strong>
+                  <p>Carry the accumulated context into the next OCR call.</p>
+                </div>
+              </div>
+              <div class="loop-step">
+                <span>3</span>
+                <div>
+                  <strong>Page 2 / Page 3</strong>
+                  <p>Continue appending sections instead of restarting from zero.</p>
+                </div>
+              </div>
+              <div class="loop-step">
+                <span>4</span>
+                <div>
+                  <strong>Merge step</strong>
+                  <p>Combine page notes and header recovery into one graph-ready preview.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deck-index">06 / 12</div>
+    </section>
+
+    <section class="slide deck-slide">
+      <img class="bit-mark" src="template_assets/bit-wordmark-color.png" alt="Beijing Institute of Technology" />
+      <div class="deck-number">5</div>
+      <div class="deck-header">
+        <div>
+          <h2 class="deck-title reveal">Structured Knowledge</h2>
+          <p class="deck-subtitle reveal">Graph output turns poster text into relations that can be queried semantically.</p>
+        </div>
+      </div>
+      <div class="deck-body">
+        <div class="graph-shell">
+          <div class="graph-canvas surface reveal">
+            <div class="graph-link" style="left: 43%; top: 50%; width: 18%; transform: rotate(-160deg);"></div>
+            <div class="graph-link" style="left: 55%; top: 48%; width: 18%; transform: rotate(-20deg);"></div>
+            <div class="graph-link" style="left: 46%; top: 57%; width: 18%; transform: rotate(140deg);"></div>
+            <div class="graph-link" style="left: 53%; top: 58%; width: 18%; transform: rotate(52deg);"></div>
+            <div class="graph-link" style="left: 50%; top: 51%; width: 21%; transform: rotate(92deg);"></div>
+
+            <div class="graph-node core">CHE Haiying<br />Professor Profile</div>
+            <div class="graph-node" style="left: 8%; top: 25%;">Signal Processing</div>
+            <div class="graph-node" style="right: 5%; top: 22%;">BIT</div>
+            <div class="graph-node" style="left: 14%; bottom: 14%;">IEEE</div>
+            <div class="graph-node" style="right: 8%; bottom: 17%;">PhD</div>
+            <div class="graph-node" style="left: 42%; bottom: 5%;">Telecom</div>
+          </div>
+
+          <div class="graph-shell surface reveal" style="grid-template-columns: 1fr; gap: 0.85rem;">
+            <div class="pill">Typical Relations</div>
+            <div class="artifact-ladder" style="margin-top: 0.25rem;">
+              <div class="ladder-output">
+                <strong>`RESEARCHES`</strong>
+                <p>who studies what</p>
+              </div>
+              <div class="ladder-output">
+                <strong>`AFFILIATED_WITH`</strong>
+                <p>which institution the person belongs to</p>
+              </div>
+              <div class="ladder-output">
+                <strong>`MEMBER_OF`</strong>
+                <p>professional societies and academic groups</p>
+              </div>
+              <div class="ladder-output">
+                <strong>`DEGREE` / `FIELD`</strong>
+                <p>background facts that later support retrieval and filtering</p>
+              </div>
+            </div>
+            <div class="quote-line">Graph structure enables questions like “who works on NLP?” or “which professors share a research field?”</div>
+          </div>
+        </div>
+      </div>
+      <div class="deck-index">07 / 12</div>
+    </section>
+
+    <section class="slide deck-slide">
+      <img class="bit-mark" src="template_assets/bit-wordmark-color.png" alt="Beijing Institute of Technology" />
+      <div class="deck-number">6</div>
+      <div class="deck-header">
+        <div>
+          <h2 class="deck-title reveal">Agents + MCP</h2>
+          <p class="deck-subtitle reveal">Lab 1 finishes with a short payoff: the graph is already built, so the agent only needs to inspect and answer.</p>
+        </div>
+      </div>
+      <div class="deck-body">
+        <div class="agent-shell">
+          <div class="surface agent-shell reveal" style="grid-template-columns: 1fr; gap: 1rem;">
+            <div class="agent-loop">
+              <div class="agent-step">
+                <b>User Question</b>
+                <span>Natural-language query from the notebook</span>
+              </div>
+              <div class="agent-step">
+                <b>Model Step</b>
+                <span>Choose whether a tool call is needed</span>
+              </div>
+              <div class="agent-step">
+                <b>MCP Tool Call</b>
+                <span>Schema check or Cypher execution</span>
+              </div>
+              <div class="agent-step">
+                <b>Tool Result</b>
+                <span>Structured facts from Neo4j</span>
+              </div>
+              <div class="agent-step">
+                <b>Final Answer</b>
+                <span>Response grounded in database state</span>
+              </div>
+            </div>
+            <div class="quote-line">Thought -> Action -> Observation stays visible because the notebook prints the ordered tool trace.</div>
+          </div>
+
+          <div class="agent-bullets reveal">
+            <div><strong>MCP standardizes tool exposure.</strong> The agent discovers Neo4j tools at runtime instead of relying on custom wrappers.</div>
+            <div><strong>MultiServerMCPClient keeps the setup small.</strong> One connection object gives the notebook a reusable agent interface.</div>
+            <div><strong>The loop stops early.</strong> The agent only keeps calling tools until it has enough evidence to answer.</div>
+          </div>
+        </div>
+      </div>
+      <div class="deck-index">08 / 12</div>
+    </section>
+
+    <section class="slide deck-slide">
+      <img class="bit-mark" src="template_assets/bit-wordmark-color.png" alt="Beijing Institute of Technology" />
+      <div class="deck-number">7</div>
+      <div class="deck-header">
+        <div>
+          <h2 class="deck-title reveal">Inspectable Artifacts</h2>
+          <p class="deck-subtitle reveal">Every major stage leaves something concrete behind, which makes the lab easy to debug and teach.</p>
+        </div>
+      </div>
+      <div class="deck-body">
+        <div class="artifact-shell">
+          <div class="artifact-ladder reveal">
+            <div class="ladder-step">
+              <div class="ladder-stage">
+                <strong>Crawl professor pages</strong>
+                <p>Collect ordered detail URLs for the working set.</p>
+              </div>
+              <div class="ladder-output">
+                <strong>Artifact</strong>
+                <p>detail URL list</p>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-stage">
+                <strong>Run page OCR</strong>
+                <p>One note per image slice with preserved visible structure.</p>
+              </div>
+              <div class="ladder-output">
+                <strong>Artifact</strong>
+                <p>`page_notes.md` and `profile_so_far`</p>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-stage">
+                <strong>Generate graph input</strong>
+                <p>Merge pages into a transient graph-ready text preview.</p>
+              </div>
+              <div class="ladder-output">
+                <strong>Artifact</strong>
+                <p>graph input preview</p>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-stage">
+                <strong>Batch KG generation</strong>
+                <p>Run one professor pipeline per entry with bounded concurrency.</p>
+              </div>
+              <div class="ladder-output">
+                <strong>Artifact</strong>
+                <p>`graph.json`, `graph.html`, Neo4j state</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="artifact-aside reveal">
+            <div>Intermediate outputs let students debug a single stage without rerunning the whole lab.</div>
+            <div>The same pieces can be reused later by the CLI agent, notebook UI, and future labs.</div>
+            <div>If Neo4j looks wrong, you can still inspect raw notes and graph JSON before blaming the agent.</div>
+          </div>
+        </div>
+      </div>
+      <div class="deck-index">09 / 12</div>
+    </section>
+
+    <section class="slide deck-slide">
+      <img class="bit-mark" src="template_assets/bit-wordmark-color.png" alt="Beijing Institute of Technology" />
+      <div class="deck-number">8</div>
+      <div class="deck-header">
+        <div>
+          <h2 class="deck-title reveal">13 Notebook Sections</h2>
+          <p class="deck-subtitle reveal">The lab is intentionally linear: each section narrows the teaching goal and hands off to the next.</p>
+        </div>
+      </div>
+      <div class="deck-body">
+        <div class="sections-shell reveal">
+          <div class="section-card surface">
+            <strong>Setup</strong>
+            <span>Steps 1–4: environment, model config, imports, tiny LCEL example.</span>
+          </div>
+          <div class="section-card surface">
+            <strong>Crawl</strong>
+            <span>Steps 5–6: professor listing, default working set, one worked example.</span>
+          </div>
+          <div class="section-card surface">
+            <strong>Extract</strong>
+            <span>Steps 7–8: page OCR, header recovery, graph-ready merge preview.</span>
+          </div>
+          <div class="section-card surface">
+            <strong>Graph</strong>
+            <span>Steps 9–10: parallel professor pipelines, Neo4j load, direct verification.</span>
+          </div>
+          <div class="section-card surface">
+            <strong>Agent</strong>
+            <span>Steps 11–12: MCP tools, one answer loop, optional inline Gradio UI.</span>
+          </div>
+          <div class="section-card surface">
+            <strong>Wrap-up</strong>
+            <span>Step 13: review concepts, inspect artifacts, and carry the habits forward.</span>
+          </div>
+        </div>
+        <div class="quote-line reveal">Each notebook section follows the same rhythm: learning goal, theory, expected result, and why it matters.</div>
+      </div>
+      <div class="deck-index">10 / 12</div>
+    </section>
+
+    <section class="slide deck-slide">
+      <img class="bit-mark" src="template_assets/bit-wordmark-color.png" alt="Beijing Institute of Technology" />
+      <div class="deck-number">9</div>
+      <div class="deck-header">
+        <div>
+          <h2 class="deck-title reveal">Carry These Into Every Lab</h2>
+          <p class="deck-subtitle reveal">Lab 1 is narrow on purpose. The durable lesson is how to structure an AI workflow so it stays inspectable and reusable.</p>
+        </div>
+      </div>
+      <div class="deck-body">
+        <div class="principles-shell reveal">
+          <div class="principle surface">
+            <div class="principle-num">1</div>
+            <strong>Deterministic vs. stochastic</strong>
+            <p>Crawling and storage stay in plain Python; reasoning stays where models actually help.</p>
+          </div>
+          <div class="principle surface">
+            <div class="principle-num">2</div>
+            <strong>Save intermediate artifacts</strong>
+            <p>Keep notes, markdown, graph JSON, and traces so failure points stay visible.</p>
+          </div>
+          <div class="principle surface">
+            <div class="principle-num">3</div>
+            <strong>One job per section</strong>
+            <p>Students can understand the lab because each section has a narrow responsibility.</p>
+          </div>
+          <div class="principle surface">
+            <div class="principle-num">4</div>
+            <strong>Reuse the same logic</strong>
+            <p>Notebook, CLI, and optional UI all depend on the same underlying agent module.</p>
+          </div>
+          <div class="principle surface">
+            <div class="principle-num">5</div>
+            <strong>Progressive disclosure</strong>
+            <p>Lab 1 teaches the narrow path first; later labs add LangGraph and multi-agent patterns.</p>
+          </div>
+        </div>
+      </div>
+      <div class="deck-index">11 / 12</div>
+    </section>
+
+    <section class="slide closing-slide">
+      <img class="closing-wordmark" src="template_assets/closing-wordmark-white.png" alt="Beijing Institute of Technology" />
+      <div class="closing-main">
+        <h2>Thank you!</h2>
+      </div>
+    </section>
+
+    <script>
+      /* ===========================================
+         PRESENTATION CONTROLLER
+         =========================================== */
+      class SlidePresentation {
+        constructor() {
+          this.slides = Array.from(document.querySelectorAll(".slide"));
+          this.progressBar = document.querySelector(".progress-bar");
+          this.navDotsContainer = document.querySelector(".nav-dots");
+          this.currentSlide = 0;
+          this.touchStartY = 0;
+          this.touchEndY = 0;
+          this.isThrottled = false;
+
+          this.hydrateTemplateFrames();
+          this.setupIntersectionObserver();
+          this.setupKeyboardNav();
+          this.setupWheelNav();
+          this.setupTouchNav();
+          this.setupNavDots();
+          this.updateProgress();
+
+          window.addEventListener("scroll", () => this.updateProgress(), { passive: true });
+          window.addEventListener("resize", () => this.updateProgress());
+        }
+
+        hydrateTemplateFrames() {
+          const interiorSlides = Array.from(document.querySelectorAll(".deck-slide"));
+
+          interiorSlides.forEach((slide, interiorIndex) => {
+            const absoluteIndex = this.slides.indexOf(slide) + 1;
+            const number = slide.querySelector(":scope > .deck-number");
+            const index = slide.querySelector(":scope > .deck-index");
+            const firstContent = slide.firstElementChild;
+
+            if (number) number.textContent = String(interiorIndex + 1);
+            if (index) index.textContent = String(absoluteIndex);
+
+            if (!slide.querySelector(":scope > .deck-frame-art")) {
+              const frame = document.createElement("img");
+              frame.className = "deck-frame-art";
+              frame.src = "template_assets/bit-interior-frame.svg";
+              frame.alt = "";
+              frame.setAttribute("aria-hidden", "true");
+              slide.insertBefore(frame, firstContent);
+            }
+          });
+        }
+
+        setupIntersectionObserver() {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("visible");
+                  this.currentSlide = this.slides.indexOf(entry.target);
+                  this.syncDots();
+                  this.updateProgress();
+                }
+              });
+            },
+            {
+              threshold: 0.55,
+            },
+          );
+
+          this.slides.forEach((slide) => observer.observe(slide));
+          this.slides[0]?.classList.add("visible");
+        }
+
+        setupKeyboardNav() {
+          window.addEventListener("keydown", (event) => {
+            if (["ArrowDown", "PageDown", " ", "ArrowRight"].includes(event.key)) {
+              event.preventDefault();
+              this.goToSlide(Math.min(this.currentSlide + 1, this.slides.length - 1));
+            }
+
+            if (["ArrowUp", "PageUp", "ArrowLeft"].includes(event.key)) {
+              event.preventDefault();
+              this.goToSlide(Math.max(this.currentSlide - 1, 0));
+            }
+
+            if (event.key === "Home") {
+              event.preventDefault();
+              this.goToSlide(0);
+            }
+
+            if (event.key === "End") {
+              event.preventDefault();
+              this.goToSlide(this.slides.length - 1);
+            }
+          });
+        }
+
+        setupWheelNav() {
+          window.addEventListener(
+            "wheel",
+            (event) => {
+              if (this.isThrottled) return;
+              if (Math.abs(event.deltaY) < 24) return;
+
+              this.isThrottled = true;
+
+              if (event.deltaY > 0) {
+                this.goToSlide(Math.min(this.currentSlide + 1, this.slides.length - 1));
+              } else {
+                this.goToSlide(Math.max(this.currentSlide - 1, 0));
+              }
+
+              window.setTimeout(() => {
+                this.isThrottled = false;
+              }, 650);
+            },
+            { passive: true },
+          );
+        }
+
+        setupTouchNav() {
+          window.addEventListener(
+            "touchstart",
+            (event) => {
+              this.touchStartY = event.changedTouches[0].clientY;
+            },
+            { passive: true },
+          );
+
+          window.addEventListener(
+            "touchend",
+            (event) => {
+              this.touchEndY = event.changedTouches[0].clientY;
+              const delta = this.touchStartY - this.touchEndY;
+
+              if (Math.abs(delta) < 40) return;
+
+              if (delta > 0) {
+                this.goToSlide(Math.min(this.currentSlide + 1, this.slides.length - 1));
+              } else {
+                this.goToSlide(Math.max(this.currentSlide - 1, 0));
+              }
+            },
+            { passive: true },
+          );
+        }
+
+        setupNavDots() {
+          this.navDotsContainer.innerHTML = "";
+
+          this.slides.forEach((slide, index) => {
+            const dot = document.createElement("button");
+            dot.className = "nav-dot";
+            dot.type = "button";
+            dot.setAttribute("aria-label", `Go to slide ${index + 1}`);
+            dot.addEventListener("click", () => this.goToSlide(index));
+            this.navDotsContainer.appendChild(dot);
+          });
+
+          this.syncDots();
+        }
+
+        syncDots() {
+          const dots = this.navDotsContainer.querySelectorAll(".nav-dot");
+          dots.forEach((dot, index) => {
+            dot.classList.toggle("active", index === this.currentSlide);
+          });
+        }
+
+        updateProgress() {
+          const denominator = Math.max(this.slides.length - 1, 1);
+          const progress = (this.currentSlide / denominator) * 100;
+          this.progressBar.style.setProperty("--progress", `${progress}%`);
+          document.body.classList.toggle("hide-keyboard-hint", this.currentSlide > 0);
+        }
+
+        goToSlide(index) {
+          this.currentSlide = index;
+          this.slides[index].scrollIntoView({ behavior: "smooth", block: "start" });
+          this.syncDots();
+          this.updateProgress();
+        }
+      }
+
+      new SlidePresentation();
+    </script>
+  </body>
+</html>

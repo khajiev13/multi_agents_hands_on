@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12192000 6858000" fill="none">
+  <title>BIT Interior Slide Frame</title>
+  <rect x="318632" y="0" width="1048735" height="873125" fill="#006C39" />
+  <rect x="1378908" y="-1612" width="167082" height="874737" fill="#A13F0B" />
+  <line
+    x1="1366474"
+    y1="-17822"
+    x2="1366474"
+    y2="1061596"
+    stroke="#FFFFFF"
+    stroke-width="12700"
+    stroke-linecap="square"
+  />
+  <line
+    x1="1550089"
+    y1="863157"
+    x2="11868712"
+    y2="863157"
+    stroke="#A2A2A2"
+    stroke-width="28575"
+    stroke-linecap="square"
+  />
+  <rect x="318631" y="6188075" width="10844339" height="669925" fill="#006C39" />
+  <rect x="11155416" y="6188075" width="713296" height="669925" fill="#A13F0B" />
+  <line
+    x1="11155416"
+    y1="6119786"
+    x2="11155416"
+    y2="6880418"
+    stroke="#FFFFFF"
+    stroke-width="12700"
+    stroke-linecap="square"
+  />
+</svg>
