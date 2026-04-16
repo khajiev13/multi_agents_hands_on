@@ -92,7 +92,12 @@ class TutorSettings:
     schema_sample_size: int = 200
 
     @classmethod
-    def from_env(cls, dotenv_path: Path | None = None) -> "TutorSettings":
+    def from_env(
+        cls,
+        dotenv_path: Path | None = None,
+        *,
+        require_llm: bool = True,
+    ) -> "TutorSettings":
         project_root = discover_project_root(dotenv_path.parent if dotenv_path else None)
         resolved_dotenv = dotenv_path.resolve() if dotenv_path else project_root / ".env"
         load_dotenv(resolved_dotenv, override=False)
@@ -109,7 +114,7 @@ class TutorSettings:
             }.items()
             if not value
         ]
-        if missing:
+        if missing and require_llm:
             missing_list = ", ".join(sorted(missing))
             raise ValueError(f"Missing required environment variables: {missing_list}")
 
@@ -132,9 +137,9 @@ class TutorSettings:
         return cls(
             project_root=project_root,
             dotenv_path=resolved_dotenv,
-            llm_api_key=llm_api_key,
-            llm_base_url=llm_base_url,
-            llm_model=llm_model,
+            llm_api_key=llm_api_key or "",
+            llm_base_url=llm_base_url or "",
+            llm_model=llm_model or "",
             ocr_api_key=(
                 _first_env("BIT_PROF_OCR_API_KEY", "LAB_TUTOR_LLM_API_KEY") or llm_api_key
             ),
@@ -142,7 +147,7 @@ class TutorSettings:
                 _first_env("BIT_PROF_OCR_BASE_URL", "LAB_TUTOR_LLM_BASE_URL") or llm_base_url
             ),
             ocr_model=(
-                _first_env("BIT_PROF_OCR_MODEL", "LAB_TUTOR_OCR_MODEL") or "qwen-vl-ocr-latest"
+                _first_env("BIT_PROF_OCR_MODEL", "LAB_TUTOR_OCR_MODEL") or "deepseek-ocr"
             ),
             embedding_api_key=(
                 _first_env("BIT_PROF_EMBEDDING_API_KEY", "LAB_TUTOR_EMBEDDING_API_KEY")

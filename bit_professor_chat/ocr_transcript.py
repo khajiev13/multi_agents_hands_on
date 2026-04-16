@@ -32,6 +32,9 @@ CHINESE_NAME_PATTERN = re.compile(r"^[\u4e00-\u9fff]{2,6}$")
 ADJACENT_MIXED_SCRIPT_PATTERN = re.compile(
     r"(?<=[A-Za-z])[\u4e00-\u9fff]|(?<=[\u4e00-\u9fff])[A-Za-z]"
 )
+MODEL_ARTIFACT_PATTERN = re.compile(
+    r"<\|[^|>]+?\|>|#+\s*|^\}\s*|^\d+text",
+)
 
 PAGE_SLICE_OCR_PROMPT = """OCR only. This is one image slice from a professor CV poster.
 
@@ -84,6 +87,26 @@ CONTACT_LABELS = (
 )
 RESEARCH_LABELS = ("research interests", "research directions", "研究方向", "研究兴趣")
 NAME_LABELS = ("name", "姓名", "英文名", "english name", "chinese name", "中文名")
+TITLE_SUFFIXES = (
+    "associate professor",
+    "assistant professor",
+    "professor",
+    "lecturer",
+    "副教授",
+    "教授",
+    "讲师",
+)
+INLINE_IDENTITY_FIELD_PATTERN = re.compile(
+    "|".join(
+        re.escape(label)
+        for label in sorted(
+            set(INLINE_BASIC_INFO_LABELS + CONTACT_LABELS + RESEARCH_LABELS + NAME_LABELS),
+            key=len,
+            reverse=True,
+        )
+    ),
+    re.I,
+)
 SECTION_ALIASES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("Research Interests", ("research interests", "research directions", "研究方向", "研究兴趣")),
     ("Basic Information", ("basic information", "基本信息")),
@@ -357,7 +380,8 @@ def _append_unique(lines: list[str], value: str) -> None:
 
 
 def _clean_extracted_line(line: str) -> str:
-    cleaned = re.sub(r"\s+", " ", line.strip())
+    cleaned = MODEL_ARTIFACT_PATTERN.sub("", line.strip())
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
     if cleaned.lower() in {"(header only)", "(section header)", "header only", "section header"}:
         return ""
     return cleaned
@@ -815,7 +839,7 @@ def parse_ocr_page_notes(markdown_text: str) -> list[OCRPageExtraction]:
 
 
 def _is_name_candidate(line: str) -> bool:
-    candidate = line.strip()
+    candidate = _strip_trailing_title(line.strip())
     if not candidate or candidate.endswith((":", "：")):
         return False
     lowered = candidate.lower()
@@ -832,6 +856,36 @@ def _is_name_candidate(line: str) -> bool:
     return not any(word.lower() in banned for word in words)
 
 
+def _strip_trailing_title(candidate: str) -> str:
+    cleaned = candidate.strip()
+    lowered = cleaned.lower()
+    for suffix in TITLE_SUFFIXES:
+        if lowered.endswith(f" {suffix}"):
+            return cleaned[: -len(suffix) - 1].strip()
+    return cleaned
+
+
+def _extract_mixed_script_name_candidate(line: str) -> str | None:
+    normalized = _strip_trailing_title(line.strip())
+    match = re.search(r"([\u4e00-\u9fff]{2,6})\s+([A-Za-z][A-Za-z .'\-]{1,60})$", normalized)
+    if not match:
+        return None
+    english_candidate = _strip_trailing_title(match.group(2).strip())
+    return english_candidate or match.group(1).strip()
+
+
+def _label_contains_name_field(label: str) -> bool:
+    normalized = re.sub(r"[\s()（）]+", " ", label.lower()).strip()
+    return any(name_label in normalized for name_label in NAME_LABELS)
+
+
+def _trim_inline_field_value(value: str) -> str:
+    match = INLINE_IDENTITY_FIELD_PATTERN.search(value)
+    if match and match.start() > 0:
+        return value[: match.start()].strip()
+    return value.strip()
+
+
 def extract_identity_candidates_from_lines(lines: Sequence[str]) -> list[str]:
     candidates: list[str] = []
     saw_field_label = False
@@ -839,11 +893,16 @@ def extract_identity_candidates_from_lines(lines: Sequence[str]) -> list[str]:
         normalized = _strip_markdown_formatting(line)
         lowered = normalized.lower()
         label, value = _split_labeled_line(line)
-        if label.lower() in NAME_LABELS and value:
-            _append_unique(candidates, value)
+        if _label_contains_name_field(label) and value:
+            _append_unique(candidates, _trim_inline_field_value(value))
             continue
-        if _is_name_candidate(normalized) and not saw_field_label:
-            _append_unique(candidates, normalized)
+        mixed_script_candidate = _extract_mixed_script_name_candidate(normalized)
+        if mixed_script_candidate:
+            _append_unique(candidates, mixed_script_candidate)
+            continue
+        stripped_title_candidate = _strip_trailing_title(normalized)
+        if _is_name_candidate(stripped_title_candidate) and not saw_field_label:
+            _append_unique(candidates, stripped_title_candidate)
             continue
         if any(token in lowered for token in INLINE_BASIC_INFO_LABELS + CONTACT_LABELS + RESEARCH_LABELS):
             saw_field_label = True
@@ -1020,6 +1079,8 @@ def build_professor_markdown_from_page_notes(
     identity_candidates = extract_identity_candidates(pages)
     for candidate in extract_identity_candidates_from_lines(supplemental_header_lines or []):
         _append_unique(identity_candidates, candidate)
+    if not identity_candidates:
+        _append_unique(identity_candidates, listing.name)
     title = choose_markdown_title(
         expected_name=listing.name,
         identity_candidates=identity_candidates,

@@ -1,86 +1,57 @@
-# 刘平青
+# Wang Juan
 - detail_url: https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113075.htm
 - page_count: 3
 
 ## Basic Information
-- 姓名：刘平青
-- 职称：教授、博士生导师
-- 所在系所：管理与经济学院组织与人力资源管理系
-- 电子邮箱：liupingqing@bit.edu.cn
-- 办公电话：010-68918041
-- 办公地点：北京理工大学主楼
+- Wang Juan
+- 学院(School): 专业：计算机科学与技术
+- 计算机学院
+- computerscienceandtechnology
+- Schoolof ComputerScience and Technology
+- 010-68912431
+- 2.嵌入式计算
+- Wangjuan99@bit.edu.cn
+- 3.数字系统设计
+- Digital System Design
+- 个人简历（Biography）
+- 教育背景: （EducationalBackground）
+- 2005年北京理工大学获得计算机应用博士学位。
+- 2005年至今北京李彤大学计算机学院教师。
+- Received thePhDdegreein ComputerScience and TechnologyfromBeijing
+- InstituteofTechnology,China,in2005.
+- 2005~Present: AssistantProfessorwiththeSchoolof ComputerScience,BeijingInstituteofTechnology,
+- Beijing,China.
+- 职称(title): 讲师
+- Assistant Professor
+- 学院(School): 计算机学院
+- 专业: 计算机科学与技术
+- computer science and technology
+- 软件工程 Software engineering
 
 ## Research Interests
-- 组织行为与人力资源管理
-- 员工关系与职业生涯
-- 领导力开发
-
-## Biography
-（个人简介内容已整合至“Basic Information”和“Research Interests”部分。）
+- 计算机体系结构
+- Computer Architecture
+- 嵌入式计算
+- Embedded Systems
+- 数字系统设计
+- Digital System Design
+- 电话(office): 010-68912431
+- 邮箱(E-mail): Wangjuan99@bit.edu.cn
 
 ## Education
-- 1994.09-1998.06 华中农业大学 经济贸易学院 农业经济管理专业 本科
-- 1998.09-2001.06 华中农业大学 经济贸易学院 农业经济管理专业 硕士
-- 2001.09-2004.06 华中农业大学 经济贸易学院 农业经济管理专业 博士
-
-## Work Experience
-- 2004.07-2006.06 北京理工大学 管理与经济学院 讲师
-- 2006.07-2011.06 北京理工大学 管理与经济学院 副教授
-- 2011.07-至今 北京理工大学 管理与经济学院 教授
-- 2012.01-至今 北京理工大学 管理与经济学院 博士生导师
-- 2014.01-2015.01 美国加州大学伯克利分校 访问学者
-
-## Research Projects
-- 国家自然科学基金面上项目，新生代员工“关系型”心理契约与创新行为研究，2016.01-2019.12，主持
-- 国家自然科学基金面上项目，基于组织认同的员工-组织关系修复研究，2013.01-2016.12，主持
-- 国家自然科学基金青年项目，员工组织社会化过程中的导师制研究，2009.01-2011.12，主持
-- 教育部人文社会科学研究规划基金项目，新生代员工职业成长与创新行为研究，2012.01-2014.12，主持
-- 北京市社会科学基金项目，北京市新生代员工职业成长研究，2011.01-2013.12，主持
-- 国家社会科学基金重大项目子课题，中国人才生态圈构建研究，2015.01-2017.12，主持
-- 企业委托项目，员工职业生涯管理研究，2014.01-2015.12，主持
-- 企业委托项目，领导力开发研究，2013.01-2014.12，主持
-
-## Academic Achievements
-### 论文与著作
-- 在《管理世界》、《南开管理评论》、《中国软科学》、《心理学报》等国内外重要学术期刊发表论文100余篇。
-- 出版专著《员工关系管理》、《职业生涯管理》、《领导力开发》等10余部。
-- 主编教材《组织行为学》、《人力资源管理》等5部。
-
-## Awards
-- 国家教学成果二等奖，2018
-- 北京市教学成果一等奖，2017
-- 北京市哲学社会科学优秀成果二等奖，2016
-- 北京市教育教学成果一等奖，2013
-- 北京理工大学教学成果特等奖，2012
-- 北京理工大学优秀博士学位论文指导教师，2011
-
-## Academic Service and Memberships
-- 中国人力资源开发研究会 常务理事
-- 中国企业管理研究会 常务理事
-- 中国劳动学会 理事
-- 北京市行为科学学会 副会长
-- 《中国人力资源开发》编委
-- 《管理评论》编委
-
-## Courses Taught
-- 组织行为学 (本科生)
-- 人力资源管理 (本科生)
-- 员工关系管理 (研究生)
-- 职业生涯管理 (研究生)
-- 领导力开发 (MBA/EMBA)
-- 组织行为学前沿 (博士生)
+- 2005年北京理工大学获得计算机应用博士学位。
+- 2005年至今北京师范大学计算机学院教师。
+- Received the PhD degree in Computer Science and Technology from Beijing
+- Institute of Technology, China, in 2005.
+- 2005～Present: Assistant Professor with the School of Computer Science, Beijing Institute of Technology,
+- Beijing, China.
+- [6] Yuan Tan, Juan Wang, Quanxin Zhang, Kai Zhang, Pentium- Computer principle and interface technology, ISBN: 9787111235729, China machine press, 2008 (in chinese)
 
 ## Contact
-- 地址：北京市海淀区中关村南大街5号北京理工大学管理与经济学院
-- 邮编：100081
-- 电话：010-68918041
-- 邮箱：liupingqing@bit.edu.cn
-- 网址：http://isc.bit.edu.cn
+- 电话(office): ComputerArchitecture
+- 邮箱(E-mail): EmbeddedSystems
 
 ## Source Pages
 - page 1: https://isc.bit.edu.cn/images/2022-04/20171129084420646323.png
 - page 2: https://isc.bit.edu.cn/images/2022-04/20171129084420649476.png
 - page 3: https://isc.bit.edu.cn/images/2022-04/20171129084420651570.png
-
-## Uncertain or Illegible Text
-（无不确定或无法辨识的文本。）

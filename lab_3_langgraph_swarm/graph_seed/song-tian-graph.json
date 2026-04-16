@@ -1,0 +1,203 @@
+{
+  "entities": [
+    "songtian@bit.edu.cn",
+    "计算机学院",
+    "2008.1",
+    "Microprocessor and System Architecture",
+    "北京理工大学",
+    "Song Tian",
+    "Tsinghua University",
+    "Visiting Scholar",
+    "Washington University in St. Louis",
+    "计算机科学与技术",
+    "嵩天",
+    "2013.7",
+    "博士学位",
+    "计算机科学与工程系",
+    "Department of Computer Science and Engineering",
+    "2011.9",
+    "Associate Professor",
+    "Network and Information Security",
+    "Beijing Institute of Technology",
+    "副教授",
+    "计算机系",
+    "2002.9",
+    "华盛顿大学",
+    "Computer Science and Technology",
+    "010-68913536",
+    "Department of Computer Science and Technology",
+    "清华大学",
+    "Ph.D.",
+    "Network Architecture and Protocol",
+    "访问学者"
+  ],
+  "edges": [
+    "has telephone",
+    "started work at",
+    "was visiting scholar at",
+    "has position",
+    "has title",
+    "works at",
+    "was visiting scholar in department",
+    "belongs to school",
+    "started Ph.D. in",
+    "has email",
+    "started visiting scholar in",
+    "has research interest",
+    "obtained degree",
+    "received Ph.D. from department",
+    "obtained Ph.D. in",
+    "ended visiting scholar in",
+    "has discipline",
+    "received Ph.D. from"
+  ],
+  "relations": [
+    [
+      "Song Tian",
+      "works at",
+      "北京理工大学"
+    ],
+    [
+      "Song Tian",
+      "received Ph.D. from department",
+      "Department of Computer Science and Technology"
+    ],
+    [
+      "Song Tian",
+      "started visiting scholar in",
+      "2011.9"
+    ],
+    [
+      "Song Tian",
+      "has position",
+      "访问学者"
+    ],
+    [
+      "Song Tian",
+      "received Ph.D. from",
+      "Tsinghua University"
+    ],
+    [
+      "Song Tian",
+      "has title",
+      "副教授"
+    ],
+    [
+      "Song Tian",
+      "obtained degree",
+      "博士学位"
+    ],
+    [
+      "Song Tian",
+      "has discipline",
+      "计算机科学与技术"
+    ],
+    [
+      "Song Tian",
+      "was visiting scholar at",
+      "华盛顿大学"
+    ],
+    [
+      "Song Tian",
+      "has telephone",
+      "010-68913536"
+    ],
+    [
+      "Song Tian",
+      "works at",
+      "Beijing Institute of Technology"
+    ],
+    [
+      "Song Tian",
+      "has position",
+      "Visiting Scholar"
+    ],
+    [
+      "Song Tian",
+      "was visiting scholar in department",
+      "计算机科学与工程系"
+    ],
+    [
+      "Song Tian",
+      "ended visiting scholar in",
+      "2013.7"
+    ],
+    [
+      "Song Tian",
+      "started work at",
+      "2008.1"
+    ],
+    [
+      "Song Tian",
+      "has research interest",
+      "Network and Information Security"
+    ],
+    [
+      "Song Tian",
+      "has discipline",
+      "Computer Science and Technology"
+    ],
+    [
+      "Song Tian",
+      "has research interest",
+      "Microprocessor and System Architecture"
+    ],
+    [
+      "Song Tian",
+      "was visiting scholar at",
+      "Washington University in St. Louis"
+    ],
+    [
+      "Song Tian",
+      "obtained degree",
+      "Ph.D."
+    ],
+    [
+      "Song Tian",
+      "has research interest",
+      "Network Architecture and Protocol"
+    ],
+    [
+      "Song Tian",
+      "received Ph.D. from department",
+      "计算机系"
+    ],
+    [
+      "Song Tian",
+      "obtained Ph.D. in",
+      "2008.1"
+    ],
+    [
+      "Song Tian",
+      "started Ph.D. in",
+      "2002.9"
+    ],
+    [
+      "Song Tian",
+      "has email",
+      "songtian@bit.edu.cn"
+    ],
+    [
+      "Song Tian",
+      "has title",
+      "Associate Professor"
+    ],
+    [
+      "Song Tian",
+      "belongs to school",
+      "计算机学院"
+    ],
+    [
+      "Song Tian",
+      "received Ph.D. from",
+      "清华大学"
+    ],
+    [
+      "Song Tian",
+      "was visiting scholar in department",
+      "Department of Computer Science and Engineering"
+    ]
+  ],
+  "entity_clusters": null,
+  "edge_clusters": null
+}

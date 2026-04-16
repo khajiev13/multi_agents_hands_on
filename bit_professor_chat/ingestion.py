@@ -30,6 +30,7 @@ from .ingestion_models import (
     ProfessorPageNotesResult,
 )
 from .legacy_cache import (
+    build_graph_seed_index,
     build_cached_markdown_result,
     build_cached_summary_line,
     build_professor_cache_index,
@@ -37,9 +38,12 @@ from .legacy_cache import (
     load_neo4j_detail_url_index,
     partition_professors_for_corpus,
     partition_professors_for_ingestion,
+    read_professor_markdown_metadata,
     rebuild_professor_summary,
+    resolve_graph_seed_dir,
     restore_professor_from_cache,
     summarize_corpus_partition,
+    sync_graph_seed_directory,
 )
 from .markdown_corpus import (
     CorpusBuildResult,
@@ -497,6 +501,201 @@ def ingest_professor(
         )
 
 
+def refresh_professors_to_graph(
+    *,
+    settings: TutorSettings,
+    project_root: Path | None = None,
+    limit: int | None = None,
+    max_concurrency: int = 2,
+    reset_database: bool = True,
+    artifact_namespace: str = "lab1-full-refresh",
+    graph_name: str = "BIT_CSAT_FULL",
+    user_agent_prefix: str = "agents-tutorial-lab1-refresh",
+) -> dict[str, Any]:
+    resolved_project_root = project_root or settings.project_root
+    settings.require_neo4j()
+
+    listing_session = build_requests_session(f"{user_agent_prefix}/0.1")
+    try:
+        listing_pages = discover_listing_pages(LISTING_URL, listing_session)
+        listings = collect_professor_links(listing_pages, listing_session)
+    finally:
+        listing_session.close()
+    if limit is not None:
+        listings = listings[:limit]
+
+    if reset_database:
+        reset_neo4j_database(settings)
+
+    ocr_model = build_ocr_model(settings)
+
+    def ingest_one(listing_input: ProfessorListing | dict[str, Any]) -> ProfessorIngestionResult:
+        listing = _coerce_listing(listing_input)
+        session = build_requests_session(f"{user_agent_prefix}/0.1")
+        try:
+            return ingest_professor(
+                listing=listing,
+                settings=settings,
+                ocr_model=ocr_model,
+                session=session,
+                project_root=resolved_project_root,
+                artifact_namespace=artifact_namespace,
+                graph_name=graph_name,
+                build_graph=True,
+            )
+        finally:
+            session.close()
+
+    results = RunnableLambda(ingest_one).batch(
+        list(listings),
+        config={"max_concurrency": max(1, max_concurrency)},
+    )
+    successes = [result for result in results if result.status == "ok"]
+    failures = [result for result in results if result.status != "ok"]
+
+    rebuild_professor_summary(resolved_project_root, successes)
+    if limit is None and not failures:
+        graph_seed_summary = {
+            "status": "synced",
+            **sync_graph_seed_directory(
+                resolved_project_root,
+                artifact_namespace=artifact_namespace,
+            ),
+        }
+    elif limit is not None:
+        graph_seed_summary = {
+            "status": "skipped",
+            "reason": "limit_applied",
+        }
+    else:
+        graph_seed_summary = {
+            "status": "skipped",
+            "reason": "refresh_errors",
+        }
+    verification = verify_neo4j_graph(settings)
+
+    return {
+        "listing_page_count": len(listing_pages),
+        "professor_count": len(listings),
+        "limit_applied": limit,
+        "artifact_namespace": artifact_namespace,
+        "graph_name": graph_name,
+        "reset_database": reset_database,
+        "max_concurrency": max(1, max_concurrency),
+        "success_count": len(successes),
+        "error_count": len(failures),
+        "failed_professors": [result.name for result in failures[:10]],
+        "graph_seed": graph_seed_summary,
+        "neo4j": {
+            "node_count": verification["node_count"],
+            "relationship_count": verification["relationship_count"],
+            "professor_count": len(verification["distinct_professors"]),
+            "sample_professors": verification["distinct_professors"][:10],
+        },
+    }
+
+
+def restore_seeded_professors_to_graph(
+    *,
+    settings: TutorSettings,
+    project_root: Path | None = None,
+    seed_dir: Path | None = None,
+    limit: int | None = None,
+    reset_database: bool = True,
+    graph_name: str = "BIT_CSAT_PREPARED",
+) -> dict[str, Any]:
+    resolved_project_root = project_root or settings.project_root
+    settings.require_neo4j()
+
+    professor_dir = resolved_project_root / "professors"
+    if not professor_dir.exists():
+        raise FileNotFoundError(f"Professor dossier directory does not exist: {professor_dir}")
+
+    seed_index = build_graph_seed_index(resolved_project_root, seed_dir=seed_dir)
+    resolved_seed_dir = resolve_graph_seed_dir(resolved_project_root, seed_dir)
+    if not seed_index:
+        raise FileNotFoundError(
+            f"No Lab 3 graph seed files were found under {resolved_seed_dir}."
+        )
+
+    markdown_paths = sorted(professor_dir.glob("*.md"))
+    if limit is not None:
+        markdown_paths = markdown_paths[:limit]
+
+    if reset_database:
+        reset_neo4j_database(settings)
+
+    successes: list[dict[str, Any]] = []
+    missing_seeds: list[str] = []
+    failures: list[dict[str, str]] = []
+    for markdown_path in markdown_paths:
+        metadata = read_professor_markdown_metadata(markdown_path)
+        professor_name = str(metadata.get("markdown_title") or markdown_path.stem).strip()
+        detail_url = str(metadata.get("detail_url") or "").strip()
+        graph_json_path = seed_index.get(markdown_path.stem)
+
+        if not detail_url:
+            failures.append(
+                {
+                    "professor_name": professor_name,
+                    "error": f"{markdown_path.name} is missing detail_url metadata.",
+                }
+            )
+            continue
+
+        if graph_json_path is None:
+            missing_seeds.append(professor_name)
+            continue
+
+        try:
+            markdown_text = markdown_path.read_text(encoding="utf-8")
+            graph = load_cached_graph(graph_json_path)
+            insert_professor_graph(
+                graph=graph,
+                settings=settings,
+                graph_name=graph_name,
+                professor_name=professor_name,
+                detail_url=detail_url,
+            )
+        except Exception as exc:
+            failures.append(
+                {
+                    "professor_name": professor_name,
+                    "error": str(exc),
+                }
+            )
+            continue
+
+        successes.append(
+            {
+                "professor_name": professor_name,
+                "slug": markdown_path.stem,
+                "graph_json_path": str(graph_json_path.relative_to(resolved_project_root)),
+                "summary_line": build_cached_summary_line(markdown_text, professor_name),
+            }
+        )
+
+    verification = verify_neo4j_graph(settings)
+    return {
+        "professor_count": len(markdown_paths),
+        "limit_applied": limit,
+        "graph_name": graph_name,
+        "reset_database": reset_database,
+        "seed_dir": str(resolved_seed_dir.relative_to(resolved_project_root)),
+        "success_count": len(successes),
+        "missing_seed_count": len(missing_seeds),
+        "error_count": len(failures),
+        "missing_professors": missing_seeds[:10],
+        "failed_professors": failures[:10],
+        "neo4j": {
+            "node_count": verification["node_count"],
+            "relationship_count": verification["relationship_count"],
+            "professor_count": len(verification["distinct_professors"]),
+            "sample_professors": verification["distinct_professors"][:10],
+        },
+    }
+
+
 __all__ = [
     "LISTING_URL",
     "OCRPageExtraction",
@@ -528,6 +727,7 @@ __all__ = [
     "ingest_professor",
     "ingest_professor_to_graph",
     "ingest_professors_to_graph",
+    "refresh_professors_to_graph",
     "load_cached_graph",
     "load_neo4j_detail_url_index",
     "needs_top_block_fallback",
@@ -543,6 +743,7 @@ __all__ = [
     "rebuild_professor_summary",
     "render_page_notes",
     "reset_neo4j_database",
+    "restore_seeded_professors_to_graph",
     "restore_professor_from_cache",
     "summarize_corpus_partition",
     "verify_neo4j_graph",

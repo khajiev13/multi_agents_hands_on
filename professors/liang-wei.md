@@ -1,66 +1,32 @@
-# 王兆华
+# Liang Wei
 - detail_url: https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113060.htm
 - page_count: 2
 
 ## Basic Information
-- 性别：男
-- 出生年份：1970年
-- 职务：北京理工大学管理与经济学院院长、教授、博士生导师
-- 人才称号：国家杰出青年科学基金获得者，教育部“长江学者”特聘教授，国家“万人计划”领军人才，享受国务院政府特殊津贴专家。
+- Liang Wei
+- 职称(Title): 副教授
+- Associ
+- ed Professor
+- 学院(School): 专业(Discipline): 计算机学院
+- 计算机应用
+- School of computer
+- Computer application
 
 ## Research Interests
-- 能源与环境管理
-- 绿色供应链管理
-- 循环经济与产业生态学
-- 可持续发展政策
-
-## Biography
-王兆华，男，1970年出生，北京理工大学管理与经济学院院长、教授、博士生导师，国家杰出青年科学基金获得者，教育部“长江学者”特聘教授，国家“万人计划”领军人才，享受国务院政府特殊津贴专家。
+- 电话(Tel): 1. 计算机视觉
+- 13810150078
+- Computer Vision
+- 邮箱(Email): 2. 人机交互
+- liangwei@bit.edu.cn
+- Human-Computer interaction
 
 ## Education
-- 1992年，北京理工大学，工业管理工程，学士
-- 1995年，北京理工大学，管理工程，硕士
-- 2001年，北京理工大学，管理科学与工程，博士
+- Received the B.E. degree in Computer Science in Jul. 2000, Shandong Polytechnic University, China
+- Received the Ph.D. degree in Computer Science in Jul.2005, Beijing Institute of Technology University, Beijing, China, supervised by Prof. YundeJia
 
 ## Work Experience
-- 1995年至今，北京理工大学管理与经济学院，历任助教、讲师、副教授、教授
-- 2003-2004年，美国麻省理工学院（MIT），访问学者
-- 2008-2009年，英国剑桥大学，访问学者
-- 2012-2013年，美国斯坦福大学，访问学者
-
-## Academic Service and Memberships
-- 兼任中国管理科学与工程学会副理事长、中国系统工程学会能源资源系统工程分会主任委员、中国“双法”研究会能源经济与管理研究分会副理事长。
-- 担任中国能源研究会能源系统工程专业委员会主任、中国系统工程学会可持续运营与管理系统分会副主任。
-- 担任国家自然科学基金委员会管理科学部专家评审组成员、教育部管理科学与工程教学指导委员会委员。
-- 担任《Energy Policy》、《Journal of Cleaner Production》、《Sustainable Production and Consumption》、《系统工程理论与实践》等10余个国际国内期刊副主编或编委。
-- 积极开展国际学术交流与合作，担任多个国际学术会议主席或程序委员会委员，多次受邀在国内外重要学术会议作大会报告或特邀报告。
-- 为国家和地方政府提供能源、环境与可持续发展领域的政策咨询，多项建议被采纳。
-
-## Publications
-- 在《Nature Energy》、《Nature Climate Change》、《Production and Operations Management》、《European Journal of Operational Research》、《Energy Economics》、《管理科学学报》、《系统工程理论与实践》等国内外重要期刊发表学术论文200余篇。
-- 出版专著、教材10余部。
-
-## Awards
-- 国家杰出青年科学基金获得者（2012）
-- 教育部“长江学者”特聘教授（2015）
-- 国家“万人计划”领军人才（2017）
-- 享受国务院政府特殊津贴专家（2018）
-- 教育部高等学校科学研究优秀成果奖（人文社会科学）一等奖（2019）
-- 北京市哲学社会科学优秀成果奖一等奖（2020）
-- 中国青年科技奖（2009）
-- 北京市优秀教师（2016）
-- 北京理工大学“师德标兵”（2018）
-- 获省部级奖励10余项。
-
-## Contact
-- 地址：北京市海淀区中关村南大街5号北京理工大学管理与经济学院，100081
-- 电话：010-6891XXXX
-- 邮箱：wangzhaohua@bit.edu.cn
-- 个人主页：http://sme.bit.edu.cn/wangzh
+- 2005.8～Present: Associate Professor, School of Computer Science, Beijing Institute of Technology
 
 ## Source Pages
 - page 1: https://isc.bit.edu.cn/images/2022-04/20171129084420276639.png
 - page 2: https://isc.bit.edu.cn/images/2022-04/20171129084420280785.png
-
-## Uncertain or Illegible Text
-- 电话号码部分数字模糊，显示为“010-6891XXXX”。

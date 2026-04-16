@@ -1,0 +1,270 @@
+{
+  "entities": [
+    "Yan Su",
+    "Alexandru Nicolau",
+    "Fault Tolerant Scheduling for Parallel Loops on Shared Memory Systems",
+    "Yizhuo Wang",
+    "IEEE International Conference on High Performance Computing (HiPC)",
+    "CCF",
+    "Yang Zhang",
+    "Xiaojun Wang",
+    "International Conference on Algorithms and Architectures for Parallel Processing (ICA3PP)",
+    "School of Computer Science",
+    "An Adaptive and Hierarchical Task Scheduling Scheme for Multi-core Clusters",
+    "Rosario Cammarota",
+    "Computer Architecture",
+    "Parallel Computing",
+    "Beijing Institute of Technology",
+    "Weixing Ji",
+    "Xu Chen",
+    "Sensen Hu",
+    "Wang Yizhuo",
+    "University of California, Irvine",
+    "Alexander V. VeidenbaumA",
+    "Feng Shi",
+    "Computer Science",
+    "IEEE",
+    "Fault tolerant self-scheduling scheme for parallel loops on shared memory systems",
+    "Qi Zuo",
+    "Parallel Programming",
+    "Task Parallel Implementation of Matrix Multiplication on Multi-socket Multi-core Architectures",
+    "Journal of Information Science and Engineering",
+    "Big Data Computing",
+    "A Work-Stealing Scheduling Framework Supporting Fault Tolerance",
+    "frankwyz@bit.edu.cn",
+    "Design, Automation & Test in Europe (DATE)",
+    "Assistant Professor",
+    "ACM",
+    "Embedded Computing",
+    "计算机学院",
+    "13691139519"
+  ],
+  "edges": [
+    "received Ph.D. from",
+    "is member of",
+    "has research interest in",
+    "was visiting scholar at",
+    "has discipline",
+    "has email",
+    "has phone number",
+    "belongs to",
+    "is author of",
+    "published in",
+    "has co-author",
+    "is"
+  ],
+  "relations": [
+    [
+      "An Adaptive and Hierarchical Task Scheduling Scheme for Multi-core Clusters",
+      "has co-author",
+      "Xu Chen"
+    ],
+    [
+      "Wang Yizhuo",
+      "is member of",
+      "ACM"
+    ],
+    [
+      "Fault Tolerant Scheduling for Parallel Loops on Shared Memory Systems",
+      "has co-author",
+      "Alexandru Nicolau"
+    ],
+    [
+      "Fault Tolerant Scheduling for Parallel Loops on Shared Memory Systems",
+      "has co-author",
+      "Rosario Cammarota"
+    ],
+    [
+      "Yizhuo Wang",
+      "is author of",
+      "A Work-Stealing Scheduling Framework Supporting Fault Tolerance"
+    ],
+    [
+      "Wang Yizhuo",
+      "has phone number",
+      "13691139519"
+    ],
+    [
+      "Fault tolerant self-scheduling scheme for parallel loops on shared memory systems",
+      "published in",
+      "IEEE International Conference on High Performance Computing (HiPC)"
+    ],
+    [
+      "Wang Yizhuo",
+      "is",
+      "Assistant Professor"
+    ],
+    [
+      "Yizhuo Wang",
+      "is author of",
+      "Fault Tolerant Scheduling for Parallel Loops on Shared Memory Systems"
+    ],
+    [
+      "Task Parallel Implementation of Matrix Multiplication on Multi-socket Multi-core Architectures",
+      "has co-author",
+      "Weixing Ji"
+    ],
+    [
+      "A Work-Stealing Scheduling Framework Supporting Fault Tolerance",
+      "has co-author",
+      "Feng Shi"
+    ],
+    [
+      "An Adaptive and Hierarchical Task Scheduling Scheme for Multi-core Clusters",
+      "has co-author",
+      "Yan Su"
+    ],
+    [
+      "Wang Yizhuo",
+      "has research interest in",
+      "Parallel Programming"
+    ],
+    [
+      "A Work-Stealing Scheduling Framework Supporting Fault Tolerance",
+      "has co-author",
+      "Qi Zuo"
+    ],
+    [
+      "An Adaptive and Hierarchical Task Scheduling Scheme for Multi-core Clusters",
+      "has co-author",
+      "Feng Shi"
+    ],
+    [
+      "Wang Yizhuo",
+      "has research interest in",
+      "Embedded Computing"
+    ],
+    [
+      "Yizhuo Wang",
+      "is author of",
+      "An Adaptive and Hierarchical Task Scheduling Scheme for Multi-core Clusters"
+    ],
+    [
+      "An Adaptive and Hierarchical Task Scheduling Scheme for Multi-core Clusters",
+      "has co-author",
+      "Xiaojun Wang"
+    ],
+    [
+      "Yizhuo Wang",
+      "is author of",
+      "Fault tolerant self-scheduling scheme for parallel loops on shared memory systems"
+    ],
+    [
+      "Task Parallel Implementation of Matrix Multiplication on Multi-socket Multi-core Architectures",
+      "has co-author",
+      "Xu Chen"
+    ],
+    [
+      "An Adaptive and Hierarchical Task Scheduling Scheme for Multi-core Clusters",
+      "published in",
+      "Parallel Computing"
+    ],
+    [
+      "Wang Yizhuo",
+      "received Ph.D. from",
+      "Beijing Institute of Technology"
+    ],
+    [
+      "Fault tolerant self-scheduling scheme for parallel loops on shared memory systems",
+      "has co-author",
+      "Alexandru Nicolau"
+    ],
+    [
+      "Fault tolerant self-scheduling scheme for parallel loops on shared memory systems",
+      "has co-author",
+      "Rosario Cammarota"
+    ],
+    [
+      "Wang Yizhuo",
+      "is member of",
+      "CCF"
+    ],
+    [
+      "Wang Yizhuo",
+      "is member of",
+      "IEEE"
+    ],
+    [
+      "Wang Yizhuo",
+      "has research interest in",
+      "Big Data Computing"
+    ],
+    [
+      "Wang Yizhuo",
+      "has email",
+      "frankwyz@bit.edu.cn"
+    ],
+    [
+      "Wang Yizhuo",
+      "was visiting scholar at",
+      "University of California, Irvine"
+    ],
+    [
+      "Task Parallel Implementation of Matrix Multiplication on Multi-socket Multi-core Architectures",
+      "has co-author",
+      "Sensen Hu"
+    ],
+    [
+      "Fault Tolerant Scheduling for Parallel Loops on Shared Memory Systems",
+      "published in",
+      "Journal of Information Science and Engineering"
+    ],
+    [
+      "Wang Yizhuo",
+      "belongs to",
+      "School of Computer Science"
+    ],
+    [
+      "A Work-Stealing Scheduling Framework Supporting Fault Tolerance",
+      "has co-author",
+      "Weixing Ji"
+    ],
+    [
+      "An Adaptive and Hierarchical Task Scheduling Scheme for Multi-core Clusters",
+      "has co-author",
+      "Weixing Ji"
+    ],
+    [
+      "A Work-Stealing Scheduling Framework Supporting Fault Tolerance",
+      "published in",
+      "Design, Automation & Test in Europe (DATE)"
+    ],
+    [
+      "Wang Yizhuo",
+      "has discipline",
+      "Computer Science"
+    ],
+    [
+      "Yizhuo Wang",
+      "is author of",
+      "Task Parallel Implementation of Matrix Multiplication on Multi-socket Multi-core Architectures"
+    ],
+    [
+      "Task Parallel Implementation of Matrix Multiplication on Multi-socket Multi-core Architectures",
+      "published in",
+      "International Conference on Algorithms and Architectures for Parallel Processing (ICA3PP)"
+    ],
+    [
+      "Wang Yizhuo",
+      "has research interest in",
+      "Computer Architecture"
+    ],
+    [
+      "Wang Yizhuo",
+      "belongs to",
+      "计算机学院"
+    ],
+    [
+      "Fault tolerant self-scheduling scheme for parallel loops on shared memory systems",
+      "has co-author",
+      "Alexander V. VeidenbaumA"
+    ],
+    [
+      "An Adaptive and Hierarchical Task Scheduling Scheme for Multi-core Clusters",
+      "has co-author",
+      "Yang Zhang"
+    ]
+  ],
+  "entity_clusters": null,
+  "edge_clusters": null
+}

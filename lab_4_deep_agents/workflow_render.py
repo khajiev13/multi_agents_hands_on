@@ -89,16 +89,16 @@ class StepSpec:
 
 
 TITLE = "Lab 4: Pure Deep Agent Workspace"
-SUBTITLE = "One deep agent manages files, delegates one add-by-URL specialist, and uses prompt engineering plus a skill."
+SUBTITLE = "One deep agent uses local files, one skill, and one subagent to add a prepared dossier."
 
 BOXES = [
     Box("user", "Student", 70, 200, 150, 86, fill="#e7f5ff", stroke="#1971c2", shape="ellipse"),
     Box(
         "main-agent",
         "ProfessorWorkspaceAgent\ncreate_deep_agent(...)",
-        300,
-        150,
-        330,
+        285,
+        145,
+        340,
         128,
         fill="#fff7ed",
         stroke="#e8590c",
@@ -106,75 +106,64 @@ BOXES = [
     Box(
         "subagent",
         "AddProfessorSubagent\n(task tool)",
-        780,
-        105,
-        270,
+        775,
+        120,
+        280,
         118,
         fill="#eff6ff",
         stroke="#1d4ed8",
     ),
     Box(
         "skill",
-        "SKILL.md\nadd-professor-from-url",
-        1125,
-        88,
-        250,
-        82,
+        "SKILL.md\nadd-professor-from-incoming",
+        1115,
+        108,
+        270,
+        84,
         fill="#f8fafc",
         stroke="#64748b",
         dashed=True,
     ),
     Box(
-        "ocr-tools",
-        "Small helper tools\nextract_image_urls\nocr_images_to_professor_markdown\nrebuild_professors_index",
-        1090,
-        220,
-        305,
-        150,
-        fill="#f5f3ff",
-        stroke="#7c3aed",
-    ),
-    Box(
         "workspace",
         "FilesystemBackend runtime root",
-        305,
-        415,
-        760,
-        265,
+        270,
+        385,
+        1120,
+        360,
         fill="#f8fafc",
         stroke="#94a3b8",
         dashed=True,
     ),
     Box(
+        "incoming",
+        "/incoming/*.md\nprepared artifact",
+        355,
+        495,
+        245,
+        98,
+        fill="#fef3c7",
+        stroke="#d97706",
+    ),
+    Box(
         "index",
         "/professors.md\ncompact index",
-        380,
-        485,
-        240,
-        96,
+        700,
+        495,
+        220,
+        98,
         fill="#ecfdf5",
         stroke="#16a34a",
     ),
     Box(
         "dossiers",
         "/professors/*.md\nfull dossiers",
-        720,
-        485,
-        250,
-        96,
+        1025,
+        495,
+        245,
+        98,
         fill="#eef2ff",
         stroke="#4f46e5",
-    ),
-    Box(
-        "appendix",
-        "Appendix only\nSandbox backend -> execute",
-        1110,
-        540,
-        290,
-        92,
-        fill="#fffbeb",
-        stroke="#f59e0b",
-        dashed=True,
     ),
 ]
 BOX_BY_ID = {box.element_id: box for box in BOXES}
@@ -185,8 +174,8 @@ ARROWS = [
         "main-to-index",
         [
             BOX_BY_ID["main-agent"].bottom_center,
-            (BOX_BY_ID["main-agent"].bottom_center[0], 360),
-            (BOX_BY_ID["index"].top_center[0], 360),
+            (BOX_BY_ID["main-agent"].bottom_center[0], 350),
+            (BOX_BY_ID["index"].top_center[0], 350),
             BOX_BY_ID["index"].top_center,
         ],
         stroke="#e8590c",
@@ -194,9 +183,9 @@ ARROWS = [
     Arrow(
         "main-to-dossiers",
         [
-            (560, 278),
-            (560, 390),
-            (845, 390),
+            (560, 273),
+            (560, 365),
+            (1147, 365),
             BOX_BY_ID["dossiers"].top_center,
         ],
         stroke="#e8590c",
@@ -215,24 +204,24 @@ ARROWS = [
         dashed=True,
     ),
     Arrow(
-        "subagent-to-ocr",
+        "subagent-to-incoming",
         [
             BOX_BY_ID["subagent"].bottom_center,
-            (BOX_BY_ID["subagent"].bottom_center[0], 245),
-            (1135, 245),
-            BOX_BY_ID["ocr-tools"].left_center,
+            (BOX_BY_ID["subagent"].bottom_center[0], 430),
+            (BOX_BY_ID["incoming"].top_center[0], 430),
+            BOX_BY_ID["incoming"].top_center,
         ],
         stroke="#1d4ed8",
     ),
     Arrow(
-        "ocr-to-dossiers",
+        "subagent-to-dossiers",
         [
-            BOX_BY_ID["ocr-tools"].left_center,
-            (1020, 295),
-            (1020, 533),
-            BOX_BY_ID["dossiers"].right_center,
+            (955, 238),
+            (955, 430),
+            (1147, 430),
+            BOX_BY_ID["dossiers"].top_center,
         ],
-        stroke="#7c3aed",
+        stroke="#1d4ed8",
     ),
     Arrow(
         "dossiers-to-index",
@@ -247,51 +236,53 @@ STEPS = [
     StepSpec(
         1,
         "Why Deep Agents",
-        "One agent owns the open-ended task and works over a file workspace.",
+        "One agent owns the open-ended task and works over a local file workspace.",
         {"user", "main-agent", "workspace", "index", "dossiers", "user-to-main", "main-to-index"},
     ),
     StepSpec(
         2,
-        "Prompt Layers",
-        "System prompts stay small; the longer add workflow lives in a skill.",
+        "Skill and Subagent",
+        "The longer add workflow lives in one skill and one delegated subagent.",
         {"main-agent", "subagent", "skill", "main-to-subagent", "subagent-to-skill"},
     ),
     StepSpec(
         3,
         "Workspace First",
-        "Broad questions read /professors.md first and open dossiers only when needed.",
-        {"workspace", "index", "dossiers", "main-agent", "main-to-index", "main-to-dossiers"},
+        "The runtime starts with a compact index, a dossier folder, and one prepared incoming artifact.",
+        {"workspace", "incoming", "index", "dossiers"},
     ),
     StepSpec(
         4,
-        "Small Tool Layer",
-        "The subagent uses OCR helpers and the main agent uses a deterministic index rebuild helper.",
-        {"subagent", "ocr-tools", "dossiers", "main-to-subagent", "subagent-to-ocr", "ocr-to-dossiers"},
+        "Deterministic Add",
+        "The subagent reads one prepared incoming file and writes one new dossier when it is not a duplicate.",
+        {"subagent", "incoming", "dossiers", "main-to-subagent", "subagent-to-incoming", "subagent-to-dossiers"},
     ),
     StepSpec(
         5,
         "General Questions",
-        "The main agent answers from local files without OCR or custom graph orchestration.",
+        "Broad questions read /professors.md first and open dossiers only when needed.",
         {"user", "main-agent", "workspace", "index", "dossiers", "user-to-main", "main-to-index", "main-to-dossiers"},
     ),
     StepSpec(
         6,
         "Add and Rebuild",
-        "Add by URL delegates to the specialist, then the main agent rebuilds the compact index.",
+        "Add the prepared dossier through the subagent, then rebuild the compact index.",
         {
             "user",
             "main-agent",
             "subagent",
             "skill",
-            "ocr-tools",
             "workspace",
+            "incoming",
             "index",
             "dossiers",
             "user-to-main",
+            "main-to-index",
+            "main-to-dossiers",
             "main-to-subagent",
             "subagent-to-skill",
-            "subagent-to-ocr",
-            "ocr-to-dossiers",
+            "subagent-to-incoming",
+            "subagent-to-dossiers",
             "dossiers-to-index",
         },
     ),
@@ -444,9 +435,6 @@ def write_excalidraw(path: Path) -> None:
 
 
 def svg_box(box: Box, dimmed: bool) -> str:
-    width, height = text_dimensions(box.label)
-    text_x = box.center_x
-    text_y = box.center_y - (height / 2) + 20
     opacity = DIM_OPACITY if dimmed else 1.0
     shape_tag = (
         f'<ellipse cx="{box.center_x}" cy="{box.center_y}" rx="{box.width / 2}" ry="{box.height / 2}" '
@@ -458,10 +446,11 @@ def svg_box(box: Box, dimmed: bool) -> str:
         shape_tag
         + f'fill="{box.fill}" stroke="{box.stroke}" stroke-width="2.6"{dash} opacity="{opacity}"/>'
     ]
-    for index, line in enumerate(box.label.split("\n")):
-        dy = (index - (len(box.label.split("\n")) - 1) / 2) * 22
+    box_lines = box.label.split("\n")
+    for index, line in enumerate(box_lines):
+        dy = (index - (len(box_lines) - 1) / 2) * 22
         lines.append(
-            f'<text x="{text_x}" y="{box.center_y + dy + 7}" text-anchor="middle" '
+            f'<text x="{box.center_x}" y="{box.center_y + dy + 7}" text-anchor="middle" '
             f'font-family="{FONT_FAMILY}" font-size="20" fill="{TEXT_DARK}" opacity="{opacity}">{escape(line)}</text>'
         )
     return "\n".join(lines)

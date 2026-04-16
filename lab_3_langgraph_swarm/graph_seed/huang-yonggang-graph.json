@@ -1,0 +1,265 @@
+{
+  "entities": [
+    "Bachelor's degree",
+    "Computer Science and Technology",
+    "Daifa Wang",
+    "QDFA: query-dependent feature aggregation for medical image retrieval",
+    "Yonggang Huang",
+    "The 13th IEEE International Conference on Computational Science and Engineering",
+    "A new re-ranking method using enhanced pseudo-relevance feedback for content-based medical image retrieval",
+    "IEICE Transactions on Information and Systems",
+    "Yongwang Zhao",
+    "The 2013 International Workshop on Big Data Computing",
+    "The 14th IEEE International Conference on Scalable Computing and Communications",
+    "Dianfu Ma",
+    "Doctoral degree",
+    "Reviewer",
+    "Computer School",
+    "HUANG Yonggang",
+    "Heyan Huang",
+    "SCI-Indexed",
+    "Medical image retrieval based on unclean image bag",
+    "Hong Kong",
+    "Beijing University of Aeronautics and Astronautics",
+    "Multimedia Tools and Applications",
+    "China",
+    "Lecturer",
+    "Computer Software and Theory",
+    "Jun Zhang",
+    "A noisy-smoothing relevance feedback method for content-based medical image retrieval",
+    "Medical image retrieval with query-dependent feature fusion based on one-class SVM",
+    "Beijing Institute of Technology"
+  ],
+  "edges": [
+    "has author",
+    "is author of",
+    "works at",
+    "is part of",
+    "obtained doctoral degree in",
+    "obtained bachelor's degree in",
+    "published in",
+    "studied at",
+    "is reviewer for",
+    "presented at",
+    "located in",
+    "is indexed as",
+    "obtained bachelor's degree from",
+    "holds position of",
+    "is",
+    "obtained doctoral degree from"
+  ],
+  "relations": [
+    [
+      "A noisy-smoothing relevance feedback method for content-based medical image retrieval",
+      "published in",
+      "Multimedia Tools and Applications"
+    ],
+    [
+      "HUANG Yonggang",
+      "obtained doctoral degree from",
+      "Beijing University of Aeronautics and Astronautics"
+    ],
+    [
+      "Medical image retrieval based on unclean image bag",
+      "published in",
+      "Multimedia Tools and Applications"
+    ],
+    [
+      "A new re-ranking method using enhanced pseudo-relevance feedback for content-based medical image retrieval",
+      "has author",
+      "Dianfu Ma"
+    ],
+    [
+      "Yonggang Huang",
+      "is author of",
+      "A noisy-smoothing relevance feedback method for content-based medical image retrieval"
+    ],
+    [
+      "HUANG Yonggang",
+      "obtained bachelor's degree from",
+      "Beijing University of Aeronautics and Astronautics"
+    ],
+    [
+      "QDFA: query-dependent feature aggregation for medical image retrieval",
+      "is indexed as",
+      "SCI-Indexed"
+    ],
+    [
+      "HUANG Yonggang",
+      "is reviewer for",
+      "The 2013 International Workshop on Big Data Computing"
+    ],
+    [
+      "QDFA: query-dependent feature aggregation for medical image retrieval",
+      "published in",
+      "IEICE Transactions on Information and Systems"
+    ],
+    [
+      "HUANG Yonggang",
+      "studied at",
+      "Computer School"
+    ],
+    [
+      "HUANG Yonggang",
+      "is",
+      "Reviewer"
+    ],
+    [
+      "A new re-ranking method using enhanced pseudo-relevance feedback for content-based medical image retrieval",
+      "published in",
+      "IEICE Transactions on Information and Systems"
+    ],
+    [
+      "Hong Kong",
+      "is part of",
+      "China"
+    ],
+    [
+      "Yonggang Huang",
+      "is author of",
+      "QDFA: query-dependent feature aggregation for medical image retrieval"
+    ],
+    [
+      "Yonggang Huang",
+      "is author of",
+      "A new re-ranking method using enhanced pseudo-relevance feedback for content-based medical image retrieval"
+    ],
+    [
+      "A noisy-smoothing relevance feedback method for content-based medical image retrieval",
+      "has author",
+      "Heyan Huang"
+    ],
+    [
+      "A new re-ranking method using enhanced pseudo-relevance feedback for content-based medical image retrieval",
+      "is indexed as",
+      "SCI-Indexed"
+    ],
+    [
+      "HUANG Yonggang",
+      "is reviewer for",
+      "Multimedia Tools and Applications"
+    ],
+    [
+      "A noisy-smoothing relevance feedback method for content-based medical image retrieval",
+      "has author",
+      "Jun Zhang"
+    ],
+    [
+      "Medical image retrieval based on unclean image bag",
+      "has author",
+      "Jun Zhang"
+    ],
+    [
+      "Medical image retrieval based on unclean image bag",
+      "has author",
+      "Heyan Huang"
+    ],
+    [
+      "HUANG Yonggang",
+      "obtained bachelor's degree in",
+      "Computer Science and Technology"
+    ],
+    [
+      "HUANG Yonggang",
+      "works at",
+      "Computer School"
+    ],
+    [
+      "Yonggang Huang",
+      "is author of",
+      "Medical image retrieval with query-dependent feature fusion based on one-class SVM"
+    ],
+    [
+      "QDFA: query-dependent feature aggregation for medical image retrieval",
+      "has author",
+      "Yongwang Zhao"
+    ],
+    [
+      "HUANG Yonggang",
+      "holds position of",
+      "Lecturer"
+    ],
+    [
+      "QDFA: query-dependent feature aggregation for medical image retrieval",
+      "has author",
+      "Jun Zhang"
+    ],
+    [
+      "Medical image retrieval based on unclean image bag",
+      "has author",
+      "Daifa Wang"
+    ],
+    [
+      "QDFA: query-dependent feature aggregation for medical image retrieval",
+      "has author",
+      "Dianfu Ma"
+    ],
+    [
+      "HUANG Yonggang",
+      "obtained doctoral degree in",
+      "Computer Software and Theory"
+    ],
+    [
+      "The 13th IEEE International Conference on Computational Science and Engineering",
+      "located in",
+      "Hong Kong"
+    ],
+    [
+      "Medical image retrieval with query-dependent feature fusion based on one-class SVM",
+      "has author",
+      "Yongwang Zhao"
+    ],
+    [
+      "Medical image retrieval with query-dependent feature fusion based on one-class SVM",
+      "has author",
+      "Jun Zhang"
+    ],
+    [
+      "Medical image retrieval with query-dependent feature fusion based on one-class SVM",
+      "presented at",
+      "The 13th IEEE International Conference on Computational Science and Engineering"
+    ],
+    [
+      "A new re-ranking method using enhanced pseudo-relevance feedback for content-based medical image retrieval",
+      "has author",
+      "Yongwang Zhao"
+    ],
+    [
+      "HUANG Yonggang",
+      "is reviewer for",
+      "The 14th IEEE International Conference on Scalable Computing and Communications"
+    ],
+    [
+      "HUANG Yonggang",
+      "works at",
+      "Beijing Institute of Technology"
+    ],
+    [
+      "A noisy-smoothing relevance feedback method for content-based medical image retrieval",
+      "is indexed as",
+      "SCI-Indexed"
+    ],
+    [
+      "Medical image retrieval with query-dependent feature fusion based on one-class SVM",
+      "has author",
+      "Dianfu Ma"
+    ],
+    [
+      "Yonggang Huang",
+      "is author of",
+      "Medical image retrieval based on unclean image bag"
+    ],
+    [
+      "A new re-ranking method using enhanced pseudo-relevance feedback for content-based medical image retrieval",
+      "has author",
+      "Jun Zhang"
+    ],
+    [
+      "Medical image retrieval based on unclean image bag",
+      "is indexed as",
+      "SCI-Indexed"
+    ]
+  ],
+  "entity_clusters": null,
+  "edge_clusters": null
+}

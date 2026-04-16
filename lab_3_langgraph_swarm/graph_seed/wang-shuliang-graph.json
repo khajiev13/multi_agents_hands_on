@@ -1,0 +1,137 @@
+{
+  "entities": [
+    "International Journal of Systems Science",
+    "Lecture Notes in Artificial Intelligence",
+    "Guest Editor",
+    "International Journal of Granular Computing, Rough Sets and Intelligent Systems",
+    "Professor",
+    "Wang Shuliang",
+    "Postdoctoral Fellow",
+    "slwang2011@bit.edu.cn",
+    "The University of Pittsburgh",
+    "教授",
+    "Visiting Professor",
+    "School of Software",
+    "International Journal of Data Mining and Data Warehousing",
+    "软件学院",
+    "Software Engineering",
+    "010 6891 4976",
+    "Membership of Editorial Board",
+    "Data field",
+    "The Hong Kong Polytechnic University",
+    "Wuhan University",
+    "Big data",
+    "Spatial data mining"
+  ],
+  "edges": [
+    "holds academic service role",
+    "has title",
+    "has phone number",
+    "has educational background",
+    "specializes in discipline",
+    "belongs to school",
+    "has work experience",
+    "serves on editorial board of",
+    "has email",
+    "has research interest"
+  ],
+  "relations": [
+    [
+      "Wang Shuliang",
+      "has email",
+      "slwang2011@bit.edu.cn"
+    ],
+    [
+      "Wang Shuliang",
+      "specializes in discipline",
+      "Software Engineering"
+    ],
+    [
+      "Wang Shuliang",
+      "serves on editorial board of",
+      "International Journal of Data Mining and Data Warehousing"
+    ],
+    [
+      "Wang Shuliang",
+      "holds academic service role",
+      "Membership of Editorial Board"
+    ],
+    [
+      "Wang Shuliang",
+      "has research interest",
+      "Spatial data mining"
+    ],
+    [
+      "Wang Shuliang",
+      "serves on editorial board of",
+      "Lecture Notes in Artificial Intelligence"
+    ],
+    [
+      "Wang Shuliang",
+      "belongs to school",
+      "School of Software"
+    ],
+    [
+      "Wang Shuliang",
+      "has work experience",
+      "Visiting Professor, The University of Pittsburgh"
+    ],
+    [
+      "Wang Shuliang",
+      "has work experience",
+      "Postdoctoral Fellow, The Hong Kong Polytechnic University"
+    ],
+    [
+      "Wang Shuliang",
+      "has educational background",
+      "Ph.D. Wuhan University, The Hong Kong Polytechnic University"
+    ],
+    [
+      "Wang Shuliang",
+      "belongs to school",
+      "软件学院"
+    ],
+    [
+      "Wang Shuliang",
+      "serves on editorial board of",
+      "International Journal of Granular Computing, Rough Sets and Intelligent Systems"
+    ],
+    [
+      "Wang Shuliang",
+      "has title",
+      "Professor"
+    ],
+    [
+      "Wang Shuliang",
+      "has research interest",
+      "Data field"
+    ],
+    [
+      "Wang Shuliang",
+      "holds academic service role",
+      "Guest Editor"
+    ],
+    [
+      "Wang Shuliang",
+      "has title",
+      "教授"
+    ],
+    [
+      "Wang Shuliang",
+      "has phone number",
+      "010 6891 4976"
+    ],
+    [
+      "Wang Shuliang",
+      "serves on editorial board of",
+      "International Journal of Systems Science"
+    ],
+    [
+      "Wang Shuliang",
+      "has research interest",
+      "Big data"
+    ]
+  ],
+  "entity_clusters": null,
+  "edge_clusters": null
+}

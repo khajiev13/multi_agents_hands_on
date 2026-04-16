@@ -1,0 +1,215 @@
+{
+  "entities": [
+    "YAN Bo",
+    "School of Computer Science and Technology",
+    "北京理工大学",
+    "Ph. D.",
+    "1998",
+    "yanbo@bit.edu.cn",
+    "Shandong University",
+    "2014.04",
+    "闫波",
+    "13311068692",
+    "FCICS2014",
+    "2014.05",
+    "Yan Bo",
+    "Blind source separation of QAM signals by using a novel optimality of the Constant Modulus Algorithm",
+    "北京",
+    "Lecture",
+    "工学学士",
+    "计算机应用技术",
+    "工学硕士",
+    "2004",
+    "计算机学院",
+    "B. A. Sc",
+    "山东大学",
+    "讲师",
+    "FCICS2014国际会议",
+    "中国",
+    "Beijing Institute of Technology",
+    "工学博士",
+    "Computer Application",
+    "M. A. Sc.",
+    "1995"
+  ],
+  "edges": [
+    "has work experience at",
+    "presented in",
+    "has phone number",
+    "holds the title of",
+    "earned degree",
+    "specializes in",
+    "graduated in",
+    "is also known as",
+    "started working in",
+    "works at",
+    "has email",
+    "is author of",
+    "earned degree from",
+    "presented at"
+  ],
+  "relations": [
+    [
+      "YAN Bo",
+      "earned degree",
+      "工学学士"
+    ],
+    [
+      "YAN Bo",
+      "is also known as",
+      "闫波"
+    ],
+    [
+      "YAN Bo",
+      "earned degree from",
+      "北京理工大学"
+    ],
+    [
+      "Blind source separation of QAM signals by using a novel optimality of the Constant Modulus Algorithm",
+      "presented at",
+      "FCICS2014"
+    ],
+    [
+      "YAN Bo",
+      "works at",
+      "School of Computer Science and Technology"
+    ],
+    [
+      "YAN Bo",
+      "started working in",
+      "1998"
+    ],
+    [
+      "YAN Bo",
+      "graduated in",
+      "2004"
+    ],
+    [
+      "YAN Bo",
+      "is also known as",
+      "Yan Bo"
+    ],
+    [
+      "YAN Bo",
+      "earned degree",
+      "B. A. Sc"
+    ],
+    [
+      "YAN Bo",
+      "earned degree",
+      "工学硕士"
+    ],
+    [
+      "YAN Bo",
+      "earned degree",
+      "Ph. D."
+    ],
+    [
+      "Blind source separation of QAM signals by using a novel optimality of the Constant Modulus Algorithm",
+      "presented in",
+      "北京"
+    ],
+    [
+      "YAN Bo",
+      "specializes in",
+      "计算机应用技术"
+    ],
+    [
+      "YAN Bo",
+      "has phone number",
+      "13311068692"
+    ],
+    [
+      "YAN Bo",
+      "graduated in",
+      "1998"
+    ],
+    [
+      "Blind source separation of QAM signals by using a novel optimality of the Constant Modulus Algorithm",
+      "presented at",
+      "FCICS2014国际会议"
+    ],
+    [
+      "YAN Bo",
+      "holds the title of",
+      "Lecture"
+    ],
+    [
+      "YAN Bo",
+      "specializes in",
+      "Computer Application"
+    ],
+    [
+      "YAN Bo",
+      "has work experience at",
+      "Beijing Institute of Technology"
+    ],
+    [
+      "YAN Bo",
+      "earned degree",
+      "工学博士"
+    ],
+    [
+      "YAN Bo",
+      "earned degree from",
+      "Shandong University"
+    ],
+    [
+      "YAN Bo",
+      "earned degree from",
+      "山东大学"
+    ],
+    [
+      "YAN Bo",
+      "is author of",
+      "Blind source separation of QAM signals by using a novel optimality of the Constant Modulus Algorithm"
+    ],
+    [
+      "YAN Bo",
+      "has work experience at",
+      "北京理工大学"
+    ],
+    [
+      "YAN Bo",
+      "graduated in",
+      "1995"
+    ],
+    [
+      "Blind source separation of QAM signals by using a novel optimality of the Constant Modulus Algorithm",
+      "presented in",
+      "中国"
+    ],
+    [
+      "YAN Bo",
+      "earned degree",
+      "M. A. Sc."
+    ],
+    [
+      "Blind source separation of QAM signals by using a novel optimality of the Constant Modulus Algorithm",
+      "presented in",
+      "2014.05"
+    ],
+    [
+      "YAN Bo",
+      "holds the title of",
+      "讲师"
+    ],
+    [
+      "YAN Bo",
+      "earned degree from",
+      "Beijing Institute of Technology"
+    ],
+    [
+      "YAN Bo",
+      "has email",
+      "yanbo@bit.edu.cn"
+    ],
+    [
+      "YAN Bo",
+      "works at",
+      "计算机学院"
+    ]
+  ],
+  "entity_clusters": null,
+  "edge_clusters": null
+}

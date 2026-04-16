@@ -1,0 +1,44 @@
+{
+  "entities": [
+    "LV Kun",
+    "https://isc.bit.edu.cn/images/2022-04/20171130014137846228.png",
+    "page 2",
+    "https://isc.bit.edu.cn/images/2022-04/20171130014137850328.png",
+    "page 1",
+    "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121636.htm"
+  ],
+  "edges": [
+    "has detail page at",
+    "is image located at",
+    "has associated image on"
+  ],
+  "relations": [
+    [
+      "page 1",
+      "is image located at",
+      "https://isc.bit.edu.cn/images/2022-04/20171130014137846228.png"
+    ],
+    [
+      "LV Kun",
+      "has detail page at",
+      "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121636.htm"
+    ],
+    [
+      "page 2",
+      "is image located at",
+      "https://isc.bit.edu.cn/images/2022-04/20171130014137850328.png"
+    ],
+    [
+      "LV Kun",
+      "has associated image on",
+      "page 2"
+    ],
+    [
+      "LV Kun",
+      "has associated image on",
+      "page 1"
+    ]
+  ],
+  "entity_clusters": null,
+  "edge_clusters": null
+}

@@ -1,0 +1,91 @@
+{
+  "entities": [
+    "China Communications",
+    "kernel hooks",
+    "2013",
+    "lightweight protection",
+    "kernel modules",
+    "Changzhen Hu",
+    "OPKH: A Lightweight Online Approach to Protecting Kernel Hooks in Kernel Modules",
+    "online approach",
+    "Yan Huaizhi",
+    "Li Xuanya",
+    "TIAN Donghai",
+    "2014",
+    "SCI Journal"
+  ],
+  "edges": [
+    "implements",
+    "is author of",
+    "is published in",
+    "is about",
+    "has publication listed in",
+    "has publication type",
+    "provides",
+    "has publication year"
+  ],
+  "relations": [
+    [
+      "OPKH: A Lightweight Online Approach to Protecting Kernel Hooks in Kernel Modules",
+      "has publication type",
+      "SCI Journal"
+    ],
+    [
+      "OPKH: A Lightweight Online Approach to Protecting Kernel Hooks in Kernel Modules",
+      "implements",
+      "online approach"
+    ],
+    [
+      "OPKH: A Lightweight Online Approach to Protecting Kernel Hooks in Kernel Modules",
+      "is about",
+      "kernel modules"
+    ],
+    [
+      "OPKH: A Lightweight Online Approach to Protecting Kernel Hooks in Kernel Modules",
+      "is published in",
+      "China Communications"
+    ],
+    [
+      "Li Xuanya",
+      "is author of",
+      "OPKH: A Lightweight Online Approach to Protecting Kernel Hooks in Kernel Modules"
+    ],
+    [
+      "OPKH: A Lightweight Online Approach to Protecting Kernel Hooks in Kernel Modules",
+      "is about",
+      "kernel hooks"
+    ],
+    [
+      "OPKH: A Lightweight Online Approach to Protecting Kernel Hooks in Kernel Modules",
+      "provides",
+      "lightweight protection"
+    ],
+    [
+      "TIAN Donghai",
+      "has publication listed in",
+      "2014"
+    ],
+    [
+      "TIAN Donghai",
+      "is author of",
+      "OPKH: A Lightweight Online Approach to Protecting Kernel Hooks in Kernel Modules"
+    ],
+    [
+      "Changzhen Hu",
+      "is author of",
+      "OPKH: A Lightweight Online Approach to Protecting Kernel Hooks in Kernel Modules"
+    ],
+    [
+      "OPKH: A Lightweight Online Approach to Protecting Kernel Hooks in Kernel Modules",
+      "has publication year",
+      "2013"
+    ],
+    [
+      "Yan Huaizhi",
+      "is author of",
+      "OPKH: A Lightweight Online Approach to Protecting Kernel Hooks in Kernel Modules"
+    ]
+  ],
+  "entity_clusters": null,
+  "edge_clusters": null
+}

@@ -1,0 +1,72 @@
+{
+  "entities": [
+    "Roma",
+    "page 3: https://isc.bit.edu.cn/images/2022-04/20171130014137764641.jpg",
+    "page_count: 3",
+    "1998",
+    "detail_url: https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121633.htm",
+    "page 1: https://isc.bit.edu.cn/images/2022-04/20171130014137759433.jpg",
+    "FILIPPO Fabrocini",
+    "Franco Angeli",
+    "Il labirinto e lo specchio. Tecniche e problemi della logica moderna",
+    "page 2: https://isc.bit.edu.cn/images/2022-04/20171130014137761541.jpg"
+  ],
+  "edges": [
+    "has page count",
+    "is author of",
+    "was published in year",
+    "was published in",
+    "has detail page at",
+    "has source page",
+    "was published by"
+  ],
+  "relations": [
+    [
+      "FILIPPO Fabrocini",
+      "is author of",
+      "Il labirinto e lo specchio. Tecniche e problemi della logica moderna"
+    ],
+    [
+      "Il labirinto e lo specchio. Tecniche e problemi della logica moderna",
+      "was published in",
+      "Roma"
+    ],
+    [
+      "Il labirinto e lo specchio. Tecniche e problemi della logica moderna",
+      "was published by",
+      "Franco Angeli"
+    ],
+    [
+      "detail_url: https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121633.htm",
+      "has page count",
+      "page_count: 3"
+    ],
+    [
+      "detail_url: https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121633.htm",
+      "has source page",
+      "page 1: https://isc.bit.edu.cn/images/2022-04/20171130014137759433.jpg"
+    ],
+    [
+      "Il labirinto e lo specchio. Tecniche e problemi della logica moderna",
+      "was published in year",
+      "1998"
+    ],
+    [
+      "FILIPPO Fabrocini",
+      "has detail page at",
+      "detail_url: https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121633.htm"
+    ],
+    [
+      "detail_url: https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121633.htm",
+      "has source page",
+      "page 3: https://isc.bit.edu.cn/images/2022-04/20171130014137764641.jpg"
+    ],
+    [
+      "detail_url: https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121633.htm",
+      "has source page",
+      "page 2: https://isc.bit.edu.cn/images/2022-04/20171130014137761541.jpg"
+    ]
+  ],
+  "entity_clusters": null,
+  "edge_clusters": null
+}

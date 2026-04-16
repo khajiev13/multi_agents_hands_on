@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import re
 from pathlib import Path
 from typing import Any
@@ -36,7 +37,15 @@ def require_neo4j_driver() -> type[GraphDatabase]:
 
 
 def save_graph_json(graph: Any, output_path: Path) -> None:
-    output_path.write_text(graph.model_dump_json(indent=2), encoding="utf-8")
+    if hasattr(graph, "model_dump_json"):
+        output_path.write_text(graph.model_dump_json(indent=2), encoding="utf-8")
+        return
+
+    payload = {
+        "entities": list(getattr(graph, "entities", [])),
+        "relations": list(getattr(graph, "relations", [])),
+    }
+    output_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def generate_professor_graph(markdown_text: str, settings: TutorSettings) -> Any:

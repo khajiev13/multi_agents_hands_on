@@ -1,0 +1,109 @@
+{
+  "entities": [
+    "1",
+    "detail_url",
+    "schools",
+    "isc.bit.edu.cn",
+    "page 1",
+    "2022-04",
+    "page_count",
+    "Source Pages",
+    "https://isc.bit.edu.cn/images/2022-04/20180313083404001845.jpg",
+    "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121631.htm",
+    "20180313083404001845.jpg",
+    "images",
+    "knowingprofessors5",
+    "csat",
+    "TANG Haijing",
+    "b121631.htm"
+  ],
+  "edges": [
+    "has path component",
+    "is",
+    "belongs to domain",
+    "has detail_url",
+    "has filename",
+    "has page_count",
+    "has URL",
+    "includes"
+  ],
+  "relations": [
+    [
+      "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121631.htm",
+      "has filename",
+      "b121631.htm"
+    ],
+    [
+      "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121631.htm",
+      "has path component",
+      "csat"
+    ],
+    [
+      "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121631.htm",
+      "has path component",
+      "knowingprofessors5"
+    ],
+    [
+      "page_count",
+      "is",
+      "1"
+    ],
+    [
+      "detail_url",
+      "is",
+      "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121631.htm"
+    ],
+    [
+      "https://isc.bit.edu.cn/images/2022-04/20180313083404001845.jpg",
+      "has filename",
+      "20180313083404001845.jpg"
+    ],
+    [
+      "https://isc.bit.edu.cn/images/2022-04/20180313083404001845.jpg",
+      "belongs to domain",
+      "isc.bit.edu.cn"
+    ],
+    [
+      "TANG Haijing",
+      "has detail_url",
+      "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121631.htm"
+    ],
+    [
+      "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121631.htm",
+      "belongs to domain",
+      "isc.bit.edu.cn"
+    ],
+    [
+      "Source Pages",
+      "includes",
+      "page 1"
+    ],
+    [
+      "page 1",
+      "has URL",
+      "https://isc.bit.edu.cn/images/2022-04/20180313083404001845.jpg"
+    ],
+    [
+      "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121631.htm",
+      "has path component",
+      "schools"
+    ],
+    [
+      "TANG Haijing",
+      "has page_count",
+      "1"
+    ],
+    [
+      "https://isc.bit.edu.cn/images/2022-04/20180313083404001845.jpg",
+      "has path component",
+      "images"
+    ],
+    [
+      "https://isc.bit.edu.cn/images/2022-04/20180313083404001845.jpg",
+      "has path component",
+      "2022-04"
+    ]
+  ],
+  "entity_clusters": null,
+  "edge_clusters": null
+}

@@ -1,0 +1,183 @@
+{
+  "entities": [
+    "Ph.D",
+    "Auto-Question Answering System",
+    "博士",
+    "gyang@bit.edu.cn",
+    "博士后",
+    "讲师",
+    "机器学习",
+    "数据挖掘",
+    "北京理工大学",
+    "高扬",
+    "自动问答系统",
+    "Lecturer",
+    "Gao Yang",
+    "计算机科学与技术",
+    "QUT",
+    "BIT",
+    "Machine Learning",
+    "Postdoc",
+    "GAO Yang",
+    "School of Computer Science & Technology",
+    "Beijing Institute of Technology",
+    "计算机学院",
+    "Data Mining",
+    "Computer Science and Technology",
+    "18513999926",
+    "昆士兰科技大学",
+    "Queensland University of Technology"
+  ],
+  "edges": [
+    "earned degree",
+    "works at",
+    "has research interest in",
+    "has email",
+    "holds title of",
+    "has phone number",
+    "works as a lecturer at",
+    "is also known as",
+    "was a postdoc at",
+    "specializes in",
+    "earned degree from"
+  ],
+  "relations": [
+    [
+      "GAO Yang",
+      "holds title of",
+      "Lecturer"
+    ],
+    [
+      "GAO Yang",
+      "has research interest in",
+      "机器学习"
+    ],
+    [
+      "GAO Yang",
+      "has research interest in",
+      "自动问答系统"
+    ],
+    [
+      "GAO Yang",
+      "has research interest in",
+      "Auto-Question Answering System"
+    ],
+    [
+      "GAO Yang",
+      "works at",
+      "School of Computer Science & Technology"
+    ],
+    [
+      "GAO Yang",
+      "works at",
+      "计算机学院"
+    ],
+    [
+      "GAO Yang",
+      "has research interest in",
+      "Machine Learning"
+    ],
+    [
+      "GAO Yang",
+      "works as a lecturer at",
+      "Beijing Institute of Technology"
+    ],
+    [
+      "GAO Yang",
+      "has email",
+      "gyang@bit.edu.cn"
+    ],
+    [
+      "GAO Yang",
+      "holds title of",
+      "讲师"
+    ],
+    [
+      "GAO Yang",
+      "has research interest in",
+      "Data Mining"
+    ],
+    [
+      "GAO Yang",
+      "works as a lecturer at",
+      "BIT"
+    ],
+    [
+      "GAO Yang",
+      "earned degree from",
+      "昆士兰科技大学"
+    ],
+    [
+      "GAO Yang",
+      "earned degree from",
+      "QUT"
+    ],
+    [
+      "GAO Yang",
+      "earned degree",
+      "博士"
+    ],
+    [
+      "GAO Yang",
+      "has phone number",
+      "18513999926"
+    ],
+    [
+      "GAO Yang",
+      "earned degree",
+      "Ph.D"
+    ],
+    [
+      "GAO Yang",
+      "was a postdoc at",
+      "Queensland University of Technology"
+    ],
+    [
+      "GAO Yang",
+      "has research interest in",
+      "数据挖掘"
+    ],
+    [
+      "GAO Yang",
+      "specializes in",
+      "计算机科学与技术"
+    ],
+    [
+      "GAO Yang",
+      "earned degree from",
+      "Queensland University of Technology"
+    ],
+    [
+      "GAO Yang",
+      "is also known as",
+      "Gao Yang"
+    ],
+    [
+      "GAO Yang",
+      "is also known as",
+      "高扬"
+    ],
+    [
+      "GAO Yang",
+      "works as a lecturer at",
+      "北京理工大学"
+    ],
+    [
+      "GAO Yang",
+      "specializes in",
+      "Computer Science and Technology"
+    ],
+    [
+      "GAO Yang",
+      "was a postdoc at",
+      "昆士兰科技大学"
+    ],
+    [
+      "GAO Yang",
+      "was a postdoc at",
+      "QUT"
+    ]
+  ],
+  "entity_clusters": null,
+  "edge_clusters": null
+}
