@@ -1,0 +1,238 @@
+{
+  "entities": [
+    "https://isc.bit.edu.cn/images/2022-04/20171129084420621147.png",
+    "Assistant Professor",
+    "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113074.htm",
+    "School of Computer Science and Technology",
+    "Work Experience",
+    "Source Pages",
+    "https://isc.bit.edu.cn/images/2022-04/20171129084420624227.png",
+    "13901139728",
+    "1988 to 1996",
+    "Computer Science",
+    "Publications",
+    "Beijing Institute of Technology",
+    "Educational Background",
+    "Computer Science and Technology",
+    "Working Experience",
+    "Associate Professor",
+    "hongzheng@bit.edu.cn",
+    "Biography",
+    "Email",
+    "1988",
+    "Computer Networks & Distributed Systems",
+    "Zheng Hong",
+    "Computer Networks",
+    "High-Performance Computing",
+    "M.S. degree",
+    "Representative publications",
+    "Discipline",
+    "Distributed Systems",
+    "Title",
+    "Education",
+    "BIT",
+    "68946645",
+    "Machine Learning",
+    "Professor",
+    "1996 to Present",
+    "1996",
+    "Technology",
+    "Tel",
+    "Present",
+    "Computer Applications",
+    "Research Interests"
+  ],
+  "edges": [
+    "is abbreviation of",
+    "worked from",
+    "graduated from",
+    "studied field",
+    "has publication list",
+    "worked as",
+    "has title",
+    "graduated in year",
+    "is title of",
+    "is in field",
+    "has email",
+    "has telephone",
+    "has source page",
+    "awarded by",
+    "has research interest",
+    "obtained in year",
+    "has biography detail",
+    "belongs to school",
+    "has discipline",
+    "is research interest of",
+    "obtained degree",
+    "worked at"
+  ],
+  "relations": [
+    [
+      "Computer Networks & Distributed Systems",
+      "is research interest of",
+      "Zheng Hong"
+    ],
+    [
+      "M.S. degree",
+      "is in field",
+      "Computer Science and Technology"
+    ],
+    [
+      "Zheng Hong",
+      "worked from",
+      "1988 to 1996"
+    ],
+    [
+      "Zheng Hong",
+      "has publication list",
+      "Publications"
+    ],
+    [
+      "Zheng Hong",
+      "has source page",
+      "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113074.htm"
+    ],
+    [
+      "Assistant Professor",
+      "is title of",
+      "Zheng Hong"
+    ],
+    [
+      "Zheng Hong",
+      "obtained degree",
+      "M.S. degree"
+    ],
+    [
+      "Zheng Hong",
+      "worked as",
+      "Associate Professor"
+    ],
+    [
+      "Zheng Hong",
+      "graduated from",
+      "Beijing Institute of Technology"
+    ],
+    [
+      "Zheng Hong",
+      "has source page",
+      "https://isc.bit.edu.cn/images/2022-04/20171129084420624227.png"
+    ],
+    [
+      "Zheng Hong",
+      "has telephone",
+      "13901139728"
+    ],
+    [
+      "Zheng Hong",
+      "has email",
+      "hongzheng@bit.edu.cn"
+    ],
+    [
+      "Zheng Hong",
+      "has research interest",
+      "Computer Networks & Distributed Systems"
+    ],
+    [
+      "Zheng Hong",
+      "worked at",
+      "BIT"
+    ],
+    [
+      "BIT",
+      "is abbreviation of",
+      "Beijing Institute of Technology"
+    ],
+    [
+      "Zheng Hong",
+      "has discipline",
+      "Computer Applications"
+    ],
+    [
+      "Zheng Hong",
+      "worked as",
+      "Assistant Professor"
+    ],
+    [
+      "Machine Learning",
+      "is research interest of",
+      "Zheng Hong"
+    ],
+    [
+      "Zheng Hong",
+      "has research interest",
+      "High-Performance Computing"
+    ],
+    [
+      "Zheng Hong",
+      "has biography detail",
+      "Educational Background"
+    ],
+    [
+      "Zheng Hong",
+      "studied field",
+      "Computer Science and Technology"
+    ],
+    [
+      "Zheng Hong",
+      "has title",
+      "Associate Professor"
+    ],
+    [
+      "M.S. degree",
+      "awarded by",
+      "Beijing Institute of Technology"
+    ],
+    [
+      "Zheng Hong",
+      "belongs to school",
+      "School of Computer Science and Technology"
+    ],
+    [
+      "Zheng Hong",
+      "has source page",
+      "https://isc.bit.edu.cn/images/2022-04/20171129084420621147.png"
+    ],
+    [
+      "High-Performance Computing",
+      "is research interest of",
+      "Zheng Hong"
+    ],
+    [
+      "Zheng Hong",
+      "has telephone",
+      "68946645"
+    ],
+    [
+      "Zheng Hong",
+      "has biography detail",
+      "Working Experience"
+    ],
+    [
+      "M.S. degree",
+      "obtained in year",
+      "1988"
+    ],
+    [
+      "Zheng Hong",
+      "worked from",
+      "1996 to Present"
+    ],
+    [
+      "Zheng Hong",
+      "graduated in year",
+      "1988"
+    ],
+    [
+      "Associate Professor",
+      "is title of",
+      "Zheng Hong"
+    ],
+    [
+      "Zheng Hong",
+      "has research interest",
+      "Machine Learning"
+    ]
+  ],
+  "entity_clusters": null,
+  "edge_clusters": null
+}

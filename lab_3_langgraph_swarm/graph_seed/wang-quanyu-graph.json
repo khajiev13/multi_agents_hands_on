@@ -1,0 +1,198 @@
+{
+  "entities": [
+    "1999",
+    "School of Computer Science and Technology",
+    "Robot Technology",
+    "1997",
+    "Human Computer Interaction",
+    "Harbin Shipbuilding Engineering Institute",
+    "Associate Professor",
+    "1991",
+    "Postdoctoral Fellow",
+    "Computer Science and Technology",
+    "Beijing Institute of Technology",
+    "Mobile Internet",
+    "Bachelor's Degree",
+    "Harbin Institute of Technology",
+    "Beijing University of Aeronautics and Astronautics",
+    "Harbin Chengxin SciTech Developing Co.",
+    "wangquanyu@bit.edu.cn",
+    "Master's Degree",
+    "Control Theory",
+    "86-10-68914322",
+    "Harbin Engineering University",
+    "2002",
+    "Wang Quanyu",
+    "1994",
+    "Engineer",
+    "PhD",
+    "UWE",
+    "2005"
+  ],
+  "edges": [
+    "has title",
+    "received degree from",
+    "received degree",
+    "worked as",
+    "has phone number",
+    "studied at",
+    "received degree in year",
+    "belongs to school",
+    "has research interest",
+    "has discipline",
+    "started working at in year",
+    "studied at in year",
+    "worked at",
+    "has email",
+    "worked in field"
+  ],
+  "relations": [
+    [
+      "Wang Quanyu",
+      "belongs to school",
+      "School of Computer Science and Technology"
+    ],
+    [
+      "Wang Quanyu",
+      "started working at in year",
+      "1997"
+    ],
+    [
+      "Wang Quanyu",
+      "studied at in year",
+      "2005"
+    ],
+    [
+      "Wang Quanyu",
+      "has research interest",
+      "Robot Technology"
+    ],
+    [
+      "Wang Quanyu",
+      "has discipline",
+      "Computer Science and Technology"
+    ],
+    [
+      "Wang Quanyu",
+      "studied at",
+      "UWE"
+    ],
+    [
+      "Wang Quanyu",
+      "received degree in year",
+      "1997"
+    ],
+    [
+      "Wang Quanyu",
+      "worked at",
+      "Harbin Engineering University"
+    ],
+    [
+      "Wang Quanyu",
+      "received degree in year",
+      "1991"
+    ],
+    [
+      "Wang Quanyu",
+      "worked at",
+      "Beijing Institute of Technology"
+    ],
+    [
+      "Wang Quanyu",
+      "started working at in year",
+      "2002"
+    ],
+    [
+      "Wang Quanyu",
+      "received degree",
+      "PhD"
+    ],
+    [
+      "Wang Quanyu",
+      "has research interest",
+      "Mobile Internet"
+    ],
+    [
+      "Wang Quanyu",
+      "worked in field",
+      "Control Theory"
+    ],
+    [
+      "Wang Quanyu",
+      "worked as",
+      "Associate Professor"
+    ],
+    [
+      "Wang Quanyu",
+      "received degree from",
+      "Beijing University of Aeronautics and Astronautics"
+    ],
+    [
+      "Wang Quanyu",
+      "worked as",
+      "Engineer"
+    ],
+    [
+      "Wang Quanyu",
+      "received degree in year",
+      "1994"
+    ],
+    [
+      "Wang Quanyu",
+      "received degree",
+      "Master's Degree"
+    ],
+    [
+      "Wang Quanyu",
+      "has phone number",
+      "86-10-68914322"
+    ],
+    [
+      "Wang Quanyu",
+      "has title",
+      "Associate Professor"
+    ],
+    [
+      "Wang Quanyu",
+      "has research interest",
+      "Human Computer Interaction"
+    ],
+    [
+      "Wang Quanyu",
+      "worked at",
+      "Harbin Chengxin SciTech Developing Co."
+    ],
+    [
+      "Wang Quanyu",
+      "received degree",
+      "Bachelor's Degree"
+    ],
+    [
+      "Wang Quanyu",
+      "received degree from",
+      "Harbin Shipbuilding Engineering Institute"
+    ],
+    [
+      "Wang Quanyu",
+      "received degree from",
+      "Harbin Institute of Technology"
+    ],
+    [
+      "Wang Quanyu",
+      "started working at in year",
+      "1999"
+    ],
+    [
+      "Wang Quanyu",
+      "has email",
+      "wangquanyu@bit.edu.cn"
+    ],
+    [
+      "Wang Quanyu",
+      "worked as",
+      "Postdoctoral Fellow"
+    ]
+  ],
+  "entity_clusters": null,
+  "edge_clusters": null
+}

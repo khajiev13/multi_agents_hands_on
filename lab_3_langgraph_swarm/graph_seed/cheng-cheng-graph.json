@@ -1,0 +1,329 @@
+{
+  "entities": [
+    "虚拟制造",
+    "Research on Perception mechanism for Virtual Assembly",
+    "Human Knowledge Acquisition from 3D Interaction in Virtual Environments",
+    "International Conference on Human System Interaction 2008",
+    "Jinan",
+    "程成",
+    "Research on Construction of Face Mating Perception in Virtual Assembly",
+    "Virtual Environments",
+    "13011008553",
+    "虚拟环境",
+    "Department of Computer Science, Nankai University",
+    "The Construction of Feature-Matching Perception in Virtual Assembly",
+    "QingQi Motocycle group company",
+    "China",
+    "Hainan zhongshang Futures Exchange",
+    "China Computer Science Federation Technical Committee on Human-Computer Interaction",
+    "Computer Science & Technology",
+    "计算机科学与技术",
+    "cc@bit.edu.cn",
+    "Beijing",
+    "Human Computer Interaction",
+    "Krakow",
+    "Journal of Software (Chinese)",
+    "Computer graphics and CAD",
+    "Poland",
+    "TianLong photoelectric company",
+    "Department of Computer Science and Technology, Beijing Institute of Technology",
+    "SCIENCE CHINA Information Sciences",
+    "Associate Professor",
+    "Bachelor degree",
+    "Institute of Software, Chinese Academy of Sciences",
+    "Control Theory",
+    "Tianjin",
+    "副教授",
+    "Computer Science",
+    "Journal of Computer Research and Development (Chinese)",
+    "Journal of Computer Science & Technology",
+    "人机交互",
+    "Master degree",
+    "Cheng Cheng",
+    "Department of Computer Science, Shandong University",
+    "Temporal Assembly Model for Virtual Environment",
+    "Virtual Manufacturing",
+    "中国计算机学会人机交互专业委员会",
+    "计算机",
+    "Ph.D.",
+    "guoguocheng@vip.sina.com"
+  ],
+  "edges": [
+    "earned Master degree in",
+    "belongs to school",
+    "has major",
+    "earned Master degree from",
+    "worked in location",
+    "has title",
+    "presented at",
+    "has email",
+    "worked at",
+    "works as",
+    "earned Bachelor degree in",
+    "earned Master degree in location",
+    "worked as",
+    "authored",
+    "is member of",
+    "earned Bachelor degree in location",
+    "earned Ph.D. in location",
+    "works at",
+    "has phone number",
+    "earned Bachelor degree from",
+    "earned Ph.D. in",
+    "has interest",
+    "published in",
+    "has name",
+    "has research interest",
+    "earned Ph.D. from",
+    "located in"
+  ],
+  "relations": [
+    [
+      "Cheng Cheng",
+      "has research interest",
+      "Virtual Manufacturing"
+    ],
+    [
+      "Research on Perception mechanism for Virtual Assembly",
+      "published in",
+      "Journal of Software (Chinese)"
+    ],
+    [
+      "Research on Construction of Face Mating Perception in Virtual Assembly",
+      "published in",
+      "Journal of Computer Research and Development (Chinese)"
+    ],
+    [
+      "Cheng Cheng",
+      "earned Ph.D. from",
+      "Institute of Software, Chinese Academy of Sciences"
+    ],
+    [
+      "Cheng Cheng",
+      "authored",
+      "The Construction of Feature-Matching Perception in Virtual Assembly"
+    ],
+    [
+      "Cheng Cheng",
+      "has email",
+      "cc@bit.edu.cn"
+    ],
+    [
+      "Cheng Cheng",
+      "has title",
+      "副教授"
+    ],
+    [
+      "International Conference on Human System Interaction 2008",
+      "located in",
+      "Poland"
+    ],
+    [
+      "Cheng Cheng",
+      "earned Master degree in",
+      "Computer graphics and CAD"
+    ],
+    [
+      "Cheng Cheng",
+      "has research interest",
+      "虚拟制造"
+    ],
+    [
+      "Cheng Cheng",
+      "worked as",
+      "Computer engineer and system developer"
+    ],
+    [
+      "Cheng Cheng",
+      "has interest",
+      "人机交互"
+    ],
+    [
+      "Cheng Cheng",
+      "has research interest",
+      "Virtual Environments"
+    ],
+    [
+      "Cheng Cheng",
+      "has major",
+      "Computer Science & Technology"
+    ],
+    [
+      "Cheng Cheng",
+      "earned Ph.D. in location",
+      "China"
+    ],
+    [
+      "International Conference on Human System Interaction 2008",
+      "located in",
+      "Krakow"
+    ],
+    [
+      "Cheng Cheng",
+      "has phone number",
+      "13011008553"
+    ],
+    [
+      "Cheng Cheng",
+      "earned Master degree from",
+      "Department of Computer Science, Shandong University"
+    ],
+    [
+      "Cheng Cheng",
+      "worked in location",
+      "Jinan"
+    ],
+    [
+      "Cheng Cheng",
+      "earned Ph.D. in",
+      "Human Computer Interaction"
+    ],
+    [
+      "Temporal Assembly Model for Virtual Environment",
+      "presented at",
+      "International Conference on Human System Interaction 2008"
+    ],
+    [
+      "Cheng Cheng",
+      "authored",
+      "Research on Perception mechanism for Virtual Assembly"
+    ],
+    [
+      "Cheng Cheng",
+      "has research interest",
+      "虚拟环境"
+    ],
+    [
+      "Human Knowledge Acquisition from 3D Interaction in Virtual Environments",
+      "published in",
+      "SCIENCE CHINA Information Sciences"
+    ],
+    [
+      "Cheng Cheng",
+      "works as",
+      "Associate Professor"
+    ],
+    [
+      "Cheng Cheng",
+      "earned Bachelor degree in",
+      "Control Theory"
+    ],
+    [
+      "Cheng Cheng",
+      "has major",
+      "计算机科学与技术"
+    ],
+    [
+      "Cheng Cheng",
+      "has email",
+      "guoguocheng@vip.sina.com"
+    ],
+    [
+      "Cheng Cheng",
+      "earned Master degree in location",
+      "Jinan"
+    ],
+    [
+      "Cheng Cheng",
+      "earned Bachelor degree from",
+      "Department of Computer Science, Nankai University"
+    ],
+    [
+      "The Construction of Feature-Matching Perception in Virtual Assembly",
+      "published in",
+      "Journal of Computer Science & Technology"
+    ],
+    [
+      "Cheng Cheng",
+      "worked as",
+      "Computer system engineer"
+    ],
+    [
+      "Cheng Cheng",
+      "authored",
+      "Temporal Assembly Model for Virtual Environment"
+    ],
+    [
+      "Cheng Cheng",
+      "worked as",
+      "Mechanical and electronic engineer"
+    ],
+    [
+      "Cheng Cheng",
+      "belongs to school",
+      "计算机"
+    ],
+    [
+      "Cheng Cheng",
+      "worked at",
+      "Hainan zhongshang Futures Exchange"
+    ],
+    [
+      "Cheng Cheng",
+      "authored",
+      "Research on Construction of Face Mating Perception in Virtual Assembly"
+    ],
+    [
+      "Cheng Cheng",
+      "has name",
+      "程成"
+    ],
+    [
+      "Cheng Cheng",
+      "authored",
+      "Human Knowledge Acquisition from 3D Interaction in Virtual Environments"
+    ],
+    [
+      "Cheng Cheng",
+      "belongs to school",
+      "Computer Science"
+    ],
+    [
+      "Cheng Cheng",
+      "worked at",
+      "TianLong photoelectric company"
+    ],
+    [
+      "Cheng Cheng",
+      "is member of",
+      "China Computer Science Federation Technical Committee on Human-Computer Interaction"
+    ],
+    [
+      "Cheng Cheng",
+      "has title",
+      "Associate Professor"
+    ],
+    [
+      "Cheng Cheng",
+      "worked in location",
+      "China"
+    ],
+    [
+      "Cheng Cheng",
+      "is member of",
+      "中国计算机学会人机交互专业委员会"
+    ],
+    [
+      "Cheng Cheng",
+      "earned Bachelor degree in location",
+      "Tianjin"
+    ],
+    [
+      "Cheng Cheng",
+      "earned Ph.D. in location",
+      "Beijing"
+    ],
+    [
+      "Cheng Cheng",
+      "works at",
+      "Department of Computer Science and Technology, Beijing Institute of Technology"
+    ],
+    [
+      "Cheng Cheng",
+      "worked at",
+      "QingQi Motocycle group company"
+    ]
+  ],
+  "entity_clusters": null,
+  "edge_clusters": null
+}

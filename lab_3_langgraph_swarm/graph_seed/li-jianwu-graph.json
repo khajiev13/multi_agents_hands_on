@@ -1,0 +1,237 @@
+{
+  "entities": [
+    "计算机学院",
+    "Pattern Recognition",
+    "School of Computer Science and Technology",
+    "北京理工大学",
+    "01068912434",
+    "Tianjin University",
+    "Columbia University",
+    "visiting scholar",
+    "天津大学",
+    "机器学习",
+    "B.S.",
+    "2014",
+    "1997",
+    "计算机科学与技术",
+    "模式识别",
+    "Image Processing",
+    "ljw@bit.edu.cn",
+    "M.Eng.",
+    "lw@bit.edu.cn",
+    "Ph.D.",
+    "图像处理",
+    "Associate Professor",
+    "Li Jianwu",
+    "李建武",
+    "2003",
+    "2000",
+    "哥伦比亚大学",
+    "Beijing Institute of Technology",
+    "副教授",
+    "2013",
+    "Computer Science and Technology",
+    "Machine Learning",
+    "访问学者"
+  ],
+  "edges": [
+    "received B.S. in",
+    "is also known as",
+    "is part of",
+    "has title",
+    "was",
+    "has email",
+    "studied at",
+    "received degree",
+    "received M.Eng. in",
+    "works at",
+    "has worked since",
+    "specializes in",
+    "has phone number",
+    "has worked at",
+    "visited",
+    "visited until",
+    "received Ph.D. in",
+    "visited from",
+    "has research interest"
+  ],
+  "relations": [
+    [
+      "Li Jianwu",
+      "received degree",
+      "M.Eng."
+    ],
+    [
+      "Li Jianwu",
+      "received B.S. in",
+      "1997"
+    ],
+    [
+      "Li Jianwu",
+      "specializes in",
+      "计算机科学与技术"
+    ],
+    [
+      "Li Jianwu",
+      "has email",
+      "lw@bit.edu.cn"
+    ],
+    [
+      "Li Jianwu",
+      "visited",
+      "Columbia University"
+    ],
+    [
+      "Li Jianwu",
+      "received degree",
+      "Ph.D."
+    ],
+    [
+      "Li Jianwu",
+      "has title",
+      "副教授"
+    ],
+    [
+      "Li Jianwu",
+      "has worked since",
+      "2003"
+    ],
+    [
+      "计算机学院",
+      "is part of",
+      "北京理工大学"
+    ],
+    [
+      "Li Jianwu",
+      "visited until",
+      "2014"
+    ],
+    [
+      "Li Jianwu",
+      "works at",
+      "School of Computer Science and Technology"
+    ],
+    [
+      "Li Jianwu",
+      "specializes in",
+      "Computer Science and Technology"
+    ],
+    [
+      "Li Jianwu",
+      "has research interest",
+      "Image Processing"
+    ],
+    [
+      "Li Jianwu",
+      "studied at",
+      "Tianjin University"
+    ],
+    [
+      "Li Jianwu",
+      "was",
+      "visiting scholar"
+    ],
+    [
+      "Li Jianwu",
+      "works at",
+      "计算机学院"
+    ],
+    [
+      "Li Jianwu",
+      "received Ph.D. in",
+      "2003"
+    ],
+    [
+      "Li Jianwu",
+      "is also known as",
+      "李建武"
+    ],
+    [
+      "Li Jianwu",
+      "has email",
+      "ljw@bit.edu.cn"
+    ],
+    [
+      "Li Jianwu",
+      "has research interest",
+      "图像处理"
+    ],
+    [
+      "Li Jianwu",
+      "received M.Eng. in",
+      "2000"
+    ],
+    [
+      "Li Jianwu",
+      "has research interest",
+      "模式识别"
+    ],
+    [
+      "Li Jianwu",
+      "has phone number",
+      "01068912434"
+    ],
+    [
+      "Li Jianwu",
+      "has worked at",
+      "北京理工大学"
+    ],
+    [
+      "Li Jianwu",
+      "was",
+      "访问学者"
+    ],
+    [
+      "Li Jianwu",
+      "visited from",
+      "2013"
+    ],
+    [
+      "Li Jianwu",
+      "received degree",
+      "B.S."
+    ],
+    [
+      "School of Computer Science and Technology",
+      "is part of",
+      "Beijing Institute of Technology"
+    ],
+    [
+      "Li Jianwu",
+      "studied at",
+      "天津大学"
+    ],
+    [
+      "Li Jianwu",
+      "has title",
+      "Associate Professor"
+    ],
+    [
+      "Li Jianwu",
+      "visited",
+      "哥伦比亚大学"
+    ],
+    [
+      "Li Jianwu",
+      "has research interest",
+      "机器学习"
+    ],
+    [
+      "Li Jianwu",
+      "has research interest",
+      "Machine Learning"
+    ],
+    [
+      "Li Jianwu",
+      "has worked at",
+      "Beijing Institute of Technology"
+    ],
+    [
+      "Li Jianwu",
+      "has research interest",
+      "Pattern Recognition"
+    ]
+  ],
+  "entity_clusters": null,
+  "edge_clusters": null
+}

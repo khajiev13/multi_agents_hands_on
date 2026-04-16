@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import re
+import shutil
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any, Iterable, Sequence
@@ -16,6 +17,9 @@ from .ingestion_models import (
     ProfessorListing,
 )
 from .markdown_corpus import validate_professor_markdown
+
+
+LAB3_GRAPH_SEED_DIR = Path("lab_3_langgraph_swarm") / "graph_seed"
 
 
 def extract_markdown_section_lines(
@@ -113,6 +117,89 @@ def read_professor_markdown_metadata(markdown_path: Path) -> dict[str, Any]:
             continue
 
     return metadata
+
+
+def resolve_graph_seed_dir(project_root: Path, seed_dir: Path | None = None) -> Path:
+    if seed_dir is None:
+        return project_root / LAB3_GRAPH_SEED_DIR
+    return seed_dir if seed_dir.is_absolute() else project_root / seed_dir
+
+
+def build_graph_seed_index(
+    project_root: Path,
+    *,
+    seed_dir: Path | None = None,
+) -> dict[str, Path]:
+    resolved_seed_dir = resolve_graph_seed_dir(project_root, seed_dir)
+    if not resolved_seed_dir.exists():
+        return {}
+
+    index: dict[str, Path] = {}
+    for graph_json_path in sorted(resolved_seed_dir.glob("*-graph.json")):
+        slug = graph_json_path.name.removesuffix("-graph.json")
+        if slug:
+            index[slug] = graph_json_path
+    return index
+
+
+def sync_graph_seed_directory(
+    project_root: Path,
+    *,
+    seed_dir: Path | None = None,
+    artifact_namespace: str | None = None,
+) -> dict[str, Any]:
+    professor_dir = project_root / "professors"
+    resolved_seed_dir = resolve_graph_seed_dir(project_root, seed_dir)
+    artifact_dir = (
+        project_root / "artifacts" / artifact_namespace if artifact_namespace else None
+    )
+    cache_index = build_professor_cache_index(project_root) if artifact_dir is None else {}
+
+    source_paths: dict[str, Path] = {}
+    missing_sources: list[str] = []
+    for markdown_path in sorted(professor_dir.glob("*.md")):
+        metadata = read_professor_markdown_metadata(markdown_path)
+        detail_url = str(metadata.get("detail_url") or "").strip()
+        if not detail_url:
+            missing_sources.append(f"{markdown_path.name}: missing detail_url")
+            continue
+
+        if artifact_dir is not None:
+            graph_json_path = artifact_dir / f"{markdown_path.stem}-graph.json"
+            if graph_json_path.exists():
+                source_paths[markdown_path.stem] = graph_json_path
+                continue
+            missing_sources.append(
+                f"{markdown_path.stem}: missing graph JSON artifact in {artifact_dir.name}"
+            )
+            continue
+
+        cache_entry = cache_index.get(detail_url)
+        if cache_entry is None or not cache_entry.graph_json_path:
+            missing_sources.append(f"{markdown_path.stem}: missing graph JSON artifact")
+            continue
+
+        source_paths[markdown_path.stem] = Path(cache_entry.graph_json_path)
+
+    if missing_sources:
+        missing_preview = "; ".join(missing_sources[:10])
+        raise ValueError(f"Cannot sync Lab 3 graph seed directory. {missing_preview}")
+
+    resolved_seed_dir.mkdir(parents=True, exist_ok=True)
+    for existing_path in resolved_seed_dir.glob("*-graph.json"):
+        existing_path.unlink()
+
+    copied_files: list[str] = []
+    for slug, source_path in sorted(source_paths.items()):
+        destination_path = resolved_seed_dir / f"{slug}-graph.json"
+        shutil.copy2(source_path, destination_path)
+        copied_files.append(destination_path.name)
+
+    return {
+        "seed_dir": str(resolved_seed_dir.relative_to(project_root)),
+        "file_count": len(copied_files),
+        "sample_files": copied_files[:8],
+    }
 
 
 def _latest_path(paths: Sequence[Path]) -> Path | None:
@@ -351,7 +438,11 @@ def restore_professor_from_cache(
     )
 
     save_graph_json(graph, graph_json_path)
-    require_kg_gen().visualize(graph, str(graph_html_path), open_in_browser=False)
+    if not graph_html_path.exists():
+        try:
+            require_kg_gen().visualize(graph, str(graph_html_path), open_in_browser=False)
+        except AttributeError:
+            pass
     insert_professor_graph(
         graph=graph,
         settings=settings,

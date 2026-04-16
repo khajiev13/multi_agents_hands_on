@@ -1,0 +1,1419 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "codex-excalidraw-skill",
+  "elements": [
+    {
+      "id": "prepared-group",
+      "type": "rectangle",
+      "x": 60,
+      "y": 128,
+      "width": 1160,
+      "height": 252,
+      "angle": 0,
+      "strokeColor": "#94a3b8",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1.8,
+      "strokeStyle": "dashed",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7001,
+      "version": 1,
+      "versionNonce": 300001,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "workflow-group",
+      "type": "rectangle",
+      "x": 60,
+      "y": 430,
+      "width": 1160,
+      "height": 400,
+      "angle": 0,
+      "strokeColor": "#94a3b8",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1.8,
+      "strokeStyle": "dashed",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7002,
+      "version": 1,
+      "versionNonce": 300002,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "workflow-divider",
+      "type": "line",
+      "x": 640,
+      "y": 510,
+      "width": 0,
+      "height": 280,
+      "angle": 0,
+      "strokeColor": "#cbd5e1",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1.4,
+      "strokeStyle": "dashed",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7003,
+      "version": 1,
+      "versionNonce": 300003,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          280
+        ]
+      ],
+      "lastCommittedPoint": [
+        0,
+        280
+      ]
+    },
+    {
+      "id": "corpus",
+      "type": "rectangle",
+      "x": 120,
+      "y": 216,
+      "width": 350,
+      "height": 100,
+      "angle": 0,
+      "strokeColor": "#1971c2",
+      "backgroundColor": "#d0ebff",
+      "fillStyle": "solid",
+      "strokeWidth": 2.2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 7004,
+      "version": 1,
+      "versionNonce": 300004,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "corpus-text"
+        },
+        {
+          "type": "arrow",
+          "id": "a-corpus-loader"
+        },
+        {
+          "type": "arrow",
+          "id": "a-corpus-workspace"
+        }
+      ],
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "corpus-text",
+      "type": "text",
+      "x": 130,
+      "y": 243.5,
+      "width": 330,
+      "height": 45,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7005,
+      "version": 1,
+      "versionNonce": 300005,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "text": "Professor corpus\nprofessors/ + professors.md",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "corpus",
+      "originalText": "Professor corpus\nprofessors/ + professors.md",
+      "lineHeight": 1.25,
+      "baseline": 18,
+      "autoResize": true
+    },
+    {
+      "id": "graph-seed",
+      "type": "rectangle",
+      "x": 490,
+      "y": 216,
+      "width": 300,
+      "height": 100,
+      "angle": 0,
+      "strokeColor": "#1971c2",
+      "backgroundColor": "#d0ebff",
+      "fillStyle": "solid",
+      "strokeWidth": 2.2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 7006,
+      "version": 1,
+      "versionNonce": 300006,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "graph-seed-text"
+        },
+        {
+          "type": "arrow",
+          "id": "a-seed-loader"
+        }
+      ],
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "graph-seed-text",
+      "type": "text",
+      "x": 500,
+      "y": 243.5,
+      "width": 280,
+      "height": 45,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7007,
+      "version": 1,
+      "versionNonce": 300007,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "text": "Lab 3 graph seeds\ngraph_seed/*.json",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "graph-seed",
+      "originalText": "Lab 3 graph seeds\ngraph_seed/*.json",
+      "lineHeight": 1.25,
+      "baseline": 18,
+      "autoResize": true
+    },
+    {
+      "id": "incoming",
+      "type": "rectangle",
+      "x": 810,
+      "y": 216,
+      "width": 320,
+      "height": 100,
+      "angle": 0,
+      "strokeColor": "#1971c2",
+      "backgroundColor": "#d0ebff",
+      "fillStyle": "solid",
+      "strokeWidth": 2.2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 7008,
+      "version": 1,
+      "versionNonce": 300008,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "incoming-text"
+        },
+        {
+          "type": "arrow",
+          "id": "a-incoming-workspace"
+        }
+      ],
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "incoming-text",
+      "type": "text",
+      "x": 820,
+      "y": 243.5,
+      "width": 300,
+      "height": 45,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7009,
+      "version": 1,
+      "versionNonce": 300009,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "text": "Lab 4 incoming files\nincoming_artifacts/",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "incoming",
+      "originalText": "Lab 4 incoming files\nincoming_artifacts/",
+      "lineHeight": 1.25,
+      "baseline": 18,
+      "autoResize": true
+    },
+    {
+      "id": "loader",
+      "type": "rectangle",
+      "x": 170,
+      "y": 568,
+      "width": 300,
+      "height": 92,
+      "angle": 0,
+      "strokeColor": "#7048e8",
+      "backgroundColor": "#d0bfff",
+      "fillStyle": "solid",
+      "strokeWidth": 2.2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 7010,
+      "version": 1,
+      "versionNonce": 300010,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "loader-text"
+        },
+        {
+          "type": "arrow",
+          "id": "a-corpus-loader"
+        },
+        {
+          "type": "arrow",
+          "id": "a-seed-loader"
+        },
+        {
+          "type": "arrow",
+          "id": "a-loader-neo4j"
+        }
+      ],
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "loader-text",
+      "type": "text",
+      "x": 180,
+      "y": 591.5,
+      "width": 280,
+      "height": 45,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7011,
+      "version": 1,
+      "versionNonce": 300011,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "text": "Run setup loader\nprepare_lab3_graph.py",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "loader",
+      "originalText": "Run setup loader\nprepare_lab3_graph.py",
+      "lineHeight": 1.25,
+      "baseline": 18,
+      "autoResize": true
+    },
+    {
+      "id": "neo4j",
+      "type": "rectangle",
+      "x": 210,
+      "y": 692,
+      "width": 220,
+      "height": 88,
+      "angle": 0,
+      "strokeColor": "#2f9e44",
+      "backgroundColor": "#b2f2bb",
+      "fillStyle": "solid",
+      "strokeWidth": 2.2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 7012,
+      "version": 1,
+      "versionNonce": 300012,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "neo4j-text"
+        },
+        {
+          "type": "arrow",
+          "id": "a-loader-neo4j"
+        },
+        {
+          "type": "arrow",
+          "id": "a-neo4j-lab3"
+        }
+      ],
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "neo4j-text",
+      "type": "text",
+      "x": 220,
+      "y": 713.5,
+      "width": 200,
+      "height": 45,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7013,
+      "version": 1,
+      "versionNonce": 300013,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "text": "Neo4j\nlocal database",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "neo4j",
+      "originalText": "Neo4j\nlocal database",
+      "lineHeight": 1.25,
+      "baseline": 18,
+      "autoResize": true
+    },
+    {
+      "id": "lab3-notebook",
+      "type": "rectangle",
+      "x": 170,
+      "y": 812,
+      "width": 300,
+      "height": 92,
+      "angle": 0,
+      "strokeColor": "#7048e8",
+      "backgroundColor": "#d0bfff",
+      "fillStyle": "solid",
+      "strokeWidth": 2.2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 7014,
+      "version": 1,
+      "versionNonce": 300014,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "lab3-notebook-text"
+        },
+        {
+          "type": "arrow",
+          "id": "a-neo4j-lab3"
+        }
+      ],
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "lab3-notebook-text",
+      "type": "text",
+      "x": 180,
+      "y": 835.5,
+      "width": 280,
+      "height": 45,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7015,
+      "version": 1,
+      "versionNonce": 300015,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "text": "Lab 3 notebook\nquery the local professor graph",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "lab3-notebook",
+      "originalText": "Lab 3 notebook\nquery the local professor graph",
+      "lineHeight": 1.25,
+      "baseline": 18,
+      "autoResize": true
+    },
+    {
+      "id": "workspace",
+      "type": "rectangle",
+      "x": 760,
+      "y": 590,
+      "width": 320,
+      "height": 100,
+      "angle": 0,
+      "strokeColor": "#7048e8",
+      "backgroundColor": "#d0bfff",
+      "fillStyle": "solid",
+      "strokeWidth": 2.2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 7016,
+      "version": 1,
+      "versionNonce": 300016,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "workspace-text"
+        },
+        {
+          "type": "arrow",
+          "id": "a-corpus-workspace"
+        },
+        {
+          "type": "arrow",
+          "id": "a-incoming-workspace"
+        },
+        {
+          "type": "arrow",
+          "id": "a-workspace-lab4"
+        }
+      ],
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "workspace-text",
+      "type": "text",
+      "x": 770,
+      "y": 617.5,
+      "width": 300,
+      "height": 45,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7017,
+      "version": 1,
+      "versionNonce": 300017,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "text": "Prepared local workspace\nprofessor corpus + incoming files",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "workspace",
+      "originalText": "Prepared local workspace\nprofessor corpus + incoming files",
+      "lineHeight": 1.25,
+      "baseline": 18,
+      "autoResize": true
+    },
+    {
+      "id": "lab4-notebook",
+      "type": "rectangle",
+      "x": 770,
+      "y": 736,
+      "width": 300,
+      "height": 100,
+      "angle": 0,
+      "strokeColor": "#7048e8",
+      "backgroundColor": "#d0bfff",
+      "fillStyle": "solid",
+      "strokeWidth": 2.2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 7018,
+      "version": 1,
+      "versionNonce": 300018,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "lab4-notebook-text"
+        },
+        {
+          "type": "arrow",
+          "id": "a-workspace-lab4"
+        }
+      ],
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "lab4-notebook-text",
+      "type": "text",
+      "x": 780,
+      "y": 763.5,
+      "width": 280,
+      "height": 45,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7019,
+      "version": 1,
+      "versionNonce": 300019,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "text": "Lab 4 notebook\ndeep-agent professor workflow",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "lab4-notebook",
+      "originalText": "Lab 4 notebook\ndeep-agent professor workflow",
+      "lineHeight": 1.25,
+      "baseline": 18,
+      "autoResize": true
+    },
+    {
+      "id": "a-corpus-loader",
+      "type": "arrow",
+      "x": 242.5,
+      "y": 316,
+      "width": 32.5,
+      "height": 252,
+      "angle": 0,
+      "strokeColor": "#7048e8",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2.2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7020,
+      "version": 1,
+      "versionNonce": 300020,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          184
+        ],
+        [
+          32.5,
+          184
+        ],
+        [
+          32.5,
+          252
+        ]
+      ],
+      "lastCommittedPoint": [
+        32.5,
+        252
+      ],
+      "startBinding": {
+        "elementId": "corpus",
+        "focus": 0,
+        "gap": 1,
+        "fixedPoint": [
+          0.35,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "loader",
+        "focus": 0,
+        "gap": 1,
+        "fixedPoint": [
+          0.35,
+          0
+        ]
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "elbowed": true
+    },
+    {
+      "id": "a-seed-loader",
+      "type": "arrow",
+      "x": 685,
+      "y": 316,
+      "width": 305,
+      "height": 252,
+      "angle": 0,
+      "strokeColor": "#7048e8",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2.2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7021,
+      "version": 1,
+      "versionNonce": 300021,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          184
+        ],
+        [
+          -305,
+          184
+        ],
+        [
+          -305,
+          252
+        ]
+      ],
+      "lastCommittedPoint": [
+        -305,
+        252
+      ],
+      "startBinding": {
+        "elementId": "graph-seed",
+        "focus": 0,
+        "gap": 1,
+        "fixedPoint": [
+          0.65,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "loader",
+        "focus": 0,
+        "gap": 1,
+        "fixedPoint": [
+          0.7,
+          0
+        ]
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "elbowed": true
+    },
+    {
+      "id": "a-loader-neo4j",
+      "type": "arrow",
+      "x": 320,
+      "y": 660,
+      "width": 0,
+      "height": 32,
+      "angle": 0,
+      "strokeColor": "#7048e8",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2.2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7022,
+      "version": 1,
+      "versionNonce": 300022,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          32
+        ]
+      ],
+      "lastCommittedPoint": [
+        0,
+        32
+      ],
+      "startBinding": {
+        "elementId": "loader",
+        "focus": 0,
+        "gap": 1,
+        "fixedPoint": [
+          0.5,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "neo4j",
+        "focus": 0,
+        "gap": 1,
+        "fixedPoint": [
+          0.5,
+          0
+        ]
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "elbowed": false
+    },
+    {
+      "id": "a-neo4j-lab3",
+      "type": "arrow",
+      "x": 320,
+      "y": 780,
+      "width": 0,
+      "height": 32,
+      "angle": 0,
+      "strokeColor": "#2f9e44",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2.2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7023,
+      "version": 1,
+      "versionNonce": 300023,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          32
+        ]
+      ],
+      "lastCommittedPoint": [
+        0,
+        32
+      ],
+      "startBinding": {
+        "elementId": "neo4j",
+        "focus": 0,
+        "gap": 1,
+        "fixedPoint": [
+          0.5,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "lab3-notebook",
+        "focus": 0,
+        "gap": 1,
+        "fixedPoint": [
+          0.5,
+          0
+        ]
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "elbowed": false
+    },
+    {
+      "id": "a-corpus-workspace",
+      "type": "arrow",
+      "x": 365,
+      "y": 316,
+      "width": 507,
+      "height": 274,
+      "angle": 0,
+      "strokeColor": "#7048e8",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2.2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7024,
+      "version": 1,
+      "versionNonce": 300024,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          184
+        ],
+        [
+          507,
+          184
+        ],
+        [
+          507,
+          274
+        ]
+      ],
+      "lastCommittedPoint": [
+        507,
+        274
+      ],
+      "startBinding": {
+        "elementId": "corpus",
+        "focus": 0,
+        "gap": 1,
+        "fixedPoint": [
+          0.7,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "workspace",
+        "focus": 0,
+        "gap": 1,
+        "fixedPoint": [
+          0.35,
+          0
+        ]
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "elbowed": true
+    },
+    {
+      "id": "a-incoming-workspace",
+      "type": "arrow",
+      "x": 922,
+      "y": 316,
+      "width": 18,
+      "height": 274,
+      "angle": 0,
+      "strokeColor": "#7048e8",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2.2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7025,
+      "version": 1,
+      "versionNonce": 300025,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          184
+        ],
+        [
+          -18,
+          184
+        ],
+        [
+          -18,
+          274
+        ]
+      ],
+      "lastCommittedPoint": [
+        -18,
+        274
+      ],
+      "startBinding": {
+        "elementId": "incoming",
+        "focus": 0,
+        "gap": 1,
+        "fixedPoint": [
+          0.35,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "workspace",
+        "focus": 0,
+        "gap": 1,
+        "fixedPoint": [
+          0.45,
+          0
+        ]
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "elbowed": true
+    },
+    {
+      "id": "a-workspace-lab4",
+      "type": "arrow",
+      "x": 920,
+      "y": 690,
+      "width": 0,
+      "height": 46,
+      "angle": 0,
+      "strokeColor": "#7048e8",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2.2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7026,
+      "version": 1,
+      "versionNonce": 300026,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          46
+        ]
+      ],
+      "lastCommittedPoint": [
+        0,
+        46
+      ],
+      "startBinding": {
+        "elementId": "workspace",
+        "focus": 0,
+        "gap": 1,
+        "fixedPoint": [
+          0.5,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "lab4-notebook",
+        "focus": 0,
+        "gap": 1,
+        "fixedPoint": [
+          0.5,
+          0
+        ]
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "elbowed": false
+    },
+    {
+      "id": "title",
+      "type": "text",
+      "x": 330,
+      "y": 28,
+      "width": 620,
+      "height": 36,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7027,
+      "version": 1,
+      "versionNonce": 300027,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "text": "Using the Prepared Course Data",
+      "fontSize": 30,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Using the Prepared Course Data",
+      "lineHeight": 1.25,
+      "baseline": 30,
+      "autoResize": true
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "x": 230,
+      "y": 72,
+      "width": 820,
+      "height": 22,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7028,
+      "version": 1,
+      "versionNonce": 300028,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "text": "Labs 3 and 4 work from the files already committed in this repo.",
+      "fontSize": 17,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Labs 3 and 4 work from the files already committed in this repo.",
+      "lineHeight": 1.25,
+      "baseline": 17,
+      "autoResize": true
+    },
+    {
+      "id": "prepared-label",
+      "type": "text",
+      "x": 86,
+      "y": 144,
+      "width": 430,
+      "height": 26,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7029,
+      "version": 1,
+      "versionNonce": 300029,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "text": "Prepared course data already in the repo",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Prepared course data already in the repo",
+      "lineHeight": 1.25,
+      "baseline": 20,
+      "autoResize": true
+    },
+    {
+      "id": "workflow-label",
+      "type": "text",
+      "x": 86,
+      "y": 446,
+      "width": 430,
+      "height": 26,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7030,
+      "version": 1,
+      "versionNonce": 300030,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "text": "Choose the lab path you are working on",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Choose the lab path you are working on",
+      "lineHeight": 1.25,
+      "baseline": 20,
+      "autoResize": true
+    },
+    {
+      "id": "lab3-label",
+      "type": "text",
+      "x": 170,
+      "y": 516,
+      "width": 90,
+      "height": 30,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7031,
+      "version": 1,
+      "versionNonce": 300031,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "text": "Lab 3",
+      "fontSize": 24,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Lab 3",
+      "lineHeight": 1.25,
+      "baseline": 24,
+      "autoResize": true
+    },
+    {
+      "id": "lab4-label",
+      "type": "text",
+      "x": 770,
+      "y": 516,
+      "width": 90,
+      "height": 30,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 7032,
+      "version": 1,
+      "versionNonce": 300032,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776370200000,
+      "link": null,
+      "locked": false,
+      "text": "Lab 4",
+      "fontSize": 24,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Lab 4",
+      "lineHeight": 1.25,
+      "baseline": 24,
+      "autoResize": true
+    }
+  ],
+  "appState": {
+    "gridSize": 20,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}

@@ -1,0 +1,84 @@
+{
+  "entities": [
+    "LI Dongni",
+    "https://isc.bit.edu.cn/images/2022-04/20190522023949733560.png",
+    "page 3",
+    "Source Pages",
+    "page 1",
+    "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b148285.htm",
+    "https://isc.bit.edu.cn/images/2022-04/20190522023934151448.png",
+    "page 2",
+    "https://isc.bit.edu.cn/images/2022-04/20190522023902060218.png",
+    "https://isc.bit.edu.cn/images/2022-04/20190522023914857328.png",
+    "detail_url",
+    "page 4",
+    "page_count",
+    "4"
+  ],
+  "edges": [
+    "has page_count",
+    "has Source Pages",
+    "has url",
+    "includes page",
+    "has detail_url"
+  ],
+  "relations": [
+    [
+      "LI Dongni",
+      "has Source Pages",
+      "Source Pages"
+    ],
+    [
+      "Source Pages",
+      "includes page",
+      "page 1"
+    ],
+    [
+      "LI Dongni",
+      "has page_count",
+      "4"
+    ],
+    [
+      "Source Pages",
+      "includes page",
+      "page 3"
+    ],
+    [
+      "Source Pages",
+      "includes page",
+      "page 4"
+    ],
+    [
+      "page 2",
+      "has url",
+      "https://isc.bit.edu.cn/images/2022-04/20190522023914857328.png"
+    ],
+    [
+      "Source Pages",
+      "includes page",
+      "page 2"
+    ],
+    [
+      "page 1",
+      "has url",
+      "https://isc.bit.edu.cn/images/2022-04/20190522023902060218.png"
+    ],
+    [
+      "page 4",
+      "has url",
+      "https://isc.bit.edu.cn/images/2022-04/20190522023949733560.png"
+    ],
+    [
+      "LI Dongni",
+      "has detail_url",
+      "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b148285.htm"
+    ],
+    [
+      "page 3",
+      "has url",
+      "https://isc.bit.edu.cn/images/2022-04/20190522023934151448.png"
+    ]
+  ],
+  "entity_clusters": null,
+  "edge_clusters": null
+}

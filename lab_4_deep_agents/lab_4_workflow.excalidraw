@@ -22,9 +22,9 @@
       "roundness": {
         "type": 3
       },
-      "seed": 99091,
+      "seed": 45191,
       "version": 1,
-      "versionNonce": 40034,
+      "versionNonce": 64925,
       "isDeleted": false,
       "boundElements": [
         {
@@ -32,7 +32,7 @@
           "id": "user-text"
         }
       ],
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "type": "ellipse"
@@ -55,12 +55,12 @@
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 78666,
+      "seed": 93781,
       "version": 1,
-      "versionNonce": 32768,
+      "versionNonce": 63789,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "text": "Student",
@@ -75,9 +75,9 @@
     },
     {
       "id": "main-agent",
-      "x": 300,
-      "y": 150,
-      "width": 330,
+      "x": 285,
+      "y": 145,
+      "width": 340,
       "height": 128,
       "angle": 0,
       "strokeColor": "#e8590c",
@@ -92,9 +92,9 @@
       "roundness": {
         "type": 3
       },
-      "seed": 86999,
+      "seed": 85969,
       "version": 1,
-      "versionNonce": 69832,
+      "versionNonce": 1814,
       "isDeleted": false,
       "boundElements": [
         {
@@ -102,7 +102,7 @@
           "id": "main-agent-text"
         }
       ],
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "type": "rectangle"
@@ -110,8 +110,8 @@
     {
       "id": "main-agent-text",
       "type": "text",
-      "x": 372.0,
-      "y": 194.0,
+      "x": 362.0,
+      "y": 189.0,
       "width": 186,
       "height": 40,
       "angle": 0,
@@ -125,12 +125,12 @@
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 42003,
+      "seed": 91479,
       "version": 1,
-      "versionNonce": 32799,
+      "versionNonce": 78383,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "text": "ProfessorWorkspaceAgent\ncreate_deep_agent(...)",
@@ -145,9 +145,9 @@
     },
     {
       "id": "subagent",
-      "x": 780,
-      "y": 105,
-      "width": 270,
+      "x": 775,
+      "y": 120,
+      "width": 280,
       "height": 118,
       "angle": 0,
       "strokeColor": "#1d4ed8",
@@ -162,9 +162,9 @@
       "roundness": {
         "type": 3
       },
-      "seed": 98038,
+      "seed": 28304,
       "version": 1,
-      "versionNonce": 50256,
+      "versionNonce": 50524,
       "isDeleted": false,
       "boundElements": [
         {
@@ -172,7 +172,7 @@
           "id": "subagent-text"
         }
       ],
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "type": "rectangle"
@@ -181,7 +181,7 @@
       "id": "subagent-text",
       "type": "text",
       "x": 834.0,
-      "y": 144.0,
+      "y": 159.0,
       "width": 162,
       "height": 40,
       "angle": 0,
@@ -195,12 +195,12 @@
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 41294,
+      "seed": 62435,
       "version": 1,
-      "versionNonce": 14030,
+      "versionNonce": 32969,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "text": "AddProfessorSubagent\n(task tool)",
@@ -215,10 +215,10 @@
     },
     {
       "id": "skill",
-      "x": 1125,
-      "y": 88,
-      "width": 250,
-      "height": 82,
+      "x": 1115,
+      "y": 108,
+      "width": 270,
+      "height": 84,
       "angle": 0,
       "strokeColor": "#64748b",
       "backgroundColor": "#f8fafc",
@@ -232,9 +232,9 @@
       "roundness": {
         "type": 3
       },
-      "seed": 96694,
+      "seed": 959,
       "version": 1,
-      "versionNonce": 18287,
+      "versionNonce": 54343,
       "isDeleted": false,
       "boundElements": [
         {
@@ -242,7 +242,7 @@
           "id": "skill-text"
         }
       ],
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "type": "rectangle"
@@ -250,9 +250,9 @@
     {
       "id": "skill-text",
       "type": "text",
-      "x": 1161.0,
-      "y": 109.0,
-      "width": 178,
+      "x": 1141.0,
+      "y": 130.0,
+      "width": 218,
       "height": 40,
       "angle": 0,
       "strokeColor": "#0f172a",
@@ -265,100 +265,30 @@
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 72490,
+      "seed": 91110,
       "version": 1,
-      "versionNonce": 67925,
+      "versionNonce": 66971,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
-      "text": "SKILL.md\nadd-professor-from-url",
+      "text": "SKILL.md\nadd-professor-from-incoming",
       "fontSize": 20,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "baseline": 34,
       "containerId": "skill",
-      "originalText": "SKILL.md\nadd-professor-from-url",
-      "lineHeight": 1.25
-    },
-    {
-      "id": "ocr-tools",
-      "x": 1090,
-      "y": 220,
-      "width": 305,
-      "height": 150,
-      "angle": 0,
-      "strokeColor": "#7c3aed",
-      "backgroundColor": "#f5f3ff",
-      "fillStyle": "solid",
-      "strokeWidth": 2.6,
-      "strokeStyle": "solid",
-      "roughness": 0,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": {
-        "type": 3
-      },
-      "seed": 31819,
-      "version": 1,
-      "versionNonce": 28604,
-      "isDeleted": false,
-      "boundElements": [
-        {
-          "type": "text",
-          "id": "ocr-tools-text"
-        }
-      ],
-      "updated": 1775928569057,
-      "link": null,
-      "locked": false,
-      "type": "rectangle"
-    },
-    {
-      "id": "ocr-tools-text",
-      "type": "text",
-      "x": 1113.0,
-      "y": 255.0,
-      "width": 259,
-      "height": 80,
-      "angle": 0,
-      "strokeColor": "#0f172a",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1,
-      "strokeStyle": "solid",
-      "roughness": 0,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 75143,
-      "version": 1,
-      "versionNonce": 62102,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1775928569057,
-      "link": null,
-      "locked": false,
-      "text": "Small helper tools\nextract_image_urls\nocr_images_to_professor_markdown\nrebuild_professors_index",
-      "fontSize": 20,
-      "fontFamily": 1,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "baseline": 74,
-      "containerId": "ocr-tools",
-      "originalText": "Small helper tools\nextract_image_urls\nocr_images_to_professor_markdown\nrebuild_professors_index",
+      "originalText": "SKILL.md\nadd-professor-from-incoming",
       "lineHeight": 1.25
     },
     {
       "id": "workspace",
-      "x": 305,
-      "y": 415,
-      "width": 760,
-      "height": 265,
+      "x": 270,
+      "y": 385,
+      "width": 1120,
+      "height": 360,
       "angle": 0,
       "strokeColor": "#94a3b8",
       "backgroundColor": "#f8fafc",
@@ -372,9 +302,9 @@
       "roundness": {
         "type": 3
       },
-      "seed": 60481,
+      "seed": 62355,
       "version": 1,
-      "versionNonce": 41569,
+      "versionNonce": 52330,
       "isDeleted": false,
       "boundElements": [
         {
@@ -382,7 +312,7 @@
           "id": "workspace-text"
         }
       ],
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "type": "rectangle"
@@ -390,8 +320,8 @@
     {
       "id": "workspace-text",
       "type": "text",
-      "x": 563.5,
-      "y": 537.5,
+      "x": 708.5,
+      "y": 555.0,
       "width": 243,
       "height": 20,
       "angle": 0,
@@ -405,12 +335,12 @@
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 4406,
+      "seed": 79311,
       "version": 1,
-      "versionNonce": 42649,
+      "versionNonce": 40281,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "text": "FilesystemBackend runtime root",
@@ -424,11 +354,81 @@
       "lineHeight": 1.25
     },
     {
+      "id": "incoming",
+      "x": 355,
+      "y": 495,
+      "width": 245,
+      "height": 98,
+      "angle": 0,
+      "strokeColor": "#d97706",
+      "backgroundColor": "#fef3c7",
+      "fillStyle": "solid",
+      "strokeWidth": 2.6,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 40544,
+      "version": 1,
+      "versionNonce": 24633,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "incoming-text"
+        }
+      ],
+      "updated": 1776267114655,
+      "link": null,
+      "locked": false,
+      "type": "rectangle"
+    },
+    {
+      "id": "incoming-text",
+      "type": "text",
+      "x": 409.0,
+      "y": 524.0,
+      "width": 137,
+      "height": 40,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 5451,
+      "version": 1,
+      "versionNonce": 52388,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1776267114655,
+      "link": null,
+      "locked": false,
+      "text": "/incoming/*.md\nprepared artifact",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "baseline": 34,
+      "containerId": "incoming",
+      "originalText": "/incoming/*.md\nprepared artifact",
+      "lineHeight": 1.25
+    },
+    {
       "id": "index",
-      "x": 380,
-      "y": 485,
-      "width": 240,
-      "height": 96,
+      "x": 700,
+      "y": 495,
+      "width": 220,
+      "height": 98,
       "angle": 0,
       "strokeColor": "#16a34a",
       "backgroundColor": "#ecfdf5",
@@ -442,9 +442,9 @@
       "roundness": {
         "type": 3
       },
-      "seed": 15936,
+      "seed": 51619,
       "version": 1,
-      "versionNonce": 4687,
+      "versionNonce": 13564,
       "isDeleted": false,
       "boundElements": [
         {
@@ -452,7 +452,7 @@
           "id": "index-text"
         }
       ],
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "type": "rectangle"
@@ -460,8 +460,8 @@
     {
       "id": "index-text",
       "type": "text",
-      "x": 443.5,
-      "y": 513.0,
+      "x": 753.5,
+      "y": 524.0,
       "width": 113,
       "height": 40,
       "angle": 0,
@@ -475,12 +475,12 @@
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 25970,
+      "seed": 55488,
       "version": 1,
-      "versionNonce": 4600,
+      "versionNonce": 26906,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "text": "/professors.md\ncompact index",
@@ -495,10 +495,10 @@
     },
     {
       "id": "dossiers",
-      "x": 720,
-      "y": 485,
-      "width": 250,
-      "height": 96,
+      "x": 1025,
+      "y": 495,
+      "width": 245,
+      "height": 98,
       "angle": 0,
       "strokeColor": "#4f46e5",
       "backgroundColor": "#eef2ff",
@@ -512,9 +512,9 @@
       "roundness": {
         "type": 3
       },
-      "seed": 58101,
+      "seed": 30258,
       "version": 1,
-      "versionNonce": 79657,
+      "versionNonce": 68546,
       "isDeleted": false,
       "boundElements": [
         {
@@ -522,7 +522,7 @@
           "id": "dossiers-text"
         }
       ],
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "type": "rectangle"
@@ -530,8 +530,8 @@
     {
       "id": "dossiers-text",
       "type": "text",
-      "x": 780.5,
-      "y": 513.0,
+      "x": 1083.0,
+      "y": 524.0,
       "width": 129,
       "height": 40,
       "angle": 0,
@@ -545,12 +545,12 @@
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 44195,
+      "seed": 56652,
       "version": 1,
-      "versionNonce": 96756,
+      "versionNonce": 73200,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "text": "/professors/*.md\nfull dossiers",
@@ -564,82 +564,12 @@
       "lineHeight": 1.25
     },
     {
-      "id": "appendix",
-      "x": 1110,
-      "y": 540,
-      "width": 290,
-      "height": 92,
-      "angle": 0,
-      "strokeColor": "#f59e0b",
-      "backgroundColor": "#fffbeb",
-      "fillStyle": "solid",
-      "strokeWidth": 2.2,
-      "strokeStyle": "dashed",
-      "roughness": 0,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": {
-        "type": 3
-      },
-      "seed": 37906,
-      "version": 1,
-      "versionNonce": 80219,
-      "isDeleted": false,
-      "boundElements": [
-        {
-          "type": "text",
-          "id": "appendix-text"
-        }
-      ],
-      "updated": 1775928569057,
-      "link": null,
-      "locked": false,
-      "type": "rectangle"
-    },
-    {
-      "id": "appendix-text",
-      "type": "text",
-      "x": 1150.0,
-      "y": 566.0,
-      "width": 210,
-      "height": 40,
-      "angle": 0,
-      "strokeColor": "#0f172a",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1,
-      "strokeStyle": "solid",
-      "roughness": 0,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 52606,
-      "version": 1,
-      "versionNonce": 23700,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1775928569057,
-      "link": null,
-      "locked": false,
-      "text": "Appendix only\nSandbox backend -> execute",
-      "fontSize": 20,
-      "fontFamily": 1,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "baseline": 34,
-      "containerId": "appendix",
-      "originalText": "Appendix only\nSandbox backend -> execute",
-      "lineHeight": 1.25
-    },
-    {
       "id": "user-to-main",
       "type": "arrow",
       "x": 220,
       "y": 243.0,
-      "width": 80,
-      "height": 29.0,
+      "width": 65,
+      "height": 34.0,
       "angle": 0,
       "strokeColor": "#1971c2",
       "backgroundColor": "transparent",
@@ -651,12 +581,12 @@
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 7979,
+      "seed": 98583,
       "version": 1,
-      "versionNonce": 71484,
+      "versionNonce": 880,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "points": [
@@ -665,13 +595,13 @@
           0.0
         ],
         [
-          80,
-          -29.0
+          65,
+          -34.0
         ]
       ],
       "lastCommittedPoint": [
-        80,
-        -29.0
+        65,
+        -34.0
       ],
       "startBinding": null,
       "endBinding": null,
@@ -682,10 +612,10 @@
     {
       "id": "main-to-index",
       "type": "arrow",
-      "x": 465.0,
-      "y": 278,
-      "width": 35.0,
-      "height": 207,
+      "x": 455.0,
+      "y": 273,
+      "width": 355.0,
+      "height": 222,
       "angle": 0,
       "strokeColor": "#e8590c",
       "backgroundColor": "transparent",
@@ -697,12 +627,12 @@
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 72705,
+      "seed": 77169,
       "version": 1,
-      "versionNonce": 70608,
+      "versionNonce": 94225,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "points": [
@@ -712,20 +642,20 @@
         ],
         [
           0.0,
-          82
+          77
         ],
         [
-          35.0,
-          82
+          355.0,
+          77
         ],
         [
-          35.0,
-          207
+          355.0,
+          222
         ]
       ],
       "lastCommittedPoint": [
-        35.0,
-        207
+        355.0,
+        222
       ],
       "startBinding": null,
       "endBinding": null,
@@ -737,9 +667,9 @@
       "id": "main-to-dossiers",
       "type": "arrow",
       "x": 560,
-      "y": 278,
-      "width": 285,
-      "height": 207,
+      "y": 273,
+      "width": 587.5,
+      "height": 222,
       "angle": 0,
       "strokeColor": "#e8590c",
       "backgroundColor": "transparent",
@@ -751,12 +681,12 @@
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 34280,
+      "seed": 22104,
       "version": 1,
-      "versionNonce": 24469,
+      "versionNonce": 73526,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "points": [
@@ -766,20 +696,20 @@
         ],
         [
           0,
-          112
+          92
         ],
         [
-          285,
-          112
+          587,
+          92
         ],
         [
-          285.0,
-          207
+          587.5,
+          222
         ]
       ],
       "lastCommittedPoint": [
-        285.0,
-        207
+        587.5,
+        222
       ],
       "startBinding": null,
       "endBinding": null,
@@ -790,10 +720,10 @@
     {
       "id": "main-to-subagent",
       "type": "arrow",
-      "x": 630,
-      "y": 214.0,
+      "x": 625,
+      "y": 209.0,
       "width": 150,
-      "height": 50.0,
+      "height": 30.0,
       "angle": 0,
       "strokeColor": "#fb923c",
       "backgroundColor": "transparent",
@@ -805,12 +735,12 @@
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 61235,
+      "seed": 38225,
       "version": 1,
-      "versionNonce": 46824,
+      "versionNonce": 94617,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "points": [
@@ -820,12 +750,12 @@
         ],
         [
           150,
-          -50.0
+          -30.0
         ]
       ],
       "lastCommittedPoint": [
         150,
-        -50.0
+        -30.0
       ],
       "startBinding": null,
       "endBinding": null,
@@ -836,10 +766,10 @@
     {
       "id": "subagent-to-skill",
       "type": "arrow",
-      "x": 1050,
-      "y": 164.0,
-      "width": 75,
-      "height": 35.0,
+      "x": 1055,
+      "y": 179.0,
+      "width": 60,
+      "height": 29.0,
       "angle": 0,
       "strokeColor": "#64748b",
       "backgroundColor": "transparent",
@@ -851,12 +781,12 @@
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 52128,
+      "seed": 82410,
       "version": 1,
-      "versionNonce": 12188,
+      "versionNonce": 3195,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "points": [
@@ -865,13 +795,13 @@
           0.0
         ],
         [
-          75,
-          -35.0
+          60,
+          -29.0
         ]
       ],
       "lastCommittedPoint": [
-        75,
-        -35.0
+        60,
+        -29.0
       ],
       "startBinding": null,
       "endBinding": null,
@@ -880,12 +810,12 @@
       "elbowed": true
     },
     {
-      "id": "subagent-to-ocr",
+      "id": "subagent-to-incoming",
       "type": "arrow",
       "x": 915.0,
-      "y": 223,
-      "width": 220.0,
-      "height": 72.0,
+      "y": 238,
+      "width": 437.5,
+      "height": 257,
       "angle": 0,
       "strokeColor": "#1d4ed8",
       "backgroundColor": "transparent",
@@ -897,12 +827,12 @@
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 67770,
+      "seed": 3500,
       "version": 1,
-      "versionNonce": 72596,
+      "versionNonce": 9921,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "points": [
@@ -912,20 +842,20 @@
         ],
         [
           0.0,
-          22
+          192
         ],
         [
-          220.0,
-          22
+          -437.5,
+          192
         ],
         [
-          175.0,
-          72.0
+          -437.5,
+          257
         ]
       ],
       "lastCommittedPoint": [
-        175.0,
-        72.0
+        -437.5,
+        257
       ],
       "startBinding": null,
       "endBinding": null,
@@ -934,14 +864,14 @@
       "elbowed": true
     },
     {
-      "id": "ocr-to-dossiers",
+      "id": "subagent-to-dossiers",
       "type": "arrow",
-      "x": 1090,
-      "y": 295.0,
-      "width": 120,
-      "height": 238.0,
+      "x": 955,
+      "y": 238,
+      "width": 192.5,
+      "height": 257,
       "angle": 0,
-      "strokeColor": "#7c3aed",
+      "strokeColor": "#1d4ed8",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2.2,
@@ -951,35 +881,35 @@
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 97090,
+      "seed": 609,
       "version": 1,
-      "versionNonce": 26113,
+      "versionNonce": 36051,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "points": [
         [
           0,
-          0.0
+          0
         ],
         [
-          -70,
-          0.0
+          0,
+          192
         ],
         [
-          -70,
-          238.0
+          192,
+          192
         ],
         [
-          -120,
-          238.0
+          192.5,
+          257
         ]
       ],
       "lastCommittedPoint": [
-        -120,
-        238.0
+        192.5,
+        257
       ],
       "startBinding": null,
       "endBinding": null,
@@ -990,9 +920,9 @@
     {
       "id": "dossiers-to-index",
       "type": "arrow",
-      "x": 720,
-      "y": 533.0,
-      "width": 100,
+      "x": 1025,
+      "y": 544.0,
+      "width": 105,
       "height": 0.0,
       "angle": 0,
       "strokeColor": "#16a34a",
@@ -1005,12 +935,12 @@
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 56045,
+      "seed": 15456,
       "version": 1,
-      "versionNonce": 29090,
+      "versionNonce": 15948,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1775928569057,
+      "updated": 1776267114655,
       "link": null,
       "locked": false,
       "points": [
@@ -1019,12 +949,12 @@
           0.0
         ],
         [
-          -100,
+          -105,
           0.0
         ]
       ],
       "lastCommittedPoint": [
-        -100,
+        -105,
         0.0
       ],
       "startBinding": null,

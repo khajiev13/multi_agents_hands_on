@@ -1,0 +1,44 @@
+{
+  "entities": [
+    "https://isc.bit.edu.cn/images/2022-04/20171130014137607269.png",
+    "https://isc.bit.edu.cn/images/2022-04/20171130014137612367.png",
+    "Basic Information",
+    "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121628.htm",
+    "https://isc.bit.edu.cn/images/2022-04/20171130014137617462.png",
+    "ZHAO Fengnian"
+  ],
+  "edges": [
+    "has detail page",
+    "has basic information section",
+    "has associated image"
+  ],
+  "relations": [
+    [
+      "ZHAO Fengnian",
+      "has detail page",
+      "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121628.htm"
+    ],
+    [
+      "ZHAO Fengnian",
+      "has associated image",
+      "https://isc.bit.edu.cn/images/2022-04/20171130014137617462.png"
+    ],
+    [
+      "ZHAO Fengnian",
+      "has associated image",
+      "https://isc.bit.edu.cn/images/2022-04/20171130014137607269.png"
+    ],
+    [
+      "ZHAO Fengnian",
+      "has associated image",
+      "https://isc.bit.edu.cn/images/2022-04/20171130014137612367.png"
+    ],
+    [
+      "ZHAO Fengnian",
+      "has basic information section",
+      "Basic Information"
+    ]
+  ],
+  "entity_clusters": null,
+  "edge_clusters": null
+}

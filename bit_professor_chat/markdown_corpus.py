@@ -32,6 +32,10 @@ def compact_name(name: str) -> str:
     return re.sub(r"[^a-z0-9\u4e00-\u9fff]+", "", name.lower())
 
 
+def _roman_name_tokens(name: str) -> list[str]:
+    return re.findall(r"[a-z]+", name.lower())
+
+
 def names_similar(left: str, right: str) -> bool:
     if not left or not right:
         return False
@@ -44,6 +48,15 @@ def names_similar(left: str, right: str) -> bool:
         return True
     if left_compact in right_compact or right_compact in left_compact:
         return True
+    left_tokens = _roman_name_tokens(left)
+    right_tokens = _roman_name_tokens(right)
+    if len(left_tokens) >= 2 and len(right_tokens) >= 2:
+        if left_tokens == right_tokens:
+            return True
+        if sorted(left_tokens) == sorted(right_tokens):
+            return True
+        if set(left_tokens).issubset(set(right_tokens)) or set(right_tokens).issubset(set(left_tokens)):
+            return True
     return SequenceMatcher(a=left_compact, b=right_compact).ratio() >= 0.9
 
 

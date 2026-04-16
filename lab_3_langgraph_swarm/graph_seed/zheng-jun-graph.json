@@ -1,0 +1,252 @@
+{
+  "entities": [
+    "网络与信息安全",
+    "Artificial Intelligence",
+    "Associate Professor",
+    "Second Prize",
+    "Master degree",
+    "Zheng Jun",
+    "86 10 68913932",
+    "zhengjun@bit.edu.cn",
+    "BIT",
+    "Beijing Association of Higher Education",
+    "Ph.D. degree",
+    "Provincial and Ministerial Appraisal Achievements",
+    "Graduate Student Mentoring Awards",
+    "Third Prize",
+    "Beijing Institute of Technology",
+    "人工智能",
+    "Ministry of Industry and Information Technology of the People's Republic of China",
+    "Department of Computer Science and Technology",
+    "Science and Technology Progress Award",
+    "First Prize",
+    "Bachelor degree in software",
+    "Network and Information Security",
+    "计算机学院",
+    "云计算技术",
+    "Cloud Computing Technology",
+    "Excellent Educational Software Awards",
+    "Excellent Teaching Achievements Awards",
+    "Computer Science and Technology",
+    "computer application technology",
+    "郑军"
+  ],
+  "edges": [
+    "is part of",
+    "has educational background",
+    "has contact",
+    "has prize level",
+    "has research interest",
+    "issued by",
+    "works at",
+    "has title",
+    "received award",
+    "is also known as",
+    "graduated from",
+    "is a degree in"
+  ],
+  "relations": [
+    [
+      "Zheng Jun",
+      "has educational background",
+      "Bachelor degree in software"
+    ],
+    [
+      "Zheng Jun",
+      "has contact",
+      "zhengjun@bit.edu.cn"
+    ],
+    [
+      "Zheng Jun",
+      "graduated from",
+      "Department of Computer Science and Technology"
+    ],
+    [
+      "Zheng Jun",
+      "works at",
+      "Computer Science and Technology"
+    ],
+    [
+      "Excellent Teaching Achievements Awards",
+      "has prize level",
+      "Second Prize"
+    ],
+    [
+      "Zheng Jun",
+      "has research interest",
+      "网络与信息安全"
+    ],
+    [
+      "Zheng Jun",
+      "received award",
+      "Excellent Educational Software Awards"
+    ],
+    [
+      "Zheng Jun",
+      "received award",
+      "Graduate Student Mentoring Awards"
+    ],
+    [
+      "Zheng Jun",
+      "has research interest",
+      "云计算技术"
+    ],
+    [
+      "Zheng Jun",
+      "works at",
+      "计算机学院"
+    ],
+    [
+      "计算机学院",
+      "is also known as",
+      "Computer Science and Technology"
+    ],
+    [
+      "云计算技术",
+      "is also known as",
+      "Cloud Computing Technology"
+    ],
+    [
+      "Excellent Educational Software Awards",
+      "has prize level",
+      "Second Prize"
+    ],
+    [
+      "Graduate Student Mentoring Awards",
+      "has prize level",
+      "Third Prize"
+    ],
+    [
+      "Zheng Jun",
+      "received award",
+      "Provincial and Ministerial Appraisal Achievements"
+    ],
+    [
+      "网络与信息安全",
+      "is also known as",
+      "Network and Information Security"
+    ],
+    [
+      "Zheng Jun",
+      "has research interest",
+      "人工智能"
+    ],
+    [
+      "Department of Computer Science and Technology",
+      "is part of",
+      "BIT"
+    ],
+    [
+      "Zheng Jun",
+      "has educational background",
+      "computer application technology"
+    ],
+    [
+      "Zheng Jun",
+      "has title",
+      "Associate Professor"
+    ],
+    [
+      "Zheng Jun",
+      "has educational background",
+      "Ph.D. degree"
+    ],
+    [
+      "Zheng Jun",
+      "has research interest",
+      "Artificial Intelligence"
+    ],
+    [
+      "Graduate Student Mentoring Awards",
+      "issued by",
+      "Beijing Institute of Technology"
+    ],
+    [
+      "Master degree",
+      "is a degree in",
+      "computer application technology"
+    ],
+    [
+      "Zheng Jun",
+      "has research interest",
+      "Cloud Computing Technology"
+    ],
+    [
+      "Excellent Educational Software Awards",
+      "issued by",
+      "Beijing Association of Higher Education"
+    ],
+    [
+      "Bachelor degree in software",
+      "is a degree in",
+      "computer application technology"
+    ],
+    [
+      "Excellent Teaching Achievements Awards",
+      "issued by",
+      "Beijing Institute of Technology"
+    ],
+    [
+      "Excellent Teaching Achievements Awards",
+      "has prize level",
+      "First Prize"
+    ],
+    [
+      "Zheng Jun",
+      "received award",
+      "Science and Technology Progress Award"
+    ],
+    [
+      "Zheng Jun",
+      "received award",
+      "Excellent Teaching Achievements Awards"
+    ],
+    [
+      "Science and Technology Progress Award",
+      "has prize level",
+      "Third Prize"
+    ],
+    [
+      "Zheng Jun",
+      "graduated from",
+      "BIT"
+    ],
+    [
+      "Science and Technology Progress Award",
+      "issued by",
+      "Ministry of Industry and Information Technology of the People's Republic of China"
+    ],
+    [
+      "Zheng Jun",
+      "has educational background",
+      "Master degree"
+    ],
+    [
+      "人工智能",
+      "is also known as",
+      "Artificial Intelligence"
+    ],
+    [
+      "Zheng Jun",
+      "has contact",
+      "86 10 68913932"
+    ],
+    [
+      "Ph.D. degree",
+      "is a degree in",
+      "computer application technology"
+    ],
+    [
+      "Zheng Jun",
+      "is also known as",
+      "郑军"
+    ],
+    [
+      "Zheng Jun",
+      "has research interest",
+      "Network and Information Security"
+    ]
+  ],
+  "entity_clusters": null,
+  "edge_clusters": null
+}

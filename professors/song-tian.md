@@ -1,93 +1,35 @@
-# 王成
+# Song Tian
 - detail_url: https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113067.htm
 - page_count: 2
 
 ## Basic Information
-王成，男，北京理工大学教授、博士生导师，国家杰出青年科学基金获得者，教育部“长江学者”特聘教授。
+- }
+- } <|boxstart|>000<|boxend|><|refstart|>text<|refend|><|mdstart|> 嵩天
+- Song Tian
+- 职称(Title): 副教授
+- Associate Professor
+- 学院(School):
+- 专业(Discipline):
+- 计算机学院
+- 计算机科学与技术
+- Computer Science and Technology
 
 ## Research Interests
-- 爆炸与冲击动力学
-- 材料动态力学行为
-- 结构冲击防护
-- 战斗部毁伤效应
-- 新型防护材料与结构
-
-## Biography
-现任北京理工大学爆炸科学与技术国家重点实验室副主任，兼任中国力学学会爆炸力学专业委员会副主任、中国兵工学会爆炸与安全技术专业委员会副主任等。曾获国家自然科学二等奖、教育部自然科学一等奖等多项奖励。
+- **电话(Tel):**
+- **1. Network Architecture and Protocol**
+- **010-68913536**
+- **2. Network and Information Security**
+- **邮箱(Email):**
+- **3. Microprocessor and System Architecture**
+- **songtian@bit.edu.cn**
 
 ## Education
-- 1994.09–1998.07 北京理工大学，机电工程学院，本科
-- 1998.09–2001.03 北京理工大学，机电工程学院，硕士
-- 2001.09–2004.07 北京理工大学，机电工程学院，博士
+- 2002.9 - 2008.1 清华大学计算机系获博士学位 (Tsinghua University, Ph.D. from Department of Computer Science and Technology).
+- 2011.9 - 2013.7 华盛顿大学计算机科学与工程系访问学者 (Visiting Scholar, Washington University in St. Louis, Department of Computer Science and Engineering)
 
 ## Work Experience
-- 2004.07–2006.07 北京理工大学，讲师
-- 2006.07–2010.07 北京理工大学，副教授
-- 2010.07–至今 北京理工大学，教授
-- 2012.12–至今 北京理工大学，博士生导师
-- 2015.01–至今 北京理工大学爆炸科学与技术国家重点实验室副主任
-
-## Academic Service and Memberships
-- 中国力学学会爆炸力学专业委员会副主任
-- 中国兵工学会爆炸与安全技术专业委员会副主任
-- 《爆炸与冲击》编委
-- 《兵工学报》编委
-- International Journal of Impact Engineering 编委
-- 多个国内外学术期刊审稿人
-- 国家自然科学基金委员会评审专家
-- 科技部重点研发计划评审专家
-- 教育部学位与研究生教育评估专家
-- 多个省市科技项目评审专家
-- 多次担任国内外学术会议主席、特邀报告人
-
-## Publications
-- 在国内外重要学术期刊发表论文200余篇，其中SCI收录150余篇。
-- 授权国家发明专利30余项。
-- 出版专著《爆炸与冲击动力学》等2部。
-
-## Awards
-- 国家杰出青年科学基金获得者
-- 教育部“长江学者”特聘教授
-- 国家自然科学二等奖1项（排名第2）
-- 教育部自然科学一等奖2项（排名第1、第3）
-- 其他省部级科技奖励多项
-
-## Contact
-- 地址：北京市海淀区中关村南大街5号北京理工大学爆炸科学与技术国家重点实验室
-- 邮编：100081
-- 电话：010-6891XXXX
-- 邮箱：wangcheng@bit.edu.cn
-- 个人主页：http://wangcheng.bit.edu.cn
-
-## Additional Information
-### 科研项目
-- 国家自然科学基金杰出青年科学基金项目，主持
-- 国家自然科学基金重点项目，主持
-- 国家科技重大专项课题，主持
-- 国防基础科研计划项目，主持
-- 装备预研项目，主持
-- 多项横向合作项目
-
-### 主讲课程
-- 《爆炸力学》
-- 《冲击动力学》
-- 《材料动态力学行为》
-- 《高等动力学》
-
-### 指导学生情况
-- 已毕业博士研究生10余名，硕士研究生20余名。
-- 在读博士研究生8名，硕士研究生6名。
-- 指导学生获全国优秀博士学位论文提名奖1项，北京市优秀博士学位论文2项。
-
-### 实验室与团队
-- 北京理工大学爆炸科学与技术国家重点实验室副主任
-- 带领冲击动力学与防护技术研究团队
-- 团队现有教师5名，博士后3名，博士/硕士研究生20余名。
-- 实验室拥有霍普金森杆、轻气炮、爆炸容器等大型实验设备。
+- 2008.1 至今北京理工大学计算机学院 (2008.1 Till now, Beijing Institute of Technology) }
 
 ## Source Pages
 - page 1: https://isc.bit.edu.cn/images/2022-04/20171129084420451934.png
 - page 2: https://isc.bit.edu.cn/images/2022-04/20171129084420455050.png
-
-## Uncertain or Illegible Text
-- 电话号码部分数字被遮挡，显示为“010-6891XXXX”。

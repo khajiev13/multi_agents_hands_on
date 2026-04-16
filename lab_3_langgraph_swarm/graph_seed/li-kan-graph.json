@@ -1,0 +1,66 @@
+{
+  "entities": [
+    "3",
+    "LI Kan",
+    "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b117510.htm",
+    "page 2",
+    "page_count",
+    "Source Pages",
+    "https://isc.bit.edu.cn/images/2022-04/20180306033004956947.png",
+    "https://isc.bit.edu.cn/images/2022-04/20180306032850022472.png",
+    "page 1",
+    "https://isc.bit.edu.cn/images/2022-04/20180306032945978894.png",
+    "page 3",
+    "detail_url"
+  ],
+  "edges": [
+    "has page_count",
+    "has URL",
+    "has Source Pages",
+    "has detail_url"
+  ],
+  "relations": [
+    [
+      "page 3",
+      "has URL",
+      "https://isc.bit.edu.cn/images/2022-04/20180306033004956947.png"
+    ],
+    [
+      "LI Kan",
+      "has Source Pages",
+      "page 2"
+    ],
+    [
+      "page 2",
+      "has URL",
+      "https://isc.bit.edu.cn/images/2022-04/20180306032945978894.png"
+    ],
+    [
+      "page 1",
+      "has URL",
+      "https://isc.bit.edu.cn/images/2022-04/20180306032850022472.png"
+    ],
+    [
+      "LI Kan",
+      "has detail_url",
+      "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b117510.htm"
+    ],
+    [
+      "LI Kan",
+      "has page_count",
+      "3"
+    ],
+    [
+      "LI Kan",
+      "has Source Pages",
+      "page 1"
+    ],
+    [
+      "LI Kan",
+      "has Source Pages",
+      "page 3"
+    ]
+  ],
+  "entity_clusters": null,
+  "edge_clusters": null
+}

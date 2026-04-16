@@ -34,7 +34,8 @@ def build_notebook() -> nbformat.NotebookNode:
             - handoff tools transfer control to another specialist,
             - `active_agent` persists across turns for the same `thread_id`.
 
-            The graph stays intentionally small. We use three agents:
+            This notebook assumes Neo4j has already been seeded from the committed local dataset with
+            `uv run python lab_3_langgraph_swarm/prepare_lab3_graph.py`. We use three agents:
 
             - `FrontDeskAgent` has no Neo4j tools and only decides who should own the conversation.
             - `ProfessorLookupAgent` handles named-professor questions.
@@ -106,7 +107,42 @@ def build_notebook() -> nbformat.NotebookNode:
         ),
         md(
             """
-            ## 2. Swarm Mental Model
+            ## 2. Neo4j Preflight
+
+            Learning goal: confirm that Neo4j is ready before we start the swarm work.
+
+            Theory: Lab 3 is student-ready only when the graph is prepared ahead of time. If the local database is empty, stop here, seed it from the committed graph JSON files, and then come back to the notebook.
+            """
+        ),
+        code(
+            '''
+            try:
+                preflight_overview, preflight_traces = query_service.get_graph_overview(limit=8)
+            except Exception as exc:
+                raise RuntimeError(
+                    "Neo4j is not ready. Start it with `docker compose up -d neo4j`, then "
+                    "seed the database with `uv run python lab_3_langgraph_swarm/prepare_lab3_graph.py`."
+                ) from exc
+
+            if preflight_overview.professor_count == 0:
+                raise RuntimeError(
+                    "Neo4j is empty. Run `uv run python lab_3_langgraph_swarm/prepare_lab3_graph.py` "
+                    "before continuing with Lab 3."
+                )
+
+            pretty(
+                {
+                    "status": "ready",
+                    "professor_count": preflight_overview.professor_count,
+                    "relationship_count": preflight_overview.relationship_count,
+                    "seed_command": "uv run python lab_3_langgraph_swarm/prepare_lab3_graph.py",
+                }
+            )
+            '''
+        ),
+        md(
+            """
+            ## 3. Swarm Mental Model
 
             Learning goal: make the control-flow difference between Lab 2 and Lab 3 explicit before we define any code.
 
@@ -133,16 +169,16 @@ def build_notebook() -> nbformat.NotebookNode:
         ),
         md(
             """
-            ## 3. Verify the Neo4j Surface
+            ## 4. Verify the Neo4j Surface
 
-            Learning goal: confirm the graph is reachable and see the small deterministic query layer that the swarm will sit on top of.
+            Learning goal: confirm the prepared local graph is reachable and see the small deterministic query layer that the swarm will sit on top of.
 
             Theory: this lab is not about Cypher generation. The Neo4j surface is intentionally narrow, because the teaching target is handoffs, not tool discovery over a large API.
             """
         ),
         code(
             '''
-            overview, traces = query_service.get_graph_overview(limit=8)
+            overview, traces = preflight_overview, preflight_traces
 
             pretty(
                 {
@@ -156,7 +192,7 @@ def build_notebook() -> nbformat.NotebookNode:
         ),
         md(
             """
-            ## 4. Define the Deterministic Neo4j Tools
+            ## 5. Define the Deterministic Neo4j Tools
 
             Learning goal: expose just enough tool surface for the two specialists.
 
@@ -216,7 +252,7 @@ def build_notebook() -> nbformat.NotebookNode:
         ),
         md(
             """
-            ## 5. Add Handoff Tools and Specialist Agents
+            ## 6. Add Handoff Tools and Specialist Agents
 
             Learning goal: build three agents with different prompts and different tool boundaries.
 
@@ -327,7 +363,7 @@ def build_notebook() -> nbformat.NotebookNode:
         ),
         md(
             """
-            ## 6. Compile the Swarm with Memory
+            ## 7. Compile the Swarm with Memory
 
             Learning goal: compile the swarm with `InMemorySaver` and keep the state as small as possible.
 
@@ -474,7 +510,7 @@ def build_notebook() -> nbformat.NotebookNode:
         ),
         md(
             """
-            ## 7. Scenario: Named Professor
+            ## 8. Scenario: Named Professor
 
             Learning goal: watch the front desk hand off to the professor specialist for one direct professor question.
             """
@@ -490,7 +526,7 @@ def build_notebook() -> nbformat.NotebookNode:
         ),
         md(
             """
-            ## 8. Scenario: Topic Match
+            ## 9. Scenario: Topic Match
 
             Learning goal: route a broad research-interest question directly to the topic-matching specialist.
             """
@@ -506,7 +542,7 @@ def build_notebook() -> nbformat.NotebookNode:
         ),
         md(
             """
-            ## 9. Scenario: Same-Thread Memory
+            ## 10. Scenario: Same-Thread Memory
 
             Learning goal: show that the swarm remembers who was active after the first turn, and that a later follow-up can hand off from one specialist to another.
 
@@ -541,7 +577,7 @@ def build_notebook() -> nbformat.NotebookNode:
         ),
         md(
             """
-            ## 10. Wrap-Up
+            ## 11. Wrap-Up
 
             Lab 3 teaches only three new ideas beyond Lab 2:
 
@@ -549,7 +585,7 @@ def build_notebook() -> nbformat.NotebookNode:
             - handoff tools move control between specialists.
             - the same `thread_id` resumes from the last active owner.
 
-            The database logic stays intentionally small so the swarm mechanics stay visible.
+            The query surface stays intentionally small so the swarm mechanics stay visible.
             """
         ),
     ]
