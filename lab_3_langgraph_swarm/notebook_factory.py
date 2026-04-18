@@ -23,25 +23,23 @@ def build_notebook() -> nbformat.NotebookNode:
     cells = [
         md(
             """
-            # Lab 3: Minimal Neo4j Swarm Handoffs
+            # Lab 3: Manual Tool-Calling Swarm
 
             **Editable diagram:** [lab_3_swarm.excalidraw](lab_3_swarm.excalidraw)  
             **Workflow preview:** [lab_3_swarm.svg](lab_3_swarm.svg)
 
-            This lab keeps the Lab 2 question domain, but removes the supervisor. The only new idea is the swarm handoff pattern:
+            This lab keeps the Lab 2 question domain, but removes the supervisor and the prebuilt agent wrapper. The core swarm idea is still the same:
 
-            - the current agent talks to the user directly,
+            - the current specialist talks to the user directly,
             - handoff tools transfer control to another specialist,
             - `active_agent` persists across turns for the same `thread_id`.
 
-            This notebook assumes Neo4j has already been seeded from the committed local dataset with
-            `uv run python lab_3_langgraph_swarm/prepare_lab3_graph.py`. We use three agents:
+            This notebook starts Neo4j locally and seeds it from the committed typed structured profile dataset in Section 2, so the graph-backed swarm flow is fully reproducible from inside the notebook. We use two specialists:
 
-            - `FrontDeskAgent` has no Neo4j tools and only decides who should own the conversation.
             - `ProfessorLookupAgent` handles named-professor questions.
             - `ResearchMatchAgent` handles topic-to-professor questions.
 
-            Both specialists use narrow deterministic Neo4j tools built on `Neo4jQueryService`, not the full MCP surface.
+            Both specialists are explicit LangGraph subgraphs with a tiny `llm -> ToolNode -> llm` loop, so the tool-calling and handoff mechanics stay visible.
 
             **Learn more:** [LangChain handoffs](https://docs.langchain.com/oss/python/langchain/multi-agent/handoffs), [LangGraph swarm reference](https://reference.langchain.com/python/langgraph-swarm/swarm/create_swarm), [LangGraph multi-agent concepts](https://raw.githubusercontent.com/langchain-ai/langgraph/main/docs/docs/concepts/multi_agent.md)
             """
@@ -52,7 +50,7 @@ def build_notebook() -> nbformat.NotebookNode:
 
             Learning goal: verify that this notebook is running inside the project environment and that the swarm package is available.
 
-            Theory: Lab 3 only works if three layers are in place before we talk about handoffs: a model, Neo4j access, and the swarm orchestration package. We keep the setup cell short so the rest of the notebook can stay focused on agent ownership and handoffs.
+            Theory: Lab 3 only works if three layers are in place before we talk about handoffs: a model, Neo4j access, and the swarm orchestration package. We keep the setup cell short so the rest of the notebook can stay focused on explicit swarm ownership and tool execution.
             """
         ),
         code(
@@ -64,7 +62,7 @@ def build_notebook() -> nbformat.NotebookNode:
             import warnings
             from importlib.metadata import version
             from pathlib import Path
-            from typing import Any
+            from typing import Any, Annotated
 
             PROJECT_ROOT = Path.cwd().resolve()
             if not (PROJECT_ROOT / "pyproject.toml").exists():
@@ -78,11 +76,16 @@ def build_notebook() -> nbformat.NotebookNode:
 
             warnings.filterwarnings("ignore", message="IProgress not found.*")
 
-            from langchain.agents import create_agent
-            from langchain.messages import AIMessage, ToolMessage
-            from langchain.tools import tool
+            from langchain.messages import AIMessage, SystemMessage, ToolMessage
+            from langchain_core.runnables import RunnableConfig
+            from langchain.tools import InjectedToolCallId, tool
+            from langgraph.config import get_stream_writer
             from langgraph.checkpoint.memory import InMemorySaver
-            from langgraph_swarm import SwarmState, create_handoff_tool, create_swarm
+            from langgraph.graph import END, START, StateGraph
+            from langgraph.prebuilt import InjectedState, ToolNode
+            from langgraph.types import Command
+            from langgraph_swarm import SwarmState, create_swarm
+            from langgraph_swarm.handoff import METADATA_KEY_HANDOFF_DESTINATION
 
             from bit_professor_chat.config import TutorSettings
             from bit_professor_chat.model_factory import build_model
@@ -107,35 +110,46 @@ def build_notebook() -> nbformat.NotebookNode:
         ),
         md(
             """
-            ## 2. Neo4j Preflight
+            ## 2. Start Neo4j and Seed the Graph
 
-            Learning goal: confirm that Neo4j is ready before we start the swarm work.
+            Learning goal: start the local Neo4j service and load the committed Lab 3 professor graph directly from the notebook.
 
-            Theory: Lab 3 is student-ready only when the graph is prepared ahead of time. If the local database is empty, stop here, seed it from the committed graph JSON files, and then come back to the notebook.
+            Theory: Lab 3 is built around a prepared typed professor graph. Instead of asking students to leave the notebook and seed Neo4j manually, we can do the setup here: bring up Docker for Neo4j, load the committed structured profile JSON files, and then verify the resulting counts before moving on to swarm handoffs.
             """
         ),
         code(
             '''
-            try:
-                preflight_overview, preflight_traces = query_service.get_graph_overview(limit=8)
-            except Exception as exc:
-                raise RuntimeError(
-                    "Neo4j is not ready. Start it with `docker compose up -d neo4j`, then "
-                    "seed the database with `uv run python lab_3_langgraph_swarm/prepare_lab3_graph.py`."
-                ) from exc
+            import subprocess
 
-            if preflight_overview.professor_count == 0:
+            from bit_professor_chat.graph_ingestion import insert_structured_output_to_neo4j
+
+            docker_result = subprocess.run(
+                ["docker", "compose", "up", "-d", "neo4j"],
+                cwd=PROJECT_ROOT,
+                capture_output=True,
+                text=True,
+            )
+            if docker_result.returncode != 0:
                 raise RuntimeError(
-                    "Neo4j is empty. Run `uv run python lab_3_langgraph_swarm/prepare_lab3_graph.py` "
-                    "before continuing with Lab 3."
+                    "Could not start Neo4j with `docker compose up -d neo4j`.\\n\\n"
+                    f"stdout:\\n{docker_result.stdout}\\n\\nstderr:\\n{docker_result.stderr}"
                 )
+
+            seed_summary = insert_structured_output_to_neo4j(
+                settings=settings,
+                project_root=PROJECT_ROOT,
+                reset_database=True,
+            )
 
             pretty(
                 {
-                    "status": "ready",
-                    "professor_count": preflight_overview.professor_count,
-                    "relationship_count": preflight_overview.relationship_count,
-                    "seed_command": "uv run python lab_3_langgraph_swarm/prepare_lab3_graph.py",
+                    "status": "seeded",
+                    "docker_command": "docker compose up -d neo4j",
+                    "seed_call": "insert_structured_output_to_neo4j(..., reset_database=True)",
+                    "professor_count": seed_summary.professor_count,
+                    "success_count": seed_summary.success_count,
+                    "node_count": seed_summary.node_count,
+                    "relationship_count": seed_summary.relationship_count,
                 }
             )
             '''
@@ -169,30 +183,7 @@ def build_notebook() -> nbformat.NotebookNode:
         ),
         md(
             """
-            ## 4. Verify the Neo4j Surface
-
-            Learning goal: confirm the prepared local graph is reachable and see the small deterministic query layer that the swarm will sit on top of.
-
-            Theory: this lab is not about Cypher generation. The Neo4j surface is intentionally narrow, because the teaching target is handoffs, not tool discovery over a large API.
-            """
-        ),
-        code(
-            '''
-            overview, traces = preflight_overview, preflight_traces
-
-            pretty(
-                {
-                    "professor_count": overview.professor_count,
-                    "relationship_count": overview.relationship_count,
-                    "sample_professors": overview.sample_professors,
-                    "common_predicates": overview.common_predicates[:5],
-                }
-            )
-            '''
-        ),
-        md(
-            """
-            ## 5. Define the Deterministic Neo4j Tools
+            ## 4. Define the Deterministic Neo4j Tools
 
             Learning goal: expose just enough tool surface for the two specialists.
 
@@ -201,46 +192,98 @@ def build_notebook() -> nbformat.NotebookNode:
         ),
         code(
             '''
+            def emit_teaching_event(event: dict[str, Any]) -> None:
+                writer = get_stream_writer()
+                writer(event)
+
+
             @tool
             def resolve_professor_tool(name_hint: str) -> dict[str, Any]:
                 """Resolve a professor name hint into ranked Neo4j matches."""
-                matches, trace = query_service.resolve_professor(name_hint=name_hint, limit=5)
-                return {
+                emit_teaching_event(
+                    {
+                        "kind": "tool_call",
+                        "agent": "ProfessorLookupAgent",
+                        "tool": "resolve_professor_tool",
+                        "input": {"name_hint": name_hint},
+                    }
+                )
+                matches, _ = query_service.resolve_professor(name_hint=name_hint, limit=5)
+                result = {
                     "matches": [match.to_dict() for match in matches],
-                    "trace": trace.to_dict(),
                 }
+                emit_teaching_event(
+                    {
+                        "kind": "tool_result",
+                        "agent": "ProfessorLookupAgent",
+                        "tool": "resolve_professor_tool",
+                        "match_count": len(result["matches"]),
+                    }
+                )
+                return result
 
 
             @tool
             def get_professor_facts_tool(professor_name: str) -> dict[str, Any]:
                 """Fetch a compact set of professor-grounded facts from Neo4j."""
-                facts, trace = query_service.get_professor_facts(
+                emit_teaching_event(
+                    {
+                        "kind": "tool_call",
+                        "agent": "ProfessorLookupAgent",
+                        "tool": "get_professor_facts_tool",
+                        "input": {"professor_name": professor_name},
+                    }
+                )
+                facts, _ = query_service.get_professor_facts(
                     professor_name=professor_name,
                     keywords=[],
                     limit=10,
                 )
-                return {
+                result = {
                     "facts": [fact.to_dict() for fact in facts],
-                    "trace": trace.to_dict(),
                 }
+                emit_teaching_event(
+                    {
+                        "kind": "tool_result",
+                        "agent": "ProfessorLookupAgent",
+                        "tool": "get_professor_facts_tool",
+                        "fact_count": len(result["facts"]),
+                    }
+                )
+                return result
 
 
             @tool
             def find_professors_by_topics_tool(keywords: list[str]) -> dict[str, Any]:
                 """Recommend professors from a small list of topic keywords."""
-                matches, trace = query_service.find_professors_by_topics(
+                emit_teaching_event(
+                    {
+                        "kind": "tool_call",
+                        "agent": "ResearchMatchAgent",
+                        "tool": "find_professors_by_topics_tool",
+                        "input": {"keywords": keywords},
+                    }
+                )
+                matches, _ = query_service.find_professors_by_topics(
                     keywords=keywords,
                     limit=5,
                 )
-                return {
+                result = {
                     "matches": [match.to_dict() for match in matches],
-                    "trace": trace.to_dict(),
                 }
+                emit_teaching_event(
+                    {
+                        "kind": "tool_result",
+                        "agent": "ResearchMatchAgent",
+                        "tool": "find_professors_by_topics_tool",
+                        "match_count": len(result["matches"]),
+                    }
+                )
+                return result
 
 
             pretty(
                 {
-                    "front_desk_tools": [],
                     "professor_lookup_tools": [
                         resolve_professor_tool.name,
                         get_professor_facts_tool.name,
@@ -252,122 +295,11 @@ def build_notebook() -> nbformat.NotebookNode:
         ),
         md(
             """
-            ## 6. Add Handoff Tools and Specialist Agents
+            ## 5. Build Custom Handoff Tools and Specialist Graphs
 
-            Learning goal: build three agents with different prompts and different tool boundaries.
+            Learning goal: build two explicit specialist subgraphs with visible tool-calling and handoff logic.
 
-            Theory: `FrontDeskAgent` owns the first turn only. After that, specialists can keep control or hand off to each other. The handoff tool is the swarm's control-flow primitive: it updates `active_agent` and routes execution to another agent node.
-            """
-        ),
-        code(
-            '''
-            transfer_to_professor_lookup = create_handoff_tool(
-                agent_name="ProfessorLookupAgent",
-                name="transfer_to_professor_lookup",
-                description="Hand off to ProfessorLookupAgent for named professor questions.",
-            )
-
-            transfer_to_research_match = create_handoff_tool(
-                agent_name="ResearchMatchAgent",
-                name="transfer_to_research_match",
-                description="Hand off to ResearchMatchAgent for topic-to-professor matching.",
-            )
-
-
-            FRONT_DESK_PROMPT = """
-            You are FrontDeskAgent for the BIT professor graph.
-
-            You have no Neo4j tools. Your only job is to decide which specialist should own the conversation.
-
-            Routing rules:
-            - If the user names a specific professor, hand off to ProfessorLookupAgent.
-            - If the user asks which professors match a topic, research direction, or interest area, hand off to ResearchMatchAgent.
-            - Do not answer substantive database questions yourself.
-            - After you decide, call exactly one handoff tool.
-            """.strip()
-
-
-            PROFESSOR_LOOKUP_PROMPT = """
-            You are ProfessorLookupAgent for the BIT professor graph.
-
-            Scope:
-            - Answer only named-professor questions.
-            - Use Neo4j evidence returned by your tools.
-            - Start with resolve_professor_tool before using get_professor_facts_tool.
-
-            Handoff rule:
-            - If the user is asking for topic-based recommendations or "which professors should I look at", hand off to ResearchMatchAgent.
-
-            Answer style:
-            - Ground every answer in tool output.
-            - If the graph does not contain the answer, say so clearly.
-            - If name resolution is ambiguous, explain that ambiguity instead of guessing.
-            """.strip()
-
-
-            RESEARCH_MATCH_PROMPT = """
-            You are ResearchMatchAgent for the BIT professor graph.
-
-            Scope:
-            - Recommend professors for a research direction or topic.
-            - Use find_professors_by_topics_tool with a short list of concrete keywords.
-
-            Handoff rule:
-            - If the user is asking about one named professor, hand off to ProfessorLookupAgent.
-
-            Answer style:
-            - Ground every answer in tool output.
-            - Prefer concise recommendations with matched nodes or predicates when helpful.
-            - If the graph has no match, say that clearly instead of guessing.
-            """.strip()
-
-
-            front_desk_agent = create_agent(
-                model,
-                tools=[transfer_to_professor_lookup, transfer_to_research_match],
-                system_prompt=FRONT_DESK_PROMPT,
-                name="FrontDeskAgent",
-            )
-
-            professor_lookup_agent = create_agent(
-                model,
-                tools=[
-                    resolve_professor_tool,
-                    get_professor_facts_tool,
-                    transfer_to_research_match,
-                ],
-                system_prompt=PROFESSOR_LOOKUP_PROMPT,
-                name="ProfessorLookupAgent",
-            )
-
-            research_match_agent = create_agent(
-                model,
-                tools=[
-                    find_professors_by_topics_tool,
-                    transfer_to_professor_lookup,
-                ],
-                system_prompt=RESEARCH_MATCH_PROMPT,
-                name="ResearchMatchAgent",
-            )
-
-            pretty(
-                {
-                    "agent_names": [
-                        front_desk_agent.name,
-                        professor_lookup_agent.name,
-                        research_match_agent.name,
-                    ]
-                }
-            )
-            '''
-        ),
-        md(
-            """
-            ## 7. Compile the Swarm with Memory
-
-            Learning goal: compile the swarm with `InMemorySaver` and keep the state as small as possible.
-
-            Theory: the whole Lab 3 state is just `messages` plus `active_agent`. We do not reintroduce Lab 2 supervisor fields, because that would blur the main design lesson.
+            Theory: each specialist is just a tiny LangGraph loop: an `llm` node decides what to do next, `ToolNode` executes Neo4j tools or a handoff tool, and the loop continues until the model stops requesting tools. The custom handoff tool is what updates `active_agent` in the parent swarm.
             """
         ),
         code(
@@ -376,217 +308,456 @@ def build_notebook() -> nbformat.NotebookNode:
                 """Lab 3 keeps only messages plus active_agent."""
 
 
+            def create_lab3_handoff_tool(
+                *,
+                agent_name: str,
+                name: str,
+                description: str,
+            ):
+                @tool(name, description=description)
+                def handoff_to_agent(
+                    state: Annotated[Any, InjectedState],
+                    tool_call_id: Annotated[str, InjectedToolCallId],
+                ) -> Command:
+                    emit_teaching_event(
+                        {
+                            "kind": "handoff",
+                            "from_agent": state.get("active_agent"),
+                            "to_agent": agent_name,
+                            "tool": name,
+                        }
+                    )
+                    tool_message = ToolMessage(
+                        content=f"Successfully transferred to {agent_name}",
+                        name=name,
+                        tool_call_id=tool_call_id,
+                    )
+                    return Command(
+                        goto=agent_name,
+                        graph=Command.PARENT,
+                        update={
+                            "messages": [*state["messages"], tool_message],
+                            "active_agent": agent_name,
+                        },
+                    )
+
+                handoff_to_agent.metadata = {
+                    METADATA_KEY_HANDOFF_DESTINATION: agent_name
+                }
+                return handoff_to_agent
+
+
+            transfer_to_professor_lookup = create_lab3_handoff_tool(
+                agent_name="ProfessorLookupAgent",
+                name="transfer_to_professor_lookup",
+                description="Hand off to ProfessorLookupAgent for named professor questions.",
+            )
+
+            transfer_to_research_match = create_lab3_handoff_tool(
+                agent_name="ResearchMatchAgent",
+                name="transfer_to_research_match",
+                description="Hand off to ResearchMatchAgent for topic-to-professor matching.",
+            )
+
+
+            PROFESSOR_LOOKUP_PROMPT = """
+            You are ProfessorLookupAgent for the BIT professor graph.
+
+            Scope:
+            - Handle named-professor questions.
+            - Use Neo4j evidence returned by your tools.
+            - For named-professor questions, call resolve_professor_tool first.
+            - If you get one clear match, call get_professor_facts_tool before answering.
+
+            Handoff rule:
+            - If the user is asking for topic-based recommendations or "which professors should I look at", call transfer_to_research_match.
+
+            Answer style:
+            - Ground every answer in tool output.
+            - If the graph does not contain the answer, say so clearly.
+            - If name resolution is ambiguous, explain that ambiguity instead of guessing.
+            - Do not answer from prior knowledge.
+            """.strip()
+
+
+            RESEARCH_MATCH_PROMPT = """
+            You are ResearchMatchAgent for the BIT professor graph.
+
+            Scope:
+            - Recommend professors for a research direction or topic.
+            - Use find_professors_by_topics_tool with a short list of concrete keywords before answering.
+
+            Handoff rule:
+            - If the user is asking about one named professor, call transfer_to_professor_lookup.
+
+            Answer style:
+            - Ground every answer in tool output.
+            - Prefer concise recommendations with matched nodes when helpful.
+            - If the graph has no match, say that clearly instead of guessing.
+            - Do not answer from prior knowledge.
+            """.strip()
+
+
+            def build_specialist_agent(
+                *,
+                agent_name: str,
+                system_prompt: str,
+                tools: list[Any],
+            ):
+                bound_model = model.bind_tools(tools)
+                tool_node = ToolNode(tools, name="tools")
+
+                def call_model(state: Lab3State, config: RunnableConfig) -> dict[str, Any]:
+                    emit_teaching_event(
+                        {
+                            "kind": "agent_turn",
+                            "agent": agent_name,
+                            "message_count": len(state["messages"]),
+                            "thread_id": config["configurable"].get("thread_id"),
+                        }
+                    )
+                    response = bound_model.invoke(
+                        [SystemMessage(content=system_prompt), *state["messages"]]
+                    )
+                    return {
+                        "messages": [response],
+                        "active_agent": agent_name,
+                    }
+
+                def route_after_model(state: Lab3State):
+                    last_message = state["messages"][-1]
+                    if isinstance(last_message, AIMessage) and last_message.tool_calls:
+                        return "tools"
+                    return END
+
+                workflow = StateGraph(Lab3State)
+                workflow.add_node("llm", call_model)
+                workflow.add_node("tools", tool_node)
+                workflow.add_edge(START, "llm")
+                workflow.add_conditional_edges("llm", route_after_model)
+                workflow.add_edge("tools", "llm")
+                return workflow.compile(name=agent_name)
+
+
+            professor_lookup_agent = build_specialist_agent(
+                agent_name="ProfessorLookupAgent",
+                system_prompt=PROFESSOR_LOOKUP_PROMPT,
+                tools=[
+                    resolve_professor_tool,
+                    get_professor_facts_tool,
+                    transfer_to_research_match,
+                ],
+            )
+
+            research_match_agent = build_specialist_agent(
+                agent_name="ResearchMatchAgent",
+                system_prompt=RESEARCH_MATCH_PROMPT,
+                tools=[
+                    find_professors_by_topics_tool,
+                    transfer_to_professor_lookup,
+                ],
+            )
+            from IPython.display import HTML, Image, display
+            from langchain_core.runnables.graph import MermaidDrawMethod
+
+            display(HTML("<strong>ProfessorLookupAgent graph</strong>"))
+            display(
+                Image(
+                    professor_lookup_agent.get_graph().draw_mermaid_png(
+                        draw_method=MermaidDrawMethod.API,
+                    )
+                )
+            )
+
+            display(HTML("<strong>ResearchMatchAgent graph</strong>"))
+            display(
+                Image(
+                    research_match_agent.get_graph().draw_mermaid_png(
+                        draw_method=MermaidDrawMethod.API,
+                    )
+                )
+            )
+            '''
+        ),
+        md(
+            """
+            ## 6. Compile the Swarm with Memory
+
+            Learning goal: compile the swarm with `InMemorySaver` and keep the state as small as possible.
+
+            Theory: `create_swarm(...)` is still the parent orchestration layer. The only persistent Lab 3 state is `messages` plus `active_agent`, and the specialists themselves are now explicit compiled subgraphs rather than prebuilt agents.
+            """
+        ),
+        code(
+            '''
             swarm_workflow = create_swarm(
                 [
-                    front_desk_agent,
                     professor_lookup_agent,
                     research_match_agent,
                 ],
-                default_active_agent="FrontDeskAgent",
+                default_active_agent="ProfessorLookupAgent",
                 state_schema=Lab3State,
             )
             swarm_app = swarm_workflow.compile(checkpointer=InMemorySaver())
 
+            display(HTML("<strong>Whole swarm graph</strong>"))
+            display(
+                Image(
+                    swarm_app.get_graph().draw_mermaid_png(
+                        draw_method=MermaidDrawMethod.API,
+                    )
+                )
+            )
+            '''
+        ),
+        md(
+            """
+            ## 7. Gradio App
 
-            def stringify_content(content: Any) -> str:
+            Learning goal: interact with the swarm through a small UI and inspect handoffs, tool usage, `active_agent`, and same-thread memory without exposing chain-of-thought.
+
+            Theory: the chat stays student-friendly on the left, while the right panel surfaces only the swarm mechanics we care about: which specialist acted, which deterministic Neo4j tool ran, when a handoff happened, and which `thread_id` is still carrying memory. Resetting the app creates a fresh `thread_id`, so students can see the same memory rule from Step 9 in a more interactive form first.
+            """
+        ),
+        code(
+            '''
+            import uuid
+
+            import gradio as gr
+
+            GRADIO_EXAMPLES = [
+                "What are CHENG Cheng's research interests?",
+                "Show me a few facts about CHE Haiying.",
+                "I am interested in computer vision and multimedia content analysis. Which professors should I look at?",
+            ]
+
+
+            def message_to_text(message: Any) -> str:
+                content = getattr(message, "content", message)
                 if isinstance(content, str):
                     return content
                 if isinstance(content, list):
                     parts: list[str] = []
                     for item in content:
-                        if isinstance(item, str):
-                            parts.append(item)
-                        elif isinstance(item, dict):
-                            text = item.get("text") or item.get("content")
-                            parts.append(text if text else json.dumps(item, ensure_ascii=False))
+                        if isinstance(item, dict):
+                            if item.get("type") == "text" and item.get("text"):
+                                parts.append(str(item["text"]))
+                            else:
+                                parts.append(json.dumps(item, ensure_ascii=False))
                         else:
                             parts.append(str(item))
-                    return "\\n".join(part for part in parts if part)
-                if isinstance(content, dict):
-                    return json.dumps(content, ensure_ascii=False, indent=2)
+                    return "\\n".join(parts)
                 return str(content)
 
 
-            def extract_last_ai_message(messages: list[Any]) -> str:
-                for message in reversed(messages):
-                    if isinstance(message, AIMessage) and not getattr(message, "tool_calls", None):
-                        return stringify_content(message.content)
-                return ""
+            def build_thread_id() -> str:
+                return f"lab3-gradio-{uuid.uuid4().hex[:8]}"
 
 
-            def summarize_tool_message(message: ToolMessage) -> dict[str, Any]:
-                content = stringify_content(message.content)
-                if content.startswith("Successfully transferred to "):
+            def placeholder_trace(thread_id: str) -> dict[str, Any]:
+                return {
+                    "thread_id": thread_id,
+                    "events": [],
+                    "message": "Send a question to inspect the latest swarm mechanics.",
+                }
+
+
+            def placeholder_snapshot(thread_id: str) -> dict[str, Any]:
+                return {
+                    "thread_id": thread_id,
+                    "active_agent": None,
+                    "stored_message_count": 0,
+                    "turns_in_session": 0,
+                }
+
+
+            def new_gradio_session() -> dict[str, Any]:
+                thread_id = build_thread_id()
+                return {
+                    "chat_history": [],
+                    "thread_id": thread_id,
+                    "latest_trace_payload": placeholder_trace(thread_id),
+                    "latest_snapshot": placeholder_snapshot(thread_id),
+                }
+
+
+            def normalize_teaching_event(raw_event: dict[str, Any], *, thread_id: str) -> dict[str, Any]:
+                event = dict(raw_event)
+                event["thread_id"] = thread_id
+                if "active_agent" not in event:
+                    event["active_agent"] = (
+                        event.get("agent")
+                        or event.get("to_agent")
+                        or event.get("from_agent")
+                    )
+                return event
+
+
+            def build_trace_payload(thread_id: str, events: list[dict[str, Any]]) -> dict[str, Any]:
+                if not events:
                     return {
-                        "event": "handoff",
-                        "target": content.removeprefix("Successfully transferred to "),
+                        "thread_id": thread_id,
+                        "events": [],
+                        "message": "The swarm answered without emitting tool or handoff events for this turn.",
                     }
+                return {
+                    "thread_id": thread_id,
+                    "events": events,
+                }
+
+
+            def build_swarm_snapshot(
+                *,
+                thread_id: str,
+                chat_history: list[dict[str, str]],
+                state_values: dict[str, Any] | None = None,
+            ) -> dict[str, Any]:
+                stored_messages = list((state_values or {}).get("messages", []))
+                return {
+                    "thread_id": thread_id,
+                    "active_agent": (state_values or {}).get("active_agent"),
+                    "stored_message_count": len(stored_messages),
+                    "turns_in_session": sum(1 for item in chat_history if item["role"] == "user"),
+                }
+
+
+            def ask_swarm(prompt: str, session_state: dict[str, Any] | None):
+                session = dict(session_state or new_gradio_session())
+                prompt = prompt.strip()
+                if not prompt:
+                    return (
+                        "",
+                        session["chat_history"],
+                        session["latest_trace_payload"],
+                        session["latest_snapshot"],
+                        session,
+                    )
+
+                thread_id = session["thread_id"]
+                config = {"configurable": {"thread_id": thread_id}}
+                teaching_events: list[dict[str, Any]] = []
 
                 try:
-                    payload = json.loads(content)
-                except json.JSONDecodeError:
-                    return {
-                        "event": "tool",
-                        "tool": getattr(message, "name", None) or "tool",
-                        "preview": content[:160],
-                    }
-
-                trace = payload.get("trace", {}) if isinstance(payload, dict) else {}
-                summary = {
-                    "event": "tool",
-                    "tool": trace.get("name") or getattr(message, "name", None) or "tool",
-                }
-
-                if isinstance(payload, dict) and "matches" in payload:
-                    matches = payload.get("matches", [])
-                    summary["result_count"] = len(matches)
-                    summary["sample_professors"] = [
-                        match.get("professor_name")
-                        for match in matches[:3]
-                        if isinstance(match, dict) and match.get("professor_name")
-                    ]
-                    return summary
-
-                if isinstance(payload, dict) and "facts" in payload:
-                    facts = payload.get("facts", [])
-                    predicates: list[str] = []
-                    for fact in facts:
-                        if not isinstance(fact, dict):
+                    for part in swarm_app.stream(
+                        {"messages": [{"role": "user", "content": prompt}]},
+                        config=config,
+                        stream_mode="custom",
+                        subgraphs=True,
+                        version="v2",
+                    ):
+                        if part["type"] != "custom":
                             continue
-                        predicate = fact.get("predicate")
-                        if predicate and predicate not in predicates:
-                            predicates.append(predicate)
-                    summary["result_count"] = len(facts)
-                    summary["sample_predicates"] = predicates[:3]
-                    return summary
+                        teaching_events.append(
+                            normalize_teaching_event(part["data"], thread_id=thread_id)
+                        )
 
-                return summary
+                    state_values = swarm_app.get_state(config).values
+                    assistant_reply = message_to_text(state_values["messages"][-1])
+                    chat_history = [
+                        *session["chat_history"],
+                        {"role": "user", "content": prompt},
+                        {"role": "assistant", "content": assistant_reply},
+                    ]
+                    trace_payload = build_trace_payload(thread_id, teaching_events)
+                    snapshot = build_swarm_snapshot(
+                        thread_id=thread_id,
+                        chat_history=chat_history,
+                        state_values=state_values,
+                    )
+                except Exception as exc:
+                    error_message = f"Swarm query failed: {exc}"
+                    chat_history = [
+                        *session["chat_history"],
+                        {"role": "user", "content": prompt},
+                        {"role": "assistant", "content": error_message},
+                    ]
+                    trace_payload = {
+                        "thread_id": thread_id,
+                        "events": [
+                            {
+                                "kind": "error",
+                                "thread_id": thread_id,
+                                "message": error_message,
+                            }
+                        ],
+                    }
+                    snapshot = build_swarm_snapshot(
+                        thread_id=thread_id,
+                        chat_history=chat_history,
+                    )
+
+                session["chat_history"] = chat_history
+                session["latest_trace_payload"] = trace_payload
+                session["latest_snapshot"] = snapshot
+                return "", chat_history, trace_payload, snapshot, session
 
 
-            def summarize_tool_steps(messages: list[Any]) -> list[dict[str, Any]]:
-                return [
-                    summarize_tool_message(message)
-                    for message in messages
-                    if isinstance(message, ToolMessage)
-                ][-4:]
-
-
-            def checkpoint_active_agent(thread_id: str) -> str | None:
-                snapshot = swarm_app.get_state({"configurable": {"thread_id": thread_id}})
-                return snapshot.values.get("active_agent")
-
-
-            def run_turn(question: str, *, thread_id: str) -> dict[str, Any]:
-                config = {"configurable": {"thread_id": thread_id}}
-                prior_snapshot = swarm_app.get_state(config)
-                prior_values = getattr(prior_snapshot, "values", {}) or {}
-                prior_message_count = len(prior_values.get("messages", []))
-                started_from_active_agent = (
-                    prior_values.get("active_agent") or "FrontDeskAgent"
+            def reset_swarm_chat():
+                session = new_gradio_session()
+                return (
+                    "",
+                    session["chat_history"],
+                    session["latest_trace_payload"],
+                    session["latest_snapshot"],
+                    session,
                 )
-                state = swarm_app.invoke(
-                    {"messages": [{"role": "user", "content": question}]},
-                    config,
+
+
+            initial_session = new_gradio_session()
+
+            with gr.Blocks(fill_width=True) as demo:
+                gr.Markdown(
+                    """### Lab 3 Gradio App
+            Ask the notebook-local swarm a question, then inspect the teaching trace and remembered swarm state for the current `thread_id`."""
                 )
-                current_turn_messages = state.get("messages", [])[prior_message_count:]
-                return {
-                    "question": question,
-                    "thread_id": thread_id,
-                    "started_from_active_agent": started_from_active_agent,
-                    "active_agent": state.get("active_agent"),
-                    "tool_steps": summarize_tool_steps(current_turn_messages),
-                    "assistant_reply": extract_last_ai_message(state.get("messages", [])),
-                }
 
+                session_state = gr.State(initial_session)
 
-            pretty(
-                {
-                    "swarm_nodes": list(swarm_app.get_graph().nodes.keys()),
-                    "default_active_agent": "FrontDeskAgent",
-                    "state_fields": list(Lab3State.__annotations__.keys()),
-                }
-            )
+                with gr.Row():
+                    with gr.Column(scale=3):
+                        chatbot = gr.Chatbot(
+                            label="Swarm conversation",
+                            height=420,
+                            value=[],
+                        )
+                        prompt = gr.Textbox(
+                            label="Ask the Lab 3 swarm",
+                            placeholder="Try one of the example prompts below.",
+                        )
+                        with gr.Row():
+                            ask_button = gr.Button("Ask", variant="primary")
+                            reset_button = gr.Button("Start a new chat")
+                        gr.Examples(examples=GRADIO_EXAMPLES, inputs=prompt)
+                    with gr.Column(scale=2):
+                        trace_view = gr.JSON(
+                            label="Latest teaching trace",
+                            value=initial_session["latest_trace_payload"],
+                        )
+                        snapshot_view = gr.JSON(
+                            label="Current swarm snapshot",
+                            value=initial_session["latest_snapshot"],
+                        )
+                        gr.Markdown(
+                            "The trace shows only swarm mechanics: active specialist, deterministic Neo4j tools, handoffs, and the current `thread_id`."
+                        )
+
+                ask_button.click(
+                    ask_swarm,
+                    inputs=[prompt, session_state],
+                    outputs=[prompt, chatbot, trace_view, snapshot_view, session_state],
+                )
+                prompt.submit(
+                    ask_swarm,
+                    inputs=[prompt, session_state],
+                    outputs=[prompt, chatbot, trace_view, snapshot_view, session_state],
+                )
+                reset_button.click(
+                    reset_swarm_chat,
+                    outputs=[prompt, chatbot, trace_view, snapshot_view, session_state],
+                )
+
+            demo.launch(inline=True, height=920, width="100%")
             '''
-        ),
-        md(
-            """
-            ## 8. Scenario: Named Professor
-
-            Learning goal: watch the front desk hand off to the professor specialist for one direct professor question.
-            """
-        ),
-        code(
-            '''
-            professor_turn = run_turn(
-                "What are CHENG Cheng's research interests?",
-                thread_id="lab3-professor",
-            )
-            pretty(professor_turn)
-            '''
-        ),
-        md(
-            """
-            ## 9. Scenario: Topic Match
-
-            Learning goal: route a broad research-interest question directly to the topic-matching specialist.
-            """
-        ),
-        code(
-            '''
-            topic_turn = run_turn(
-                "I am interested in computer vision and multimedia content analysis. Which professors should I look at?",
-                thread_id="lab3-topic",
-            )
-            pretty(topic_turn)
-            '''
-        ),
-        md(
-            """
-            ## 10. Scenario: Same-Thread Memory
-
-            Learning goal: show that the swarm remembers who was active after the first turn, and that a later follow-up can hand off from one specialist to another.
-
-            Theory: after Turn 1, the checkpoint stores `active_agent`. When Turn 2 reuses the same `thread_id`, the swarm resumes from that remembered owner instead of resetting to `FrontDeskAgent`.
-            """
-        ),
-        code(
-            '''
-            memory_thread = "lab3-memory"
-
-            turn_1 = run_turn(
-                "I am interested in computer vision and multimedia content analysis. Which professors should I look at?",
-                thread_id=memory_thread,
-            )
-            remembered_agent = checkpoint_active_agent(memory_thread)
-            turn_2 = run_turn(
-                "What about CHENG Cheng specifically?",
-                thread_id=memory_thread,
-            )
-
-            pretty(
-                {
-                    "turn_1_final_active_agent": turn_1["active_agent"],
-                    "checkpoint_active_agent_before_turn_2": remembered_agent,
-                    "turn_2_started_from_active_agent": turn_2["started_from_active_agent"],
-                    "turn_2_final_active_agent": turn_2["active_agent"],
-                    "turn_2_tool_steps": turn_2["tool_steps"],
-                    "turn_2_reply": turn_2["assistant_reply"],
-                }
-            )
-            '''
-        ),
-        md(
-            """
-            ## 11. Wrap-Up
-
-            Lab 3 teaches only three new ideas beyond Lab 2:
-
-            - `active_agent` is now the routing state.
-            - handoff tools move control between specialists.
-            - the same `thread_id` resumes from the last active owner.
-
-            The query surface stays intentionally small so the swarm mechanics stay visible.
-            """
         ),
     ]
     return new_notebook(
