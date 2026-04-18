@@ -1,0 +1,211 @@
+{
+  "metadata": {
+    "name": "ZHENG Jun",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113073.htm",
+    "slug": "zheng-jun",
+    "page_count": 2,
+    "image_urls": [
+      "https://isc.bit.edu.cn/images/2022-04/20171129084420598971.png",
+      "https://isc.bit.edu.cn/images/2022-04/20171129084420601076.png"
+    ],
+    "artifact_namespace": "structured_seed",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/zheng-jun-ocr.md"
+  },
+  "professor": {
+    "professor_id": "professor-b91da839dd98",
+    "name_local": "郑军",
+    "name_english": "Zheng Jun",
+    "aliases": [
+      "郑军",
+      "Zheng Jun"
+    ],
+    "title": "Associate Professor",
+    "emails": [
+      "zhengjun@bit.edu.cn"
+    ],
+    "phones": [
+      "861068913932"
+    ],
+    "biography_text": "Graduated from the Department of Computer Science and Technology of BIT and received her Bachelor degree in software, Master degree and Ph.D. degree in computer application technology respectively.",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/zheng-jun-ocr.md"
+  },
+  "organizations": [
+    {
+      "org_id": "org-32bd8f54a067",
+      "name": "计算机学院",
+      "aliases": [
+        "计算机学院"
+      ],
+      "org_type": "school"
+    },
+    {
+      "org_id": "org-bc092ea57a2d",
+      "name": "Computer Science and Technology",
+      "aliases": [
+        "Computer Science and Technology"
+      ],
+      "org_type": "school"
+    }
+  ],
+  "affiliation_organization_names": [
+    "计算机学院",
+    "Computer Science and Technology"
+  ],
+  "research_topics": [
+    {
+      "topic_id": "topic-69d28008951b",
+      "name": "网络与信息安全 Network and Information Security",
+      "normalized_name": "网络与信息安全-network-and-information-security",
+      "language": "bilingual"
+    },
+    {
+      "topic_id": "topic-082bfc8759f6",
+      "name": "云计算技术 Cloud Computing Technology",
+      "normalized_name": "云计算技术-cloud-computing-technology",
+      "language": "bilingual"
+    },
+    {
+      "topic_id": "topic-65aba0aea030",
+      "name": "人工智能 Artificial Intelligence.",
+      "normalized_name": "人工智能-artificial-intelligence",
+      "language": "bilingual"
+    }
+  ],
+  "education_experiences": [
+    {
+      "experience_id": "education-db7292f9182e",
+      "degree": "Bachelor degree in software",
+      "field": "",
+      "organization_name_raw": "Department of Computer Science and Technology of BIT",
+      "start_text": "",
+      "end_text": "",
+      "is_current": false,
+      "order": 1,
+      "raw_text": "Graduated from the Department of Computer Science and Technology of BIT and received her Bachelor degree in software"
+    },
+    {
+      "experience_id": "education-eaa390bcabbf",
+      "degree": "Master degree",
+      "field": "computer application technology",
+      "organization_name_raw": "Department of Computer Science and Technology of BIT",
+      "start_text": "",
+      "end_text": "",
+      "is_current": false,
+      "order": 2,
+      "raw_text": "Graduated from the Department of Computer Science and Technology of BIT and received her ... Master degree ... in computer application technology respectively."
+    },
+    {
+      "experience_id": "education-7a5317367076",
+      "degree": "Ph.D. degree",
+      "field": "computer application technology",
+      "organization_name_raw": "Department of Computer Science and Technology of BIT",
+      "start_text": "",
+      "end_text": "",
+      "is_current": false,
+      "order": 3,
+      "raw_text": "Graduated from the Department of Computer Science and Technology of BIT and received her ... Ph.D. degree in computer application technology respectively."
+    }
+  ],
+  "employment_experiences": [],
+  "academic_service_roles": [],
+  "awards": [
+    {
+      "award_id": "award-eb4f593605b8",
+      "name": "Science and Technology Progress Award issued by Ministry of Industry and Information Technology of the People's Republic of China, Third Prize",
+      "category": "Science and Technology Progress Award",
+      "year": "",
+      "granting_org_name_raw": "Ministry of Industry and Information Technology of the People's Republic of China",
+      "level": "Third Prize",
+      "raw_text": "Science and Technology Progress Award issued by Ministry of Industry and Information Technology of the People's Republic of China, Third Prize, 2 items"
+    },
+    {
+      "award_id": "award-98b35cf3d886",
+      "name": "Provincial and Ministerial Appraisal Achievements",
+      "category": "Provincial and Ministerial Appraisal Achievements",
+      "year": "",
+      "granting_org_name_raw": "",
+      "level": "",
+      "raw_text": "Provincial and Ministerial Appraisal Achievements, 5 items"
+    },
+    {
+      "award_id": "award-9a062692e2c3",
+      "name": "Excellent Teaching Achievements Awards issued by Beijing Institute of Technology",
+      "category": "Excellent Teaching Achievements Awards",
+      "year": "",
+      "granting_org_name_raw": "Beijing Institute of Technology",
+      "level": "First Prize, Second Prize",
+      "raw_text": "Excellent Teaching Achievements Awards issued by Beijing Institute of Technology, First Prize, 1 item; Second Prize, 3 items"
+    },
+    {
+      "award_id": "award-17721263a0aa",
+      "name": "Excellent Educational Software Awards issued by Beijing Association of Higher Education",
+      "category": "Excellent Educational Software Awards",
+      "year": "",
+      "granting_org_name_raw": "Beijing Association of Higher Education",
+      "level": "Second Prize",
+      "raw_text": "Excellent Educational Software Awards issued by Beijing Association of Higher Education, Second Prize, 1 items"
+    },
+    {
+      "award_id": "award-ff4c98fe97f8",
+      "name": "Graduate Student Mentoring Awards issued by Beijing Institute of Technology",
+      "category": "Graduate Student Mentoring Awards",
+      "year": "",
+      "granting_org_name_raw": "Beijing Institute of Technology",
+      "level": "Third Prize",
+      "raw_text": "Graduate Student Mentoring Awards issued by Beijing Institute of Technology,Third Prize, 1 item"
+    }
+  ],
+  "publications": [
+    {
+      "publication_id": "publication-7653ec7d2de7",
+      "title": "An Improved Dynamic Structure-based Neural Networks Determination Approaches to Simulation Optimization Problems",
+      "authors_raw": "Zheng Jun, Tan Yu-an,Zhang Xue-Lan",
+      "year": "2010",
+      "venue": "Neural Computing and Applications",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "Zheng Jun, Tan Yu-an,Zhang Xue-Lan. An Improved Dynamic Structure-based Neural Networks Determination Approaches to Simulation Optimization Problems [J].Neural Computing and Applications,2010,19(6),pp:883-901."
+    },
+    {
+      "publication_id": "publication-1c952cb278d0",
+      "title": "Alliance-Authentication Protocol in Clouds Computing Environment",
+      "authors_raw": "Guo Xianchen,Zhang Qikun, Zheng Jun",
+      "year": "2013",
+      "venue": "Journal of Investigative Medicine",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "Guo Xianchen,Zhang Qikun, Zheng Jun. Alliance-Authentication Protocol in Clouds Computing Environment[J]. Journal of Investigative Medicine, APR 2013,61(4)."
+    },
+    {
+      "publication_id": "publication-25c9ac23addb",
+      "title": "Multi-Domain Authentication Model Based On Lattice in Grid environment",
+      "authors_raw": "Zheng Jun,Zhang Qikun, Liu Hongchang,Guo Xianchen",
+      "year": "2012",
+      "venue": "Advanced Science Letters",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "Zheng Jun,Zhang Qikun, Liu Hongchang,Guo Xianchen. Multi-Domain Authentication Model Based On Lattice in Grid environment [J].Advanced Science Letters,Volume 6, Number 1, March 2012, pp. 687-691."
+    },
+    {
+      "publication_id": "publication-a5a3c0238101",
+      "title": "Dynamic Role-based Access Control Model",
+      "authors_raw": "Jun Zheng,Qikun Zhang,Shangwen Zheng and Yuan Tan",
+      "year": "2011",
+      "venue": "Journal of software",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "Jun Zheng,Qikun Zhang,Shangwen Zheng and Yuan Tan.Dynamic Role-based Access Control Model[J]. Journal of software, 2011,6(6),pp:1096-1102."
+    },
+    {
+      "publication_id": "publication-59e133e1a7a6",
+      "title": "Constructing Trust Networks Based on Small-World Theories",
+      "authors_raw": "Jun Zheng",
+      "year": "",
+      "venue": "The 9th International Conference for Young Computer Scientists",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "Jun Zheng. Constructing Trust Networks Based on Small-World Theories[C]. The 9th International Conference for Young Computer Scientists."
+    }
+  ],
+  "warnings": []
+}

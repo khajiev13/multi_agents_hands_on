@@ -1,0 +1,258 @@
+{
+  "metadata": {
+    "name": "FILIPPO Fabrocini",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121633.htm",
+    "slug": "filippo-fabrocini",
+    "page_count": 3,
+    "image_urls": [
+      "https://isc.bit.edu.cn/images/2022-04/20171130014137759433.jpg",
+      "https://isc.bit.edu.cn/images/2022-04/20171130014137761541.jpg",
+      "https://isc.bit.edu.cn/images/2022-04/20171130014137764641.jpg"
+    ],
+    "artifact_namespace": "structured_seed",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/filippo-fabrocini-ocr.md"
+  },
+  "professor": {
+    "professor_id": "professor-61ceef80885b",
+    "name_local": "",
+    "name_english": "Filippo Fabrocini",
+    "aliases": [
+      "Filippo Fabrocini"
+    ],
+    "title": "Prof.",
+    "emails": [
+      "filippo.fabrocini@gmail.com"
+    ],
+    "phones": [
+      "+86-159-10236957"
+    ],
+    "biography_text": "",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/filippo-fabrocini-ocr.md"
+  },
+  "organizations": [
+    {
+      "org_id": "org-6d0d4b2224c1",
+      "name": "School of Software",
+      "aliases": [
+        "School of Software"
+      ],
+      "org_type": "school"
+    }
+  ],
+  "affiliation_organization_names": [
+    "EMC",
+    "IBM",
+    "Gregorian University",
+    "IBM Research",
+    "School of Software"
+  ],
+  "research_topics": [
+    {
+      "topic_id": "topic-3df1fe40916e",
+      "name": "Cognitive Science",
+      "normalized_name": "cognitive-science",
+      "language": "en"
+    },
+    {
+      "topic_id": "topic-1fe613515202",
+      "name": "Artificial Intelligence",
+      "normalized_name": "artificial-intelligence",
+      "language": "en"
+    },
+    {
+      "topic_id": "topic-552af3b80624",
+      "name": "Logic Programming",
+      "normalized_name": "logic-programming",
+      "language": "en"
+    },
+    {
+      "topic_id": "topic-9532a7ce0509",
+      "name": "Machine Learning",
+      "normalized_name": "machine-learning",
+      "language": "en"
+    }
+  ],
+  "education_experiences": [
+    {
+      "experience_id": "education-6f3e81c0ca3f",
+      "degree": "Ph.D.",
+      "field": "Philosophy",
+      "organization_name_raw": "",
+      "start_text": "",
+      "end_text": "",
+      "is_current": false,
+      "order": 1,
+      "raw_text": "Ph.D. (Philosophy)"
+    },
+    {
+      "experience_id": "education-ad860587a6f6",
+      "degree": "M.A.",
+      "field": "Cognitive Science",
+      "organization_name_raw": "",
+      "start_text": "",
+      "end_text": "",
+      "is_current": false,
+      "order": 2,
+      "raw_text": "M.A. (Cognitive Science)"
+    },
+    {
+      "experience_id": "education-44d714aaaeae",
+      "degree": "M.A.",
+      "field": "Philosophy - Specialization: Mathematical Logic",
+      "organization_name_raw": "",
+      "start_text": "",
+      "end_text": "",
+      "is_current": false,
+      "order": 3,
+      "raw_text": "M.A. (Philosophy - Specialization: Mathematical Logic)"
+    }
+  ],
+  "employment_experiences": [
+    {
+      "experience_id": "employment-cf80fd5bbc5b",
+      "role_title": "",
+      "organization_name_raw": "EMC",
+      "location": "",
+      "start_text": "",
+      "end_text": "",
+      "is_current": false,
+      "order": 1,
+      "raw_text": "EMC"
+    },
+    {
+      "experience_id": "employment-9eb7af1f06d7",
+      "role_title": "",
+      "organization_name_raw": "IBM",
+      "location": "",
+      "start_text": "",
+      "end_text": "",
+      "is_current": false,
+      "order": 2,
+      "raw_text": "IBM"
+    },
+    {
+      "experience_id": "employment-5e5543bfb981",
+      "role_title": "",
+      "organization_name_raw": "Gregorian University",
+      "location": "",
+      "start_text": "",
+      "end_text": "",
+      "is_current": false,
+      "order": 3,
+      "raw_text": "Gregorian University"
+    },
+    {
+      "experience_id": "employment-43b0394780d0",
+      "role_title": "",
+      "organization_name_raw": "IBM Research",
+      "location": "",
+      "start_text": "",
+      "end_text": "",
+      "is_current": false,
+      "order": 4,
+      "raw_text": "IBM Research"
+    }
+  ],
+  "academic_service_roles": [],
+  "awards": [
+    {
+      "award_id": "award-49218c323eb3",
+      "name": "IBM Outstanding Technical Award",
+      "category": "Award",
+      "year": "1991",
+      "granting_org_name_raw": "IBM",
+      "level": "",
+      "raw_text": "IBM Outstanding Technical Award (1991)"
+    },
+    {
+      "award_id": "award-b5e228687ef4",
+      "name": "IBM Outstanding Technical Award",
+      "category": "Award",
+      "year": "1987",
+      "granting_org_name_raw": "IBM",
+      "level": "",
+      "raw_text": "IBM Outstanding Technical Award (1987)"
+    },
+    {
+      "award_id": "award-9b04d5f2341d",
+      "name": "Honor Medal",
+      "category": "Award",
+      "year": "",
+      "granting_org_name_raw": "Universidad Catolica Andres Bello",
+      "level": "",
+      "raw_text": "Universidad Catolica Andres Bello - Honor Medal"
+    },
+    {
+      "award_id": "award-52a6f36aad10",
+      "name": "Bellarmino Prize - Best Doctoral Thesis",
+      "category": "Award",
+      "year": "",
+      "granting_org_name_raw": "Gregorian University",
+      "level": "",
+      "raw_text": "Gregorian University Bellarmino Prize - Best Doctoral Thesis"
+    }
+  ],
+  "publications": [
+    {
+      "publication_id": "publication-fc5e49dbb42c",
+      "title": "Using Classification to Guide Knowledge Acquisition and Refinement in Real-World Domains",
+      "authors_raw": "L. Di Pace, F. Fabrocini",
+      "year": "1990",
+      "venue": "Cybernetics and Systems ’90, Proceedings of the Tenth European Meeting on Cybernetics and System Research",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "L. Di Pace, F. Fabrocini, “Using Classification to Guide Knowledge Acquisition and Refinement in Real-World Domains”; in Cybernetics and Systems ’90, Proceedings of the Tenth European Meeting on Cybernetics and System Research, 1990."
+    },
+    {
+      "publication_id": "publication-2c6b7ee45aeb",
+      "title": "Learning from Observation in Noisy Environments via Integration of EBL and SBL Techniques",
+      "authors_raw": "L. Di Pace, Filippo Fabrocini",
+      "year": "1990",
+      "venue": "Proceedings of the Ninth European Conference on Artificial Intelligence, ECAI",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "L. Di Pace, Filippo Fabrocini, “Learning from Observation in Noisy Environments via Integration of EBL and SBL Techniques”; in Proceedings of the Ninth European Conference on Artificial Intelligence, ECAI, 1990."
+    },
+    {
+      "publication_id": "publication-c115971111fa",
+      "title": "Shift of Bias in Leaning from Drug Compounds",
+      "authors_raw": "L. Di Pace, F. Fabrocini, G. Bolis",
+      "year": "1991",
+      "venue": "Proceedings of the European Working Session on Learning, EWSL",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "L. Di Pace, F. Fabrocini, G. Bolis, “Shift of Bias in Leaning from Drug Compounds”; inProceedings of the European Working Session on Learning, EWSL, 1991."
+    },
+    {
+      "publication_id": "publication-eb6578d2ec30",
+      "title": "A Machine Leaning Tool for Computer-Aided Molecular Design",
+      "authors_raw": "G. Bolis, L. Di Pace, F. Fabrocini",
+      "year": "1991",
+      "venue": "Proceedings of the IEEE International Conference on Tools for Artificial Intelligence",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "G. Bolis, L. Di Pace, F. Fabrocini, “A Machine Leaning Tool for Computer-Aided Molecular Design”; in Proceedings of the IEEE International Conference on Tools for Artificial Intelligence, 1991."
+    },
+    {
+      "publication_id": "publication-cadcc735e58c",
+      "title": "A Machine Leaning Approach to Computer-Aided Molecular Design",
+      "authors_raw": "G. Bolis, L. Di Pace, F. Fabrocini",
+      "year": "1991",
+      "venue": "International Journal of Computer-Aided Molecular Design, 5",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "G. Bolis, L. Di Pace, F. Fabrocini, “A Machine Leaning Approach to Computer-Aided Molecular Design”; in International Journal of Computer-Aided Molecular Design, 5, 1991."
+    },
+    {
+      "publication_id": "publication-87952ce65098",
+      "title": "Il labirinto e lo specchio. Tecniche e problemi della logica moderna",
+      "authors_raw": "F. Fabrocini",
+      "year": "1998",
+      "venue": "Franco Angeli",
+      "publication_type": "book",
+      "doi_or_isbn": "",
+      "raw_text": "F. Fabrocini, *Il labirinto e lo specchio. Tecniche e problemi della logica moderna*, Roma, Franco Angeli, 1998"
+    }
+  ],
+  "warnings": []
+}

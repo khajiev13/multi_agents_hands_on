@@ -1,0 +1,235 @@
+{
+  "metadata": {
+    "name": "TANG Haijing",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121631.htm",
+    "slug": "tang-haijing",
+    "page_count": 1,
+    "image_urls": [
+      "https://isc.bit.edu.cn/images/2022-04/20180313083404001845.jpg"
+    ],
+    "artifact_namespace": "structured_seed",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/tang-haijing-ocr.md"
+  },
+  "professor": {
+    "professor_id": "professor-1ad77921d32e",
+    "name_local": "TANG Haijing",
+    "name_english": "",
+    "aliases": [
+      "TANG Haijing"
+    ],
+    "title": "",
+    "emails": [],
+    "phones": [],
+    "biography_text": "",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/tang-haijing-ocr.md"
+  },
+  "organizations": [
+    {
+      "org_id": "org-d3f24e18eccc",
+      "name": "北京理工大学",
+      "aliases": [
+        "北京理工大学"
+      ],
+      "org_type": "university"
+    },
+    {
+      "org_id": "org-e702c99732c2",
+      "name": "清华大学",
+      "aliases": [
+        "清华大学"
+      ],
+      "org_type": "university"
+    },
+    {
+      "org_id": "org-3724f6c433e1",
+      "name": "联想软件",
+      "aliases": [
+        "联想软件"
+      ],
+      "org_type": "company"
+    },
+    {
+      "org_id": "org-33da13c89bb6",
+      "name": "北京市科委",
+      "aliases": [
+        "北京市科委"
+      ],
+      "org_type": "school"
+    },
+    {
+      "org_id": "org-7d1cd0bb48f0",
+      "name": "北京环境交易所",
+      "aliases": [
+        "北京环境交易所"
+      ],
+      "org_type": "school"
+    },
+    {
+      "org_id": "org-1ece55d81829",
+      "name": "北京绿色金融协会",
+      "aliases": [
+        "北京绿色金融协会"
+      ],
+      "org_type": "school"
+    }
+  ],
+  "affiliation_organization_names": [
+    "北京理工大学软件学院"
+  ],
+  "research_topics": [],
+  "education_experiences": [
+    {
+      "experience_id": "education-ac8371f93faa",
+      "degree": "本科",
+      "field": "Computer Science",
+      "organization_name_raw": "北京理工大学计算机系",
+      "start_text": "",
+      "end_text": "",
+      "is_current": false,
+      "order": 1,
+      "raw_text": "北京理工大学计算机系，本科 Computer Science, Beijing Institute Of Technology, Undergraduate"
+    },
+    {
+      "experience_id": "education-5251d5626776",
+      "degree": "硕士",
+      "field": "Computer Science",
+      "organization_name_raw": "清华大学计算机系",
+      "start_text": "",
+      "end_text": "",
+      "is_current": false,
+      "order": 2,
+      "raw_text": "清华大学计算机系，硕士 Computer Science, Tsinghua University, Graduate"
+    },
+    {
+      "experience_id": "education-960619683ce8",
+      "degree": "博士",
+      "field": "Software Engineering",
+      "organization_name_raw": "北京理工大学软件学院",
+      "start_text": "",
+      "end_text": "",
+      "is_current": false,
+      "order": 3,
+      "raw_text": "北京理工大学软件学院，博士 Software Engineering, Beijing Institute Of Technology, PHD"
+    }
+  ],
+  "employment_experiences": [
+    {
+      "experience_id": "employment-8f7a0682b2a1",
+      "role_title": "副总裁、技术总监",
+      "organization_name_raw": "联想软件",
+      "location": "",
+      "start_text": "2000",
+      "end_text": "2004",
+      "is_current": false,
+      "order": 1,
+      "raw_text": "2000-2004, 联想软件副总裁、技术总监"
+    },
+    {
+      "experience_id": "employment-b730ad06a188",
+      "role_title": "创办多家高科技公司",
+      "organization_name_raw": "",
+      "location": "",
+      "start_text": "2005",
+      "end_text": "2012",
+      "is_current": false,
+      "order": 2,
+      "raw_text": "2005-2012, 先后创办多家高科技公司，长期专注于软件和互联网领域"
+    },
+    {
+      "experience_id": "employment-b4b3d5b8803a",
+      "role_title": "任教",
+      "organization_name_raw": "北京理工大学软件学院",
+      "location": "",
+      "start_text": "2013",
+      "end_text": "至今",
+      "is_current": true,
+      "order": 3,
+      "raw_text": "2013 年至今，在北京理工大学软件学院任教"
+    }
+  ],
+  "academic_service_roles": [
+    {
+      "service_id": "service-c9211cb881ab",
+      "role_title": "项目评审专家",
+      "organization_name_raw": "北京市科委",
+      "service_type": "reviewer",
+      "raw_text": "北京市科委项目评审专家"
+    },
+    {
+      "service_id": "service-18944e3e17ee",
+      "role_title": "顾问",
+      "organization_name_raw": "北京环境交易所",
+      "service_type": "committee",
+      "raw_text": "北京环境交易所顾问"
+    },
+    {
+      "service_id": "service-17d2b9660367",
+      "role_title": "副秘书长",
+      "organization_name_raw": "北京绿色金融协会",
+      "service_type": "committee",
+      "raw_text": "北京绿色金融协会副秘书长"
+    }
+  ],
+  "awards": [
+    {
+      "award_id": "award-6a136d0976fa",
+      "name": "北京市科技新星",
+      "category": "honor",
+      "year": "2008",
+      "granting_org_name_raw": "北京市",
+      "level": "municipal",
+      "raw_text": "2008 年北京市科技新星"
+    },
+    {
+      "award_id": "award-d7abda4eba90",
+      "name": "北京市科学技术三等奖",
+      "category": "prize",
+      "year": "2009",
+      "granting_org_name_raw": "北京市",
+      "level": "municipal",
+      "raw_text": "2009、2011 两次荣获北京市科学技术三等奖，第一完成人"
+    },
+    {
+      "award_id": "award-d94781c98be7",
+      "name": "北京市科学技术三等奖",
+      "category": "prize",
+      "year": "2011",
+      "granting_org_name_raw": "北京市",
+      "level": "municipal",
+      "raw_text": "2009、2011 两次荣获北京市科学技术三等奖，第一完成人"
+    }
+  ],
+  "publications": [
+    {
+      "publication_id": "publication-377650e28eaf",
+      "title": "Optimizing Instruction Scheduling and Register Allocation for Register-File-Connected Clustered LVIW Architectures",
+      "authors_raw": "",
+      "year": "2013",
+      "venue": "The Scientific World Journal",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "1、Optimizing Instruction Scheduling and Register Allocation for Register-File-Connected Clustered LVIW Architectures, The Scientific World Journal, vol. 2013, Article ID 913038, 11 pages, 2013.7.SC: | WOS:000322475800001"
+    },
+    {
+      "publication_id": "publication-982db830a90f",
+      "title": "Effort at Constructing Big Data Sensor Networks for Monitoring Greenhouse Gas Emission",
+      "authors_raw": "",
+      "year": "2014",
+      "venue": "International Journal of Distributed Sensor Networks",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "2、Effort at Constructing Big Data Sensor Networks for Monitoring Greenhouse Gas Emission, International Journal of Distributed Sensor Networks, vol. 2014, Article ID 619608, 7 pages, 2014.6.SC: WOS:00033921 1000001"
+    },
+    {
+      "publication_id": "publication-a9f2e5a1496a",
+      "title": "《数据科学导论》",
+      "authors_raw": "",
+      "year": "2014",
+      "venue": "北京理工大学出版社",
+      "publication_type": "book",
+      "doi_or_isbn": "",
+      "raw_text": "3、《数据科学导论》，2014年3月，北京理工大学出版社"
+    }
+  ],
+  "warnings": []
+}

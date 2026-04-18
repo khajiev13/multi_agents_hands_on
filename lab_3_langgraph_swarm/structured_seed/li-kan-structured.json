@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "name": "LI Kan",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b117510.htm",
+    "slug": "li-kan",
+    "page_count": 3,
+    "image_urls": [
+      "https://isc.bit.edu.cn/images/2022-04/20180306032850022472.png",
+      "https://isc.bit.edu.cn/images/2022-04/20180306032945978894.png",
+      "https://isc.bit.edu.cn/images/2022-04/20180306033004956947.png"
+    ],
+    "artifact_namespace": "structured_seed",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/li-kan-ocr.md"
+  },
+  "professor": {
+    "professor_id": "professor-235cf31ae8c2",
+    "name_local": "李侃",
+    "name_english": "Kan Li",
+    "aliases": [
+      "李侃",
+      "Kan Li"
+    ],
+    "title": "教授",
+    "emails": [
+      "likan@bit.edu.cn"
+    ],
+    "phones": [
+      "86-10-68918604"
+    ],
+    "biography_text": "李侃，博士，教授，博士生导师。国家863评审专家，博士点基金/博士后基金评审专家，CCF互联网专委会委员，计算机应用专委会委员，YOCSEF委员，北京市青少年后备人才导师。目前主要从事机器学习、数据挖掘、及分布式系统方面的研究。承担了国家973课题、863重大、国家自然科学基金、教育部博士点基金、国防重点型号、预先研究项目、技术基础等多项国家级和部级项目，获得了国防科技进步奖等科研奖励。在国内外期刊、学术会议上发表SCI/EI检索论文50余篇，发明专利近20项，出版了教育部精品教材和北京市精品教材等。获得了第七届青年教师基本功大赛一等奖，T-more优秀教师奖，第十三届教学成果奖等教学奖励。 Dr. Kan Li is a Professor and PhD principle supervisor of Computer Science at Beijing Institute of Technology. His current research interests focus on machine learning, data mining and distributed systems. He has published four textbooks, 50 papers in refereed journals and conference proceedings and 20 patents. His recent and current works are funded primarily through National Basic Research Program of China (973 Program), National High Technology Research and Development Program of China (863 Program), National Natural Science Foundation of China, etc. He received National Defence Science and Technology Progress Award, T-more Best Teacher Award, First Prize in the Seven Young Teacher Competition, and First Prize for Science and Technology achievements in BIT. Prof. Kan Li is a member of CCF Internet Special Committee, and CCF YOCSEF. He serves as evaluation expert for National Natural Science Foundation of China, National High Technology Research and Development Program of China (863 Program), Research Fund or Doctoral Program of Higher Education, Postdoctoral Science Foundation.",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/li-kan-ocr.md"
+  },
+  "organizations": [
+    {
+      "org_id": "org-d3f24e18eccc",
+      "name": "北京理工大学",
+      "aliases": [
+        "北京理工大学"
+      ],
+      "org_type": "university"
+    },
+    {
+      "org_id": "org-32bd8f54a067",
+      "name": "计算机学院",
+      "aliases": [
+        "计算机学院"
+      ],
+      "org_type": "school"
+    }
+  ],
+  "affiliation_organization_names": [
+    "北京理工大学 计算机学院",
+    "北京理工大学",
+    "计算机学院"
+  ],
+  "research_topics": [
+    {
+      "topic_id": "topic-384842990017",
+      "name": "机器学习",
+      "normalized_name": "机器学习",
+      "language": "zh"
+    },
+    {
+      "topic_id": "topic-9532a7ce0509",
+      "name": "Machine Learning",
+      "normalized_name": "machine-learning",
+      "language": "en"
+    },
+    {
+      "topic_id": "topic-fb1a3c7a3801",
+      "name": "数据挖掘",
+      "normalized_name": "数据挖掘",
+      "language": "zh"
+    },
+    {
+      "topic_id": "topic-fdc084d12290",
+      "name": "Data Mining",
+      "normalized_name": "data-mining",
+      "language": "en"
+    },
+    {
+      "topic_id": "topic-d6785a776da1",
+      "name": "分布式系统",
+      "normalized_name": "分布式系统",
+      "language": "zh"
+    },
+    {
+      "topic_id": "topic-03a3d9f63e52",
+      "name": "Distributed Systems",
+      "normalized_name": "distributed-systems",
+      "language": "en"
+    }
+  ],
+  "education_experiences": [
+    {
+      "experience_id": "education-120d3dc7ad62",
+      "degree": "博士",
+      "field": "",
+      "organization_name_raw": "北京理工大学",
+      "start_text": "2000",
+      "end_text": "2003",
+      "is_current": false,
+      "order": 1,
+      "raw_text": "2000—2003, 北京理工大学, 计算机学院, 博士"
+    }
+  ],
+  "employment_experiences": [
+    {
+      "experience_id": "employment-7b465ec6d9cb",
+      "role_title": "",
+      "organization_name_raw": "北京理工大学 计算机学院",
+      "location": "",
+      "start_text": "2003",
+      "end_text": "至今",
+      "is_current": true,
+      "order": 1,
+      "raw_text": "2003—至今, 北京理工大学 计算机学院"
+    }
+  ],
+  "academic_service_roles": [
+    {
+      "service_id": "service-984309cbd719",
+      "role_title": "委员",
+      "organization_name_raw": "CCF互联网专委会",
+      "service_type": "committee",
+      "raw_text": "CCF互联网专委会委员"
+    },
+    {
+      "service_id": "service-00a2dfe1402a",
+      "role_title": "委员",
+      "organization_name_raw": "计算机应用专委会",
+      "service_type": "committee",
+      "raw_text": "计算机应用专委会委员"
+    },
+    {
+      "service_id": "service-16f55e9b88a3",
+      "role_title": "委员",
+      "organization_name_raw": "CCF YOCSEF",
+      "service_type": "committee",
+      "raw_text": "CCF YOCSEF委员"
+    },
+    {
+      "service_id": "service-2df340ac9e70",
+      "role_title": "评审专家",
+      "organization_name_raw": "国家自然科学基金",
+      "service_type": "reviewer",
+      "raw_text": "国家自然科学基金评审专家"
+    },
+    {
+      "service_id": "service-aa9457e4a25d",
+      "role_title": "评审专家",
+      "organization_name_raw": "国家863计划",
+      "service_type": "reviewer",
+      "raw_text": "国家863计划评审专家"
+    },
+    {
+      "service_id": "service-9a6d5a7da5de",
+      "role_title": "评审专家",
+      "organization_name_raw": "博士点基金",
+      "service_type": "reviewer",
+      "raw_text": "博士点基金评审专家"
+    },
+    {
+      "service_id": "service-0cf1f7003202",
+      "role_title": "评审专家",
+      "organization_name_raw": "博士后基金",
+      "service_type": "reviewer",
+      "raw_text": "博士后评审专家"
+    },
+    {
+      "service_id": "service-27c600c9e8b4",
+      "role_title": "审稿人",
+      "organization_name_raw": "Journal of Supercomputing",
+      "service_type": "reviewer",
+      "raw_text": "Journal of Supercomputing审稿人"
+    },
+    {
+      "service_id": "service-600e834fc9c2",
+      "role_title": "审稿人",
+      "organization_name_raw": "Neurocomputing",
+      "service_type": "reviewer",
+      "raw_text": "Neurocomputing等期刊审稿人"
+    }
+  ],
+  "awards": [
+    {
+      "award_id": "award-90cdc6a59444",
+      "name": "T-more优秀教师奖",
+      "category": "teaching",
+      "year": "",
+      "granting_org_name_raw": "T-more",
+      "level": "university",
+      "raw_text": "T-mor 优秀教师奖"
+    },
+    {
+      "award_id": "award-b718628ea197",
+      "name": "第十三届教育成果奖",
+      "category": "teaching",
+      "year": "",
+      "granting_org_name_raw": "",
+      "level": "university",
+      "raw_text": "第十三届教育成果奖"
+    },
+    {
+      "award_id": "award-bada11712cf1",
+      "name": "国防科技进步奖",
+      "category": "research",
+      "year": "",
+      "granting_org_name_raw": "",
+      "level": "national",
+      "raw_text": "国防科技进步奖"
+    },
+    {
+      "award_id": "award-7fdf0f96dbc8",
+      "name": "第七届青年教师教学比赛一等奖",
+      "category": "teaching",
+      "year": "",
+      "granting_org_name_raw": "",
+      "level": "university",
+      "raw_text": "第七届青年教师教学比赛一等奖"
+    },
+    {
+      "award_id": "award-3d69b61245a4",
+      "name": "北京理工大学科研成果一等奖",
+      "category": "research",
+      "year": "",
+      "granting_org_name_raw": "北京理工大学",
+      "level": "university",
+      "raw_text": "北京理工大学科研成果一等奖"
+    },
+    {
+      "award_id": "award-e56b29376987",
+      "name": "First Prize for Science and Technology achievements in BIT",
+      "category": "research",
+      "year": "",
+      "granting_org_name_raw": "北京理工大学",
+      "level": "university",
+      "raw_text": "First Prize for Science and Technology achievements in BIT"
+    }
+  ],
+  "publications": [
+    {
+      "publication_id": "publication-a97810402cc4",
+      "title": "Detecting Hierarchical Structure of Community Members in Social Networks",
+      "authors_raw": "Fengjiao Chen, Kan Li",
+      "year": "2015",
+      "venue": "Knowledge-Based Systems",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "Fengjiao Chen, Kan Li. Detecting Hierarchical Structure of Community Members in Social Networks. Knowledge-Based Systems. 2015"
+    },
+    {
+      "publication_id": "publication-3bea5e7ac3a1",
+      "title": "A Unified Detection Algorithm in Complex Network",
+      "authors_raw": "Kan Li, Yin Pang",
+      "year": "2014",
+      "venue": "Neurocomputing",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "Kan Li, Yin Pang. A Unified Detection Algorithm in Complex Network. Neurocomputing. 2014"
+    },
+    {
+      "publication_id": "publication-7a51d5dd0e5a",
+      "title": "main Objects Interaction Activity Recognition in Real Images",
+      "authors_raw": "Lin Bai, Kan Li,et.al",
+      "year": "2015",
+      "venue": "Neural Computing and Applications",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "Lin Bai, Kan Li,et.al. main Objects Interaction Activity Recognition in Real Images. Neural Computing and Applications.2015"
+    },
+    {
+      "publication_id": "publication-cd71dfa484eb",
+      "title": "Predicting Image Caption by a Unified Hierarchical Model",
+      "authors_raw": "Lin Bai, Kan Li",
+      "year": "2015",
+      "venue": "IEEE International Conference on Multimedia and Expo (ICME)",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "Lin Bai, Kan Li. Predicting Image Caption by a Unified Hierarchical Model. IEEE International Conference on Multimedia and Expo (ICME). 2015"
+    },
+    {
+      "publication_id": "publication-519152769a93",
+      "title": "Generating Image Description by Modeling Spatial Context of An Image",
+      "authors_raw": "Kan Li, Lin Bai",
+      "year": "2015",
+      "venue": "International Joint Conference on Neural Networks (IJCNN)",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "Kan Li, Lin Bai. Generating Image Description by Modeling Spatial Context of An Image. International Joint Conference on Neural Networks (IJCNN). 2015"
+    }
+  ],
+  "warnings": []
+}

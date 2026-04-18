@@ -1,0 +1,214 @@
+{
+  "metadata": {
+    "name": "SHI Feng",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113069.htm",
+    "slug": "shi-feng",
+    "page_count": 3,
+    "image_urls": [
+      "https://isc.bit.edu.cn/images/2022-04/20171129084420510371.png",
+      "https://isc.bit.edu.cn/images/2022-04/20171129084420513482.png",
+      "https://isc.bit.edu.cn/images/2022-04/20171129084420514529.png"
+    ],
+    "artifact_namespace": "structured_seed",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/shi-feng-ocr.md"
+  },
+  "professor": {
+    "professor_id": "professor-cc156a3a687c",
+    "name_local": "石峰",
+    "name_english": "ShiFeng",
+    "aliases": [
+      "石峰",
+      "ShiFeng"
+    ],
+    "title": "教授",
+    "emails": [
+      "bitsf@bit.edu.cn"
+    ],
+    "phones": [
+      "13910413487"
+    ],
+    "biography_text": "",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/shi-feng-ocr.md"
+  },
+  "organizations": [
+    {
+      "org_id": "org-69a1494753ed",
+      "name": "北京理工大学计算机学院",
+      "aliases": [
+        "北京理工大学计算机学院"
+      ],
+      "org_type": "school"
+    }
+  ],
+  "affiliation_organization_names": [
+    "北京理工大学计算机学院"
+  ],
+  "research_topics": [
+    {
+      "topic_id": "topic-ef3e066960ad",
+      "name": "多核处理器体系结构",
+      "normalized_name": "多核处理器体系结构",
+      "language": "zh"
+    },
+    {
+      "topic_id": "topic-341a28f69a5d",
+      "name": "Architecture of Chip Multi-Processors",
+      "normalized_name": "architecture-of-chip-multi-processors",
+      "language": "en"
+    },
+    {
+      "topic_id": "topic-f823dc845039",
+      "name": "专用集成电路设计",
+      "normalized_name": "专用集成电路设计",
+      "language": "zh"
+    },
+    {
+      "topic_id": "topic-a4d80544a827",
+      "name": "ASIC Design",
+      "normalized_name": "asic-design",
+      "language": "en"
+    },
+    {
+      "topic_id": "topic-28390551eff8",
+      "name": "并行与高性能计算",
+      "normalized_name": "并行与高性能计算",
+      "language": "zh"
+    },
+    {
+      "topic_id": "topic-fdaac222d228",
+      "name": "Parallel & High Performance Computation",
+      "normalized_name": "parallel-high-performance-computation",
+      "language": "en"
+    }
+  ],
+  "education_experiences": [
+    {
+      "experience_id": "education-eb64d50d9dcd",
+      "degree": "理学学士",
+      "field": "物理系",
+      "organization_name_raw": "北京大学",
+      "start_text": "1979.9",
+      "end_text": "1983.7",
+      "is_current": false,
+      "order": 1,
+      "raw_text": "1979.9-1983.7 北京大学物理系理学学士"
+    },
+    {
+      "experience_id": "education-c6c1f04ed4a5",
+      "degree": "博士",
+      "field": "计算机应用技术专业",
+      "organization_name_raw": "北京理工大学",
+      "start_text": "1996.4",
+      "end_text": "1999.4",
+      "is_current": false,
+      "order": 2,
+      "raw_text": "1996.4-1999.4 北京理工大学计算机应用技术专业博士"
+    }
+  ],
+  "employment_experiences": [
+    {
+      "experience_id": "employment-8b21bdd6b87b",
+      "role_title": "",
+      "organization_name_raw": "吉林农业大学",
+      "location": "",
+      "start_text": "1983.7",
+      "end_text": "1996.4",
+      "is_current": false,
+      "order": 1,
+      "raw_text": "1983.7~1996.4 吉林农业大学"
+    },
+    {
+      "experience_id": "employment-d7656b8b37f5",
+      "role_title": "Teacher",
+      "organization_name_raw": "北京理工大学计算机学院",
+      "location": "",
+      "start_text": "1977.4",
+      "end_text": "现在",
+      "is_current": true,
+      "order": 2,
+      "raw_text": "1977.4-现在北京理工大学计算机学院"
+    }
+  ],
+  "academic_service_roles": [
+    {
+      "service_id": "service-c29a7861f9d3",
+      "role_title": "Member",
+      "organization_name_raw": "NCRE(National Computer Rank Examination) Committee",
+      "service_type": "committee",
+      "raw_text": "Member of NCRE(National Computer Rank Examination) Committee"
+    }
+  ],
+  "awards": [
+    {
+      "award_id": "award-3e5119b4ef76",
+      "name": "Member of BIT Academic Committee",
+      "category": "honor",
+      "year": "",
+      "granting_org_name_raw": "BIT Academic Committee",
+      "level": "university",
+      "raw_text": "Member of BIT Academic Committee"
+    },
+    {
+      "award_id": "award-bc0134140626",
+      "name": "Vice-chairman of Info. & Elec. Divisions of BIT Academy",
+      "category": "honor",
+      "year": "",
+      "granting_org_name_raw": "BIT Academy",
+      "level": "university",
+      "raw_text": "Vice-chairman of Info. & Elec. Divisions of BIT Academy"
+    }
+  ],
+  "publications": [
+    {
+      "publication_id": "publication-f3fc0a485c0b",
+      "title": "3D floorplanning of flow-power and area-efficient Network-on-Chip architecture",
+      "authors_raw": "Licheng Xue, Feng Shi, Weixing Ji, Haroon-Ur-Rashid Khan",
+      "year": "2011",
+      "venue": "Microprocessors and Microsystems, Elsevier",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "[1] Licheng Xue, Feng Shi, Weixing Ji, Haroon-Ur-Rashid Khan, 3D floorplanning of flow-power and area-efficient Network-on-Chip architecture. Microprocessors and Microsystems, Elsevier. Volume 35, Issue 5, July 2011, Pages 484-495, SCI"
+    },
+    {
+      "publication_id": "publication-41dcad78334f",
+      "title": "Computationally efficient locality-aware interconnection topology for multi-processor system-on-chip(MP-SoC)",
+      "authors_raw": "Haroon-Ur-Rashid Khan, SHI Feng, Ji WeiXing, GAO YuJin, WANG YiZhuo, LIU CaiXia, DENG Ning, LI JiaXin",
+      "year": "2010",
+      "venue": "Chinese Science Bulletin (科学通报-英文版)",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "[2] Haroon-Ur-Rashid Khan, SHI Feng, Ji WeiXing, GAO YuJin, WANG YiZhuo, LIU CaiXia, DENG Ning, LI JiaXin, Computationally efficient locality-aware interconnection topology for multi-processor system-on-chip(MP-SoC). Chinese Science Bulletin (科学通报-英文版). October 2010. Vol.55 No.29. p3363-3371. SCI."
+    },
+    {
+      "publication_id": "publication-26c2dab61245",
+      "title": "Group-caching for NoC based multicore cache coherent systems",
+      "authors_raw": "Wang Zuo, Shi Feng, Zuo Qi, Ji Weixing, Li Jiaxin, Deng Ning, Xue Licheng, Tan Yuan, Qiao Baojun",
+      "year": "2009",
+      "venue": "Proceedings -Design, Automation and Test in Europe. DATE’09",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "[3] Wang Zuo, Shi Feng, Zuo Qi, Ji Weixing, Li Jiaxin, Deng Ning, Xue Licheng, Tan Yuan, Qiao Baojun, Group-caching for NoC based multicore cache coherent systems. Proceedings -Design, Automation and Test in Europe. DATE’09. p755-760. 2009. EI"
+    },
+    {
+      "publication_id": "publication-1db8f69c5e5f",
+      "title": "Performance of triplet based interconnection strategy for multi-core on-chip processors",
+      "authors_raw": "Khan, H-U-R., Shi Feng, Jia Xilin, Bai Ziru",
+      "year": "2009",
+      "venue": "2009 11th IEEE International Conference on High Performance Computing and Communications. HPCC’09",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "[4] Khan, H-U-R., Shi Feng, Jia Xilin, Bai Ziru. Performance of triplet based interconnection strategy for multi-core on-chip processors. 2009 11th IEEE International Conference on High Performance Computing and Communications. HPCC’09. p163-70. 2009. EI"
+    },
+    {
+      "publication_id": "publication-1711e5264626",
+      "title": "Performance evaluation of a self-maintained memory module",
+      "authors_raw": "Ji Weixing, Shi Feng, Qiao Baojun, Zuo Qi, Liu Caixia",
+      "year": "2007",
+      "venue": "Proc. 28th IEEE International Real-Time Systems Symposium. RTSS 2007",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "[5] Ji Weixing, Shi Feng, Qiao Baojun, Zuo Qi, Liu Caixia. Performance evaluation of a self-maintained memory module. Proc. 28th IEEE International Real-Time Systems Symposium. RTSS 2007. p254-263. 2007. EI"
+    }
+  ],
+  "warnings": []
+}

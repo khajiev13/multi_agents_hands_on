@@ -1,0 +1,243 @@
+{
+  "metadata": {
+    "name": "GAO Guangyu",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121634.htm",
+    "slug": "gao-guangyu",
+    "page_count": 3,
+    "image_urls": [
+      "https://isc.bit.edu.cn/images/2022-04/20171130014137787732.jpg",
+      "https://isc.bit.edu.cn/images/2022-04/20171130014137796867.jpg",
+      "https://isc.bit.edu.cn/images/2022-04/20171130014137799961.jpg"
+    ],
+    "artifact_namespace": "structured_seed",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/gao-guangyu-ocr.md"
+  },
+  "professor": {
+    "professor_id": "professor-d441209a385d",
+    "name_local": "高广宇",
+    "name_english": "Gao Guangyu",
+    "aliases": [
+      "高广宇",
+      "Gao Guangyu"
+    ],
+    "title": "讲师",
+    "emails": [
+      "guangyu.ryan@gmail.com",
+      "guangyugao@bit.edu.cn"
+    ],
+    "phones": [
+      "18911129899"
+    ],
+    "biography_text": "个人简历(Biography) 教育背景:(Educational Background) 2012/7-2013/4 National University of Singapore(Electro. and Computer Eng.) Joint PhD. 2007/9-2013/7 Beijing University Of Posts and Telecommunications(Computer Science) PhD. 2003/9-2007/6 Zhengzhou University(Computer Science and Technology) Bachelor 工作经历:(Working Experience) 2013/10-Present School of Software, Beijing Institute of Technology 学术兼职:(Part-time Academic Jobs) Reviewer of IEEE Trans. On Multimedia, Neurocomputing etc. Member of IEEE, ACM and CCF.",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/gao-guangyu-ocr.md"
+  },
+  "organizations": [
+    {
+      "org_id": "org-6d0d4b2224c1",
+      "name": "软件学院",
+      "aliases": [
+        "软件学院",
+        "School of Software"
+      ],
+      "org_type": "school"
+    },
+    {
+      "org_id": "org-080bfd5b93cc",
+      "name": "IEEE",
+      "aliases": [
+        "IEEE"
+      ],
+      "org_type": "school"
+    },
+    {
+      "org_id": "org-856c5388bec3",
+      "name": "ACM",
+      "aliases": [
+        "ACM"
+      ],
+      "org_type": "school"
+    },
+    {
+      "org_id": "org-b8089db26e20",
+      "name": "CCF",
+      "aliases": [
+        "CCF"
+      ],
+      "org_type": "school"
+    }
+  ],
+  "affiliation_organization_names": [
+    "School of Software, Beijing Institute of Technology"
+  ],
+  "research_topics": [
+    {
+      "topic_id": "topic-35eac0b4625a",
+      "name": "Computer Vision",
+      "normalized_name": "computer-vision",
+      "language": "en"
+    },
+    {
+      "topic_id": "topic-40718650e06e",
+      "name": "Multimedia",
+      "normalized_name": "multimedia",
+      "language": "en"
+    },
+    {
+      "topic_id": "topic-2698f68e499b",
+      "name": "Big Data & Cloud Computing",
+      "normalized_name": "big-data-cloud-computing",
+      "language": "en"
+    }
+  ],
+  "education_experiences": [
+    {
+      "experience_id": "education-d8812ba5ec75",
+      "degree": "PhD",
+      "field": "Electro. and Computer Eng.",
+      "organization_name_raw": "National University of Singapore",
+      "start_text": "2012/7",
+      "end_text": "2013/4",
+      "is_current": false,
+      "order": 1,
+      "raw_text": "2012/7-2013/4 National University of Singapore(Electro. and Computer Eng.) Joint PhD."
+    },
+    {
+      "experience_id": "education-c2cf1a884100",
+      "degree": "PhD",
+      "field": "Computer Science",
+      "organization_name_raw": "Beijing University Of Posts and Telecommunications",
+      "start_text": "2007/9",
+      "end_text": "2013/7",
+      "is_current": false,
+      "order": 2,
+      "raw_text": "2007/9-2013/7 Beijing University Of Posts and Telecommunications(Computer Science) PhD."
+    },
+    {
+      "experience_id": "education-69a3d7435ea4",
+      "degree": "Bachelor",
+      "field": "Computer Science and Technology",
+      "organization_name_raw": "Zhengzhou University",
+      "start_text": "2003/9",
+      "end_text": "2007/6",
+      "is_current": false,
+      "order": 3,
+      "raw_text": "2003/9-2007/6 Zhengzhou University(Computer Science and Technology) Bachelor"
+    }
+  ],
+  "employment_experiences": [
+    {
+      "experience_id": "employment-87974704f134",
+      "role_title": "讲师",
+      "organization_name_raw": "School of Software, Beijing Institute of Technology",
+      "location": "Beijing Institute of Technology",
+      "start_text": "2013/10",
+      "end_text": "Present",
+      "is_current": true,
+      "order": 1,
+      "raw_text": "2013/10-Present School of Software, Beijing Institute of Technology"
+    }
+  ],
+  "academic_service_roles": [
+    {
+      "service_id": "service-46f2b271129f",
+      "role_title": "Reviewer",
+      "organization_name_raw": "IEEE Trans. On Multimedia, Neurocomputing etc.",
+      "service_type": "reviewer",
+      "raw_text": "Reviewer of IEEE Trans. On Multimedia, Neurocomputing etc."
+    }
+  ],
+  "awards": [
+    {
+      "award_id": "award-760a814fbe24",
+      "name": "Electronic Information& Science Tech. Prize",
+      "category": "prize",
+      "year": "2011",
+      "granting_org_name_raw": "Chinese Institute of Electronics",
+      "level": "first_prize",
+      "raw_text": "传媒业务协同处理关键技术及应用 2011 年度中国电子学会电子信息科学技术奖一等奖 \"**The Key Technology and Application of Media Service Collaborative Processing**\" Electronic Information& Science Tech. Prize by Chinese Institute of Electronics, The 1st Prize."
+    }
+  ],
+  "publications": [
+    {
+      "publication_id": "publication-d3d57a2fbaba",
+      "title": "Video Summarization: Structure Parsing and Content Extraction",
+      "authors_raw": "G. Gao and C. H. Liu",
+      "year": "2015",
+      "venue": "CRC Press, Taylor & Francis Group",
+      "publication_type": "book",
+      "doi_or_isbn": "ISBN-10: 1482235773, ISBN-13: 978-1482235777",
+      "raw_text": "BOOK: G. Gao and C. H. Liu \"Video Summarization: Structure Parsing and Content Extraction\", Publisher: CRC Press, Taylor & Francis Group (2015). Language: English, ISBN-10: 1482235773, ISBN-13: 978-1482235777."
+    },
+    {
+      "publication_id": "publication-f687bb5ea181",
+      "title": "Cast2Face: Assigning Character Names onto Faces in Movie with Actor-Character Correspondence",
+      "authors_raw": "Guangyu Gao, Mengdi Xu, Jialie Shen, Huadong Ma and Shuicheng Yan",
+      "year": "2015",
+      "venue": "IEEE Transactions on Circuits and Video Technology (TCSVT)",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "[1]. Guangyu Gao, Mengdi Xu, Jialie Shen, Huadong Ma and Shuicheng Yan. Cast2Face: Assigning Character Names onto Faces in Movie with Actor-Character Correspondence. IEEE Transactions on Circuits and Video Technology (TCSVT). 2015."
+    },
+    {
+      "publication_id": "publication-4ff3f57b2592",
+      "title": "Adaptive Learning for Celebrity Identification with Video Context",
+      "authors_raw": "Chao Xiong, Guangyu Gao(Equal Contribution), Zhengjun Zha, Shuicheng Yan, Huadong Ma, Tae-Kyun Kim",
+      "year": "2014",
+      "venue": "IEEE Transactions on Multimedia (TMM)",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "[2]. Chao Xiong, Guangyu Gao(Equal Contribution), Zhengjun Zha, Shuicheng Yan, Huadong Ma, Tae-Kyun Kim. Adaptive Learning for Celebrity Identification with Video Context. IEEE Transactions on Multimedia (TMM). 2014."
+    },
+    {
+      "publication_id": "publication-ab58b3fab1e9",
+      "title": "Movie Scene Recognition Using Panoramic Frame and Representative Feature Patches",
+      "authors_raw": "Guangyu Gao, Huadong Ma",
+      "year": "2014",
+      "venue": "Journal of Computer Science and Technology",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "[3]. Guangyu Gao, Huadong Ma. Movie Scene Recognition Using Panoramic Frame and Representative Feature Patches. Journal of Computer Science and Technology. Journal of Computer Science and Technology 2014."
+    },
+    {
+      "publication_id": "publication-ab190e5bde30",
+      "title": "To Accelerate Shot Boundary Detection by Reducing Detection Region and Scope",
+      "authors_raw": "Guangyu Gao and Huadong Ma",
+      "year": "2014",
+      "venue": "Journal of Multimedia Tools and Applications (MTAP)",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "[4] Guangyu Gao and Huadong Ma. To Accelerate Shot Boundary Detection by Reducing Detection Region and Scope. Journal of Multimedia Tools and Applications (MTAP). 2014."
+    },
+    {
+      "publication_id": "publication-8743e792d0db",
+      "title": "Batch-Orthogonal Locality-Sensitive Hashing for Angular Similarity",
+      "authors_raw": "Jianqiu Ji, Shuicheng Yan, Jianmin Li, Guangyu Gao, Qi Tian and Bo Zhang",
+      "year": "2014",
+      "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "[5] Jianqiu Ji, Shuicheng Yan, Jianmin Li, Guangyu Gao, Qi Tian and Bo Zhang. Batch-Orthogonal Locality-Sensitive Hashing for Angular Similarity. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI). 2014."
+    },
+    {
+      "publication_id": "publication-dc71a70991c3",
+      "title": "A Robust Vedio Text Extraction and Recognition Approach using OCR Feedback Information",
+      "authors_raw": "Guangyu Gao, He Zhang, Hongting Chen",
+      "year": "2015",
+      "venue": "Pacific-Rim Conference on Multimedia",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "[6] Guangyu Gao, He Zhang, Hongting Chen. A Robust Vedio Text Extraction and Recognition Approach using OCR Feedback Information. Pacific-Rim Conference on Multimedia 2015."
+    },
+    {
+      "publication_id": "publication-5eff75d33d5c",
+      "title": "The Future of Smart Dressing Mirror",
+      "authors_raw": "Guangyu Gao, Chenchen Bai, Wei Zheng and Chi Harold Liu",
+      "year": "2015",
+      "venue": "12th IEEE International Conference on Ubiquitous Intelligence and Computing (UIC 2015)",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "[7] Guangyu Gao, Chenchen Bai, Wei Zheng and Chi Harold Liu. The Future of Smart Dressing Mirror. In the 12th IEEE International Conference on Ubiquitous Intelligence and Computing (UIC 2015)."
+    }
+  ],
+  "warnings": []
+}

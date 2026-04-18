@@ -1,0 +1,264 @@
+{
+  "metadata": {
+    "name": "SONG Hong",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b135433.htm",
+    "slug": "song-hong",
+    "page_count": 2,
+    "image_urls": [
+      "https://isc.bit.edu.cn/images/2022-04/20181120075353865886.png",
+      "https://isc.bit.edu.cn/images/2022-04/20181120075426517990.png"
+    ],
+    "artifact_namespace": "structured_seed",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/song-hong-ocr.md"
+  },
+  "professor": {
+    "professor_id": "professor-4a7ef69058c2",
+    "name_local": "宋红",
+    "name_english": "Song Hong",
+    "aliases": [
+      "宋红",
+      "Song Hong"
+    ],
+    "title": "Professor",
+    "emails": [
+      "songhong@bit.edu.cn"
+    ],
+    "phones": [
+      "13810028826"
+    ],
+    "biography_text": "",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/song-hong-ocr.md"
+  },
+  "organizations": [
+    {
+      "org_id": "org-456a51b628e7",
+      "name": "School of Computer Science & Technology",
+      "aliases": [
+        "School of Computer Science & Technology"
+      ],
+      "org_type": "school"
+    },
+    {
+      "org_id": "org-c3b777374e4d",
+      "name": "Beijing Institute of Technology",
+      "aliases": [
+        "Beijing Institute of Technology"
+      ],
+      "org_type": "university"
+    }
+  ],
+  "affiliation_organization_names": [
+    "School of Software, Beijing Institute of Technology",
+    "School of Computer Science & Technology",
+    "Beijing Institute of Technology"
+  ],
+  "research_topics": [
+    {
+      "topic_id": "topic-08658f523508",
+      "name": "图像处理与机器学习",
+      "normalized_name": "图像处理与机器学习",
+      "language": "zh"
+    },
+    {
+      "topic_id": "topic-4a8096d61162",
+      "name": "Image Processing and Machine Learning",
+      "normalized_name": "image-processing-and-machine-learning",
+      "language": "en"
+    },
+    {
+      "topic_id": "topic-4da3673e2a5c",
+      "name": "医学影像分析",
+      "normalized_name": "医学影像分析",
+      "language": "zh"
+    },
+    {
+      "topic_id": "topic-76971a2ddc37",
+      "name": "Medical Image Analysis",
+      "normalized_name": "medical-image-analysis",
+      "language": "en"
+    }
+  ],
+  "education_experiences": [
+    {
+      "experience_id": "education-c4624d4ee28f",
+      "degree": "Ph.D.",
+      "field": "Computer Science",
+      "organization_name_raw": "Beijing Institute of Technology",
+      "start_text": "2001",
+      "end_text": "2004",
+      "is_current": false,
+      "order": 1,
+      "raw_text": "Ph.D. Computer Science, Beijing Institute of Technology, 2001-2004"
+    },
+    {
+      "experience_id": "education-3509e1f9d8bd",
+      "degree": "Master.",
+      "field": "Computer Science",
+      "organization_name_raw": "Beijing Institute of Technology",
+      "start_text": "1999",
+      "end_text": "2001",
+      "is_current": false,
+      "order": 2,
+      "raw_text": "Master. Computer Science, Beijing Institute of Technology, 1999-2001"
+    },
+    {
+      "experience_id": "education-11fc79430d7a",
+      "degree": "Bachelor.",
+      "field": "Computer Science",
+      "organization_name_raw": "Beijing Institute of Technology",
+      "start_text": "1995",
+      "end_text": "1999",
+      "is_current": false,
+      "order": 3,
+      "raw_text": "Bachelor. Computer Science, Beijing Institute of Technology,1995-1999"
+    }
+  ],
+  "employment_experiences": [
+    {
+      "experience_id": "employment-0cd0db3c28d5",
+      "role_title": "Professor",
+      "organization_name_raw": "School of Software, Beijing Institute of Technology",
+      "location": "",
+      "start_text": "2014",
+      "end_text": "present",
+      "is_current": true,
+      "order": 1,
+      "raw_text": "Professor, School of Software, Beijing Institute of Technology, 2014-present"
+    },
+    {
+      "experience_id": "employment-4d6e29265d46",
+      "role_title": "Associate Professor",
+      "organization_name_raw": "School of Software, Beijing Institute of Technology",
+      "location": "",
+      "start_text": "2012",
+      "end_text": "2014",
+      "is_current": false,
+      "order": 2,
+      "raw_text": "Associate Professor, School of Software, Beijing Institute of Technology, 2012-2014"
+    },
+    {
+      "experience_id": "employment-002cf648c5e5",
+      "role_title": "Associate Professor",
+      "organization_name_raw": "School of Computer Science, Beijing Institute of Technology",
+      "location": "",
+      "start_text": "2006",
+      "end_text": "2012",
+      "is_current": false,
+      "order": 3,
+      "raw_text": "Associate Professor, School of Computer Science, Beijing Institute of Technology, 2006-2012"
+    },
+    {
+      "experience_id": "employment-9fddcba7499d",
+      "role_title": "Assistant Professor",
+      "organization_name_raw": "School of Computer Science, Beijing Institute of Technology",
+      "location": "",
+      "start_text": "2004",
+      "end_text": "2006",
+      "is_current": false,
+      "order": 4,
+      "raw_text": "Assistant Professor, School of Computer Science, Beijing Institute of Technology, 2004-2006"
+    },
+    {
+      "experience_id": "employment-ffde961525c6",
+      "role_title": "Senior Visiting Scholar",
+      "organization_name_raw": "College of Computing & Informatics, Drexel University",
+      "location": "",
+      "start_text": "2017",
+      "end_text": "2018",
+      "is_current": false,
+      "order": 5,
+      "raw_text": "Senior Visiting Scholar, College of Computing & Informatics, Drexel University,2017-2018"
+    },
+    {
+      "experience_id": "employment-6e9e443cc0a3",
+      "role_title": "Visiting Scholar",
+      "organization_name_raw": "Computer Science, Columbia University, Texas A&M University",
+      "location": "",
+      "start_text": "2008",
+      "end_text": "2009",
+      "is_current": false,
+      "order": 6,
+      "raw_text": "Visiting Scholar, Computer Science, Columbia University, Texas A&M University, 2008-2009"
+    }
+  ],
+  "academic_service_roles": [
+    {
+      "service_id": "service-5971e1dcd13a",
+      "role_title": "Member",
+      "organization_name_raw": "China Computer Federation Young Computer Scientists & Engineers Forum",
+      "service_type": "committee",
+      "raw_text": "Member of China Computer Federation Young Computer Scientists & Engineers Forum"
+    },
+    {
+      "service_id": "service-66ee014e2162",
+      "role_title": "Member",
+      "organization_name_raw": "Chinese Association of Artificial Intelligence",
+      "service_type": "committee",
+      "raw_text": "Member of Chinese Association of Artificial Intelligence"
+    }
+  ],
+  "awards": [
+    {
+      "award_id": "award-f57afec207ab",
+      "name": "FIRST PRIZE",
+      "category": "teaching",
+      "year": "",
+      "granting_org_name_raw": "Beijing higher education teaching achievement award",
+      "level": "provincial",
+      "raw_text": "Being awarded a FIRST PRIZE by Beijing higher education teaching achievement award"
+    }
+  ],
+  "publications": [
+    {
+      "publication_id": "publication-c8431aa57cb1",
+      "title": "Automatic schizophrenia discrimination on fNIRS by using complex brain network analysis and SVM",
+      "authors_raw": "Song Hong, Chen Lei, Gao Ruiqi, Jian Yang",
+      "year": "2017",
+      "venue": "BMC Medical Informatics and Decision Making",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "[1] Song Hong, Chen Lei, Gao Ruiqi, Jian Yang, Automatic schizophrenia discrimination on fNIRS by using complex brain network analysis and SVM, BMC Medical Informatics and Decision Making.2017.12"
+    },
+    {
+      "publication_id": "publication-e2bb8785685f",
+      "title": "Kidney segmentation in CT sequences using SKFCM and improved GrowCut algorithm",
+      "authors_raw": "Hong Song*, Wei Kang,Qian Zhang,Shuliang Wang",
+      "year": "2015",
+      "venue": "BMC Systems Biology",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "[2] Hong Song*, Wei Kang,Qian Zhang,Shuliang Wang, Kidney segmentation in CT sequences using SKFCM and improved GrowCut algorithm, BMC Systems Biology,Volume 9,Suppl 5.2015."
+    },
+    {
+      "publication_id": "publication-c941fa78a46d",
+      "title": "Splitting touching cells based on concave-point and improved watershed algorithms",
+      "authors_raw": "Hong Song*, Qingjie Zhao, Yinghong Liu",
+      "year": "2014",
+      "venue": "Frontiers of Computer Science",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "[3] Hong Song*, Qingjie Zhao, Yinghong Liu. Splitting touching cells based on concave-point and improved watershed algorithms. Frontiers of Computer Science. 8 (1), 156-162,2014."
+    },
+    {
+      "publication_id": "publication-677d6aaf5551",
+      "title": "Multi-modality liver image registration based on multilevel B-splines free-form deformation and L-BFGS optimal algorithm",
+      "authors_raw": "Song Hong*, LI Jiajia, Wang Shuliang, Ma Jingtung",
+      "year": "2014",
+      "venue": "Journal of Central South University",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "[4] Song Hong*, LI Jiajia, Wang Shuliang, Ma Jingtung. Multi-modality liver image registration based on multilevel B-splines free-form deformation and L-BFGS optimal algorithm. Journal of Central South University.21(1), 287-292, 2014."
+    },
+    {
+      "publication_id": "publication-1dc325b203b2",
+      "title": "Dorsal Hand Vein Recognition Based On Convolutional Neural Networks",
+      "authors_raw": "Haipeng Wan, Hong Song, Lei Chen, Jian Yang",
+      "year": "2016",
+      "venue": "2017 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "[5] Haipeng Wan, Hong Song, Lei Chen, Jian Yang. Dorsal Hand Vein Recognition Based On Convolutional Neural Networks, 2017 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), 2016.12, USA"
+    }
+  ],
+  "warnings": []
+}

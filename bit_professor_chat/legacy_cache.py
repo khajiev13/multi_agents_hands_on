@@ -16,7 +16,7 @@ from .ingestion_models import (
     ProfessorIngestionResult,
     ProfessorListing,
 )
-from .markdown_corpus import validate_professor_markdown
+from .markdown_corpus import clean_quality_line, parse_markdown_sections, validate_professor_markdown
 
 
 LAB3_GRAPH_SEED_DIR = Path("lab_3_langgraph_swarm") / "graph_seed"
@@ -62,19 +62,53 @@ def extract_markdown_section_lines(
 
 
 def build_cached_summary_line(markdown_text: str, fallback_name: str) -> str:
-    research_lines = extract_markdown_section_lines(
-        markdown_text, ["Research Interests", "research interests"]
+    preferred_sections = (
+        "Research Interests",
+        "Basic Information",
+        "Academic Service and Memberships",
+        "Teaching",
+        "Work Experience",
+        "Education",
+        "Publications",
+        "Awards",
+        "Contact",
     )
-    if research_lines:
-        return f"{fallback_name}: {', '.join(research_lines[:3])}"
+    sections = parse_markdown_sections(markdown_text)
+    fragments: list[str] = []
 
-    basic_lines = extract_markdown_section_lines(
-        markdown_text, ["Basic Information", "basic information"]
-    )
-    if basic_lines:
-        return f"{fallback_name}: {', '.join(basic_lines[:3])}"
+    def append_section(section_name: str) -> None:
+        for actual_name, lines in sections.items():
+            if actual_name.lower() != section_name.lower():
+                continue
+            for line in lines:
+                cleaned = clean_quality_line(line)
+                if cleaned and cleaned not in fragments:
+                    fragments.append(cleaned)
+                    if len(fragments) >= 3:
+                        return
 
-    return f"{fallback_name}: restored from cached graph data"
+    for section_name in preferred_sections:
+        append_section(section_name)
+        if len(fragments) >= 3:
+            break
+
+    if len(fragments) < 3:
+        for section_name, lines in sections.items():
+            if section_name == "Source Pages":
+                continue
+            for line in lines:
+                cleaned = clean_quality_line(line)
+                if cleaned and cleaned not in fragments:
+                    fragments.append(cleaned)
+                    if len(fragments) >= 3:
+                        break
+            if len(fragments) >= 3:
+                break
+
+    if fragments:
+        return f"{fallback_name}: {', '.join(fragments[:3])}"
+
+    return f"{fallback_name}: summary unavailable"
 
 
 def load_cached_graph(graph_json_path: Path) -> Any:
@@ -235,7 +269,10 @@ def build_professor_cache_index(
         slug = markdown_path.stem
         graph_json_path = find_professor_artifact_path(project_root, slug, "-graph.json")
         graph_html_path = find_professor_artifact_path(project_root, slug, "-graph.html")
-        page_notes_path = find_professor_artifact_path(project_root, slug, "-page-notes.md")
+        page_notes_path = find_professor_artifact_path(
+            project_root, slug, "-page-notes.md"
+        ) or find_professor_artifact_path(project_root, slug, "-ocr.md")
+        dossier_json_path = find_professor_artifact_path(project_root, slug, "-dossier.json")
 
         record = ProfessorArtifactCacheRecord(
             detail_url=detail_url,
@@ -245,6 +282,7 @@ def build_professor_cache_index(
             graph_json_path=str(graph_json_path) if graph_json_path else None,
             graph_html_path=str(graph_html_path) if graph_html_path else None,
             page_notes_path=str(page_notes_path) if page_notes_path else None,
+            dossier_json_path=str(dossier_json_path) if dossier_json_path else None,
             page_count=metadata.get("page_count"),
             markdown_mtime=markdown_path.stat().st_mtime,
             graph_json_mtime=graph_json_path.stat().st_mtime if graph_json_path else None,
@@ -291,8 +329,14 @@ def build_cached_markdown_result(
         entity_count=0,
         relation_count=0,
         summary_line=summary_line,
+        dossier_json_path=(
+            str(Path(cache_entry.dossier_json_path).relative_to(project_root))
+            if cache_entry.dossier_json_path
+            else ""
+        ),
         validation_status=validation.status,
         validation_notes=validation.notes,
+        validation_checks=validation.checks,
     )
 
 
@@ -422,11 +466,7 @@ def restore_professor_from_cache(
         if cache_entry.graph_html_path
         else artifact_dir / f"{cache_entry.slug}-graph.html"
     )
-    page_notes_path = (
-        Path(cache_entry.page_notes_path)
-        if cache_entry.page_notes_path
-        else artifact_dir / f"{cache_entry.slug}-page-notes.md"
-    )
+    page_notes_path = Path(cache_entry.page_notes_path) if cache_entry.page_notes_path else None
 
     cached_markdown = markdown_path.read_text(encoding="utf-8")
     summary_line = build_cached_summary_line(cached_markdown, listing.name)
@@ -457,21 +497,37 @@ def restore_professor_from_cache(
         slug=cache_entry.slug,
         page_count=cache_entry.page_count or 0,
         markdown_path=str(markdown_path.relative_to(project_root)),
-        page_notes_path=str(page_notes_path.relative_to(project_root)),
+        page_notes_path=(
+            str(page_notes_path.relative_to(project_root)) if page_notes_path else ""
+        ),
         graph_json_path=str(graph_json_path.relative_to(project_root)),
         graph_html_path=str(graph_html_path.relative_to(project_root)),
         entity_count=len(graph.entities),
         relation_count=len(graph.relations),
         summary_line=summary_line,
+        dossier_json_path=(
+            str(Path(cache_entry.dossier_json_path).relative_to(project_root))
+            if cache_entry.dossier_json_path
+            else ""
+        ),
         validation_status=validation.status,
         validation_notes=validation.notes,
+        validation_checks=validation.checks,
     )
 
 
 def rebuild_professor_summary(project_root: Path, entries: Iterable[ProfessorIngestionResult]) -> Path:
     lines = ["# BIT CSAT Professors", ""]
     for entry in sorted(entries, key=lambda item: item.name):
-        lines.append(f"- {entry.summary_line}")
+        markdown_path = project_root / entry.markdown_path if entry.markdown_path else None
+        if markdown_path and markdown_path.exists():
+            summary_line = build_cached_summary_line(
+                markdown_path.read_text(encoding="utf-8"),
+                entry.name,
+            )
+        else:
+            summary_line = build_cached_summary_line(entry.summary_line, entry.name)
+        lines.append(f"- {summary_line}")
     lines.append("")
     output_path = project_root / "professors.md"
     output_path.write_text("\n".join(lines), encoding="utf-8")
