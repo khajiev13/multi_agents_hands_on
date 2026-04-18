@@ -1,0 +1,281 @@
+{
+  "metadata": {
+    "name": "ZHAO Fengnian",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121628.htm",
+    "slug": "zhao-fengnian",
+    "page_count": 3,
+    "image_urls": [
+      "https://isc.bit.edu.cn/images/2022-04/20171130014137607269.png",
+      "https://isc.bit.edu.cn/images/2022-04/20171130014137612367.png",
+      "https://isc.bit.edu.cn/images/2022-04/20171130014137617462.png"
+    ],
+    "artifact_namespace": "structured_seed",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/zhao-fengnian-ocr.md"
+  },
+  "professor": {
+    "professor_id": "professor-20d45ee529c5",
+    "name_local": "赵丰年",
+    "name_english": "Zhao Fenghuan",
+    "aliases": [
+      "赵丰年",
+      "Zhao Fenghuan"
+    ],
+    "title": "讲师/Lecturer",
+    "emails": [
+      "zhaofn@bit.edu.cn"
+    ],
+    "phones": [
+      "13521010011"
+    ],
+    "biography_text": "个人简历(Biography) 教育背景:(Educational Background) Sept 2012 ~ Present PhD Candidate in Institute of Education at BIT Sept 1992 ~ June 1999 Received Master's degree at BIT, Department of Computer Science, June 1999 Received Bachelor's degree at BIT, Department of Computer Science, June 1996 工作经历:(Working Experience) Sept 1999 ~ Present Instructor at Beijing Institute of Technology International Affairs Coordinator of School of Software Taught the following courses *bilingually or in English*: Computer Science Foundations (head teacher), Web Design Basics (head teacher), C Programming, English for Software Engineers, Electronic Commerce, Web Publishing with HTML&XHTML, Management Information Systems, etc., some rated as high as 97% by students Published more than 20 books on computer applications, several selected as National Level Planned Textbooks Published several academic papers Sept 2004 ~ Sept 2005 Visiting scholar at University of California, San Diego Researched at Interactive Cognition Laboratory Worked as TA at Department of Cognitive Science",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/zhao-fengnian-ocr.md"
+  },
+  "organizations": [
+    {
+      "org_id": "org-d36498f3ea8e",
+      "name": "School of Software, Beijing Institute of Technology",
+      "aliases": [
+        "School of Software, Beijing Institute of Technology"
+      ],
+      "org_type": "school"
+    }
+  ],
+  "affiliation_organization_names": [
+    "Beijing Institute of Technology",
+    "School of Software, Beijing Institute of Technology"
+  ],
+  "research_topics": [
+    {
+      "topic_id": "topic-5a705a2af038",
+      "name": "Gamification of Software Systems",
+      "normalized_name": "gamification-of-software-systems",
+      "language": "English"
+    },
+    {
+      "topic_id": "topic-e76a335e8b2b",
+      "name": "Educational Games",
+      "normalized_name": "educational-games",
+      "language": "English"
+    },
+    {
+      "topic_id": "topic-7fcee54613c9",
+      "name": "Digital Game Based Learning",
+      "normalized_name": "digital-game-based-learning",
+      "language": "English"
+    }
+  ],
+  "education_experiences": [
+    {
+      "experience_id": "education-f0a07e3628f6",
+      "degree": "PhD Candidate",
+      "field": "Education",
+      "organization_name_raw": "Institute of Education at BIT",
+      "start_text": "Sept 2012",
+      "end_text": "Present",
+      "is_current": true,
+      "order": 1,
+      "raw_text": "Sept 2012 ~ Present PhD Candidate in Institute of Education at BIT"
+    },
+    {
+      "experience_id": "education-d24786126184",
+      "degree": "Master's degree",
+      "field": "Computer Science",
+      "organization_name_raw": "BIT, Department of Computer Science",
+      "start_text": "Sept 1992",
+      "end_text": "June 1999",
+      "is_current": false,
+      "order": 2,
+      "raw_text": "Sept 1992 ~ June 1999 Received Master's degree at BIT, Department of Computer Science, June 1999"
+    },
+    {
+      "experience_id": "education-54f3c8d340dc",
+      "degree": "Bachelor's degree",
+      "field": "Computer Science",
+      "organization_name_raw": "BIT, Department of Computer Science",
+      "start_text": "",
+      "end_text": "June 1996",
+      "is_current": false,
+      "order": 3,
+      "raw_text": "Received Bachelor's degree at BIT, Department of Computer Science, June 1996"
+    }
+  ],
+  "employment_experiences": [
+    {
+      "experience_id": "employment-0a5f46ee8132",
+      "role_title": "Instructor, International Affairs Coordinator of School of Software",
+      "organization_name_raw": "Beijing Institute of Technology",
+      "location": "",
+      "start_text": "Sept 1999",
+      "end_text": "Present",
+      "is_current": true,
+      "order": 1,
+      "raw_text": "Sept 1999 ~ Present Instructor at Beijing Institute of Technology International Affairs Coordinator of School of Software Taught the following courses *bilingually or in English*: Computer Science Foundations (head teacher), Web Design Basics (head teacher), C Programming, English for Software Engineers, Electronic Commerce, Web Publishing with HTML&XHTML, Management Information Systems, etc., some rated as high as 97% by students Published more than 20 books on computer applications, several selected as National Level Planned Textbooks Published several academic papers"
+    },
+    {
+      "experience_id": "employment-0177401912d7",
+      "role_title": "Visiting scholar, TA",
+      "organization_name_raw": "University of California, San Diego",
+      "location": "",
+      "start_text": "Sept 2004",
+      "end_text": "Sept 2005",
+      "is_current": false,
+      "order": 2,
+      "raw_text": "Sept 2004 ~ Sept 2005 Visiting scholar at University of California, San Diego Researched at Interactive Cognition Laboratory Worked as TA at Department of Cognitive Science"
+    }
+  ],
+  "academic_service_roles": [],
+  "awards": [
+    {
+      "award_id": "award-ffc63a4ea5b0",
+      "name": "First Prize of Beijing Institute of Technology T-more Teaching Competition",
+      "category": "Teaching",
+      "year": "2015",
+      "granting_org_name_raw": "Beijing Institute of Technology",
+      "level": "University",
+      "raw_text": "First Prize of Beijing Institute of Technology T-more Teaching Competition, 2015"
+    },
+    {
+      "award_id": "award-528c6398cb80",
+      "name": "Third Prize of Beijing Institute of Technology T-more Teaching Competition",
+      "category": "Teaching",
+      "year": "2012",
+      "granting_org_name_raw": "Beijing Institute of Technology",
+      "level": "University",
+      "raw_text": "Third Prize of Beijing Institute of Technology T-more Teaching Competition, 2012"
+    },
+    {
+      "award_id": "award-b196c4ceba55",
+      "name": "Multimedia Technology>, Excellent Textbook of Beijing",
+      "category": "Publication",
+      "year": "2011",
+      "granting_org_name_raw": "Beijing",
+      "level": "Municipal",
+      "raw_text": "Multimedia Technology>, Excellent Textbook of Beijing, 2011"
+    },
+    {
+      "award_id": "award-1dfdcbd5a148",
+      "name": "C Programming>, National Level Bilingual Teaching Exemplary Course",
+      "category": "Teaching",
+      "year": "2010",
+      "granting_org_name_raw": "National Level",
+      "level": "National",
+      "raw_text": "C Programming>, National Level Bilingual Teaching Exemplary Course, 2010"
+    },
+    {
+      "award_id": "award-c3377625b5a3",
+      "name": "One of the “Top 10 teachers of Beijing Institute of Technology”",
+      "category": "Teaching",
+      "year": "2009",
+      "granting_org_name_raw": "Beijing Institute of Technology",
+      "level": "University",
+      "raw_text": "One of the “Top 10 teachers of Beijing Institute of Technology”, 2009"
+    },
+    {
+      "award_id": "award-79d0bc22052e",
+      "name": "Public Computer Courses Teaching Team>, National Level Excellent Teaching Team",
+      "category": "Teaching",
+      "year": "2009",
+      "granting_org_name_raw": "National Level",
+      "level": "National",
+      "raw_text": "Public Computer Courses Teaching Team>, National Level Excellent Teaching Team, 2009"
+    },
+    {
+      "award_id": "award-34d093fd9002",
+      "name": "Multimedia Technology>, National Level Excellent Course",
+      "category": "Teaching",
+      "year": "2008",
+      "granting_org_name_raw": "National Level",
+      "level": "National",
+      "raw_text": "Multimedia Technology>, National Level Excellent Course, 2008"
+    },
+    {
+      "award_id": "award-bfc1716392c0",
+      "name": "<Software Engineering Practice>, Second Prize of Beijing Higher Education Awards",
+      "category": "Teaching",
+      "year": "2004",
+      "granting_org_name_raw": "Beijing Higher Education Awards",
+      "level": "Municipal",
+      "raw_text": "<Software Engineering Practice>, Second Prize of Beijing Higher Education Awards, 2004"
+    },
+    {
+      "award_id": "award-f37c8fa0040b",
+      "name": "<Web Design>, Excellent Textbook of Beijing",
+      "category": "Publication",
+      "year": "2003",
+      "granting_org_name_raw": "Beijing",
+      "level": "Municipal",
+      "raw_text": "<Web Design>, Excellent Textbook of Beijing, 2003"
+    },
+    {
+      "award_id": "award-39d8f153ba5b",
+      "name": "Second Prize in the Beijing Institute of Technology T-more Teaching Competition",
+      "category": "Teaching",
+      "year": "2003",
+      "granting_org_name_raw": "Beijing Institute of Technology",
+      "level": "University",
+      "raw_text": "Second Prize in the Beijing Institute of Technology T-more Teaching Competition, 2003"
+    },
+    {
+      "award_id": "award-38f852c6af95",
+      "name": "Third prize in the 5th National Popular Science Books Award",
+      "category": "Publication",
+      "year": "2003",
+      "granting_org_name_raw": "5th National Popular Science Books Award",
+      "level": "National",
+      "raw_text": "Third prize in the 5th National Popular Science Books Award, 2003"
+    }
+  ],
+  "publications": [
+    {
+      "publication_id": "publication-5a3b8e5a8e1c",
+      "title": "Gamified learning: definition, characteristics and application",
+      "authors_raw": "Zhao F N, et al.",
+      "year": "2014",
+      "venue": "ETIF2014",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "[Zhao F N, et al. Gamified learning: definition, characteristics and application[C]. ETIF2014.2014"
+    },
+    {
+      "publication_id": "publication-0b3341e7d3d8",
+      "title": "AC Practice Course Based on PBL and LBD",
+      "authors_raw": "Zhao F N.",
+      "year": "2014",
+      "venue": "All-English Instruction Research and Practice",
+      "publication_type": "book",
+      "doi_or_isbn": "",
+      "raw_text": "[Zhao F N. AC Practice Course Based on PBL and LBD[M] // Xu J. All-English Instruction Research and Practice. Beijing: Beijing Institute of Technology Press, 2014: 196-203."
+    },
+    {
+      "publication_id": "publication-8c5706d994f8",
+      "title": "Web Design Technology(2nd edition)",
+      "authors_raw": "Zhao F N.",
+      "year": "2009",
+      "venue": "Tsinghua University Press",
+      "publication_type": "book",
+      "doi_or_isbn": "",
+      "raw_text": "[Zhao F N. Web Design Technology(2nd edition)[M]. Beijing: Tsinghua University Press, 2009"
+    },
+    {
+      "publication_id": "publication-c5aba6d76bcc",
+      "title": "A Text Filtering Model Based on Concept",
+      "authors_raw": "Zhao F N, et al.",
+      "year": "2006",
+      "venue": "Computer Engineering and Application",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "[Zhao F N, et al. A Text Filtering Model Based on Concept[J]. Computer Engineering and Application, 2006, 42(04):186-188"
+    },
+    {
+      "publication_id": "publication-40400024ca48",
+      "title": "A Textbook on Web Design(3rd edition)",
+      "authors_raw": "Zhao F N.",
+      "year": "2006",
+      "venue": "Posts&Telecom Press",
+      "publication_type": "book",
+      "doi_or_isbn": "",
+      "raw_text": "[Zhao F N. A Textbook on Web Design(3rd edition)[M]. Beijing: Posts&Telecom Press, 2006"
+    }
+  ],
+  "warnings": []
+}

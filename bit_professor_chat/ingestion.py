@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+import json
 import re
+import shutil
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections.abc import Iterable, Sequence
 from pathlib import Path
 from typing import Any
@@ -11,23 +14,31 @@ from langchain_openai import ChatOpenAI
 
 from .config import TutorSettings
 from .graph_ingestion import (
+    aggregate_graphs,
+    build_kg_generator,
+    cluster_graph,
     generate_professor_graph,
+    generate_professor_graph_with_generator,
+    graph_to_payload,
     insert_professor_graph,
     require_kg_gen,
     reset_neo4j_database,
+    save_graph_html,
     save_graph_json,
     verify_neo4j_graph,
 )
 from .ingestion_models import (
-    OCRPageExtraction,
-    OCRVisibleBlock,
     ProfessorArtifactCacheRecord,
     ProfessorCorpusPartition,
+    ProfessorDossier,
     ProfessorGraphIngestionResult,
     ProfessorIngestionPartition,
     ProfessorIngestionResult,
     ProfessorListing,
+    ProfessorOCRBundleResult,
     ProfessorPageNotesResult,
+    ProfessorPreInsertionBatchResult,
+    ProfessorPreInsertionResult,
 )
 from .legacy_cache import (
     build_graph_seed_index,
@@ -50,23 +61,11 @@ from .markdown_corpus import (
     build_dossier_metadata,
     rebuild_markdown_corpus,
     slugify_name,
-    validate_professor_markdown,
+    validate_professor_dossier,
 )
-from .model_factory import build_model, build_ocr_model
-from .ocr_transcript import (
-    build_professor_markdown_from_page_notes,
-    cleanup_markdown_artifact,
-    extract_header_identity_lines,
-    extract_identity_candidates,
-    extract_professor_page_markdown,
-    extract_professor_poster_notes,
-    needs_top_block_fallback,
-    normalize_page_ocr_markdown,
-    page_markdown_to_page_extraction,
-    parse_header_identity_lines,
-    parse_ocr_page_notes,
-    render_page_notes,
-)
+from .markdown_render import render_professor_markdown
+from .model_factory import build_ocr_model
+from .ocr_transcript import extract_professor_poster_page_markdowns, extract_professor_poster_markdown
 from .source_discovery import (
     LISTING_URL,
     build_requests_session,
@@ -76,9 +75,368 @@ from .source_discovery import (
     extract_image_urls,
     fetch_soup,
 )
+from .structured_review import build_professor_structured_review
+from .synthesis import synthesize_professor_dossier
 
 
 GRAPH_INPUT_SOURCE_SECTION_PATTERN = re.compile(r"\n## Source Pages(?:\n.*)*$", re.S)
+EXPECTED_COURSE_PROFESSOR_SLUGS = (
+    "che-haiying",
+    "cheng-cheng",
+    "filippo-fabrocini",
+    "gao-guangyu",
+    "gao-yang",
+    "huang-heyan",
+    "huang-yonggang",
+    "jin-fusheng",
+    "li-dongni",
+    "li-fan",
+    "li-jianwu",
+    "li-kan",
+    "li-xin",
+    "li-yugang",
+    "liang-wei",
+    "liu-hui",
+    "lu-yao",
+    "lv-kun",
+    "mao-xianling",
+    "niu-zhendong",
+    "shang-jianyun",
+    "shen-meng",
+    "shi-feng",
+    "shi-shumin",
+    "song-hong",
+    "song-tian",
+    "tang-haijing",
+    "tian-donghai",
+    "wang-juan",
+    "wang-quanyu",
+    "wang-shuliang",
+    "wang-yizhuo",
+    "wei-jin",
+    "yan-bo",
+    "yang-song",
+    "yu-yue",
+    "yuan-hanning",
+    "zhang-huaping",
+    "zhang-wenyao",
+    "zhao-fengnian",
+    "zhao-qingjie",
+    "zheng-hong",
+    "zheng-jun",
+    "zhu-liehuang",
+)
+
+
+class ProfessorMarkdownValidationError(ValueError):
+    def __init__(self, validation: Any):
+        self.validation = validation
+        super().__init__("; ".join(validation.notes) or "OCR validation failed")
+
+
+RAW_OCR_MARKDOWN_MODE_MESSAGE = (
+    "Raw OCR markdown mode is enabled. Downstream dossier synthesis, professors/*.md generation, "
+    "corpus rebuilds, and graph generation are intentionally paused until a follow-up "
+    "compatibility pass. Use prepare_professor_ocr_bundle(...) to produce "
+    "artifacts/<namespace>/<slug>-ocr.md."
+)
+
+KG_GEN_PROFESSOR_CONTEXT = """Beijing Institute of Technology professor profile.
+
+The OCR usually follows a professor dossier structure. Prefer extracting entities and relations for:
+- professor identity and aliases
+- affiliations and organizations
+- research interests
+- education experiences
+- employment roles
+- academic service roles
+- awards
+- publications
+- contact information
+
+When relation wording is supported by the text, prefer predicates such as:
+affiliated_with, has_research_interest, studied_at, held_role_at, served_in_role_at,
+received_award, authored, has_email, has_phone.
+Keep relations faithful to the OCR text. Do not invent unsupported facts.
+"""
+
+KG_GEN_CLUSTER_CONTEXT = """Cluster this professor-graph corpus while preserving the professor-profile ontology.
+
+Prefer canonical entities for:
+- professor names and aliases
+- organizations
+- research topics
+- awards
+- publications
+
+When predicates are semantically equivalent, prefer the canonical forms:
+affiliated_with, has_research_interest, studied_at, held_role_at, served_in_role_at,
+received_award, authored, has_email, has_phone.
+Do not merge entities unless the OCR evidence strongly supports equivalence.
+"""
+
+KG_GEN_CLUSTER_ENTITY_LIMIT = 60
+KG_GEN_CLUSTER_EDGE_LIMIT = 15
+
+
+class RawOCRMarkdownModeError(RuntimeError):
+    pass
+
+
+def _raise_raw_ocr_markdown_mode_error(entrypoint: str) -> None:
+    raise RawOCRMarkdownModeError(f"{entrypoint}: {RAW_OCR_MARKDOWN_MODE_MESSAGE}")
+
+
+def _write_json_file(path: Path, payload: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def _maybe_cluster_graph(
+    *,
+    kg: Any,
+    graph: Any,
+    context: str,
+) -> tuple[Any, bool, str | None]:
+    entity_count = len(getattr(graph, "entities", []) or [])
+    edge_count = len(getattr(graph, "edges", []) or [])
+    if entity_count > KG_GEN_CLUSTER_ENTITY_LIMIT or edge_count > KG_GEN_CLUSTER_EDGE_LIMIT:
+        return (
+            graph,
+            False,
+            (
+                "skipped kg-gen clustering because graph exceeded the interactive prep "
+                f"threshold ({entity_count} entities, {edge_count} edges)"
+            ),
+        )
+    try:
+        return cluster_graph(kg=kg, graph=graph, context=context), True, None
+    except Exception as exc:
+        return graph, False, f"kg-gen clustering failed: {exc}"
+
+
+def _fetch_live_professor_listings(user_agent: str) -> tuple[list[str], list[ProfessorListing]]:
+    listing_session = build_requests_session(user_agent)
+    try:
+        listing_pages = discover_listing_pages(LISTING_URL, listing_session)
+        listings = collect_professor_links(listing_pages, listing_session)
+    finally:
+        listing_session.close()
+    return listing_pages, listings
+
+
+def _build_refresh_preflight(listings: Sequence[ProfessorListing]) -> dict[str, Any]:
+    live_slugs = [slugify_name(item.name) for item in listings]
+    live_slug_set = set(live_slugs)
+    expected_slug_set = set(EXPECTED_COURSE_PROFESSOR_SLUGS)
+    missing_live_slugs = sorted(expected_slug_set - live_slug_set)
+    unexpected_live_slugs = sorted(live_slug_set - expected_slug_set)
+    status = (
+        "ok"
+        if len(listings) == len(EXPECTED_COURSE_PROFESSOR_SLUGS)
+        and not missing_live_slugs
+        and not unexpected_live_slugs
+        else "mismatch"
+    )
+    return {
+        "status": status,
+        "expected_count": len(EXPECTED_COURSE_PROFESSOR_SLUGS),
+        "live_count": len(listings),
+        "missing_live_slugs": missing_live_slugs,
+        "unexpected_live_slugs": unexpected_live_slugs,
+        "sample_live_slugs": live_slugs[:10],
+    }
+
+
+def _select_refresh_listings(
+    listings: Sequence[ProfessorListing],
+    *,
+    only_slugs: Sequence[str] | None,
+    limit: int | None,
+) -> list[ProfessorListing]:
+    selected = list(listings)
+    if only_slugs:
+        requested_slugs = list(dict.fromkeys(slug.strip() for slug in only_slugs if slug.strip()))
+        live_by_slug = {slugify_name(item.name): item for item in listings}
+        unknown_slugs = [slug for slug in requested_slugs if slug not in live_by_slug]
+        if unknown_slugs:
+            raise ValueError(f"Unknown professor slugs requested: {', '.join(unknown_slugs)}")
+        selected = [live_by_slug[slug] for slug in requested_slugs]
+    if limit is not None:
+        selected = selected[:limit]
+    return selected
+
+
+def _wipe_refresh_outputs(
+    *,
+    project_root: Path,
+    artifact_namespace: str,
+    settings: TutorSettings,
+    reset_database: bool,
+) -> dict[str, Any]:
+    deleted_markdown_files = 0
+    professor_dir = project_root / "professors"
+    if professor_dir.exists():
+        for markdown_path in professor_dir.glob("*.md"):
+            markdown_path.unlink()
+            deleted_markdown_files += 1
+
+    professors_index_path = project_root / "professors.md"
+    if professors_index_path.exists():
+        professors_index_path.unlink()
+
+    artifact_dir = project_root / "artifacts" / artifact_namespace
+    if artifact_dir.exists():
+        shutil.rmtree(artifact_dir)
+
+    seed_dir = resolve_graph_seed_dir(project_root)
+    deleted_seed_files = 0
+    if seed_dir.exists():
+        for graph_json_path in seed_dir.glob("*-graph.json"):
+            graph_json_path.unlink()
+            deleted_seed_files += 1
+
+    if reset_database:
+        reset_neo4j_database(settings)
+
+    return {
+        "deleted_markdown_files": deleted_markdown_files,
+        "deleted_professors_index": not professors_index_path.exists(),
+        "deleted_seed_files": deleted_seed_files,
+        "artifact_dir": str(artifact_dir.relative_to(project_root)),
+        "seed_dir": str(seed_dir.relative_to(project_root)),
+        "neo4j_reset": reset_database,
+    }
+
+
+def _build_refresh_report_rows(
+    results: Sequence[ProfessorIngestionResult],
+) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for result in results:
+        rows.append(
+            {
+                "name": result.name,
+                "slug": result.slug,
+                "detail_url": result.detail_url,
+                "status": result.status,
+                "error": result.error,
+                "validation_status": result.validation_status,
+                "validation_notes": list(result.validation_notes),
+                "validation_checks": dict(result.validation_checks),
+                "markdown_path": result.markdown_path,
+                "page_notes_path": result.page_notes_path,
+                "graph_json_path": result.graph_json_path,
+                "graph_html_path": result.graph_html_path,
+                "page_count": result.page_count,
+                "entity_count": result.entity_count,
+                "relation_count": result.relation_count,
+                "summary_line": result.summary_line,
+            }
+        )
+    return rows
+
+
+def _dedupe_strings(values: Sequence[str]) -> list[str]:
+    seen: list[str] = []
+    for value in values:
+        cleaned = value.strip()
+        if cleaned and cleaned not in seen:
+            seen.append(cleaned)
+    return seen
+
+
+def _finalize_dossier(
+    *,
+    dossier: ProfessorDossier,
+    listing: ProfessorListing,
+    image_urls: Sequence[str],
+    page_notes_result: ProfessorPageNotesResult,
+) -> ProfessorDossier:
+    basic_information = dossier.basic_information.model_copy(
+        update={
+            "heading": "Basic Information",
+            "bullets": _dedupe_strings(dossier.basic_information.bullets),
+        }
+    )
+    sections = [
+        section.model_copy(
+            update={
+                "heading": section.heading.strip(),
+                "heading_original": section.heading_original.strip()
+                if section.heading_original
+                else None,
+                "bullets": _dedupe_strings(section.bullets),
+            }
+        )
+        for section in dossier.sections
+        if section.heading.strip() and _dedupe_strings(section.bullets)
+    ]
+    warnings = list(dossier.warnings)
+    for page in getattr(page_notes_result, "ocr_pages", []):
+        if not any(block.lines for block in page.blocks) and not page.uncertain_lines:
+            warnings.append(f"page {page.page_number} OCR empty")
+
+    return dossier.model_copy(
+        update={
+            "detail_url": listing.detail_url,
+            "source_page_urls": list(image_urls),
+            "basic_information": basic_information,
+            "sections": sections,
+            "uncertain_lines": _dedupe_strings(dossier.uncertain_lines),
+            "warnings": _dedupe_strings(warnings),
+        }
+    )
+
+
+def _build_synthesis_retry_hint(listing: ProfessorListing) -> str:
+    return (
+        "The previous synthesis was invalid. Rebuild the dossier using only OCR text. "
+        f"Ensure the title matches the professor listing name '{listing.name}', keep "
+        "Basic Information populated only with OCR-supported identity/contact lines, "
+        "and keep at least one non-empty section when OCR blocks provide section text."
+    )
+
+
+def prepare_professor_ocr_bundle(
+    *,
+    listing: ProfessorListing,
+    ocr_model: ChatOpenAI,
+    session: requests.Session,
+    project_root: Path,
+    artifact_namespace: str,
+) -> ProfessorOCRBundleResult:
+    artifact_dir = project_root / "artifacts" / artifact_namespace
+    artifact_dir.mkdir(parents=True, exist_ok=True)
+
+    slug = slugify_name(listing.name)
+    ocr_markdown_path = artifact_dir / f"{slug}-ocr.md"
+    image_urls = extract_image_urls(listing.detail_url, session)
+    if not image_urls:
+        raise ValueError(f"No image URLs found for {listing.name}")
+
+    page_markdowns = extract_professor_poster_page_markdowns(
+        listing=listing,
+        model=ocr_model,
+        image_urls=image_urls,
+        session=session,
+    )
+    ocr_markdown_text = "\n\n".join(page_markdowns)
+    if not ocr_markdown_text.strip():
+        raise ValueError(f"OCR markdown artifact is empty for {listing.name}")
+    ocr_markdown_path.write_text(ocr_markdown_text, encoding="utf-8")
+
+    return ProfessorOCRBundleResult(
+        name=listing.name,
+        detail_url=listing.detail_url,
+        slug=slug,
+        page_count=len(image_urls),
+        image_urls=list(image_urls),
+        page_markdowns=list(page_markdowns),
+        ocr_markdown_path=str(ocr_markdown_path.relative_to(project_root)),
+        ocr_markdown_text=ocr_markdown_text,
+        page_notes_path=str(ocr_markdown_path.relative_to(project_root)),
+    )
 
 
 def prepare_professor_page_notes(
@@ -89,67 +447,535 @@ def prepare_professor_page_notes(
     project_root: Path,
     artifact_namespace: str,
 ) -> ProfessorPageNotesResult:
-    artifact_dir = project_root / "artifacts" / artifact_namespace
-    artifact_dir.mkdir(parents=True, exist_ok=True)
-
-    slug = slugify_name(listing.name)
-    raw_page_notes_path = artifact_dir / f"{slug}-page-notes.md"
-    image_urls = extract_image_urls(listing.detail_url, session)
-    if not image_urls:
-        raise ValueError(f"No image URLs found for {listing.name}")
-
-    page_notes_markdown = extract_professor_poster_notes(
-        model=ocr_model,
-        image_urls=image_urls,
+    return prepare_professor_ocr_bundle(
+        listing=listing,
+        ocr_model=ocr_model,
         session=session,
+        project_root=project_root,
+        artifact_namespace=artifact_namespace,
     )
-    raw_page_notes_path.write_text(page_notes_markdown, encoding="utf-8")
 
-    pages = parse_ocr_page_notes(page_notes_markdown)
-    supplemental_header_lines: list[str] = []
-    if needs_top_block_fallback(pages=pages, expected_name=listing.name):
-        supplemental_header_lines = extract_header_identity_lines(
-            model=ocr_model,
-            image_url=image_urls[0],
-            session=session,
-        )
 
-    return ProfessorPageNotesResult(
+def _build_graph_artifact_metadata(
+    *,
+    listing: ProfessorListing,
+    slug: str,
+    page_count: int,
+    image_urls: Sequence[str],
+    artifact_namespace: str,
+    source_file: str,
+) -> dict[str, Any]:
+    return {
+        "name": listing.name,
+        "detail_url": listing.detail_url,
+        "slug": slug,
+        "page_count": page_count,
+        "image_urls": list(image_urls),
+        "artifact_namespace": artifact_namespace,
+        "source_file": source_file,
+    }
+
+
+def _build_page_graphs_payload(
+    *,
+    listing: ProfessorListing,
+    slug: str,
+    image_urls: Sequence[str],
+    page_markdowns: Sequence[str],
+    page_graphs: Sequence[Any],
+    artifact_namespace: str,
+    source_file: str,
+) -> dict[str, Any]:
+    return {
+        "metadata": _build_graph_artifact_metadata(
+            listing=listing,
+            slug=slug,
+            page_count=len(image_urls),
+            image_urls=image_urls,
+            artifact_namespace=artifact_namespace,
+            source_file=source_file,
+        ),
+        "pages": [
+            {
+                "page_number": page_number,
+                "image_url": image_url,
+                "ocr_markdown": page_markdown,
+                "graph": graph_to_payload(page_graph),
+            }
+            for page_number, (image_url, page_markdown, page_graph) in enumerate(
+                zip(image_urls, page_markdowns, page_graphs),
+                start=1,
+            )
+        ],
+    }
+
+
+def _build_single_graph_payload(
+    *,
+    listing: ProfessorListing,
+    slug: str,
+    image_urls: Sequence[str],
+    artifact_namespace: str,
+    source_file: str,
+    graph: Any,
+    stage: str,
+    page_graph_count: int,
+    extra_metadata: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    metadata = _build_graph_artifact_metadata(
+        listing=listing,
+        slug=slug,
+        page_count=len(image_urls),
+        image_urls=image_urls,
+        artifact_namespace=artifact_namespace,
+        source_file=source_file,
+    )
+    if extra_metadata:
+        metadata.update(extra_metadata)
+    return {
+        "metadata": metadata,
+        "stage": stage,
+        "page_graph_count": page_graph_count,
+        "graph": graph_to_payload(graph),
+    }
+
+
+def _artifact_relative_path(project_root: Path, path: Path) -> str:
+    return str(path.relative_to(project_root))
+
+
+def _build_professor_preinsertion_result(
+    *,
+    listing: ProfessorListing,
+    slug: str,
+    image_urls: Sequence[str],
+    stage_statuses: dict[str, bool],
+    artifact_paths: dict[str, str],
+    aggregate_graph: Any | None = None,
+    clustered_graph: Any | None = None,
+    error: str | None = None,
+    failure_stage: str | None = None,
+) -> ProfessorPreInsertionResult:
+    return ProfessorPreInsertionResult(
         name=listing.name,
         detail_url=listing.detail_url,
         slug=slug,
         page_count=len(image_urls),
-        image_urls=list(image_urls),
-        page_notes_path=str(raw_page_notes_path.relative_to(project_root)),
-        page_notes_markdown=page_notes_markdown,
-        supplemental_header_lines=supplemental_header_lines,
+        status="ok" if error is None else "error",
+        failure_stage=failure_stage,
+        error=error,
+        stage_statuses=dict(stage_statuses),
+        artifact_paths=dict(artifact_paths),
+        page_graph_count=len(image_urls) if stage_statuses.get("kg_generate") else 0,
+        aggregate_entity_count=len(getattr(aggregate_graph, "entities", []) or []),
+        aggregate_relation_count=len(getattr(aggregate_graph, "relations", []) or []),
+        clustered_entity_count=len(getattr(clustered_graph, "entities", []) or []),
+        clustered_relation_count=len(getattr(clustered_graph, "relations", []) or []),
     )
 
 
-def _build_validated_canonical_markdown(
+def _prepare_professor_preinsertion_bundle(
+    *,
+    listing: ProfessorListing,
+    settings: TutorSettings,
+    project_root: Path,
+    artifact_namespace: str,
+    user_agent: str,
+    kg_context: str,
+    cluster_context: str,
+) -> tuple[ProfessorPreInsertionResult, Any | None]:
+    artifact_dir = project_root / "artifacts" / artifact_namespace
+    artifact_dir.mkdir(parents=True, exist_ok=True)
+
+    slug = slugify_name(listing.name)
+    ocr_markdown_path = artifact_dir / f"{slug}-ocr.md"
+    page_graphs_path = artifact_dir / f"{slug}-page-graphs.json"
+    professor_aggregate_path = artifact_dir / f"{slug}-professor-aggregate.json"
+    professor_aggregate_html_path = artifact_dir / f"{slug}-professor-aggregate.html"
+    professor_clustered_path = artifact_dir / f"{slug}-professor-clustered.json"
+    professor_clustered_html_path = artifact_dir / f"{slug}-professor-clustered.html"
+    structured_json_path = artifact_dir / f"{slug}-structured.json"
+
+    stage_statuses = {
+        "crawl": False,
+        "ocr": False,
+        "kg_generate": False,
+        "aggregate": False,
+        "cluster": False,
+        "structured_json": False,
+    }
+    artifact_paths: dict[str, str] = {}
+    current_stage = "crawl"
+    image_urls: list[str] = []
+    aggregate_graph: Any | None = None
+    clustered_graph: Any | None = None
+
+    session = build_requests_session(user_agent)
+    try:
+        image_urls = extract_image_urls(listing.detail_url, session)
+        if not image_urls:
+            raise ValueError(f"No image URLs found for {listing.name}")
+        stage_statuses["crawl"] = True
+
+        current_stage = "ocr"
+        ocr_model = build_ocr_model(settings)
+        page_markdowns = extract_professor_poster_page_markdowns(
+            listing=listing,
+            image_urls=image_urls,
+            model=ocr_model,
+            session=session,
+        )
+        ocr_markdown_text = "\n\n".join(page_markdowns).strip()
+        if not ocr_markdown_text:
+            raise ValueError(f"OCR markdown artifact is empty for {listing.name}")
+        ocr_markdown_path.write_text(ocr_markdown_text, encoding="utf-8")
+        artifact_paths["ocr_markdown_path"] = _artifact_relative_path(project_root, ocr_markdown_path)
+        stage_statuses["ocr"] = True
+
+        ocr_bundle_result = ProfessorOCRBundleResult(
+            name=listing.name,
+            detail_url=listing.detail_url,
+            slug=slug,
+            page_count=len(image_urls),
+            image_urls=list(image_urls),
+            page_markdowns=list(page_markdowns),
+            ocr_markdown_path=artifact_paths["ocr_markdown_path"],
+            ocr_markdown_text=ocr_markdown_text,
+            page_notes_path=artifact_paths["ocr_markdown_path"],
+        )
+
+        current_stage = "kg_generate"
+        kg = build_kg_generator(settings)
+        page_graphs = [
+            generate_professor_graph_with_generator(
+                markdown_text=page_markdown,
+                kg=kg,
+                context=kg_context,
+            )
+            for page_markdown in page_markdowns
+        ]
+        _write_json_file(
+            page_graphs_path,
+            _build_page_graphs_payload(
+                listing=listing,
+                slug=slug,
+                image_urls=image_urls,
+                page_markdowns=page_markdowns,
+                page_graphs=page_graphs,
+                artifact_namespace=artifact_namespace,
+                source_file=artifact_paths["ocr_markdown_path"],
+            ),
+        )
+        artifact_paths["page_graphs_path"] = _artifact_relative_path(project_root, page_graphs_path)
+        stage_statuses["kg_generate"] = True
+
+        current_stage = "aggregate"
+        aggregate_graph = aggregate_graphs(kg=kg, graphs=page_graphs)
+        _write_json_file(
+            professor_aggregate_path,
+            _build_single_graph_payload(
+                listing=listing,
+                slug=slug,
+                image_urls=image_urls,
+                artifact_namespace=artifact_namespace,
+                source_file=artifact_paths["ocr_markdown_path"],
+                graph=aggregate_graph,
+                stage="professor_aggregate",
+                page_graph_count=len(page_graphs),
+            ),
+        )
+        artifact_paths["professor_aggregate_path"] = _artifact_relative_path(
+            project_root, professor_aggregate_path
+        )
+        save_graph_html(aggregate_graph, professor_aggregate_html_path)
+        artifact_paths["professor_aggregate_html_path"] = _artifact_relative_path(
+            project_root, professor_aggregate_html_path
+        )
+        stage_statuses["aggregate"] = True
+
+        current_stage = "cluster"
+        clustered_graph, cluster_applied, cluster_reason = _maybe_cluster_graph(
+            kg=kg,
+            graph=aggregate_graph,
+            context=cluster_context,
+        )
+        _write_json_file(
+            professor_clustered_path,
+            _build_single_graph_payload(
+                listing=listing,
+                slug=slug,
+                image_urls=image_urls,
+                artifact_namespace=artifact_namespace,
+                source_file=artifact_paths["ocr_markdown_path"],
+                graph=clustered_graph,
+                stage="professor_clustered",
+                page_graph_count=len(page_graphs),
+                extra_metadata={
+                    "cluster_applied": cluster_applied,
+                    "cluster_reason": cluster_reason,
+                },
+            ),
+        )
+        artifact_paths["professor_clustered_path"] = _artifact_relative_path(
+            project_root, professor_clustered_path
+        )
+        save_graph_html(clustered_graph, professor_clustered_html_path)
+        artifact_paths["professor_clustered_html_path"] = _artifact_relative_path(
+            project_root, professor_clustered_html_path
+        )
+        stage_statuses["cluster"] = True
+
+        current_stage = "structured_json"
+        structured_review = build_professor_structured_review(
+            listing=listing,
+            ocr_bundle_result=ocr_bundle_result,
+            artifact_namespace=artifact_namespace,
+            settings=settings,
+        )
+        _write_json_file(
+            structured_json_path,
+            structured_review.model_dump(mode="json"),
+        )
+        artifact_paths["structured_json_path"] = _artifact_relative_path(
+            project_root, structured_json_path
+        )
+        stage_statuses["structured_json"] = True
+
+        return (
+            _build_professor_preinsertion_result(
+                listing=listing,
+                slug=slug,
+                image_urls=image_urls,
+                stage_statuses=stage_statuses,
+                artifact_paths=artifact_paths,
+                aggregate_graph=aggregate_graph,
+                clustered_graph=clustered_graph,
+            ),
+            aggregate_graph,
+        )
+    except Exception as exc:
+        return (
+            _build_professor_preinsertion_result(
+                listing=listing,
+                slug=slug,
+                image_urls=image_urls,
+                stage_statuses=stage_statuses,
+                artifact_paths=artifact_paths,
+                aggregate_graph=aggregate_graph,
+                clustered_graph=clustered_graph,
+                error=str(exc),
+                failure_stage=current_stage,
+            ),
+            None,
+        )
+    finally:
+        session.close()
+
+
+def prepare_professor_preinsertion_artifacts(
+    *,
+    listing: ProfessorListing,
+    settings: TutorSettings,
+    project_root: Path,
+    artifact_namespace: str,
+    user_agent: str = "agents-tutorial-preinsert-worker/0.1",
+    kg_context: str = KG_GEN_PROFESSOR_CONTEXT,
+    cluster_context: str = KG_GEN_CLUSTER_CONTEXT,
+) -> ProfessorPreInsertionResult:
+    result, _ = _prepare_professor_preinsertion_bundle(
+        listing=listing,
+        settings=settings,
+        project_root=project_root,
+        artifact_namespace=artifact_namespace,
+        user_agent=user_agent,
+        kg_context=kg_context,
+        cluster_context=cluster_context,
+    )
+    return result
+
+
+def _build_stage_counts(results: Sequence[ProfessorPreInsertionResult]) -> dict[str, int]:
+    stages = ("crawl", "ocr", "kg_generate", "aggregate", "cluster", "structured_json")
+    return {
+        stage: sum(1 for result in results if result.stage_statuses.get(stage, False))
+        for stage in stages
+    }
+
+
+def refresh_professors_to_artifacts(
+    *,
+    settings: TutorSettings,
+    project_root: Path | None = None,
+    limit: int | None = None,
+    only_slugs: Sequence[str] | None = None,
+    max_concurrency: int = 8,
+    artifact_namespace: str = "lab1-pre-insertion-review",
+    user_agent_prefix: str = "agents-tutorial-preinsert",
+    kg_context: str = KG_GEN_PROFESSOR_CONTEXT,
+    cluster_context: str = KG_GEN_CLUSTER_CONTEXT,
+) -> ProfessorPreInsertionBatchResult:
+    resolved_project_root = project_root or settings.project_root
+    listing_pages, listings = _fetch_live_professor_listings(f"{user_agent_prefix}/listing")
+    selected_listings = _select_refresh_listings(
+        listings,
+        only_slugs=only_slugs,
+        limit=limit,
+    )
+    artifact_dir = resolved_project_root / "artifacts" / artifact_namespace
+    artifact_dir.mkdir(parents=True, exist_ok=True)
+
+    results: list[ProfessorPreInsertionResult] = []
+    successful_professor_graphs: list[Any] = []
+
+    with ThreadPoolExecutor(max_workers=max_concurrency) as executor:
+        future_to_listing = {
+            executor.submit(
+                _prepare_professor_preinsertion_bundle,
+                listing=listing,
+                settings=settings,
+                project_root=resolved_project_root,
+                artifact_namespace=artifact_namespace,
+                user_agent=f"{user_agent_prefix}/{index + 1}",
+                kg_context=kg_context,
+                cluster_context=cluster_context,
+            ): listing
+            for index, listing in enumerate(selected_listings)
+        }
+        for future in as_completed(future_to_listing):
+            result, professor_graph = future.result()
+            results.append(result)
+            if result.status == "ok" and professor_graph is not None:
+                successful_professor_graphs.append(professor_graph)
+
+    results.sort(key=lambda result: result.slug)
+
+    corpus_artifact_paths: dict[str, str] = {}
+    if successful_professor_graphs:
+        kg = build_kg_generator(settings)
+        corpus_aggregate_graph = aggregate_graphs(kg=kg, graphs=successful_professor_graphs)
+        corpus_aggregate_path = artifact_dir / "all-professors-aggregate.json"
+        corpus_aggregate_html_path = artifact_dir / "all-professors-aggregate.html"
+        _write_json_file(
+            corpus_aggregate_path,
+            {
+                "metadata": {
+                    "artifact_namespace": artifact_namespace,
+                    "professor_count": len(successful_professor_graphs),
+                    "listing_pages": list(listing_pages),
+                    "source_professors": [result.name for result in results if result.status == "ok"],
+                },
+                "stage": "corpus_aggregate",
+                "graph": graph_to_payload(corpus_aggregate_graph),
+            },
+        )
+        corpus_artifact_paths["corpus_aggregate_path"] = _artifact_relative_path(
+            resolved_project_root,
+            corpus_aggregate_path,
+        )
+        save_graph_html(corpus_aggregate_graph, corpus_aggregate_html_path)
+        corpus_artifact_paths["corpus_aggregate_html_path"] = _artifact_relative_path(
+            resolved_project_root,
+            corpus_aggregate_html_path,
+        )
+
+        corpus_clustered_graph, corpus_cluster_applied, corpus_cluster_reason = _maybe_cluster_graph(
+            kg=kg,
+            graph=corpus_aggregate_graph,
+            context=cluster_context,
+        )
+        corpus_clustered_path = artifact_dir / "all-professors-clustered.json"
+        corpus_clustered_html_path = artifact_dir / "all-professors-clustered.html"
+        _write_json_file(
+            corpus_clustered_path,
+            {
+                "metadata": {
+                    "artifact_namespace": artifact_namespace,
+                    "professor_count": len(successful_professor_graphs),
+                    "listing_pages": list(listing_pages),
+                    "source_professors": [result.name for result in results if result.status == "ok"],
+                    "cluster_applied": corpus_cluster_applied,
+                    "cluster_reason": corpus_cluster_reason,
+                },
+                "stage": "corpus_clustered",
+                "graph": graph_to_payload(corpus_clustered_graph),
+            },
+        )
+        corpus_artifact_paths["corpus_clustered_path"] = _artifact_relative_path(
+            resolved_project_root,
+            corpus_clustered_path,
+        )
+        save_graph_html(corpus_clustered_graph, corpus_clustered_html_path)
+        corpus_artifact_paths["corpus_clustered_html_path"] = _artifact_relative_path(
+            resolved_project_root,
+            corpus_clustered_html_path,
+        )
+
+    failures = [
+        {
+            "name": result.name,
+            "slug": result.slug,
+            "detail_url": result.detail_url,
+            "failure_stage": result.failure_stage,
+            "error": result.error,
+        }
+        for result in results
+        if result.status != "ok"
+    ]
+
+    batch_result = ProfessorPreInsertionBatchResult(
+        artifact_namespace=artifact_namespace,
+        artifact_dir=str(artifact_dir.relative_to(resolved_project_root)),
+        listing_pages=list(listing_pages),
+        professor_count=len(selected_listings),
+        success_count=sum(1 for result in results if result.status == "ok"),
+        failure_count=sum(1 for result in results if result.status != "ok"),
+        stage_counts=_build_stage_counts(results),
+        failures=failures,
+        results=results,
+        corpus_artifact_paths=corpus_artifact_paths,
+    )
+    report_path = artifact_dir / "ingestion-report.json"
+    _write_json_file(report_path, batch_result.to_dict())
+    batch_result.corpus_artifact_paths["report_path"] = _artifact_relative_path(
+        resolved_project_root,
+        report_path,
+    )
+    _write_json_file(report_path, batch_result.to_dict())
+    return batch_result
+
+
+def _build_validated_dossier_and_markdown(
     *,
     page_notes_result: ProfessorPageNotesResult,
-) -> tuple[str, Any]:
+    settings: TutorSettings,
+    retry_hint: str | None = None,
+) -> tuple[ProfessorDossier, str, Any]:
+    _raise_raw_ocr_markdown_mode_error("_build_validated_dossier_and_markdown")
     listing = ProfessorListing(
         name=page_notes_result.name,
         detail_url=page_notes_result.detail_url,
     )
-    canonical_markdown = cleanup_markdown_artifact(
-        build_professor_markdown_from_page_notes(
-            listing=listing,
-            image_urls=page_notes_result.image_urls,
-            page_notes_markdown=page_notes_result.page_notes_markdown,
-            supplemental_header_lines=page_notes_result.supplemental_header_lines,
-        )
+    dossier = synthesize_professor_dossier(
+        listing=listing,
+        pages=page_notes_result.ocr_pages,
+        settings=settings,
+        retry_hint=retry_hint,
     )
-    validation = validate_professor_markdown(
-        markdown_text=canonical_markdown,
-        expected_name=listing.name,
-        expected_detail_url=listing.detail_url,
+    finalized_dossier = _finalize_dossier(
+        dossier=dossier,
+        listing=listing,
+        image_urls=page_notes_result.image_urls,
+        page_notes_result=page_notes_result,
+    )
+    canonical_markdown = render_professor_markdown(finalized_dossier).strip()
+    validation = validate_professor_dossier(
+        dossier=finalized_dossier,
+        listing=listing,
+        rendered_markdown=canonical_markdown,
     )
     if validation.status != "valid":
-        raise ValueError("; ".join(validation.notes) or "OCR validation failed")
-    return canonical_markdown, validation
+        raise ProfessorMarkdownValidationError(validation)
+    return finalized_dossier, canonical_markdown, validation
 
 
 def _strip_graph_input_metadata(markdown_text: str) -> str:
@@ -161,21 +987,23 @@ def _strip_graph_input_metadata(markdown_text: str) -> str:
             continue
         filtered_lines.append(line)
 
-    stripped = GRAPH_INPUT_SOURCE_SECTION_PATTERN.sub("", "\n".join(filtered_lines)).strip()
-    return cleanup_markdown_artifact(stripped)
+    return GRAPH_INPUT_SOURCE_SECTION_PATTERN.sub("", "\n".join(filtered_lines)).strip()
 
 
 def build_graph_input_text_from_page_notes(
     *,
     page_notes_result: ProfessorPageNotesResult,
+    settings: TutorSettings | None = None,
 ) -> str:
-    canonical_markdown, _validation = _build_validated_canonical_markdown(
-        page_notes_result=page_notes_result,
-    )
-    graph_input_text = _strip_graph_input_metadata(canonical_markdown)
-    if not graph_input_text:
-        raise ValueError(f"Graph input text is empty for {page_notes_result.name}")
-    return graph_input_text
+    _raise_raw_ocr_markdown_mode_error("build_graph_input_text_from_page_notes")
+
+
+def build_graph_input_text_from_ocr_bundle(
+    *,
+    ocr_bundle_result: ProfessorOCRBundleResult,
+    settings: TutorSettings | None = None,
+) -> str:
+    _raise_raw_ocr_markdown_mode_error("build_graph_input_text_from_ocr_bundle")
 
 
 def prepare_professor_markdown(
@@ -187,39 +1015,7 @@ def prepare_professor_markdown(
     project_root: Path,
     artifact_namespace: str,
 ) -> ProfessorIngestionResult:
-    professor_dir = project_root / "professors"
-    professor_dir.mkdir(parents=True, exist_ok=True)
-
-    page_notes_result = prepare_professor_page_notes(
-        listing=listing,
-        ocr_model=ocr_model,
-        session=session,
-        project_root=project_root,
-        artifact_namespace=artifact_namespace,
-    )
-    canonical_markdown, validation = _build_validated_canonical_markdown(
-        page_notes_result=page_notes_result,
-    )
-
-    professor_markdown_path = professor_dir / f"{page_notes_result.slug}.md"
-    professor_markdown_path.write_text(canonical_markdown, encoding="utf-8")
-    summary_line = build_cached_summary_line(canonical_markdown, listing.name)
-
-    return ProfessorIngestionResult(
-        name=listing.name,
-        detail_url=listing.detail_url,
-        slug=page_notes_result.slug,
-        page_count=page_notes_result.page_count,
-        markdown_path=str(professor_markdown_path.relative_to(project_root)),
-        page_notes_path=page_notes_result.page_notes_path,
-        graph_json_path="",
-        graph_html_path="",
-        entity_count=0,
-        relation_count=0,
-        summary_line=summary_line,
-        validation_status=validation.status,
-        validation_notes=validation.notes,
-    )
+    _raise_raw_ocr_markdown_mode_error("prepare_professor_markdown")
 
 
 def rebuild_markdown_corpus_from_results(
@@ -228,23 +1024,7 @@ def rebuild_markdown_corpus_from_results(
     settings: TutorSettings,
     results: Iterable[ProfessorIngestionResult],
 ) -> CorpusBuildResult:
-    dossier_entries = [
-        build_dossier_metadata(
-            professor_name=result.name,
-            detail_url=result.detail_url,
-            markdown_path=project_root / result.markdown_path,
-            project_root=project_root,
-        )
-        for result in sorted(results, key=lambda item: item.name)
-        if result.status == "ok"
-        and result.markdown_path
-        and (project_root / result.markdown_path).exists()
-    ]
-    return rebuild_markdown_corpus(
-        project_root=project_root,
-        dossier_entries=dossier_entries,
-        settings=settings,
-    )
+    _raise_raw_ocr_markdown_mode_error("rebuild_markdown_corpus_from_results")
 
 
 def _coerce_listing(value: ProfessorListing | dict[str, Any]) -> ProfessorListing:
@@ -262,80 +1042,7 @@ def _build_professor_graph_chain(
     graph_name: str,
     user_agent: str,
 ):
-    artifact_dir = project_root / "artifacts" / artifact_namespace
-    artifact_dir.mkdir(parents=True, exist_ok=True)
-
-    def prepare_step(listing_input: ProfessorListing | dict[str, Any]) -> dict[str, Any]:
-        listing = _coerce_listing(listing_input)
-        session = build_requests_session(user_agent)
-        page_notes_result = prepare_professor_page_notes(
-            listing=listing,
-            ocr_model=ocr_model,
-            session=session,
-            project_root=project_root,
-            artifact_namespace=artifact_namespace,
-        )
-        return {
-            "listing": listing,
-            "page_notes_result": page_notes_result,
-        }
-
-    def build_graph_input_step(payload: dict[str, Any]) -> dict[str, Any]:
-        graph_input_text = build_graph_input_text_from_page_notes(
-            page_notes_result=payload["page_notes_result"],
-        )
-        return {**payload, "graph_input_text": graph_input_text}
-
-    def generate_graph_step(payload: dict[str, Any]) -> dict[str, Any]:
-        page_notes_result: ProfessorPageNotesResult = payload["page_notes_result"]
-        graph_input_text = payload["graph_input_text"]
-        graph_json_path = artifact_dir / f"{page_notes_result.slug}-graph.json"
-        graph_html_path = artifact_dir / f"{page_notes_result.slug}-graph.html"
-        graph = generate_professor_graph(graph_input_text, settings)
-        save_graph_json(graph, graph_json_path)
-        require_kg_gen().visualize(graph, str(graph_html_path), open_in_browser=False)
-        return {
-            **payload,
-            "graph": graph,
-            "graph_json_path": str(graph_json_path.relative_to(project_root)),
-            "graph_html_path": str(graph_html_path.relative_to(project_root)),
-        }
-
-    def insert_graph_step(payload: dict[str, Any]) -> ProfessorGraphIngestionResult:
-        listing: ProfessorListing = payload["listing"]
-        page_notes_result: ProfessorPageNotesResult = payload["page_notes_result"]
-        graph_input_text: str = payload["graph_input_text"]
-        graph = payload["graph"]
-        insert_professor_graph(
-            graph=graph,
-            settings=settings,
-            graph_name=graph_name,
-            professor_name=listing.name,
-            detail_url=listing.detail_url,
-        )
-        summary_line = build_cached_summary_line(graph_input_text, listing.name)
-        return ProfessorGraphIngestionResult(
-            name=listing.name,
-            detail_url=listing.detail_url,
-            slug=page_notes_result.slug,
-            page_count=page_notes_result.page_count,
-            page_notes_path=page_notes_result.page_notes_path,
-            graph_json_path=payload["graph_json_path"],
-            graph_html_path=payload["graph_html_path"],
-            entity_count=len(graph.entities),
-            relation_count=len(graph.relations),
-            summary_line=summary_line,
-            graph_input_char_count=len(graph_input_text),
-            validation_status="valid",
-            validation_notes=[],
-        )
-
-    return (
-        RunnableLambda(prepare_step)
-        | RunnableLambda(build_graph_input_step)
-        | RunnableLambda(generate_graph_step)
-        | RunnableLambda(insert_graph_step)
-    )
+    _raise_raw_ocr_markdown_mode_error("_build_professor_graph_chain")
 
 
 def ingest_professor_to_graph(
@@ -349,55 +1056,7 @@ def ingest_professor_to_graph(
     user_agent: str = "agents-tutorial-lab1-worker/0.1",
     max_attempts: int = 2,
 ) -> ProfessorGraphIngestionResult:
-    professor_chain = _build_professor_graph_chain(
-        settings=settings,
-        ocr_model=ocr_model,
-        project_root=project_root,
-        artifact_namespace=artifact_namespace,
-        graph_name=graph_name,
-        user_agent=user_agent,
-    )
-    slug = slugify_name(listing.name)
-    artifact_dir = project_root / "artifacts" / artifact_namespace
-    graph_json_path = artifact_dir / f"{slug}-graph.json"
-    graph_html_path = artifact_dir / f"{slug}-graph.html"
-
-    for attempt in range(max_attempts):
-        try:
-            result = professor_chain.invoke(listing)
-            if attempt == 0:
-                return result
-            return ProfessorGraphIngestionResult(
-                **{
-                    **result.to_dict(),
-                    "retry_count": attempt,
-                }
-            )
-        except Exception as exc:
-            if attempt + 1 < max_attempts:
-                continue
-            return ProfessorGraphIngestionResult(
-                name=listing.name,
-                detail_url=listing.detail_url,
-                slug=slug,
-                page_count=0,
-                page_notes_path=str(
-                    (artifact_dir / f"{slug}-page-notes.md").relative_to(project_root)
-                ),
-                graph_json_path=str(graph_json_path.relative_to(project_root)),
-                graph_html_path=str(graph_html_path.relative_to(project_root)),
-                entity_count=0,
-                relation_count=0,
-                summary_line=f"{listing.name} could not be summarized because ingestion failed.",
-                retry_count=max_attempts - 1,
-                graph_input_char_count=0,
-                status="error",
-                error=str(exc),
-                validation_status="error",
-                validation_notes=[str(exc)],
-            )
-
-    raise RuntimeError(f"Unreachable ingest_professor_to_graph state for {listing.name}")
+    _raise_raw_ocr_markdown_mode_error("ingest_professor_to_graph")
 
 
 def ingest_professors_to_graph(
@@ -411,94 +1070,21 @@ def ingest_professors_to_graph(
     max_concurrency: int = 4,
     user_agent_prefix: str = "agents-tutorial-lab1-worker",
 ) -> list[ProfessorGraphIngestionResult]:
-    professor_runner = RunnableLambda(
-        lambda listing: ingest_professor_to_graph(
-            listing=_coerce_listing(listing),
-            settings=settings,
-            ocr_model=ocr_model,
-            project_root=project_root,
-            artifact_namespace=artifact_namespace,
-            graph_name=graph_name,
-            user_agent=f"{user_agent_prefix}/0.1",
-        )
-    )
-    return professor_runner.batch(
-        list(listings),
-        config={"max_concurrency": max_concurrency},
-    )
+    _raise_raw_ocr_markdown_mode_error("ingest_professors_to_graph")
 
 
 def ingest_professor(
-    *,
     listing: ProfessorListing,
-    settings: TutorSettings,
-    ocr_model: ChatOpenAI,
-    session: requests.Session,
-    project_root: Path,
-    artifact_namespace: str,
+    *,
+    settings: TutorSettings | None = None,
+    ocr_model: ChatOpenAI | None = None,
+    session: requests.Session | None = None,
+    project_root: Path | None = None,
+    artifact_namespace: str = "lab1-ingestion",
     graph_name: str = "",
     build_graph: bool = True,
 ) -> ProfessorIngestionResult:
-    artifact_dir = project_root / "artifacts" / artifact_namespace
-    artifact_dir.mkdir(parents=True, exist_ok=True)
-    slug = slugify_name(listing.name)
-    graph_json_path = artifact_dir / f"{slug}-graph.json"
-    graph_html_path = artifact_dir / f"{slug}-graph.html"
-
-    try:
-        prepared = prepare_professor_markdown(
-            listing=listing,
-            settings=settings,
-            ocr_model=ocr_model,
-            session=session,
-            project_root=project_root,
-            artifact_namespace=artifact_namespace,
-        )
-
-        if not build_graph:
-            return prepared
-
-        markdown_text = (project_root / prepared.markdown_path).read_text(encoding="utf-8")
-        graph = generate_professor_graph(markdown_text, settings)
-        save_graph_json(graph, graph_json_path)
-        from .graph_ingestion import require_kg_gen
-
-        require_kg_gen().visualize(graph, str(graph_html_path), open_in_browser=False)
-        insert_professor_graph(
-            graph=graph,
-            settings=settings,
-            graph_name=graph_name,
-            professor_name=listing.name,
-            detail_url=listing.detail_url,
-        )
-
-        return ProfessorIngestionResult(
-            **{
-                **prepared.to_dict(),
-                "graph_json_path": str(graph_json_path.relative_to(project_root)),
-                "graph_html_path": str(graph_html_path.relative_to(project_root)),
-                "entity_count": len(graph.entities),
-                "relation_count": len(graph.relations),
-            }
-        )
-    except Exception as exc:
-        return ProfessorIngestionResult(
-            name=listing.name,
-            detail_url=listing.detail_url,
-            slug=slug,
-            page_count=0,
-            markdown_path=str((project_root / "professors" / f"{slug}.md").relative_to(project_root)),
-            page_notes_path=str((project_root / "artifacts" / artifact_namespace / f"{slug}-page-notes.md").relative_to(project_root)),
-            graph_json_path=str(graph_json_path.relative_to(project_root)),
-            graph_html_path=str(graph_html_path.relative_to(project_root)),
-            entity_count=0,
-            relation_count=0,
-            summary_line=f"{listing.name} could not be summarized because ingestion failed.",
-            status="error",
-            error=str(exc),
-            validation_status="error",
-            validation_notes=[str(exc)],
-        )
+    _raise_raw_ocr_markdown_mode_error("ingest_professor")
 
 
 def refresh_professors_to_graph(
@@ -506,93 +1092,15 @@ def refresh_professors_to_graph(
     settings: TutorSettings,
     project_root: Path | None = None,
     limit: int | None = None,
+    only_slugs: Sequence[str] | None = None,
     max_concurrency: int = 2,
     reset_database: bool = True,
+    wipe_first: bool = False,
     artifact_namespace: str = "lab1-full-refresh",
     graph_name: str = "BIT_CSAT_FULL",
     user_agent_prefix: str = "agents-tutorial-lab1-refresh",
 ) -> dict[str, Any]:
-    resolved_project_root = project_root or settings.project_root
-    settings.require_neo4j()
-
-    listing_session = build_requests_session(f"{user_agent_prefix}/0.1")
-    try:
-        listing_pages = discover_listing_pages(LISTING_URL, listing_session)
-        listings = collect_professor_links(listing_pages, listing_session)
-    finally:
-        listing_session.close()
-    if limit is not None:
-        listings = listings[:limit]
-
-    if reset_database:
-        reset_neo4j_database(settings)
-
-    ocr_model = build_ocr_model(settings)
-
-    def ingest_one(listing_input: ProfessorListing | dict[str, Any]) -> ProfessorIngestionResult:
-        listing = _coerce_listing(listing_input)
-        session = build_requests_session(f"{user_agent_prefix}/0.1")
-        try:
-            return ingest_professor(
-                listing=listing,
-                settings=settings,
-                ocr_model=ocr_model,
-                session=session,
-                project_root=resolved_project_root,
-                artifact_namespace=artifact_namespace,
-                graph_name=graph_name,
-                build_graph=True,
-            )
-        finally:
-            session.close()
-
-    results = RunnableLambda(ingest_one).batch(
-        list(listings),
-        config={"max_concurrency": max(1, max_concurrency)},
-    )
-    successes = [result for result in results if result.status == "ok"]
-    failures = [result for result in results if result.status != "ok"]
-
-    rebuild_professor_summary(resolved_project_root, successes)
-    if limit is None and not failures:
-        graph_seed_summary = {
-            "status": "synced",
-            **sync_graph_seed_directory(
-                resolved_project_root,
-                artifact_namespace=artifact_namespace,
-            ),
-        }
-    elif limit is not None:
-        graph_seed_summary = {
-            "status": "skipped",
-            "reason": "limit_applied",
-        }
-    else:
-        graph_seed_summary = {
-            "status": "skipped",
-            "reason": "refresh_errors",
-        }
-    verification = verify_neo4j_graph(settings)
-
-    return {
-        "listing_page_count": len(listing_pages),
-        "professor_count": len(listings),
-        "limit_applied": limit,
-        "artifact_namespace": artifact_namespace,
-        "graph_name": graph_name,
-        "reset_database": reset_database,
-        "max_concurrency": max(1, max_concurrency),
-        "success_count": len(successes),
-        "error_count": len(failures),
-        "failed_professors": [result.name for result in failures[:10]],
-        "graph_seed": graph_seed_summary,
-        "neo4j": {
-            "node_count": verification["node_count"],
-            "relationship_count": verification["relationship_count"],
-            "professor_count": len(verification["distinct_professors"]),
-            "sample_professors": verification["distinct_professors"][:10],
-        },
-    }
+    _raise_raw_ocr_markdown_mode_error("refresh_professors_to_graph")
 
 
 def restore_seeded_professors_to_graph(
@@ -698,50 +1206,43 @@ def restore_seeded_professors_to_graph(
 
 __all__ = [
     "LISTING_URL",
-    "OCRPageExtraction",
-    "OCRVisibleBlock",
     "ProfessorArtifactCacheRecord",
     "ProfessorCorpusPartition",
     "ProfessorGraphIngestionResult",
     "ProfessorIngestionPartition",
     "ProfessorIngestionResult",
     "ProfessorListing",
+    "ProfessorOCRBundleResult",
     "ProfessorPageNotesResult",
+    "RAW_OCR_MARKDOWN_MODE_MESSAGE",
+    "RawOCRMarkdownModeError",
     "build_cached_markdown_result",
     "build_cached_summary_line",
+    "build_graph_input_text_from_ocr_bundle",
     "build_graph_input_text_from_page_notes",
-    "build_model",
     "build_ocr_model",
     "build_professor_cache_index",
     "build_requests_session",
-    "cleanup_markdown_artifact",
     "collect_professor_links",
     "collect_professor_links_from_page",
     "discover_listing_pages",
-    "extract_header_identity_lines",
-    "extract_identity_candidates",
     "extract_image_urls",
-    "extract_professor_page_markdown",
-    "extract_professor_poster_notes",
     "fetch_soup",
     "ingest_professor",
     "ingest_professor_to_graph",
     "ingest_professors_to_graph",
     "refresh_professors_to_graph",
+    "refresh_professors_to_artifacts",
     "load_cached_graph",
     "load_neo4j_detail_url_index",
-    "needs_top_block_fallback",
-    "normalize_page_ocr_markdown",
-    "page_markdown_to_page_extraction",
-    "parse_header_identity_lines",
-    "parse_ocr_page_notes",
     "partition_professors_for_corpus",
     "partition_professors_for_ingestion",
     "prepare_professor_markdown",
+    "prepare_professor_ocr_bundle",
     "prepare_professor_page_notes",
+    "prepare_professor_preinsertion_artifacts",
     "rebuild_markdown_corpus_from_results",
     "rebuild_professor_summary",
-    "render_page_notes",
     "reset_neo4j_database",
     "restore_seeded_professors_to_graph",
     "restore_professor_from_cache",

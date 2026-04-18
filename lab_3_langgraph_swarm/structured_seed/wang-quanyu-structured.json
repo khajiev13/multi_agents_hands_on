@@ -1,0 +1,236 @@
+{
+  "metadata": {
+    "name": "WANG Quanyu",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113076.htm",
+    "slug": "wang-quanyu",
+    "page_count": 3,
+    "image_urls": [
+      "https://isc.bit.edu.cn/images/2022-04/20171129084420691610.jpg",
+      "https://isc.bit.edu.cn/images/2022-04/20171129084420694789.jpg",
+      "https://isc.bit.edu.cn/images/2022-04/20171129084420698898.jpg"
+    ],
+    "artifact_namespace": "structured_seed",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/wang-quanyu-ocr.md"
+  },
+  "professor": {
+    "professor_id": "professor-0c602d0eafdc",
+    "name_local": "王全玉",
+    "name_english": "Wang Quanyu",
+    "aliases": [
+      "王全玉",
+      "Wang Quanyu"
+    ],
+    "title": "Associate Professor",
+    "emails": [
+      "wangquanyu@bit.edu.cn"
+    ],
+    "phones": [
+      "86-10-68914322"
+    ],
+    "biography_text": "",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/wang-quanyu-ocr.md"
+  },
+  "organizations": [
+    {
+      "org_id": "org-4136d47c8fc4",
+      "name": "School of Computer Science and Technology",
+      "aliases": [
+        "School of Computer Science and Technology"
+      ],
+      "org_type": "school"
+    },
+    {
+      "org_id": "org-c3b777374e4d",
+      "name": "Beijing Institute of Technology",
+      "aliases": [
+        "Beijing Institute of Technology"
+      ],
+      "org_type": "university"
+    }
+  ],
+  "affiliation_organization_names": [
+    "Beijing Institute of Technology",
+    "School of Computer Science and Technology"
+  ],
+  "research_topics": [
+    {
+      "topic_id": "topic-9f3854f06fd9",
+      "name": "移动互联网 Mobile Internet",
+      "normalized_name": "移动互联网-mobile-internet",
+      "language": "bilingual"
+    },
+    {
+      "topic_id": "topic-b191bf2c7673",
+      "name": "机器人技术 Robot Technology",
+      "normalized_name": "机器人技术-robot-technology",
+      "language": "bilingual"
+    },
+    {
+      "topic_id": "topic-1647d0e2427e",
+      "name": "人机交互 Human Computer Interaction",
+      "normalized_name": "人机交互-human-computer-interaction",
+      "language": "bilingual"
+    }
+  ],
+  "education_experiences": [
+    {
+      "experience_id": "education-414d29c1f55f",
+      "degree": "Bachelor's Degree",
+      "field": "",
+      "organization_name_raw": "Beijing University of Aeronautics and Astronautics",
+      "start_text": "",
+      "end_text": "1991",
+      "is_current": false,
+      "order": 1,
+      "raw_text": "1991年于北京航空航天大学获得学士学位，1994年于哈尔滨船舶工程学院获得硕士学位，1997年于哈尔滨工业大学获得博士学位 Bachelor's Degree, Beijing University of Aeronautics and Astronautics, 1991 Master's Degree, Harbin Shipbuilding Engineering Institute, 1994 PhD, Harbin Institute of Technology, 1997"
+    },
+    {
+      "experience_id": "education-5702fb0a5bb7",
+      "degree": "Master's Degree",
+      "field": "",
+      "organization_name_raw": "Harbin Shipbuilding Engineering Institute",
+      "start_text": "",
+      "end_text": "1994",
+      "is_current": false,
+      "order": 2,
+      "raw_text": "1991年于北京航空航天大学获得学士学位，1994年于哈尔滨船舶工程学院获得硕士学位，1997年于哈尔滨工业大学获得博士学位 Bachelor's Degree, Beijing University of Aeronautics and Astronautics, 1991 Master's Degree, Harbin Shipbuilding Engineering Institute, 1994 PhD, Harbin Institute of Technology, 1997"
+    },
+    {
+      "experience_id": "education-b728e628e9f7",
+      "degree": "PhD",
+      "field": "",
+      "organization_name_raw": "Harbin Institute of Technology",
+      "start_text": "",
+      "end_text": "1997",
+      "is_current": false,
+      "order": 3,
+      "raw_text": "1991年于北京航空航天大学获得学士学位，1994年于哈尔滨船舶工程学院获得硕士学位，1997年于哈尔滨工业大学获得博士学位 Bachelor's Degree, Beijing University of Aeronautics and Astronautics, 1991 Master's Degree, Harbin Shipbuilding Engineering Institute, 1994 PhD, Harbin Institute of Technology, 1997"
+    }
+  ],
+  "employment_experiences": [
+    {
+      "experience_id": "employment-e8c1b788d64d",
+      "role_title": "Engineer",
+      "organization_name_raw": "Harbin Chengxin SciTech Developing Co.",
+      "location": "",
+      "start_text": "1997",
+      "end_text": "",
+      "is_current": false,
+      "order": 1,
+      "raw_text": "1997年入职哈尔滨诚信科技发展有限公司，1999年进入控制理论与控制工程博士后流动站工作，2002年进入北京理工大学任教，于2005年学校公派赴英国UWE大学学习。 1997, Engineer, Harbin Chengxin SciTech Developing Co. 1999, Postdoctoral Fellow, Control Theory, Harbin Engineering University 2002, Associate Professor, Beijing Institute of Technology"
+    },
+    {
+      "experience_id": "employment-bef1a7d81f65",
+      "role_title": "Postdoctoral Fellow",
+      "organization_name_raw": "Harbin Engineering University",
+      "location": "",
+      "start_text": "1999",
+      "end_text": "",
+      "is_current": false,
+      "order": 2,
+      "raw_text": "1997年入职哈尔滨诚信科技发展有限公司，1999年进入控制理论与控制工程博士后流动站工作，2002年进入北京理工大学任教，于2005年学校公派赴英国UWE大学学习。 1997, Engineer, Harbin Chengxin SciTech Developing Co. 1999, Postdoctoral Fellow, Control Theory, Harbin Engineering University 2002, Associate Professor, Beijing Institute of Technology"
+    },
+    {
+      "experience_id": "employment-2a59d7dae386",
+      "role_title": "Associate Professor",
+      "organization_name_raw": "Beijing Institute of Technology",
+      "location": "",
+      "start_text": "2002",
+      "end_text": "",
+      "is_current": true,
+      "order": 3,
+      "raw_text": "1997年入职哈尔滨诚信科技发展有限公司，1999年进入控制理论与控制工程博士后流动站工作，2002年进入北京理工大学任教，于2005年学校公派赴英国UWE大学学习。 1997, Engineer, Harbin Chengxin SciTech Developing Co. 1999, Postdoctoral Fellow, Control Theory, Harbin Engineering University 2002, Associate Professor, Beijing Institute of Technology"
+    }
+  ],
+  "academic_service_roles": [
+    {
+      "service_id": "service-342174bd8ad6",
+      "role_title": "Senior member",
+      "organization_name_raw": "中国计算机学会",
+      "service_type": "committee",
+      "raw_text": "中国计算机学会高级会员、虚拟现实专业委员会委员、IEEE 会员 Senior member of China Computer Federation Member of Virtual Reality and Visualization Technology Committee IEEE Member"
+    }
+  ],
+  "awards": [
+    {
+      "award_id": "award-033c36d34e45",
+      "name": "航空航天部科技进步二等奖",
+      "category": "Science and Technology Progress Award",
+      "year": "",
+      "granting_org_name_raw": "Department of Aeronautics and Astronautics",
+      "level": "Second-class",
+      "raw_text": "曾获航空航天部科技进步二等奖、兵器工业总公司科技进步三等奖、北京理工大学科学技术一等奖 Second-class Science and Technology Progress Award from Department of Aeronautics and Astronautics Third-class Science and Technology Progress Award from China North Industries Group Corporation First-class Science and Technology Award from Beijing Institute of Technology"
+    },
+    {
+      "award_id": "award-17ed9f7f0882",
+      "name": "兵器工业总公司科技进步三等奖",
+      "category": "Science and Technology Progress Award",
+      "year": "",
+      "granting_org_name_raw": "China North Industries Group Corporation",
+      "level": "Third-class",
+      "raw_text": "曾获航空航天部科技进步二等奖、兵器工业总公司科技进步三等奖、北京理工大学科学技术一等奖 Second-class Science and Technology Progress Award from Department of Aeronautics and Astronautics Third-class Science and Technology Progress Award from China North Industries Group Corporation First-class Science and Technology Award from Beijing Institute of Technology"
+    },
+    {
+      "award_id": "award-3ab84926245c",
+      "name": "北京理工大学科学技术一等奖",
+      "category": "Science and Technology Award",
+      "year": "",
+      "granting_org_name_raw": "Beijing Institute of Technology",
+      "level": "First-class",
+      "raw_text": "曾获航空航天部科技进步二等奖、兵器工业总公司科技进步三等奖、北京理工大学科学技术一等奖 Second-class Science and Technology Progress Award from Department of Aeronautics and Astronautics Third-class Science and Technology Progress Award from China North Industries Group Corporation First-class Science and Technology Award from Beijing Institute of Technology"
+    }
+  ],
+  "publications": [
+    {
+      "publication_id": "publication-c2bee84e6791",
+      "title": "An Energy-efficient Routing Protocol for Wireless Sensor Networks",
+      "authors_raw": "Xin Liu, Quanyu Wang, Xuliang Jin",
+      "year": "2008",
+      "venue": "Proceedings of the 7th World Congress on Intelligent Control and Automation",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "Xin Liu, Quanyu Wang, Xuliang Jin, An Energy-efficient Routing Protocol for Wireless Sensor Networks, Proceedings of the 7th World Congress on Intelligent Control and Automation June 25-27, 2008, Chongqing, China, pp.1728-1733"
+    },
+    {
+      "publication_id": "publication-3d8fcc9d0fcc",
+      "title": "A New Internet Architecture for Robot Remote Control",
+      "authors_raw": "Quanyu WANG, Siyin LIU, Zhe WANG",
+      "year": "2006",
+      "venue": "2006 IEEE/RSJ INTERNATIONAL CONFERENCE ON Intelligent Robots and Systems",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "2. Quanyu WANG, Siyin LIU, Zhe WANG. A New Internet Architecture for Robot Remote Control. 2006 IEEE/RSJ INTERNATIONAL CONFERENCE ON Intelligent Robots and Systems October 9-14, 2006, Beijing, China."
+    },
+    {
+      "publication_id": "publication-070b53d8730d",
+      "title": "BITBot-A Modelling and Simulation Platform for Robots",
+      "authors_raw": "Quanyu WANG, Bin LU, Xin LIU",
+      "year": "2008",
+      "venue": "IEEE-RAS International Conference on Humanoids Robots, Humanoids'08",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "3. Quanyu WANG, Bin LU, Xin LIU,BITBot-A Modelling and Simulation Platform for Robots,IEEE-RAS International Conference on Humanoids Robots, Humanoids'08, Daejeon, Korea, December 1-3, 2008, pp469-474"
+    },
+    {
+      "publication_id": "publication-01c02bbeeff2",
+      "title": "An Internet Robot Tele-operating System",
+      "authors_raw": "WANG Quanyu, CAO Haifang, LIU Xin",
+      "year": "2008",
+      "venue": "International Conference on Robotics, Automation & MechatronicsIEEE CIS-RAM 2008",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "4. WANG Quanyu, CAO Haifang, LIU Xin, An Internet Robot Tele-operating System,International Conference on Robotics, Automation & MechatronicsIEEE CIS-RAM 2008, Chengdu, China"
+    },
+    {
+      "publication_id": "publication-da13997ec6a2",
+      "title": "Position/Attitude Resolving Simulation of a Shooting Device in a Projection System",
+      "authors_raw": "Wang Quanyu, Mi Qing, Shen Pengyang, Liu Xin",
+      "year": "2010",
+      "venue": "(ICCASM2010)",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "5. Wang Quanyu, Mi Qing, Shen Pengyang, Liu Xin, Position/Attitude Resolving Simulation of a Shooting Device in a Projection System,(ICCASM2010)V15,pp244-247"
+    }
+  ],
+  "warnings": []
+}

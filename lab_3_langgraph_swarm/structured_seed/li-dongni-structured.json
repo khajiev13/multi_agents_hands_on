@@ -1,0 +1,360 @@
+{
+  "metadata": {
+    "name": "LI Dongni",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b148285.htm",
+    "slug": "li-dongni",
+    "page_count": 4,
+    "image_urls": [
+      "https://isc.bit.edu.cn/images/2022-04/20190522023902060218.png",
+      "https://isc.bit.edu.cn/images/2022-04/20190522023914857328.png",
+      "https://isc.bit.edu.cn/images/2022-04/20190522023934151448.png",
+      "https://isc.bit.edu.cn/images/2022-04/20190522023949733560.png"
+    ],
+    "artifact_namespace": "structured_seed",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/li-dongni-ocr.md"
+  },
+  "professor": {
+    "professor_id": "professor-822ca51e1dbe",
+    "name_local": "李冬妮",
+    "name_english": "LI Dongni",
+    "aliases": [
+      "李冬妮",
+      "LI Dongni"
+    ],
+    "title": "副教授",
+    "emails": [
+      "ldn@bit.edu.cn"
+    ],
+    "phones": [
+      "010-68914361"
+    ],
+    "biography_text": "",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/li-dongni-ocr.md"
+  },
+  "organizations": [
+    {
+      "org_id": "org-32bd8f54a067",
+      "name": "计算机学院",
+      "aliases": [
+        "计算机学院"
+      ],
+      "org_type": "school"
+    },
+    {
+      "org_id": "org-d03a9f87090f",
+      "name": "School of Computer Science",
+      "aliases": [
+        "School of Computer Science"
+      ],
+      "org_type": "school"
+    }
+  ],
+  "affiliation_organization_names": [
+    "北京理工大学计算机学院",
+    "计算机学院",
+    "School of Computer Science"
+  ],
+  "research_topics": [
+    {
+      "topic_id": "topic-1c98e6b9f19a",
+      "name": "智能优化",
+      "normalized_name": "智能优化",
+      "language": "zh"
+    },
+    {
+      "topic_id": "topic-ef9495e1e0a3",
+      "name": "工业大数据处理与分析",
+      "normalized_name": "工业大数据处理与分析",
+      "language": "zh"
+    },
+    {
+      "topic_id": "topic-c175304f8217",
+      "name": "工业互联网",
+      "normalized_name": "工业互联网",
+      "language": "zh"
+    },
+    {
+      "topic_id": "topic-581e8f726456",
+      "name": "Intelligent Optimization",
+      "normalized_name": "intelligent-optimization",
+      "language": "en"
+    },
+    {
+      "topic_id": "topic-62118688965b",
+      "name": "Big Data Processing and Analysis in Industry",
+      "normalized_name": "big-data-processing-and-analysis-in-industry",
+      "language": "en"
+    },
+    {
+      "topic_id": "topic-c0f85c416b36",
+      "name": "Industrial Internet",
+      "normalized_name": "industrial-internet",
+      "language": "en"
+    }
+  ],
+  "education_experiences": [
+    {
+      "experience_id": "education-c51fb292136a",
+      "degree": "工学学士",
+      "field": "",
+      "organization_name_raw": "东北大学",
+      "start_text": "1996.09",
+      "end_text": "2000.07",
+      "is_current": false,
+      "order": 1,
+      "raw_text": "1996.09-2000.07 东北大学 工学学士"
+    },
+    {
+      "experience_id": "education-2903197c6365",
+      "degree": "工学硕士",
+      "field": "",
+      "organization_name_raw": "东北大学",
+      "start_text": "2000.09",
+      "end_text": "2002.01",
+      "is_current": false,
+      "order": 2,
+      "raw_text": "2000.09-2002.01 东北大学 工学硕士"
+    },
+    {
+      "experience_id": "education-4911aec5fd1b",
+      "degree": "工学博士",
+      "field": "",
+      "organization_name_raw": "东北大学",
+      "start_text": "2002.03",
+      "end_text": "2005.03",
+      "is_current": false,
+      "order": 3,
+      "raw_text": "2002.03-2005.03 东北大学 工学博士"
+    }
+  ],
+  "employment_experiences": [
+    {
+      "experience_id": "employment-b596e7a125e9",
+      "role_title": "讲师",
+      "organization_name_raw": "北京理工大学计算机学院",
+      "location": "",
+      "start_text": "2005.04",
+      "end_text": "2008.06",
+      "is_current": false,
+      "order": 1,
+      "raw_text": "2005.04-2008.06，北京理工大学计算机学院 讲师"
+    },
+    {
+      "experience_id": "employment-9f43f81b9a12",
+      "role_title": "博士后",
+      "organization_name_raw": "康奈尔大学",
+      "location": "美国",
+      "start_text": "2010.01",
+      "end_text": "2011.01",
+      "is_current": false,
+      "order": 2,
+      "raw_text": "2010.01-2011.01, 美国康奈尔大学 博士后"
+    },
+    {
+      "experience_id": "employment-03542f472e68",
+      "role_title": "副教授",
+      "organization_name_raw": "北京理工大学计算机学院",
+      "location": "",
+      "start_text": "2008.07",
+      "end_text": "至今",
+      "is_current": true,
+      "order": 3,
+      "raw_text": "2008.07 至今，北京理工大学计算机学院 副教授"
+    },
+    {
+      "experience_id": "employment-785b70de8329",
+      "role_title": "博士生导师",
+      "organization_name_raw": "北京理工大学计算机学院",
+      "location": "",
+      "start_text": "2015.07",
+      "end_text": "至今",
+      "is_current": true,
+      "order": 4,
+      "raw_text": "2015.07 至今，北京理工大学计算机学院 博士生导师"
+    }
+  ],
+  "academic_service_roles": [
+    {
+      "service_id": "service-929d2e4da2d7",
+      "role_title": "编委",
+      "organization_name_raw": "国际期刊 AJMSA",
+      "service_type": "committee",
+      "raw_text": "国际期刊 AJMSA 编委"
+    },
+    {
+      "service_id": "service-a1170c959382",
+      "role_title": "秘书长",
+      "organization_name_raw": "信息技术新工科产学研联盟虚拟仿真实验资源建设工委会",
+      "service_type": "committee",
+      "raw_text": "信息技术新工科产学研联盟虚拟仿真实验资源建设工委会秘书长"
+    },
+    {
+      "service_id": "service-17ef43730459",
+      "role_title": "理事",
+      "organization_name_raw": "中国系统工程学会物流系统工程专委会",
+      "service_type": "committee",
+      "raw_text": "中国系统工程学会物流系统工程专委会理事"
+    },
+    {
+      "service_id": "service-de8864a59d4b",
+      "role_title": "专家",
+      "organization_name_raw": "内蒙古制造业信息化科技工程",
+      "service_type": "committee",
+      "raw_text": "内蒙古制造业信息化科技工程专家"
+    }
+  ],
+  "awards": [
+    {
+      "award_id": "award-f2abe99d5222",
+      "name": "国家级教学成果二等奖",
+      "category": "teaching",
+      "year": "2018",
+      "granting_org_name_raw": "国家级",
+      "level": "national",
+      "raw_text": "国家级教学成果二等奖 2018 年"
+    },
+    {
+      "award_id": "award-3cabca5fc397",
+      "name": "全国 “挑战杯” 特等奖",
+      "category": "student_competition",
+      "year": "2013",
+      "granting_org_name_raw": "全国 “挑战杯”",
+      "level": "national",
+      "raw_text": "全国 “挑战杯” 特等奖 2013 年"
+    },
+    {
+      "award_id": "award-c2044abacfd6",
+      "name": "全国 “挑战杯” 二等奖",
+      "category": "student_competition",
+      "year": "2015",
+      "granting_org_name_raw": "全国 “挑战杯”",
+      "level": "national",
+      "raw_text": "全国 “挑战杯” 二等奖 2015 年"
+    },
+    {
+      "award_id": "award-6065a49d9be9",
+      "name": "全国 “挑战杯” 景进创新奖",
+      "category": "student_competition",
+      "year": "2015",
+      "granting_org_name_raw": "全国 “挑战杯”",
+      "level": "national",
+      "raw_text": "全国 “挑战杯” 景进创新奖 2015 年"
+    },
+    {
+      "award_id": "award-fcba998d41c0",
+      "name": "全国 “挑战杯” 优秀指导教师",
+      "category": "teaching",
+      "year": "2015",
+      "granting_org_name_raw": "全国 “挑战杯”",
+      "level": "national",
+      "raw_text": "全国 “挑战杯” 优秀指导教师 2015 年"
+    },
+    {
+      "award_id": "award-66455482df4c",
+      "name": "全国工程硕士实习实践优秀成果",
+      "category": "student_competition",
+      "year": "2015",
+      "granting_org_name_raw": "全国工程硕士实习实践",
+      "level": "national",
+      "raw_text": "全国工程硕士实习实践优秀成果 2015 年"
+    },
+    {
+      "award_id": "award-13b4a9aafd58",
+      "name": "北京市教学成果一等奖",
+      "category": "teaching",
+      "year": "2017",
+      "granting_org_name_raw": "北京市",
+      "level": "provincial",
+      "raw_text": "北京市教学成果一等奖 2017 年"
+    },
+    {
+      "award_id": "award-75686808c8e0",
+      "name": "北京高校青年教师教学基本功比赛二等奖",
+      "category": "teaching",
+      "year": "2015",
+      "granting_org_name_raw": "北京高校青年教师教学基本功比赛",
+      "level": "provincial",
+      "raw_text": "北京高校青年教师教学基本功比赛二等奖 2015 年"
+    },
+    {
+      "award_id": "award-f336317f26a9",
+      "name": "北京高校青年教师教学基本功比赛最佳演示奖",
+      "category": "teaching",
+      "year": "2015",
+      "granting_org_name_raw": "北京高校青年教师教学基本功比赛",
+      "level": "provincial",
+      "raw_text": "北京高校青年教师教学基本功比赛最佳演示奖 2015 年"
+    },
+    {
+      "award_id": "award-7016f73bc6c4",
+      "name": "首都“挑战杯”一等奖",
+      "category": "student_competition",
+      "year": "2013, 2015",
+      "granting_org_name_raw": "首都“挑战杯”",
+      "level": "provincial",
+      "raw_text": "首都“挑战杯”一等奖 2013 年、2015 年"
+    },
+    {
+      "award_id": "award-ae4cb8550446",
+      "name": "北京市“师德先锋”",
+      "category": "teaching",
+      "year": "2015",
+      "granting_org_name_raw": "北京市",
+      "level": "provincial",
+      "raw_text": "北京市“师德先锋”2015 年"
+    }
+  ],
+  "publications": [
+    {
+      "publication_id": "publication-e9fe0e0af29c",
+      "title": "A Hyperheuristic approach for intercell scheduling with single processing machines and batch processing machines",
+      "authors_raw": "Dongni Li*, Miao Li, Xianwen Meng, and Yumia Tian",
+      "year": "2015",
+      "venue": "IEEE Transactions on Systems, Man, and Cybernetics: Systems",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "Dongni Li*, Miao Li, Xianwen Meng, and Yumia Tian. A Hyperheuristic approach for intercell scheduling with single processing machines and batch processing machines [J]. IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2015, 45(2): 315-325 (IF: 2.378)"
+    },
+    {
+      "publication_id": "publication-975431b0e820",
+      "title": "Dynamic parts scheduling in multiple job shop cells considering intercell moves and flexible routes",
+      "authors_raw": "Dongni Li*, Yan Wang, Guangxue Xiao, and Jiafu Tang",
+      "year": "2013",
+      "venue": "Computers & Operations Research",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "Dongni Li*, Yan Wang, Guangxue Xiao, and Jiafu Tang. Dynamic parts scheduling in multiple job shop cells considering intercell moves and flexible routes [J]. Computers & Operations Research, 2013, 5: 2007-2023 (IF: 2.016)"
+    },
+    {
+      "publication_id": "publication-3c42587893e6",
+      "title": "The evolution of production systems from Industry 2.0 through Industry 4.0",
+      "authors_raw": "Yong Yin, Kathryn E. Stecke and Dongni Li*",
+      "year": "2018",
+      "venue": "International Journal of Production Research",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "Yong Yin, Kathryn E. Stecke and Dongni Li*. The evolution of production systems from Industry 2.0 through Industry 4.0 [J]. International Journal of Production Research, 2018, 56(1-2):848-861."
+    },
+    {
+      "publication_id": "publication-34a8113e3263",
+      "title": "A Hybrid Evolutionary Hyper-Heuristic Approach for Intercell Scheduling Considering Transportation Capacity",
+      "authors_raw": "Dongni Li*, Rongxin Zhan, Dan Zheng, Miao Li and Ikou Kaku",
+      "year": "2016",
+      "venue": "IEEE Transactions on Automation Science & Engineering",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "Dongni Li*, Rongxin Zhan, Dan Zheng, Miao Li and Ikou Kaku. A Hybrid Evolutionary Hyper-Heuristic Approach for Intercell Scheduling Considering Transportation Capacity [J]. IEEE Transactions on Automation Science & Engineering, 2016, 13(2):1072-1089."
+    },
+    {
+      "publication_id": "publication-6b4e436a3f76",
+      "title": "Automatic Design of Intercell Scheduling Heuristics",
+      "authors_raw": "Dongni Li*, Rongxin Zhan, Shaofeng Du, Xuhui Wu and Shuai Wang",
+      "year": "2019",
+      "venue": "IEEE Transactions on Automation Science and Engineering",
+      "publication_type": "journal",
+      "doi_or_isbn": "10.1109/TASE.2019.2895369",
+      "raw_text": "Dongni Li*, Rongxin Zhan, Shaofeng Du, Xuhui Wu and Shuai Wang. Automatic Design of Intercell Scheduling Heuristics [J]. IEEE Transactions on Automation Science and Engineering, DOI 10.1109/TASE.2019.2895369, 2019."
+    }
+  ],
+  "warnings": []
+}

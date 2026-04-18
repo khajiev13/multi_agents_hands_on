@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "name": "LIANG Wei",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113060.htm",
+    "slug": "liang-wei",
+    "page_count": 2,
+    "image_urls": [
+      "https://isc.bit.edu.cn/images/2022-04/20171129084420276639.png",
+      "https://isc.bit.edu.cn/images/2022-04/20171129084420280785.png"
+    ],
+    "artifact_namespace": "structured_seed",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/liang-wei-ocr.md"
+  },
+  "professor": {
+    "professor_id": "professor-f402326e80fd",
+    "name_local": "梁玮",
+    "name_english": "Liang Wei",
+    "aliases": [
+      "梁玮",
+      "Liang Wei"
+    ],
+    "title": "副教授 / Associated Professor",
+    "emails": [
+      "liangwei@bit.edu.cn"
+    ],
+    "phones": [
+      "13810150078"
+    ],
+    "biography_text": "个人简历(Biography) 教育背景:(Educational Background) Received the B.E. degree in Computer Science in Jul. 2000, Shandong Polytechnic University, China Received the Ph.D. degree in Computer Science in Jul.2005, Beijing Institute of Technology University, Beijing, China, supervised by Prof. Yunde Jia 工作经历:(Working Experience) 2005.8~Present: Associate Professor, School of Computer Science, Beijing Institute of Technology 发表文章(Publications) 请列举5篇左右代表性论文或著作。(Please list 5 representative publications)",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/liang-wei-ocr.md"
+  },
+  "organizations": [
+    {
+      "org_id": "org-393f8ea7639c",
+      "name": "School of computer",
+      "aliases": [
+        "School of computer"
+      ],
+      "org_type": "school"
+    },
+    {
+      "org_id": "org-99cc4b37144b",
+      "name": "Computer application",
+      "aliases": [
+        "Computer application"
+      ],
+      "org_type": "unknown"
+    }
+  ],
+  "affiliation_organization_names": [
+    "School of Computer Science, Beijing Institute of Technology",
+    "School of computer",
+    "Computer application"
+  ],
+  "research_topics": [
+    {
+      "topic_id": "topic-e38b7a7f6d06",
+      "name": "计算机视觉 / Computer Vision",
+      "normalized_name": "计算机视觉-computer-vision",
+      "language": "bilingual"
+    },
+    {
+      "topic_id": "topic-1647d0e2427e",
+      "name": "人机交互 / Human-Computer interaction",
+      "normalized_name": "人机交互-human-computer-interaction",
+      "language": "bilingual"
+    }
+  ],
+  "education_experiences": [
+    {
+      "experience_id": "education-27f7e69f45b1",
+      "degree": "B.E.",
+      "field": "Computer Science",
+      "organization_name_raw": "Shandong Polytechnic University, China",
+      "start_text": "",
+      "end_text": "Jul. 2000",
+      "is_current": false,
+      "order": 1,
+      "raw_text": "Received the B.E. degree in Computer Science in Jul. 2000, Shandong Polytechnic University, China"
+    },
+    {
+      "experience_id": "education-890a807824c6",
+      "degree": "Ph.D.",
+      "field": "Computer Science",
+      "organization_name_raw": "Beijing Institute of Technology University, Beijing, China",
+      "start_text": "",
+      "end_text": "Jul.2005",
+      "is_current": false,
+      "order": 2,
+      "raw_text": "Received the Ph.D. degree in Computer Science in Jul.2005, Beijing Institute of Technology University, Beijing, China, supervised by Prof. Yunde Jia"
+    }
+  ],
+  "employment_experiences": [
+    {
+      "experience_id": "employment-93f70f0aee5d",
+      "role_title": "Associate Professor",
+      "organization_name_raw": "School of Computer Science, Beijing Institute of Technology",
+      "location": "",
+      "start_text": "2005.8",
+      "end_text": "Present",
+      "is_current": true,
+      "order": 1,
+      "raw_text": "2005.8~Present: Associate Professor, School of Computer Science, Beijing Institute of Technology"
+    }
+  ],
+  "academic_service_roles": [],
+  "awards": [],
+  "publications": [
+    {
+      "publication_id": "publication-9e47e59db34d",
+      "title": "Recognizing Human Interaction from Videos by a Discriminative Models",
+      "authors_raw": "Yu Kong, Wei Liang, Zhen Dong, YundeJia",
+      "year": "2014",
+      "venue": "Computer Vision, IET",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "Yu Kong, Wei Liang, Zhen Dong, YundeJia. Recognizing Human Interaction from Videos by a Discriminative Models. Computer Vision, IET, 2014, 8(4): 277-286."
+    },
+    {
+      "publication_id": "publication-03b637bd4d1f",
+      "title": "Scene Image Retrieval via Re-Ranking Semantic and Packed Dense Interest Points",
+      "authors_raw": "Han Wang, Wei Liang, Xinxiiao Wu, Peng Teng",
+      "year": "2013",
+      "venue": "Neurocomputing",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "Han Wang, Wei Liang, Xinxiiao Wu, Peng Teng, Scene Image Retrieval via Re-Ranking Semantic and Packed Dense Interest Points, Neurocomputing, 2013, 119: 65-73."
+    },
+    {
+      "publication_id": "publication-1c242baf57e3",
+      "title": "Action recognition feedback framework for human pose reconstruction from monocular images",
+      "authors_raw": "WuXinxiiao, Wei Liang, JIA Yunde",
+      "year": "2009",
+      "venue": "Pattern Recognition Letters",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "WuXinxiiao, Wei Liang, JIA Yunde. Action recognition feedback framework for human pose reconstruction from monocular images. Pattern Recognition Letters. 30 (3):267-274, 2009."
+    },
+    {
+      "publication_id": "publication-1e816f1d170c",
+      "title": "Tracking articulated objects by leaning intrinsic structure of Motion",
+      "authors_raw": "WuXinxiiao,Wei Liang, JIA Yunde",
+      "year": "2009",
+      "venue": "Pattern Recognition Letters",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "WuXinxiiao,Wei Liang, JIA Yunde. Tracking articulated objects by leaning intrinsic structure of Motion. Pattern Recognition Letters. 30(3):267-274, Feb. 2009."
+    },
+    {
+      "publication_id": "publication-e3a872887052",
+      "title": "Incremental Discriminative Analysis of Canonical Correlations for Action Recognition",
+      "authors_raw": "WuXinxiiao, Wei Liangand JIA Yunde",
+      "year": "2009",
+      "venue": "International Conference on Computer Vision (ICCV2009), Kyoto, Japan",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "WuXinxiiao, Wei Liangand JIA Yunde, Incremental Discriminative Analysis of Canonical Correlations for Action Recognition, International Conference on Computer Vision (ICCV2009), Kyoto, Japan, Sept. 2009."
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,219 @@
+{
+  "metadata": {
+    "name": "SHEN Meng",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113070.htm",
+    "slug": "shen-meng",
+    "page_count": 1,
+    "image_urls": [
+      "https://isc.bit.edu.cn/images/2022-04/20180306053455694241.jpg"
+    ],
+    "artifact_namespace": "structured_seed",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/shen-meng-ocr.md"
+  },
+  "professor": {
+    "professor_id": "professor-bb5ec3ae67b3",
+    "name_local": "沈蒙",
+    "name_english": "Meng SHEN",
+    "aliases": [
+      "沈蒙",
+      "Meng SHEN"
+    ],
+    "title": "讲师/Assistant Professor",
+    "emails": [
+      "shenmeng@bit.edu.cn"
+    ],
+    "phones": [
+      "15210362001"
+    ],
+    "biography_text": "个人简历(Biography) 教育背景: 本人于 2009 年和 2014 年分别在山东大学和清华大学获得工学学士和博士学位，均为计算机科学与技术专业。 Dr. Meng SHEN received a B.Eng degree from Shandong University, Jinan, China in 2009, and a Ph.D degree from Tsinghua University, Beijing, China in 2014, all in Computer Science and Technology. 工作经历: 曾作为访问学者访问英国埃塞克斯大学，美国麻省州立大学，西班牙加泰罗尼亚理工大学。 Dr. Meng SHEN was a visiting scholar at University of Essex, UK, University of Massachusetts at Amherst, US, and Universitat Politècnica de Catalunya (UPC), Spain. 学术兼职: IEEE 会员, ACM 会员, CCF 会员。担任 IEEE TPDS, IEEE Network Magazine, IEEE Globecom 等多个国际期刊和会议审稿人。 IEEE Member, ACM member, CCF (China Computer Federation) Member. Serve as reviewers for multiple international conferences, journals and transactions such as IEEE TPDS, IEEE Network Magazine, IEEE Globecom. 所获荣誉: 2014 年清华大学计算机系优秀毕业生 Outstanding Graduate Award of Dept. Computer Science, Tsinghua University, 2014",
+    "source_file": "lab_3_langgraph_swarm/structured_seed/shen-meng-ocr.md"
+  },
+  "organizations": [
+    {
+      "org_id": "org-527cc8f50577",
+      "name": "计算机/Computer Science",
+      "aliases": [
+        "计算机/Computer Science",
+        "计算机",
+        "Computer Science"
+      ],
+      "org_type": "school"
+    }
+  ],
+  "affiliation_organization_names": [
+    "英国埃塞克斯大学/University of Essex",
+    "美国麻省州立大学/University of Massachusetts at Amherst",
+    "西班牙加泰罗尼亚理工大学/Universitat Politècnica de Catalunya (UPC)",
+    "计算机/Computer Science"
+  ],
+  "research_topics": [
+    {
+      "topic_id": "topic-e3c0b2a0c223",
+      "name": "网络虚拟化",
+      "normalized_name": "网络虚拟化",
+      "language": "zh"
+    },
+    {
+      "topic_id": "topic-631cdad157e2",
+      "name": "network virtualization",
+      "normalized_name": "network-virtualization",
+      "language": "en"
+    },
+    {
+      "topic_id": "topic-76ce617fd474",
+      "name": "无线网络与移动计算",
+      "normalized_name": "无线网络与移动计算",
+      "language": "zh"
+    },
+    {
+      "topic_id": "topic-e79366175256",
+      "name": "wireless network and mobile computing",
+      "normalized_name": "wireless-network-and-mobile-computing",
+      "language": "en"
+    },
+    {
+      "topic_id": "topic-0688ff38a605",
+      "name": "前沿通信技术",
+      "normalized_name": "前沿通信技术",
+      "language": "zh"
+    },
+    {
+      "topic_id": "topic-46d32975f5d7",
+      "name": "emerging communication technologies",
+      "normalized_name": "emerging-communication-technologies",
+      "language": "en"
+    }
+  ],
+  "education_experiences": [
+    {
+      "experience_id": "education-566b478eda86",
+      "degree": "工学学士/B.Eng degree",
+      "field": "计算机科学与技术/Computer Science and Technology",
+      "organization_name_raw": "山东大学/Shandong University",
+      "start_text": "2009",
+      "end_text": "2009",
+      "is_current": false,
+      "order": 1,
+      "raw_text": "本人于 2009 年和 2014 年分别在山东大学和清华大学获得工学学士和博士学位，均为计算机科学与技术专业。 Dr. Meng SHEN received a B.Eng degree from Shandong University, Jinan, China in 2009, and a Ph.D degree from Tsinghua University, Beijing, China in 2014, all in Computer Science and Technology."
+    },
+    {
+      "experience_id": "education-0a0defc72199",
+      "degree": "博士学位/Ph.D degree",
+      "field": "计算机科学与技术/Computer Science and Technology",
+      "organization_name_raw": "清华大学/Tsinghua University",
+      "start_text": "2014",
+      "end_text": "2014",
+      "is_current": false,
+      "order": 2,
+      "raw_text": "本人于 2009 年和 2014 年分别在山东大学和清华大学获得工学学士和博士学位，均为计算机科学与技术专业。 Dr. Meng SHEN received a B.Eng degree from Shandong University, Jinan, China in 2009, and a Ph.D degree from Tsinghua University, Beijing, China in 2014, all in Computer Science and Technology."
+    }
+  ],
+  "employment_experiences": [
+    {
+      "experience_id": "employment-dcde52e495dd",
+      "role_title": "访问学者/visiting scholar",
+      "organization_name_raw": "英国埃塞克斯大学/University of Essex",
+      "location": "UK",
+      "start_text": "",
+      "end_text": "",
+      "is_current": false,
+      "order": 1,
+      "raw_text": "曾作为访问学者访问英国埃塞克斯大学，美国麻省州立大学，西班牙加泰罗尼亚理工大学。 Dr. Meng SHEN was a visiting scholar at University of Essex, UK, University of Massachusetts at Amherst, US, and Universitat Politècnica de Catalunya (UPC), Spain."
+    },
+    {
+      "experience_id": "employment-b5b208d179b1",
+      "role_title": "访问学者/visiting scholar",
+      "organization_name_raw": "美国麻省州立大学/University of Massachusetts at Amherst",
+      "location": "US",
+      "start_text": "",
+      "end_text": "",
+      "is_current": false,
+      "order": 2,
+      "raw_text": "曾作为访问学者访问英国埃塞克斯大学，美国麻省州立大学，西班牙加泰罗尼亚理工大学。 Dr. Meng SHEN was a visiting scholar at University of Essex, UK, University of Massachusetts at Amherst, US, and Universitat Politècnica de Catalunya (UPC), Spain."
+    },
+    {
+      "experience_id": "employment-aa2c34e1bc87",
+      "role_title": "访问学者/visiting scholar",
+      "organization_name_raw": "西班牙加泰罗尼亚理工大学/Universitat Politècnica de Catalunya (UPC)",
+      "location": "Spain",
+      "start_text": "",
+      "end_text": "",
+      "is_current": false,
+      "order": 3,
+      "raw_text": "曾作为访问学者访问英国埃塞克斯大学，美国麻省州立大学，西班牙加泰罗尼亚理工大学。 Dr. Meng SHEN was a visiting scholar at University of Essex, UK, University of Massachusetts at Amherst, US, and Universitat Politècnica de Catalunya (UPC), Spain."
+    }
+  ],
+  "academic_service_roles": [
+    {
+      "service_id": "service-9d214b275105",
+      "role_title": "审稿人/reviewer",
+      "organization_name_raw": "IEEE TPDS, IEEE Network Magazine, IEEE Globecom",
+      "service_type": "reviewer",
+      "raw_text": "担任 IEEE TPDS, IEEE Network Magazine, IEEE Globecom 等多个国际期刊和会议审稿人。 Serve as reviewers for multiple international conferences, journals and transactions such as IEEE TPDS, IEEE Network Magazine, IEEE Globecom."
+    }
+  ],
+  "awards": [
+    {
+      "award_id": "award-6b8f65e71991",
+      "name": "优秀毕业生/Outstanding Graduate Award",
+      "category": "graduation",
+      "year": "2014",
+      "granting_org_name_raw": "清华大学计算机系/Dept. Computer Science, Tsinghua University",
+      "level": "university",
+      "raw_text": "2014 年清华大学计算机系优秀毕业生 Outstanding Graduate Award of Dept. Computer Science, Tsinghua University, 2014"
+    }
+  ],
+  "publications": [
+    {
+      "publication_id": "publication-51954a16aec8",
+      "title": "A Model Approach to the Estimation of Peer-to-Peer Traffic Matrices",
+      "authors_raw": "Ke Xu, Meng Shen, Yong Cui, et al.",
+      "year": "2014",
+      "venue": "IEEE Transactions on Parallel and Distributed Systems (TPDS)",
+      "publication_type": "journal",
+      "doi_or_isbn": "",
+      "raw_text": "[1] Ke Xu, Meng Shen, Yong Cui, et al., \"A Model Approach to the Estimation of Peer-to-Peer Traffic Matrices,\" IEEE Transactions on Parallel and Distributed Systems (TPDS), vol. 25, no. 5, pp. 1101-1111, May 2014. (SCI, IF: 1.792)"
+    },
+    {
+      "publication_id": "publication-3ecb339f83cf",
+      "title": "Towards Efficient Virtual Network Embedding Across Multiple Network Domains",
+      "authors_raw": "Meng Shen, Ke Xu, Kun Yang, et al.",
+      "year": "2014",
+      "venue": "IEEE/ACM IWQoS",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "[2] Meng Shen, Ke Xu, Kun Yang, et al., \"Towards Efficient Virtual Network Embedding Across Multiple Network Domains,\" IEEE/ACM IWQoS 2014."
+    },
+    {
+      "publication_id": "publication-738fa6e8d84c",
+      "title": "Routing On Demand: Toward the Energy-Aware Traffic Engineering with OSPF",
+      "authors_raw": "Meng Shen, Hongying Liu, Ke Xu, et al.",
+      "year": "2012",
+      "venue": "IFIP/TC6 Networking",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "[3] Meng Shen, Hongying Liu, Ke Xu, et al., \"Routing On Demand: Toward the Energy-Aware Traffic Engineering with OSPF,\" IFIP/TC6 Networking, pp. 232-246, May 2012."
+    },
+    {
+      "publication_id": "publication-4acde0de849a",
+      "title": "A Model Approach to Estimate Peer-to-Peer Traffic Matrices",
+      "authors_raw": "Ke Xu, Meng Shen, and Mingjiang Ye",
+      "year": "2011",
+      "venue": "IEEE INFOCOM",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "[4] Ke Xu, Meng Shen, and Mingjiang Ye, \"A Model Approach to Estimate Peer-to-Peer Traffic Matrices,\" IEEE INFOCOM, pp. 676-684, April 2011."
+    },
+    {
+      "publication_id": "publication-0acf03be13f4",
+      "title": "One More Weight is Enough: Toward the Optimal Traffic Engineering with OSPF",
+      "authors_raw": "Ke Xu, Hongying Liu, Jiangchuan Liu, and Meng Shen",
+      "year": "2011",
+      "venue": "IEEE ICDCS",
+      "publication_type": "conference",
+      "doi_or_isbn": "",
+      "raw_text": "[5] Ke Xu, Hongying Liu, Jiangchuan Liu, and Meng Shen, \"One More Weight is Enough: Toward the Optimal Traffic Engineering with OSPF,\" IEEE ICDCS, pp. 836-846, June 2011."
+    }
+  ],
+  "warnings": []
+}

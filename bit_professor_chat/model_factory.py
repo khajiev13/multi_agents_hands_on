@@ -23,6 +23,7 @@ def build_ocr_model(settings: TutorSettings) -> ChatOpenAI:
         base_url=config["base_url"],
         api_key=config["api_key"],
         temperature=0,
+        max_tokens=32000,
         max_retries=2,
         timeout=180,
     )
