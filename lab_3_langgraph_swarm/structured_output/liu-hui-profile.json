@@ -1,0 +1,407 @@
+{
+  "metadata": {
+    "name": "LIU Hui",
+    "slug": "liu-hui",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b148282.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/liu-hui-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "LIU Hui",
+      "aliases": [
+        "LIU Hui",
+        "刘辉",
+        "Liu Hui"
+      ],
+      "title": "Professor",
+      "school_name": "Computer Science and Technology",
+      "discipline": "Computer Science",
+      "biography_text": "",
+      "emails": [],
+      "phones": [],
+      "websites": [
+        "https://liuhuigmail.github.io/"
+      ],
+      "locations": [
+        "北京 Beijing",
+        "珠海 Zhuhai",
+        "嘉兴 Jiaxing"
+      ]
+    },
+    "organizations": [
+      {
+        "name": "Computer Science and Technology",
+        "org_type": "school",
+        "normalized_name": "computer science and technology"
+      },
+      {
+        "name": "Peking University",
+        "org_type": "university",
+        "normalized_name": "peking university"
+      },
+      {
+        "name": "Shanghai University",
+        "org_type": "university",
+        "normalized_name": "shanghai university"
+      },
+      {
+        "name": "Shandong University",
+        "org_type": "university",
+        "normalized_name": "shandong university"
+      },
+      {
+        "name": "Beijing Institute of Technology",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "University College London",
+        "org_type": "university",
+        "normalized_name": "university college london"
+      },
+      {
+        "name": "CCF (China Computer Federation) Technical Committee on Software Engineering",
+        "org_type": "association",
+        "normalized_name": "ccf china computer federation technical committee on software engineering"
+      },
+      {
+        "name": "China Computer Federation",
+        "org_type": "association",
+        "normalized_name": "china computer federation"
+      },
+      {
+        "name": "journal IET Software",
+        "org_type": "journal",
+        "normalized_name": "journal iet software"
+      },
+      {
+        "name": "ChinaSoft 2025",
+        "org_type": "conference",
+        "normalized_name": "chinasoft 2025"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "LLM-based Software Development",
+        "normalized_name": "llm based software development"
+      },
+      {
+        "name": "Machine Learning and Data Mining",
+        "normalized_name": "machine learning and data mining"
+      },
+      {
+        "name": "Software Testing and validation",
+        "normalized_name": "software testing and validation"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph.D.",
+        "field": "",
+        "organization_name": "Peking University",
+        "location": "",
+        "start_text": "2004",
+        "end_text": "2008",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "2004-2008, Peking University, Ph.D."
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "M.S.",
+        "field": "",
+        "organization_name": "Shanghai University",
+        "location": "",
+        "start_text": "2001",
+        "end_text": "2004",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "2001-2004, Shanghai University, M.S."
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "B.S.",
+        "field": "",
+        "organization_name": "Shandong University",
+        "location": "",
+        "start_text": "1997",
+        "end_text": "2001",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "1997-2001, Shandong University, B.S."
+      },
+      {
+        "kind": "employment",
+        "title": "Professor",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "China",
+        "start_text": "2016",
+        "end_text": "",
+        "is_current": true,
+        "order": 4,
+        "raw_text": "2016 - Professor, Beijing Institute of Technology, China"
+      },
+      {
+        "kind": "employment",
+        "title": "Visting Research Fellow",
+        "degree": "",
+        "field": "",
+        "organization_name": "University College London",
+        "location": "United Kingdom",
+        "start_text": "2012",
+        "end_text": "2013",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "2012-2013, Visting Research Fellow, University College London, United Kingdom"
+      },
+      {
+        "kind": "employment",
+        "title": "Associate Professor",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "China",
+        "start_text": "2011",
+        "end_text": "2016",
+        "is_current": false,
+        "order": 6,
+        "raw_text": "2011-2016, Associate Professor, Beijing Institute of Technology, China"
+      },
+      {
+        "kind": "employment",
+        "title": "Assistant Professor",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "China",
+        "start_text": "2008",
+        "end_text": "2011",
+        "is_current": false,
+        "order": 7,
+        "raw_text": "2008 -2011, Assistant Professor, Beijing Institute of Technology, China"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Secretary-General",
+        "degree": "",
+        "field": "",
+        "organization_name": "CCF (China Computer Federation) Technical Committee on Software Engineering",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 8,
+        "raw_text": "Secretary-General of the CCF (China Computer Federation) Technical Committee on Software Engineering"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Distinguished member",
+        "degree": "",
+        "field": "",
+        "organization_name": "China Computer Federation",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 9,
+        "raw_text": "Distinguished member of China Computer Federation"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Associate Editor",
+        "degree": "",
+        "field": "",
+        "organization_name": "journal IET Software",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 10,
+        "raw_text": "Associate Editor of journal IET Software"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Co-Chair",
+        "degree": "",
+        "field": "",
+        "organization_name": "ChinaSoft 2025",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 11,
+        "raw_text": "Co-Chair of ChinaSoft 2025"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Has My Code Been Stolen for Model Training? A Naturalness Based Approach to Code Contamination Detection",
+        "authors_raw": "Haris Ali Khan (Ph.D student from Pakistan), Yanjie Jiang, Qasim Umer, Yuxia Zhang, Waseem Akram, and Hui Liu",
+        "year": "2025",
+        "venue": "ACM International Conference on the Foundations of Software Engineering (FSE2025)",
+        "publication_type": "conference",
+        "doi_or_url": "https://doi.org/10.1145/3715765",
+        "raw_text": "[1] Haris Ali Khan (Ph.D student from Pakistan), Yanjie Jiang, Qasim Umer, Yuxia Zhang, Waseem Akram, and Hui Liu. 2025. Has My Code Been Stolen for Model Training? A Naturalness Based Approach to Code Contamination Detection. ACM International Conference on the Foundations of Software Engineering (FSE2025), 22 pages. https://doi.org/10.1145/3715765 [Top Conference]",
+        "order": 1
+      },
+      {
+        "title": "LLM-based Method Name Suggestion with Automatically Generated Context-Rich Prompts",
+        "authors_raw": "Waseem Akram (Ph.D student from Pakistan), Yanjie Jiang, Yuxia Zhang, Haris Ali Khan, and Hui Liu",
+        "year": "2025",
+        "venue": "The ACM International Conference on the Foundations of Software Engineering (FSE 2025)",
+        "publication_type": "conference",
+        "doi_or_url": "https://doi.org/10.1145/3715753",
+        "raw_text": "[2] Waseem Akram (Ph.D student from Pakistan), Yanjie Jiang, Yuxia Zhang, Haris Ali Khan, and Hui Liu. LLM-based Method Name Suggestion with Automatically Generated Context-Rich Prompts. The ACM International Conference on the Foundations of Software Engineering (FSE 2025), 22pages, https://doi.org/10.1145/3715753 [Top Conference]",
+        "order": 2
+      },
+      {
+        "title": "An Empirical Study of Software Refactorings in Real-World Open-Source Java Projects",
+        "authors_raw": "Bridget Nyirongo (Ph.D student from Africa). Yanjie Jiang, Nan Niu, and Hui Liu",
+        "year": "2025",
+        "venue": "IEEE Transactions on Software Engineering",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[3] Bridget Nyirongo (Ph.D student from Africa). Yanjie Jiang, Nan Niu, and Hui Liu. An Empirical Study of Software Refactorings in Real-World Open-Source Java Projects, IEEE Transactions on Software Engineering, 2025 [Top Journal]",
+        "order": 3
+      },
+      {
+        "title": "CNN-Based Automatic Prioritization of Bug Reports",
+        "authors_raw": "Qasim Umer (Ph.D student from Pakistan), Hui Liu and I. Illahi",
+        "year": "2020",
+        "venue": "IEEE Transactions on Reliability",
+        "publication_type": "journal",
+        "doi_or_url": "10.1109/TR.2019.2959624",
+        "raw_text": "[4] Qasim Umer (Ph.D student from Pakistan), Hui Liu and I. Illahi. CNN-Based Automatic Prioritization of Bug Reports. IEEE Transactions on Reliability, vol. 69, no. 4, pp. 1341-1354, Dec. 2020, doi: 10.1109/TR.2019.2959624 [Top Journal]",
+        "order": 4
+      },
+      {
+        "title": "An Automated Approach to Extracting Local Variables",
+        "authors_raw": "Xiaye Chi (Master Student), Hui Liu, Guangjie Li, Weixiao Wang, Yunni Xia, Yanjie Jiang, Yuxia Zhang, and Weixing Ji",
+        "year": "2023",
+        "venue": "Proceedings of the 31st ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE '23)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[5] Xiaye Chi (Master Student), Hui Liu, Guangjie Li, Weixiao Wang, Yunni Xia, Yanjie Jiang, Yuxia Zhang, and Weixing Ji. An Automated Approach to Extracting Local Variables. In Proceedings of the 31st ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE '23), 3-9 December 2023, San Francisco, California, United States, pp. 313-325. ACM Distinguished Paper Award! [Top Conference]",
+        "order": 5
+      },
+      {
+        "title": "What Makes a Good Commit Message?",
+        "authors_raw": "Yingchen Tian (Master Student), Yuxia Zhang, Klaas-Jan Stol, Lin Jiang, and Hui Liu",
+        "year": "2022",
+        "venue": "Proceedings of the 44th International Conference on Software Engineering (ICSE '22)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[6] Yingchen Tian (Master Student), Yuxia Zhang, Klaas-Jan Stol, Lin Jiang, and Hui Liu. What Makes a Good Commit Message? In Proceedings of the 44th International Conference on Software Engineering (ICSE '22). Association for Computing Machinery, New York, NY, USA, 2389-2401. ACM Distinguished Paper Award! [Top Conference]",
+        "order": 6
+      }
+    ],
+    "awards": [
+      {
+        "name": "ACM Distinguished Paper Award",
+        "year": "",
+        "granting_org_name": "31st ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE 2023)",
+        "level": "",
+        "raw_text": "ACM Distinguished Paper Award from 31st ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE 2023)",
+        "order": 1
+      },
+      {
+        "name": "ACM Distinguished Paper Award",
+        "year": "",
+        "granting_org_name": "44th International Conference on Software Engineering",
+        "level": "",
+        "raw_text": "ACM Distinguished Paper Award from 44th International Conference on Software Engineering",
+        "order": 2
+      },
+      {
+        "name": "Best Research Paper Award",
+        "year": "",
+        "granting_org_name": "Requirements Engineering Conference",
+        "level": "",
+        "raw_text": "Best Research Paper Award from Requirements Engineering Conference (RE’2021)",
+        "order": 3
+      },
+      {
+        "name": "IET Premium Award (best paper award)",
+        "year": "",
+        "granting_org_name": "IET",
+        "level": "",
+        "raw_text": "IET Premium Award (best paper award)",
+        "order": 4
+      },
+      {
+        "name": "New Century Excellent Talents in University",
+        "year": "",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "New Century Excellent Talents in University",
+        "order": 5
+      },
+      {
+        "name": "Beijing Higher Education Young Elite Teacher",
+        "year": "",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "Beijing Higher Education Young Elite Teacher",
+        "order": 6
+      },
+      {
+        "name": "“Study in BIT” 2022 Supervisor of the Year for distinguished supervision of international students.",
+        "year": "",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "“Study in BIT” 2022 Supervisor of the Year for distinguished supervision of international students.",
+        "order": 7
+      },
+      {
+        "name": "Outstanding Graduate Award for my Ph.D student Waseem Akram who joined COMSATS University Islamabad as Assistant Professor",
+        "year": "",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "Outstanding Graduate Award for my Ph.D student Waseem Akram who joined COMSATS University Islamabad as Assistant Professor",
+        "order": 8
+      },
+      {
+        "name": "Outstanding Graduate Award for my Ph.D student Qasim Umer who joined King Fahd University of Petroleum & Minerals, Saudi Arabi as Assistant Professor",
+        "year": "",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "Outstanding Graduate Award for my Ph.D student Qasim Umer who joined King Fahd University of Petroleum & Minerals, Saudi Arabi as Assistant Professor",
+        "order": 9
+      },
+      {
+        "name": "Outstanding Graduate",
+        "year": "",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "Outstanding Graduate",
+        "order": 10
+      },
+      {
+        "name": "北京理工大学“2022年度留学北理我最喜爱的导师”称号",
+        "year": "",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "北京理工大学“2022年度留学北理我最喜爱的导师”称号",
+        "order": 11
+      }
+    ],
+    "warnings": [
+      "Ignored the instruction-only publication heading because it did not list concrete items.",
+      "Ignored the note section containing contact details for form submission as they are not the professor's direct contact information.",
+      "The professor's email and phone fields are empty in the provided data.",
+      "The professor's biography text is empty in the provided data.",
+      "The '区 硕导', '区 master’s supervisor', '区 博导', 'Ph.D. supervisor' lines appear to be OCR noise or formatting and were not used as titles.",
+      "The '证书 CERTIFICATE' and '给我予特别教授' lines appear to be OCR noise and were ignored.",
+      "Publication [3] lacks a DOI/URL; the field is left empty.",
+      "Publication [5] and [6] lack a DOI/URL; the field is left empty.",
+      "Award years are not explicitly provided for most entries; year fields are left empty.",
+      "The '注' section contains administrative instructions and contact details for the form submission process, not the professor's personal contacts. These were ignored."
+    ]
+  }
+}

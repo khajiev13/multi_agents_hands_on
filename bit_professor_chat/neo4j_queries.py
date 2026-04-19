@@ -65,24 +65,18 @@ class TopicMatch:
         return asdict(self)
 
 
-@dataclass(frozen=True)
-class GraphOverview:
-    professor_count: int
-    relationship_count: int
-    sample_professors: list[str]
-    common_predicates: list[str]
-
-    def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
-
-
 class Neo4jQueryService:
-    """Deterministic query helpers for Lab 2's supervisor workflow."""
+    """Deterministic query helpers for the typed Lab 3 professor graph."""
 
     def __init__(self, settings: TutorSettings) -> None:
         self.settings = settings
 
-    def _run(self, name: str, cypher: str, params: dict[str, Any] | None = None) -> tuple[list[dict[str, Any]], QueryTrace]:
+    def _run(
+        self,
+        name: str,
+        cypher: str,
+        params: dict[str, Any] | None = None,
+    ) -> tuple[list[dict[str, Any]], QueryTrace]:
         params = params or {}
         driver = GraphDatabase.driver(
             self.settings.neo4j_uri,
@@ -103,72 +97,27 @@ class Neo4jQueryService:
         )
         return rows, trace
 
-    def get_graph_overview(self, *, limit: int = 8) -> tuple[GraphOverview, list[QueryTrace]]:
-        professor_count_rows, professor_trace = self._run(
-            "graph_overview_professor_count",
-            """
-            MATCH (p:Entity)
-            WHERE p.professor_name IS NOT NULL
-            RETURN count(DISTINCT p.professor_name) AS professor_count
-            """,
-        )
-        relationship_rows, relationship_trace = self._run(
-            "graph_overview_relationship_count",
-            """
-            MATCH ()-[r]->()
-            RETURN count(r) AS relationship_count
-            """,
-        )
-        professor_rows, professors_trace = self._run(
-            "graph_overview_sample_professors",
-            """
-            MATCH (p:Entity)
-            WHERE p.professor_name IS NOT NULL
-            RETURN DISTINCT p.professor_name AS professor_name
-            ORDER BY professor_name
-            LIMIT $limit
-            """,
-            {"limit": limit},
-        )
-        predicate_rows, predicates_trace = self._run(
-            "graph_overview_common_predicates",
-            """
-            MATCH ()-[r]->()
-            RETURN coalesce(r.predicate, type(r)) AS predicate, count(*) AS relationship_count
-            ORDER BY relationship_count DESC, predicate
-            LIMIT $limit
-            """,
-            {"limit": limit},
-        )
-
-        overview = GraphOverview(
-            professor_count=professor_count_rows[0]["professor_count"] if professor_count_rows else 0,
-            relationship_count=relationship_rows[0]["relationship_count"] if relationship_rows else 0,
-            sample_professors=[row["professor_name"] for row in professor_rows],
-            common_predicates=[row["predicate"] for row in predicate_rows],
-        )
-        return overview, [professor_trace, relationship_trace, professors_trace, predicates_trace]
-
     def resolve_professor(self, name_hint: str, *, limit: int = 5) -> tuple[list[ProfessorMatch], QueryTrace]:
         normalized_hint = name_hint.strip().lower()
         rows, trace = self._run(
             "resolve_professor",
             """
-            MATCH (p:Entity)
-            WHERE p.professor_name IS NOT NULL
-              AND (
-                toLower(p.professor_name) = $needle
-                OR toLower(p.name) = $needle
-                OR toLower(p.professor_name) CONTAINS $needle
-                OR toLower(p.name) CONTAINS $needle
-              )
-            RETURN DISTINCT
-              p.professor_name AS professor_name,
-              p.name AS matched_name,
+            MATCH (p:Professor)
+            WITH p,
+                 [value IN ([coalesce(p.name, '')] + coalesce(p.aliases, [])) WHERE trim(value) <> ''] AS candidate_names
+            WITH p, candidate_names,
+                 [value IN candidate_names WHERE
+                    toLower(value) = $needle
+                    OR toLower(value) CONTAINS $needle
+                 ] AS matched_names
+            WHERE size(matched_names) > 0
+            RETURN
+              p.name AS professor_name,
+              coalesce(head(matched_names), p.name) AS matched_name,
               p.detail_url AS detail_url,
               CASE
-                WHEN toLower(p.professor_name) = $needle OR toLower(p.name) = $needle THEN 0
-                WHEN toLower(p.professor_name) STARTS WITH $needle OR toLower(p.name) STARTS WITH $needle THEN 1
+                WHEN any(value IN candidate_names WHERE toLower(value) = $needle) THEN 0
+                WHEN any(value IN candidate_names WHERE toLower(value) STARTS WITH $needle) THEN 1
                 ELSE 2
               END AS score
             ORDER BY score, professor_name
@@ -198,22 +147,84 @@ class Neo4jQueryService:
         rows, trace = self._run(
             "get_professor_facts",
             """
-            MATCH (source:Entity)-[r]->(target:Entity)
-            WHERE $professor_name IN coalesce(r.source_professors, [])
+            MATCH (p:Professor)
+            WHERE p.name = $professor_name OR $professor_name IN coalesce(p.aliases, [])
+            WITH p
+            CALL (p) {
+              MATCH (p)-[:AFFILIATED_WITH]->(o:Organization)
+              RETURN p.name AS professor_name, p.name AS source_name, o.name AS target_name, 'AFFILIATED_WITH' AS relationship_type
+              UNION ALL
+              MATCH (p)-[:HAS_RESEARCH_INTEREST]->(t:ResearchTopic)
+              RETURN p.name AS professor_name, p.name AS source_name, t.name AS target_name, 'HAS_RESEARCH_INTEREST' AS relationship_type
+              UNION ALL
+              MATCH (p)-[:HAS_EXPERIENCE]->(e:Experience)
+              RETURN
+                p.name AS professor_name,
+                p.name AS source_name,
+                CASE
+                  WHEN coalesce(e.raw_text, '') <> '' THEN e.raw_text
+                  WHEN coalesce(e.title, '') <> '' THEN e.title
+                  WHEN coalesce(e.degree, '') <> '' THEN e.degree
+                  WHEN coalesce(e.organization_name, '') <> '' THEN e.organization_name
+                  ELSE coalesce(e.field, '')
+                END AS target_name,
+                'HAS_EXPERIENCE' AS relationship_type
+              UNION ALL
+              MATCH (p)-[:AUTHORED]->(pub:Publication)
+              RETURN
+                p.name AS professor_name,
+                p.name AS source_name,
+                CASE
+                  WHEN coalesce(pub.title, '') <> '' THEN pub.title
+                  ELSE coalesce(pub.raw_text, '')
+                END AS target_name,
+                'AUTHORED' AS relationship_type
+              UNION ALL
+              MATCH (p)-[:RECEIVED]->(a:Award)
+              RETURN
+                p.name AS professor_name,
+                p.name AS source_name,
+                CASE
+                  WHEN coalesce(a.name, '') <> '' THEN a.name
+                  ELSE coalesce(a.raw_text, '')
+                END AS target_name,
+                'RECEIVED' AS relationship_type
+              UNION ALL
+              UNWIND coalesce(p.emails, []) AS value
+              RETURN p.name AS professor_name, p.name AS source_name, value AS target_name, 'HAS_EMAIL' AS relationship_type
+              UNION ALL
+              UNWIND coalesce(p.phones, []) AS value
+              RETURN p.name AS professor_name, p.name AS source_name, value AS target_name, 'HAS_PHONE' AS relationship_type
+              UNION ALL
+              UNWIND coalesce(p.websites, []) AS value
+              RETURN p.name AS professor_name, p.name AS source_name, value AS target_name, 'HAS_WEBSITE' AS relationship_type
+              UNION ALL
+              UNWIND coalesce(p.locations, []) AS value
+              RETURN p.name AS professor_name, p.name AS source_name, value AS target_name, 'LOCATED_IN' AS relationship_type
+              UNION ALL
+              WITH p WHERE coalesce(p.title, '') <> ''
+              RETURN p.name AS professor_name, p.name AS source_name, p.title AS target_name, 'HAS_TITLE' AS relationship_type
+              UNION ALL
+              WITH p WHERE coalesce(p.discipline, '') <> ''
+              RETURN p.name AS professor_name, p.name AS source_name, p.discipline AS target_name, 'IN_DISCIPLINE' AS relationship_type
+            }
+            WITH professor_name, source_name, target_name, relationship_type
+            WHERE target_name IS NOT NULL
+              AND trim(target_name) <> ''
               AND (
                 size($keywords) = 0
                 OR any(keyword IN $keywords WHERE
-                    toLower(source.name) CONTAINS keyword
-                    OR toLower(target.name) CONTAINS keyword
-                    OR toLower(coalesce(r.predicate, type(r))) CONTAINS keyword
+                    toLower(source_name) CONTAINS keyword
+                    OR toLower(target_name) CONTAINS keyword
+                    OR toLower(relationship_type) CONTAINS keyword
                 )
               )
             RETURN
-              source.name AS source_name,
-              target.name AS target_name,
-              type(r) AS relationship_type,
-              coalesce(r.predicate, type(r)) AS predicate,
-              coalesce(r.source_professors, []) AS source_professors
+              source_name,
+              target_name,
+              relationship_type,
+              relationship_type AS predicate,
+              [professor_name] AS source_professors
             ORDER BY predicate, target_name
             LIMIT $limit
             """,
@@ -245,23 +256,19 @@ class Neo4jQueryService:
         rows, trace = self._run(
             "find_professors_by_topics",
             """
-            MATCH (source:Entity)-[r]->(target:Entity)
-            UNWIND coalesce(r.source_professors, []) AS professor_name
-            WITH professor_name, source, target, r,
+            MATCH (p:Professor)-[:HAS_RESEARCH_INTEREST]->(t:ResearchTopic)
+            WITH p, t,
                  [keyword IN $keywords WHERE
-                    toLower(source.name) CONTAINS keyword
-                    OR toLower(target.name) CONTAINS keyword
-                    OR toLower(coalesce(r.predicate, type(r))) CONTAINS keyword
+                    toLower(t.name) CONTAINS keyword
+                    OR toLower(coalesce(t.normalized_name, '')) CONTAINS keyword
                  ] AS hits
             WHERE size(hits) > 0
-            OPTIONAL MATCH (p:Entity)
-            WHERE p.professor_name = professor_name
             RETURN
-              professor_name,
-              head(collect(DISTINCT p.detail_url)) AS detail_url,
-              collect(DISTINCT target.name)[0..5] AS matched_nodes,
-              collect(DISTINCT coalesce(r.predicate, type(r)))[0..5] AS matched_predicates,
-              count(*) AS match_count
+              p.name AS professor_name,
+              p.detail_url AS detail_url,
+              collect(DISTINCT t.name)[0..5] AS matched_nodes,
+              ['HAS_RESEARCH_INTEREST'] AS matched_predicates,
+              count(DISTINCT t) AS match_count
             ORDER BY match_count DESC, professor_name
             LIMIT $limit
             """,
@@ -278,3 +285,12 @@ class Neo4jQueryService:
             for row in rows
         ]
         return matches, trace
+
+
+__all__ = [
+    "Neo4jQueryService",
+    "ProfessorFact",
+    "ProfessorMatch",
+    "QueryTrace",
+    "TopicMatch",
+]

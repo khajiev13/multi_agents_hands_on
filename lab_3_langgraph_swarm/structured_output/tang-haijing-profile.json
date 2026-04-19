@@ -1,0 +1,215 @@
+{
+  "metadata": {
+    "name": "TANG Haijing",
+    "slug": "tang-haijing",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121631.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/tang-haijing-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "TANG Haijing",
+      "aliases": [
+        "TANG Haijing"
+      ],
+      "title": "",
+      "school_name": "",
+      "discipline": "",
+      "biography_text": "",
+      "emails": [],
+      "phones": [],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "Beijing Institute Of Technology",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "Tsinghua University",
+        "org_type": "university",
+        "normalized_name": "tsinghua university"
+      },
+      {
+        "name": "Lenovo Software",
+        "org_type": "company",
+        "normalized_name": "lenovo software"
+      },
+      {
+        "name": "School Of Software, Beijing Institute of Technology",
+        "org_type": "school",
+        "normalized_name": "school of software beijing institute of technology"
+      },
+      {
+        "name": "Beijing municipal science and technology commission",
+        "org_type": "government",
+        "normalized_name": "beijing municipal science and technology commission"
+      },
+      {
+        "name": "Beijing Environment Exchange",
+        "org_type": "company",
+        "normalized_name": "beijing environment exchange"
+      },
+      {
+        "name": "Beijing Green Finance Association",
+        "org_type": "association",
+        "normalized_name": "beijing green finance association"
+      },
+      {
+        "name": "The Scientific World Journal",
+        "org_type": "journal",
+        "normalized_name": "the scientific world journal"
+      },
+      {
+        "name": "International Journal of Distributed Sensor Networks",
+        "org_type": "journal",
+        "normalized_name": "international journal of distributed sensor networks"
+      },
+      {
+        "name": "Beijing Institute of Technology Press",
+        "org_type": "company",
+        "normalized_name": "beijing institute of technology press"
+      }
+    ],
+    "research_topics": [],
+    "experiences": [
+      {
+        "kind": "employment",
+        "title": "Vice President & Chief Technology Officer",
+        "degree": "",
+        "field": "",
+        "organization_name": "Lenovo Software",
+        "location": "",
+        "start_text": "2000",
+        "end_text": "2004",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "2000-2004, Lenovo Software Vice President & Chief Technology Officer"
+      },
+      {
+        "kind": "employment",
+        "title": "",
+        "degree": "",
+        "field": "",
+        "organization_name": "",
+        "location": "",
+        "start_text": "2005",
+        "end_text": "2012",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "2005-2012, Successfully founded many high-tech companies, long-term focus on software and Internet field"
+      },
+      {
+        "kind": "employment",
+        "title": "",
+        "degree": "",
+        "field": "",
+        "organization_name": "School Of Software, Beijing Institute of Technology",
+        "location": "",
+        "start_text": "2013",
+        "end_text": "Present",
+        "is_current": true,
+        "order": 3,
+        "raw_text": "Since 2013, Teach in School Of Software, Beijing Institute of Technology"
+      },
+      {
+        "kind": "academic_service",
+        "title": "project evaluation experts",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing municipal science and technology commission",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 4,
+        "raw_text": "Beijing municipal science and technology commission project evaluation experts"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Advisor",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing Environment Exchange",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "Beijing Environment Exchange Advisor"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Deputy Secretary-General",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing Green Finance Association",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 6,
+        "raw_text": "Beijing Green Finance Association Deputy Secretary-General"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Optimizing Instruction Scheduling and Register Allocation for Register-File-Connected Clustered LVIW Architectures",
+        "authors_raw": "",
+        "year": "2013",
+        "venue": "The Scientific World Journal",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Optimizing Instruction Scheduling and Register Allocation for Register-File-Connected Clustered LVIW Architectures, The Scientific World Journal, vol. 2013, Article ID 913038, 11 pages, 2013.7.SC: WOS:000322475800001",
+        "order": 1
+      },
+      {
+        "title": "Effort at Constructing Big Data Sensor Networks for Monitoring Greenhouse Gas Emission",
+        "authors_raw": "",
+        "year": "2014",
+        "venue": "International Journal of Distributed Sensor Networks",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Effort at Constructing Big Data Sensor Networks for Monitoring Greenhouse Gas Emission, International Journal of Distributed Sensor Networks, vol. 2014, Article ID 619608, 7 pages, 2014.6.SC: WOS:00033921 1000001",
+        "order": 2
+      },
+      {
+        "title": "Introduction to Data Science",
+        "authors_raw": "",
+        "year": "2014",
+        "venue": "Beijing Institute of Technology Press",
+        "publication_type": "book",
+        "doi_or_url": "",
+        "raw_text": "《数据科学导论》，2014年3月，北京理工大学出版社 《Introduction to Data Science》, 2014.3, Beijing Institute of Technology Press",
+        "order": 3
+      }
+    ],
+    "awards": [
+      {
+        "name": "Beijing Technology New Star",
+        "year": "2008",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "2008 Beijing Technology New Star",
+        "order": 1
+      },
+      {
+        "name": "Beijing Science and Technology Third Prize",
+        "year": "2009, 2011",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "2009、2011 Twice Beijing Science and Technology Third Prize, The first person to complete",
+        "order": 2
+      }
+    ],
+    "warnings": [
+      "Ignored the education section because it lists degrees but not in a structured 'experience' format with clear start/end dates.",
+      "Ignored the instruction-only publication heading because it did not list concrete items.",
+      "Publication year extracted from raw text; month/date information not captured.",
+      "Publication identifiers (WOS, Article ID) not captured as DOI/URL.",
+      "Publication venue for book is the publisher name.",
+      "No explicit professor title, school, discipline, contact details, or biography found in the provided text."
+    ]
+  }
+}

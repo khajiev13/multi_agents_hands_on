@@ -1,0 +1,350 @@
+{
+  "metadata": {
+    "name": "ZHAO Fengnian",
+    "slug": "zhao-fengnian",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121628.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/zhao-fengnian-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "赵丰年",
+      "aliases": [
+        "赵丰年",
+        "Zhao Fenghuan",
+        "ZHAO Fengnian"
+      ],
+      "title": "讲师",
+      "school_name": "软件学院",
+      "discipline": "软件工程&教育技术",
+      "biography_text": "",
+      "emails": [
+        "zhaofn@bit.edu.cn"
+      ],
+      "phones": [
+        "13521010011"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "School of Software",
+        "org_type": "school",
+        "normalized_name": "school of software"
+      },
+      {
+        "name": "BIT",
+        "org_type": "university",
+        "normalized_name": "bit"
+      },
+      {
+        "name": "Beijing Institute of Technology",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "University of California, San Diego",
+        "org_type": "university",
+        "normalized_name": "university of california san diego"
+      },
+      {
+        "name": "Interactive Cognition Laboratory",
+        "org_type": "laboratory",
+        "normalized_name": "interactive cognition laboratory"
+      },
+      {
+        "name": "Department of Cognitive Science",
+        "org_type": "school",
+        "normalized_name": "department of cognitive science"
+      },
+      {
+        "name": "Beijing Institute of Technology Press",
+        "org_type": "company",
+        "normalized_name": "beijing institute of technology press"
+      },
+      {
+        "name": "Tsinghua University Press",
+        "org_type": "company",
+        "normalized_name": "tsinghua university press"
+      },
+      {
+        "name": "Posts&Telecom Press",
+        "org_type": "company",
+        "normalized_name": "posts telecom press"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "Gamification of Software Systems",
+        "normalized_name": "gamification of software systems"
+      },
+      {
+        "name": "Educational Games",
+        "normalized_name": "educational games"
+      },
+      {
+        "name": "Digital Game Based Learning",
+        "normalized_name": "digital game based learning"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "PhD Candidate",
+        "field": "Institute of Education",
+        "organization_name": "BIT",
+        "location": "",
+        "start_text": "Sept 2012",
+        "end_text": "Present",
+        "is_current": true,
+        "order": 1,
+        "raw_text": "Sept 2012 ~ Present PhD Candidate in Institute of Education at BIT"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Master's degree",
+        "field": "Department of Computer Science",
+        "organization_name": "BIT",
+        "location": "",
+        "start_text": "Sept 1992",
+        "end_text": "June 1999",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "Sept 1992 ~ June 1999 Received Master's degree at BIT, Department of Computer Science, June 1999"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Bachelor's degree",
+        "field": "Department of Computer Science",
+        "organization_name": "BIT",
+        "location": "",
+        "start_text": "",
+        "end_text": "June 1996",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "Received Bachelor's degree at BIT, Department of Computer Science, June 1996"
+      },
+      {
+        "kind": "employment",
+        "title": "Instructor",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "",
+        "start_text": "Sept 1999",
+        "end_text": "Present",
+        "is_current": true,
+        "order": 4,
+        "raw_text": "Sept 1999 ~ Present Instructor at Beijing Institute of Technology"
+      },
+      {
+        "kind": "academic_service",
+        "title": "International Affairs Coordinator",
+        "degree": "",
+        "field": "",
+        "organization_name": "School of Software",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "International Affairs Coordinator of School of Software"
+      },
+      {
+        "kind": "employment",
+        "title": "Visiting scholar",
+        "degree": "",
+        "field": "",
+        "organization_name": "University of California, San Diego",
+        "location": "",
+        "start_text": "Sept 2004",
+        "end_text": "Sept 2005",
+        "is_current": false,
+        "order": 6,
+        "raw_text": "Sept 2004 ~ Sept 2005 Visiting scholar at University of California, San Diego"
+      },
+      {
+        "kind": "employment",
+        "title": "",
+        "degree": "",
+        "field": "",
+        "organization_name": "Interactive Cognition Laboratory",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 7,
+        "raw_text": "Researched at Interactive Cognition Laboratory"
+      },
+      {
+        "kind": "employment",
+        "title": "TA",
+        "degree": "",
+        "field": "",
+        "organization_name": "Department of Cognitive Science",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 8,
+        "raw_text": "Worked as TA at Department of Cognitive Science"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Gamified learning: definition, characteristics and application",
+        "authors_raw": "Zhao F N, et al.",
+        "year": "2014",
+        "venue": "ETIF2014",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[Zhao F N, et al. Gamified learning: definition, characteristics and application[C]. ETIF2014.2014",
+        "order": 1
+      },
+      {
+        "title": "AC Practice Course Based on PBL and LBD",
+        "authors_raw": "Zhao F N.",
+        "year": "2014",
+        "venue": "All-English Instruction Research and Practice",
+        "publication_type": "book",
+        "doi_or_url": "",
+        "raw_text": "[Zhao F N. AC Practice Course Based on PBL and LBD[M] // Xu J. All-English Instruction Research and Practice. Beijing: Beijing Institute of Technology Press, 2014: 196-203.",
+        "order": 2
+      },
+      {
+        "title": "Web Design Technology(2nd edition)",
+        "authors_raw": "Zhao F N.",
+        "year": "2009",
+        "venue": "",
+        "publication_type": "book",
+        "doi_or_url": "",
+        "raw_text": "[Zhao F N. Web Design Technology(2nd edition)[M]. Beijing: Tsinghua University Press, 2009",
+        "order": 3
+      },
+      {
+        "title": "A Text Filtering Model Based on Concept",
+        "authors_raw": "Zhao F N, et al.",
+        "year": "2006",
+        "venue": "Computer Engineering and Application",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[Zhao F N, et al. A Text Filtering Model Based on Concept[J]. Computer Engineering and Application, 2006, 42(04):186-188",
+        "order": 4
+      },
+      {
+        "title": "A Textbook on Web Design(3rd edition)",
+        "authors_raw": "Zhao F N.",
+        "year": "2006",
+        "venue": "",
+        "publication_type": "book",
+        "doi_or_url": "",
+        "raw_text": "[Zhao F N. A Textbook on Web Design(3rd edition)[M]. Beijing: Posts&Telecom Press, 2006",
+        "order": 5
+      }
+    ],
+    "awards": [
+      {
+        "name": "First Prize of Beijing Institute of Technology T-more Teaching Competition",
+        "year": "2015",
+        "granting_org_name": "Beijing Institute of Technology",
+        "level": "",
+        "raw_text": "First Prize of Beijing Institute of Technology T-more Teaching Competition, 2015",
+        "order": 1
+      },
+      {
+        "name": "Third Prize of Beijing Institute of Technology T-more Teaching Competition",
+        "year": "2012",
+        "granting_org_name": "Beijing Institute of Technology",
+        "level": "",
+        "raw_text": "Third Prize of Beijing Institute of Technology T-more Teaching Competition, 2012",
+        "order": 2
+      },
+      {
+        "name": "Multimedia Technology>, Excellent Textbook of Beijing",
+        "year": "2011",
+        "granting_org_name": "Beijing",
+        "level": "",
+        "raw_text": "Multimedia Technology>, Excellent Textbook of Beijing, 2011",
+        "order": 3
+      },
+      {
+        "name": "C Programming>, National Level Bilingual Teaching Exemplary Course",
+        "year": "2010",
+        "granting_org_name": "",
+        "level": "National Level",
+        "raw_text": "C Programming>, National Level Bilingual Teaching Exemplary Course, 2010",
+        "order": 4
+      },
+      {
+        "name": "One of the “Top 10 teachers of Beijing Institute of Technology”",
+        "year": "2009",
+        "granting_org_name": "Beijing Institute of Technology",
+        "level": "",
+        "raw_text": "One of the “Top 10 teachers of Beijing Institute of Technology”, 2009",
+        "order": 5
+      },
+      {
+        "name": "Public Computer Courses Teaching Team>, National Level Excellent Teaching Team",
+        "year": "2009",
+        "granting_org_name": "",
+        "level": "National Level",
+        "raw_text": "Public Computer Courses Teaching Team>, National Level Excellent Teaching Team, 2009",
+        "order": 6
+      },
+      {
+        "name": "Multimedia Technology>, National Level Excellent Course",
+        "year": "2008",
+        "granting_org_name": "",
+        "level": "National Level",
+        "raw_text": "Multimedia Technology>, National Level Excellent Course, 2008",
+        "order": 7
+      },
+      {
+        "name": "<Software Engineering Practice>, Second Prize of Beijing Higher Education Awards",
+        "year": "2004",
+        "granting_org_name": "Beijing Higher Education Awards",
+        "level": "Second Prize",
+        "raw_text": "<Software Engineering Practice>, Second Prize of Beijing Higher Education Awards, 2004",
+        "order": 8
+      },
+      {
+        "name": "<Web Design>, Excellent Textbook of Beijing",
+        "year": "2003",
+        "granting_org_name": "Beijing",
+        "level": "",
+        "raw_text": "<Web Design>, Excellent Textbook of Beijing, 2003",
+        "order": 9
+      },
+      {
+        "name": "Second Prize in the Beijing Institute of Technology T-more Teaching Competition",
+        "year": "2003",
+        "granting_org_name": "Beijing Institute of Technology",
+        "level": "Second Prize",
+        "raw_text": "Second Prize in the Beijing Institute of Technology T-more Teaching Competition, 2003",
+        "order": 10
+      },
+      {
+        "name": "Third prize in the 5th National Popular Science Books Award",
+        "year": "2003",
+        "granting_org_name": "5th National Popular Science Books Award",
+        "level": "Third prize",
+        "raw_text": "Third prize in the 5th National Popular Science Books Award, 2003",
+        "order": 11
+      }
+    ],
+    "warnings": [
+      "Ignored the instruction-only publication heading because it did not list concrete items.",
+      "The professor's name appears as 'Zhao Fenghuan' in the English title line, but the listing metadata uses 'Zhao Fengnian'. The alias 'Zhao Fenghuan' has been recorded.",
+      "The 'Received Bachelor's degree' line lacks an explicit start date; start_text is left empty.",
+      "The 'International Affairs Coordinator' role is treated as academic_service due to its nature, but its temporal context is unclear.",
+      "The 'Researched at Interactive Cognition Laboratory' and 'Worked as TA at Department of Cognitive Science' lines are assumed to be part of the visiting scholar period but are listed as separate employment experiences due to distinct organization names.",
+      "Award names contain unmatched angle brackets (e.g., '<Software Engineering Practice>', 'Multimedia Technology>', '<Web Design>') which are preserved as-is.",
+      "The 'Planned Textbooks' and 'Published several academic papers' lines under work experience are not concrete items and are not extracted.",
+      "The 'Taught the following courses...' description under work experience is not extracted as a separate experience item.",
+      "The 'Published more than 20 books...' line under work experience is not extracted as a publication due to lack of concrete details."
+    ]
+  }
+}

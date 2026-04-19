@@ -1,0 +1,254 @@
+{
+  "metadata": {
+    "name": "JIN Fusheng",
+    "slug": "jin-fusheng",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121635.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/jin-fusheng-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "金福生",
+      "aliases": [
+        "金福生",
+        "Jin Fu Sheng",
+        "JIN Fusheng"
+      ],
+      "title": "Associate Professor",
+      "school_name": "School of Software",
+      "discipline": "Software Engineering",
+      "biography_text": "JIN Fusheng received his Ph.D. degree in Computer Science at Beijing Institute of Technology. Now, he is an associate professor in School of Software of Beijing Institute of Technology, the vice deputy director of 'IBM-BIT big data analyzing center'. As visiting scholar, he visited to Bristol in UK in the year of 2007.",
+      "emails": [
+        "Jfs21cn@bit.edu.cn"
+      ],
+      "phones": [
+        "(8610)68914916"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "School of Software",
+        "org_type": "school",
+        "normalized_name": "school of software"
+      },
+      {
+        "name": "Beijing Institute of Technology",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "IBM-BIT big data analyzing center",
+        "org_type": "laboratory",
+        "normalized_name": "ibm bit big data analyzing center"
+      },
+      {
+        "name": "JOURNAL OF ELECTRONICS",
+        "org_type": "journal",
+        "normalized_name": "journal of electronics"
+      },
+      {
+        "name": "2013 international conference of Granular computing",
+        "org_type": "conference",
+        "normalized_name": "2013 international conference of granular computing"
+      },
+      {
+        "name": "China Computer Federation",
+        "org_type": "association",
+        "normalized_name": "china computer federation"
+      },
+      {
+        "name": "BIT",
+        "org_type": "university",
+        "normalized_name": "bit"
+      },
+      {
+        "name": "IBM",
+        "org_type": "company",
+        "normalized_name": "ibm"
+      },
+      {
+        "name": "China Scholarship Council",
+        "org_type": "funder",
+        "normalized_name": "china scholarship council"
+      },
+      {
+        "name": "Ministry of Science and Technology",
+        "org_type": "government",
+        "normalized_name": "ministry of science and technology"
+      },
+      {
+        "name": "National Development and Reform Commission",
+        "org_type": "government",
+        "normalized_name": "national development and reform commission"
+      },
+      {
+        "name": "International Department of the Central Committee of CPC",
+        "org_type": "government",
+        "normalized_name": "international department of the central committee of cpc"
+      },
+      {
+        "name": "National Natural Science Foundation of China",
+        "org_type": "funder",
+        "normalized_name": "national natural science foundation of china"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "Software Architecture Design",
+        "normalized_name": "software architecture design"
+      },
+      {
+        "name": "Embedded System",
+        "normalized_name": "embedded system"
+      },
+      {
+        "name": "Software Security",
+        "normalized_name": "software security"
+      },
+      {
+        "name": "IOS/Android Application",
+        "normalized_name": "ios android application"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph.D.",
+        "field": "Computer Science",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "JIN Fusheng received his Ph.D. degree in Computer Science at Beijing Institute of Technology."
+      },
+      {
+        "kind": "employment",
+        "title": "associate professor, vice deputy director of 'IBM-BIT big data analyzing center'",
+        "degree": "",
+        "field": "",
+        "organization_name": "School of Software of Beijing Institute of Technology",
+        "location": "",
+        "start_text": "Now",
+        "end_text": "",
+        "is_current": true,
+        "order": 2,
+        "raw_text": "Now, he is an associate professor in School of Software of Beijing Institute of Technology, the vice deputy director of 'IBM-BIT big data analyzing center'."
+      },
+      {
+        "kind": "academic_service",
+        "title": "Reviewer",
+        "degree": "",
+        "field": "",
+        "organization_name": "JOURNAL OF ELECTRONICS",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "Reviewer for JOURNAL OF ELECTRONICS"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Publicity Chair",
+        "degree": "",
+        "field": "",
+        "organization_name": "2013 international conference of Granular computing",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 4,
+        "raw_text": "Publicity Chair of 2013 international conference of Granular computing"
+      },
+      {
+        "kind": "academic_service",
+        "title": "senior member",
+        "degree": "",
+        "field": "",
+        "organization_name": "China Computer Federation",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "senior member of China Computer Federation"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Software Architecture",
+        "authors_raw": "",
+        "year": "",
+        "venue": "",
+        "publication_type": "book",
+        "doi_or_url": "",
+        "raw_text": "Software Architecture",
+        "order": 1
+      },
+      {
+        "title": "ios Application Development Methods and Practices",
+        "authors_raw": "",
+        "year": "",
+        "venue": "",
+        "publication_type": "book",
+        "doi_or_url": "",
+        "raw_text": "ios Application Development Methods and Practices",
+        "order": 2
+      },
+      {
+        "title": "Talking about cloud computing era",
+        "authors_raw": "",
+        "year": "",
+        "venue": "",
+        "publication_type": "book",
+        "doi_or_url": "",
+        "raw_text": "Talking about cloud computing era",
+        "order": 3
+      }
+    ],
+    "awards": [
+      {
+        "name": "The Student Extracurricular Scientific and Technological gardener",
+        "year": "2009",
+        "granting_org_name": "BIT",
+        "level": "",
+        "raw_text": "2009 \"The Student Extracurricular Scientific and Technological gardener\" Awarded by BIT",
+        "order": 1
+      },
+      {
+        "name": "The IBM Outstanding Teacher Award for cooperation projects",
+        "year": "2009",
+        "granting_org_name": "IBM",
+        "level": "",
+        "raw_text": "2009 \"The IBM Outstanding Teacher Award for cooperation projects\" Awarded by IBM",
+        "order": 2
+      },
+      {
+        "name": "IBM China Outstanding Teacher Award",
+        "year": "2009-2014",
+        "granting_org_name": "China Scholarship Council",
+        "level": "",
+        "raw_text": "2009-2014 \"IBM China Outstanding Teacher Award\" Awarded by China Scholarship Council",
+        "order": 3
+      },
+      {
+        "name": "The first prize of Twelfth educational achievement award",
+        "year": "2012",
+        "granting_org_name": "BIT",
+        "level": "",
+        "raw_text": "2012 \"The first prize of Twelfth educational achievement award\" Awarded by BIT",
+        "order": 4
+      }
+    ],
+    "warnings": [
+      "Ignored the instruction-only publication heading '请列举5篇左右代表性论文或著作。(Please list 5 representative publications)' because it did not list concrete items.",
+      "Publication counts and project descriptions in the 'Teaching&Research' paragraph were not extracted as individual publication items.",
+      "The visiting scholar experience to Bristol in 2007 was not extracted due to insufficient detail for a structured experience record.",
+      "The award 'IBM China Outstanding Teacher Award' has a non-standard year range '2009-2014'."
+    ]
+  }
+}

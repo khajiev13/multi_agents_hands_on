@@ -1,0 +1,219 @@
+{
+  "metadata": {
+    "name": "LI Yugang",
+    "slug": "li-yugang",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113054.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/li-yugang-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "LI Yugang",
+      "aliases": [
+        "LI Yugang",
+        "李玉岗",
+        "Li Yugang"
+      ],
+      "title": "讲师",
+      "school_name": "计算机",
+      "discipline": "计算机科学与技术",
+      "biography_text": "",
+      "emails": [
+        "lyg@bit.edu.cn"
+      ],
+      "phones": [
+        "13910635605"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "School of Computer Science and Technology",
+        "org_type": "school",
+        "normalized_name": "school of computer science and technology"
+      },
+      {
+        "name": "Institute of Computing Technology, Chinese Academy of Science",
+        "org_type": "laboratory",
+        "normalized_name": "institute of computing technology chinese academy of science"
+      },
+      {
+        "name": "Computer School, Beijing Institute of Technology",
+        "org_type": "school",
+        "normalized_name": "computer school beijing institute of technology"
+      },
+      {
+        "name": "department of Applied Mathematics, Beijing Institute of Technology",
+        "org_type": "school",
+        "normalized_name": "department of applied mathematics beijing institute of technology"
+      },
+      {
+        "name": "Haituoyongxu Company",
+        "org_type": "company",
+        "normalized_name": "haituoyongxu company"
+      },
+      {
+        "name": "Langchao group company",
+        "org_type": "company",
+        "normalized_name": "langchao group company"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "高性能计算",
+        "normalized_name": "high performance computing"
+      },
+      {
+        "name": "图像处理",
+        "normalized_name": "image processing"
+      },
+      {
+        "name": "生物信息",
+        "normalized_name": "bioinformatics"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph. D degree of Computer Architecture",
+        "field": "High performance Computing",
+        "organization_name": "Institute of Computing Technology, Chinese Academy of Science",
+        "location": "Beijing China",
+        "start_text": "2001/9",
+        "end_text": "2004/7",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "2001/9-2004/7 High performance Computing, Ph. D degree of Computer Architecture at Institute of Computing Technology, Chinese Academy of Science, Beijing China"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Master degree of Computer Science and technology",
+        "field": "Computer Application",
+        "organization_name": "Computer School, Beijing Institute of Technology",
+        "location": "Beijing China",
+        "start_text": "1999/9/",
+        "end_text": "2001/7",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "1999/9/-2001/7 Computer Application, Master degree of Computer Science and technology at Computer School, Beijing Institute of Technology, Beijing China"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Bachelor degree of applied Mathematics",
+        "field": "Applied Mathematics",
+        "organization_name": "department of Applied Mathematics, Beijing Institute of Technology",
+        "location": "",
+        "start_text": "1990/9",
+        "end_text": "1994/7",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "1990/9-1994/7 Applied Mathematics, Bachelor degree of applied Mathematics at department of Applied Mathematics, Beijing Institute of Technology, Beijing China"
+      },
+      {
+        "kind": "employment",
+        "title": "Lecture",
+        "degree": "",
+        "field": "",
+        "organization_name": "School of Computer Science and Technology, Beijing Institute of Technology",
+        "location": "Beijing, China",
+        "start_text": "2004/9",
+        "end_text": "now",
+        "is_current": true,
+        "order": 4,
+        "raw_text": "2004/9-now - Lecture in School of Computer Science and Technology, Beijing Institute of Technology, Beijing, China"
+      },
+      {
+        "kind": "employment",
+        "title": "Project manager",
+        "degree": "",
+        "field": "",
+        "organization_name": "Haituoyongxu Company",
+        "location": "Beijing, China",
+        "start_text": "1997/6",
+        "end_text": "1999/7",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "1997/6-1999/7 - Project manager at Haituoyongxu Company, Beijing, China"
+      },
+      {
+        "kind": "employment",
+        "title": "Computer software engineer",
+        "degree": "",
+        "field": "",
+        "organization_name": "Langchao group company",
+        "location": "Jinan China",
+        "start_text": "1994/9",
+        "end_text": "1997/5",
+        "is_current": false,
+        "order": 6,
+        "raw_text": "1994/9-1997/5 - Computer software engineer Langchao group company, Jinan China"
+      }
+    ],
+    "publications": [
+      {
+        "title": "FASART: An iterative reconstruction algorithm with inter-iteration adaptive NAD filter",
+        "authors_raw": "Zhiying Zhou, Yugang Li, Fa Zhang, and Xiaohua Wan",
+        "year": "2015",
+        "venue": "Bio-Medical Materials and Engineering",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "FASART: An iterative reconstruction algorithm with inter-iteration adaptive NAD filter, Zhiying Zhou, Yugang Li, Fa Zhang, and Xiaohua Wan, Bio-Medical Materials and Engineering 26 (2015) S1409-S1415",
+        "order": 1
+      },
+      {
+        "title": "Parallel optimization of Geometric Correction Algorithm based on CPU-GPU hybrid architecture",
+        "authors_raw": "HongTao Bai, YuGang Li, LiYing Chen, YanLing Wang",
+        "year": "2014",
+        "venue": "Applied Mechanics and Materials",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Parallel optimization of Geometric Correction Algorithm based on CPU-GPU hybrid architecture, HongTao Bai, YuGang Li, LiYing Chen, YanLing Wang, Applied Mechanics and Materials, Vols. 543-547, pp. 2804-2808, 2014",
+        "order": 2
+      },
+      {
+        "title": "Fast and convergence-guaranteed algorithm for linear separation",
+        "authors_raw": "Zhiyong Liu,David Zhang and Yugang Li",
+        "year": "2010",
+        "venue": "Science China Information Sciences",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Fast and convergence-guaranteed algorithm for linear separation, Zhiyong Liu,David Zhang and Yugang Li, Science China Information Sciences, 2010, Volume 53, Issue 4, pp 729-737",
+        "order": 3
+      },
+      {
+        "title": "Combining Position-Specific-Value-Method and SVM for Remote Protein Classification",
+        "authors_raw": "Yugang Li, Fa Zang, Zhiyong Liu",
+        "year": "2008",
+        "venue": "Chinese Journal of Computers",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Combining Position-Specific-Value-Method and SVM for Remote Protein Classification, Yugang Li, Fa Zang, Zhiyong Liu, Chinese Journal of Computers,2008, Vol. 31,No. 1,43-50.",
+        "order": 4
+      },
+      {
+        "title": "Algorithm Parallelization and Optimization of CoSMPs System Based on the HPM Model",
+        "authors_raw": "Yugang Li, Xiangzhen Qiao, Zhiyong Liu",
+        "year": "2004",
+        "venue": "Journal of Computer Research and Development",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Algorithm Parallelization and Optimization of CoSMPs System Based on the HPM Model, Yugang Li, Xiangzhen Qiao, Zhiyong Liu, Journal of Computer Research and Development, 2004, 41(4):621-629",
+        "order": 5
+      }
+    ],
+    "awards": [],
+    "warnings": [
+      "Ignored the instruction text 'FASART: 算法5 站左右代表性论文或著作。(Please list 5 representative publications)' as it is not a concrete publication.",
+      "The professor's title is listed as '讲师' and 'Assistant Professor'. The Chinese title '讲师' is used as the primary title.",
+      "The school name is listed as '计算机' and 'School of Computer Science and Technology'. The Chinese name '计算机' is used as the primary school_name.",
+      "The discipline is listed as '计算机科学与技术' and 'Computer Science and Technology'. The Chinese name '计算机科学与技术' is used as the primary discipline.",
+      "The research interests list contains duplicate entries in Chinese and English. Only the Chinese entries have been kept, with normalized English names.",
+      "The employment title 'Lecture' is likely an OCR error for 'Lecturer', but the raw text is preserved.",
+      "The education entry for the Bachelor's degree lists 'Beijing Institute of Technology' as the location, but this is part of the organization name. The location field is left empty.",
+      "The publication list includes a numbered heading '1. FASART:' which is part of the instruction text. The actual publication item starts with 'FASART: An iterative reconstruction algorithm...' and has been parsed accordingly."
+    ]
+  }
+}

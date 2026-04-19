@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1720" height="1200" viewBox="0 0 1720 1200">
+<rect x="0" y="0" width="100%" height="100%" fill="#f8fafc"/>
+<rect x="20" y="20" width="1680" height="1160" rx="24" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+<text x="56" y="74" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">AddProfessorSubagent — skill workflow &amp; live add pipeline</text>
+<text x="56" y="110" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#475569">Subagent prompt → /skills/add-professor-from-url/SKILL.md → one execute() call → add_professor_from_url.py crawl + OCR + structured extract.</text>
+<path d="M 250 440.0 L 290 440.0" fill="none" stroke="#4f46e5" stroke-width="2.8"/>
+<polygon points="290,440.0 279,434.0 279,446.0" fill="#4f46e5"/>
+<rect x="222.0" y="417.0" width="96" height="24" rx="6" fill="#ffffff" stroke="#4f46e5" stroke-width="1.4"/>
+<text x="270.0" y="435.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">tool_calls</text>
+<path d="M 370.0 400 L 370.0 380 L 170.0 380 L 170.0 400" fill="none" stroke="#7c3aed" stroke-width="2.8" stroke-dasharray="8 6"/>
+<polygon points="170.0,400 164.0,389 176.0,389" fill="#7c3aed"/>
+<path d="M 450 470.0 L 470 470.0 L 470 340 L 530 340" fill="none" stroke="#ca8a04" stroke-width="2.8"/>
+<polygon points="530,340 519,334 519,346" fill="#ca8a04"/>
+<rect x="406.0" y="382.0" width="128" height="24" rx="6" fill="#ffffff" stroke="#ca8a04" stroke-width="1.4"/>
+<text x="470.0" y="400.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">loads SKILL.md</text>
+<path d="M 970 575 L 1030 575" fill="none" stroke="#7c3aed" stroke-width="2.8"/>
+<polygon points="1030,575 1019,569 1019,581" fill="#7c3aed"/>
+<rect x="956.0" y="552.0" width="88" height="24" rx="6" fill="#ffffff" stroke="#7c3aed" stroke-width="1.4"/>
+<text x="1000.0" y="570.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">execute()</text>
+<path d="M 1335 440 L 1335 445" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="1335,445 1329,434 1341,434" fill="#475569"/>
+<path d="M 1335 505 L 1335 510" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="1335,510 1329,499 1341,499" fill="#475569"/>
+<path d="M 1335 570 L 1335 575" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="1335,575 1329,564 1341,564" fill="#475569"/>
+<path d="M 1335 635 L 1335 640" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="1335,640 1329,629 1341,629" fill="#475569"/>
+<path d="M 1335 700 L 1335 705" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="1335,705 1329,694 1341,694" fill="#475569"/>
+<path d="M 1335 765 L 1335 770" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="1335,770 1329,759 1341,759" fill="#475569"/>
+<path d="M 1335 830 L 1335 835" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="1335,835 1329,824 1341,824" fill="#475569"/>
+<path d="M 750 450 L 750 460" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="750,460 744,449 756,449" fill="#475569"/>
+<path d="M 750 530 L 750 540" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="750,540 744,529 756,529" fill="#475569"/>
+<path d="M 750 610 L 750 620" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="750,620 744,609 756,609" fill="#475569"/>
+<path d="M 750 690 L 750 700" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="750,700 744,689 756,689" fill="#475569"/>
+<path d="M 750 770 L 750 780" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="750,780 744,769 756,769" fill="#475569"/>
+<path d="M 1335 895 L 1335 940 L 325.0 940 L 325.0 980" fill="none" stroke="#475569" stroke-width="2.8" stroke-dasharray="8 6"/>
+<polygon points="325.0,980 319.0,969 331.0,969" fill="#475569"/>
+<path d="M 1335 895 L 1335 940 L 860.0 940 L 860.0 980" fill="none" stroke="#475569" stroke-width="2.8" stroke-dasharray="8 6"/>
+<polygon points="860.0,980 854.0,969 866.0,969" fill="#475569"/>
+<path d="M 1335 895 L 1335 940 L 1395.0 940 L 1395.0 980" fill="none" stroke="#475569" stroke-width="2.8" stroke-dasharray="8 6"/>
+<polygon points="1395.0,980 1389.0,969 1401.0,969" fill="#475569"/>
+<rect x="60" y="140" width="1600" height="130" rx="18" fill="#fee2e2" stroke="#dc2626" stroke-width="3.0"/>
+<text x="860.0" y="168.25" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f172a">Subagent prompt (ADD_SUBAGENT_PROMPT) — rules:</text>
+<text x="860.0" y="189.25" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f172a">• Inspect professors/ first.</text>
+<text x="860.0" y="210.25" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f172a">• Accept only official BIT CSAT detail URLs.</text>
+<text x="860.0" y="231.25" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f172a">• Use execute exactly once to run the skill-owned script.   • Do not rebuild professors.md.</text>
+<text x="860.0" y="252.25" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f172a">• Return one compact final line: { status, professor_name, slug, markdown_path, page_count }.</text>
+<rect x="60" y="300" width="420" height="580" rx="18" fill="#fef2f2" stroke="#fca5a5" stroke-width="3.0" stroke-dasharray="8 6"/>
+<rect x="88" y="320" width="364" height="40" rx="18" fill="#fee2e2" stroke="#dc2626" stroke-width="3.0"/>
+<text x="270.0" y="346.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">Subagent compiled graph</text>
+<rect x="90" y="400" width="160" height="80" rx="18" fill="#eef2ff" stroke="#4f46e5" stroke-width="3.0"/>
+<text x="170.0" y="434.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">model</text>
+<text x="170.0" y="458.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">(LLM call)</text>
+<rect x="290" y="400" width="160" height="80" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="3.0"/>
+<text x="370.0" y="434.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">tools</text>
+<text x="370.0" y="458.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">(ToolNode)</text>
+<rect x="80" y="510" width="380" height="200" rx="18" fill="#ffffff" stroke="#475569" stroke-width="3.0" stroke-dasharray="8 6"/>
+<text x="270.0" y="534.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">Tools available to the subagent</text>
+<text x="270.0" y="554.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"></text>
+<text x="270.0" y="574.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">• Built-in file tools (ls, read_file, write_file,</text>
+<text x="270.0" y="594.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">   edit_file, glob, grep)</text>
+<text x="270.0" y="614.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">• execute(cmd) — bash, capped output</text>
+<text x="270.0" y="634.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">• /skills/ resolver — loads SKILL.md</text>
+<text x="270.0" y="654.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"></text>
+<text x="270.0" y="674.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">(no rebuild_professors_index_tool —</text>
+<text x="270.0" y="694.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"> only the parent has it)</text>
+<rect x="80" y="730" width="380" height="110" rx="18" fill="#fffbeb" stroke="#d97706" stroke-width="3.0" stroke-dasharray="8 6"/>
+<text x="270.0" y="769.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">Final reply (one line) is appended</text>
+<text x="270.0" y="789.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">to the parent's messages and the</text>
+<text x="270.0" y="809.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">subgraph hits END.</text>
+<rect x="510" y="300" width="480" height="580" rx="18" fill="#fefce8" stroke="#eab308" stroke-width="3.0" stroke-dasharray="8 6"/>
+<rect x="538" y="320" width="424" height="40" rx="18" fill="#fef9c3" stroke="#ca8a04" stroke-width="3.0"/>
+<text x="750.0" y="345.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">/skills/add-professor-from-url/SKILL.md</text>
+<rect x="530" y="380" width="440" height="70" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="3.0"/>
+<text x="750.0" y="410.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">1. Inspect professors/*.md to learn</text>
+<text x="750.0" y="429.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">    the current workspace state.</text>
+<rect x="530" y="460" width="440" height="70" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="3.0"/>
+<text x="750.0" y="480.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">2. Accept only URLs shaped like</text>
+<text x="750.0" y="499.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">    https://isc.bit.edu.cn/schools/csat/</text>
+<text x="750.0" y="518.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">    knowingprofessors5/b&lt;NNNN&gt;.htm</text>
+<rect x="530" y="540" width="440" height="70" rx="18" fill="#fef9c3" stroke="#ca8a04" stroke-width="3.0"/>
+<text x="750.0" y="541.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">3. Run exactly one execute() command:</text>
+<text x="750.0" y="560.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">    python skills/add-professor-from-url/</text>
+<text x="750.0" y="579.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">    scripts/add_professor_from_url.py</text>
+<text x="750.0" y="598.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">    --detail-url "&lt;url&gt;"</text>
+<text x="750.0" y="617.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">    --professors-dir professors</text>
+<rect x="530" y="620" width="440" height="70" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="3.0"/>
+<text x="750.0" y="659.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">4. Read the script's stdout JSON.</text>
+<rect x="530" y="700" width="440" height="70" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="3.0"/>
+<text x="750.0" y="730.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">5. status=added or duplicate_found →</text>
+<text x="750.0" y="749.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">    return one summary line and stop.</text>
+<rect x="530" y="780" width="440" height="70" rx="18" fill="#fee2e2" stroke="#dc2626" stroke-width="3.0"/>
+<text x="750.0" y="810.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">6. status=failed → return one</text>
+<text x="750.0" y="829.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">    failed summary line and stop.</text>
+<rect x="1010" y="300" width="650" height="580" rx="18" fill="#f0fdf4" stroke="#16a34a" stroke-width="3.0" stroke-dasharray="8 6"/>
+<rect x="1038" y="320" width="594" height="40" rx="18" fill="#dcfce7" stroke="#15803d" stroke-width="3.0"/>
+<text x="1335.0" y="346.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">add_professor_from_url.py — pipeline</text>
+<rect x="1030" y="380" width="610" height="60" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="3.0"/>
+<text x="1335.0" y="405.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">validate URL</text>
+<text x="1335.0" y="424.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">(regex: knowingprofessors5/b&lt;digits&gt;.htm)</text>
+<rect x="1030" y="445" width="610" height="60" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="3.0"/>
+<text x="1335.0" y="470.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">find_professor_listing_by_detail_url(url)</text>
+<text x="1335.0" y="489.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">resolves canonical name + listing</text>
+<rect x="1030" y="510" width="610" height="60" rx="18" fill="#fef9c3" stroke="#ca8a04" stroke-width="3.0"/>
+<text x="1335.0" y="535.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">duplicate check: professors/&lt;slug&gt;.md</text>
+<text x="1335.0" y="554.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">or any *.md whose detail_url matches</text>
+<rect x="1030" y="575" width="610" height="60" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="3.0"/>
+<text x="1335.0" y="600.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">extract_image_urls(detail_url)</text>
+<text x="1335.0" y="619.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">→ poster image URLs</text>
+<rect x="1030" y="640" width="610" height="60" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="3.0"/>
+<text x="1335.0" y="655.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">extract_professor_poster_markdown(...)</text>
+<text x="1335.0" y="674.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">Qwen-VL OCR over each poster image</text>
+<text x="1335.0" y="693.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">→ writes incoming/&lt;slug&gt;-ocr.md</text>
+<rect x="1030" y="705" width="610" height="60" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="3.0"/>
+<text x="1335.0" y="720.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">extract_structured_professor_profile(...)</text>
+<text x="1335.0" y="739.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">LLM → typed Pydantic profile</text>
+<text x="1335.0" y="758.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">→ writes incoming/&lt;slug&gt;-profile.json</text>
+<rect x="1030" y="770" width="610" height="60" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="3.0"/>
+<text x="1335.0" y="785.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">structured_profile_to_dossier(...) +</text>
+<text x="1335.0" y="804.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">render_professor_markdown(...) +</text>
+<text x="1335.0" y="823.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">validate_professor_dossier(...)</text>
+<rect x="1030" y="835" width="610" height="60" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="3.0"/>
+<text x="1335.0" y="860.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">write professors/&lt;slug&gt;.md</text>
+<text x="1335.0" y="879.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">emit JSON: status=added</text>
+<rect x="60" y="920" width="1600" height="40" rx="18" fill="#1e293b" stroke="#0f172a" stroke-width="3.0"/>
+<text x="860.0" y="945.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#ffffff">Three outcomes the script can return — and how the subagent reports each</text>
+<rect x="70" y="980" width="510" height="180" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="3.0"/>
+<text x="325.0" y="1014.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">status=added</text>
+<text x="325.0" y="1034.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"></text>
+<text x="325.0" y="1054.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">New dossier written to</text>
+<text x="325.0" y="1074.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">professors/&lt;slug&gt;.md.</text>
+<text x="325.0" y="1094.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">Subagent returns one line;</text>
+<text x="325.0" y="1114.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">parent then calls</text>
+<text x="325.0" y="1134.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">rebuild_professors_index_tool.</text>
+<rect x="605" y="980" width="510" height="180" rx="18" fill="#fef9c3" stroke="#ca8a04" stroke-width="3.0"/>
+<text x="860.0" y="1014.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">status=duplicate_found</text>
+<text x="860.0" y="1034.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"></text>
+<text x="860.0" y="1054.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">The slug or detail URL is</text>
+<text x="860.0" y="1074.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">already present.</text>
+<text x="860.0" y="1094.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">Subagent returns one line;</text>
+<text x="860.0" y="1114.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">parent skips the rebuild and</text>
+<text x="860.0" y="1134.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">replies that we already have it.</text>
+<rect x="1140" y="980" width="510" height="180" rx="18" fill="#fee2e2" stroke="#dc2626" stroke-width="3.0"/>
+<text x="1395.0" y="1014.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">status=failed</text>
+<text x="1395.0" y="1034.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"></text>
+<text x="1395.0" y="1054.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">Validation, crawl, OCR, or</text>
+<text x="1395.0" y="1074.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">structured extraction raised.</text>
+<text x="1395.0" y="1094.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">Subagent returns one failed</text>
+<text x="1395.0" y="1114.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">line with the error; parent</text>
+<text x="1395.0" y="1134.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">recovers silently.</text>
+</svg>

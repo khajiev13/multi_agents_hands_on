@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import base64
 import mimetypes
+import re
 from collections.abc import Sequence
 
 import requests
@@ -21,6 +22,62 @@ If text is cut off, include only the visible portion.
 If text is unreadable, omit it or mark it inline as [unreadable]. Do not guess.
 Do not wrap the answer in code fences.
 Do not add metadata, page markers, or commentary that is not visibly present in the image."""
+
+MARKDOWN_FENCE_LINE_PATTERN = re.compile(r"^\s*```(?:markdown|md)?\s*$", re.IGNORECASE)
+MARKDOWN_TABLE_LINE_PATTERN = re.compile(r"^\s*\|.*\|\s*$")
+MARKDOWN_TABLE_SEPARATOR_CELL_PATTERN = re.compile(r"^:?-{3,}:?$")
+INLINE_PIPE_SEPARATOR_PATTERN = re.compile(r"\s+\|\s+")
+
+
+def clean_ocr_markdown(markdown_text: str) -> str:
+    normalized_lines = markdown_text.replace("\r\n", "\n").replace("\r", "\n").split("\n")
+    cleaned_lines: list[str] = []
+    table_block: list[str] = []
+
+    def flush_table_block() -> None:
+        nonlocal table_block
+        if not table_block:
+            return
+        parsed_rows = [
+            [cell.strip() for cell in row.strip().strip("|").split("|")]
+            for row in table_block
+        ]
+        has_separator_row = any(
+            nonempty_cells
+            and all(
+                MARKDOWN_TABLE_SEPARATOR_CELL_PATTERN.fullmatch(cell)
+                for cell in nonempty_cells
+            )
+            for nonempty_cells in ([cell for cell in row if cell] for row in parsed_rows)
+        )
+        if has_separator_row:
+            for row in parsed_rows:
+                nonempty_cells = [cell for cell in row if cell]
+                if not nonempty_cells:
+                    continue
+                if all(
+                    MARKDOWN_TABLE_SEPARATOR_CELL_PATTERN.fullmatch(cell)
+                    for cell in nonempty_cells
+                ):
+                    continue
+                cleaned_lines.append(" - ".join(nonempty_cells))
+        else:
+            cleaned_lines.extend(table_block)
+        table_block = []
+
+    for line in normalized_lines:
+        if MARKDOWN_FENCE_LINE_PATTERN.match(line):
+            continue
+        if MARKDOWN_TABLE_LINE_PATTERN.match(line):
+            table_block.append(line)
+            continue
+        flush_table_block()
+        cleaned_lines.append(line)
+
+    flush_table_block()
+    return "\n".join(
+        INLINE_PIPE_SEPARATOR_PATTERN.sub(" - ", line) for line in cleaned_lines
+    ).strip()
 
 
 def extract_professor_page_markdown(
@@ -59,7 +116,8 @@ def extract_professor_page_markdown(
     page_markdown = (
         llm_response.text if isinstance(llm_response.text, str) else str(llm_response.text)
     )
-    if not page_markdown.strip():
+    page_markdown = clean_ocr_markdown(page_markdown)
+    if not page_markdown:
         raise ValueError("OCR returned empty markdown for page image")
     return page_markdown
 
@@ -105,6 +163,7 @@ def extract_professor_poster_page_markdowns(
 
 __all__ = [
     "RAW_OCR_MARKDOWN_PROMPT",
+    "clean_ocr_markdown",
     "extract_professor_page_markdown",
     "extract_professor_poster_page_markdowns",
     "extract_professor_poster_markdown",

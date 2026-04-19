@@ -1,0 +1,302 @@
+{
+  "metadata": {
+    "name": "SONG Hong",
+    "slug": "song-hong",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b135433.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/song-hong-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "SONG Hong",
+      "aliases": [
+        "SONG Hong",
+        "宋红",
+        "Song Hong"
+      ],
+      "title": "教授",
+      "school_name": "计算机学院",
+      "discipline": "计算机科学",
+      "biography_text": "",
+      "emails": [
+        "songhong@bit.edu.cn"
+      ],
+      "phones": [
+        "13810028826"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "School of Computer Science & Technology",
+        "org_type": "school",
+        "normalized_name": "school of computer science technology"
+      },
+      {
+        "name": "Beijing Institute of Technology",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "School of Software, Beijing Institute of Technology",
+        "org_type": "school",
+        "normalized_name": "school of software beijing institute of technology"
+      },
+      {
+        "name": "School of Computer Science, Beijing Institute of Technology",
+        "org_type": "school",
+        "normalized_name": "school of computer science beijing institute of technology"
+      },
+      {
+        "name": "College of Computing & Informatics, Drexel University",
+        "org_type": "school",
+        "normalized_name": "college of computing informatics drexel university"
+      },
+      {
+        "name": "Computer Science, Columbia University, Texas A&M University",
+        "org_type": "school",
+        "normalized_name": "computer science columbia university texas a m university"
+      },
+      {
+        "name": "China Computer Federation Young Computer Scientists & Engineers Forum",
+        "org_type": "association",
+        "normalized_name": "china computer federation young computer scientists engineers forum"
+      },
+      {
+        "name": "Chinese Association of Artificial Intelligence",
+        "org_type": "association",
+        "normalized_name": "chinese association of artificial intelligence"
+      },
+      {
+        "name": "Beijing higher education teaching achievement award",
+        "org_type": "funder",
+        "normalized_name": "beijing higher education teaching achievement award"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "图像处理与机器学习",
+        "normalized_name": "图像处理与机器学习"
+      },
+      {
+        "name": "医学影像分析",
+        "normalized_name": "医学影像分析"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph.D.",
+        "field": "Computer Science",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "",
+        "start_text": "2001",
+        "end_text": "2004",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "Ph.D. Computer Science, Beijing Institute of Technology, 2001-2004"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Master.",
+        "field": "Computer Science",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "",
+        "start_text": "1999",
+        "end_text": "2001",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "Master. Computer Science, Beijing Institute of Technology, 1999-2001"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Bachelor.",
+        "field": "Computer Science",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "",
+        "start_text": "1995",
+        "end_text": "1999",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "Bachelor. Computer Science, Beijing Institute of Technology,1995-1999"
+      },
+      {
+        "kind": "employment",
+        "title": "Professor",
+        "degree": "",
+        "field": "",
+        "organization_name": "School of Software, Beijing Institute of Technology",
+        "location": "",
+        "start_text": "2014",
+        "end_text": "present",
+        "is_current": true,
+        "order": 4,
+        "raw_text": "Professor, School of Software, Beijing Institute of Technology, 2014-present"
+      },
+      {
+        "kind": "employment",
+        "title": "Associate Professor",
+        "degree": "",
+        "field": "",
+        "organization_name": "School of Software, Beijing Institute of Technology",
+        "location": "",
+        "start_text": "2012",
+        "end_text": "2014",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "Associate Professor, School of Software, Beijing Institute of Technology, 2012-2014"
+      },
+      {
+        "kind": "employment",
+        "title": "Associate Professor",
+        "degree": "",
+        "field": "",
+        "organization_name": "School of Computer Science, Beijing Institute of Technology",
+        "location": "",
+        "start_text": "2006",
+        "end_text": "2012",
+        "is_current": false,
+        "order": 6,
+        "raw_text": "Associate Professor, School of Computer Science, Beijing Institute of Technology, 2006-2012"
+      },
+      {
+        "kind": "employment",
+        "title": "Assistant Professor",
+        "degree": "",
+        "field": "",
+        "organization_name": "School of Computer Science, Beijing Institute of Technology",
+        "location": "",
+        "start_text": "2004",
+        "end_text": "2006",
+        "is_current": false,
+        "order": 7,
+        "raw_text": "Assistant Professor, School of Computer Science, Beijing Institute of Technology, 2004-2006"
+      },
+      {
+        "kind": "employment",
+        "title": "Senior Visiting Scholar",
+        "degree": "",
+        "field": "",
+        "organization_name": "College of Computing & Informatics, Drexel University",
+        "location": "",
+        "start_text": "2017",
+        "end_text": "2018",
+        "is_current": false,
+        "order": 8,
+        "raw_text": "Senior Visiting Scholar, College of Computing & Informatics, Drexel University,2017-2018"
+      },
+      {
+        "kind": "employment",
+        "title": "Visiting Scholar",
+        "degree": "",
+        "field": "",
+        "organization_name": "Computer Science, Columbia University, Texas A&M University",
+        "location": "",
+        "start_text": "2008",
+        "end_text": "2009",
+        "is_current": false,
+        "order": 9,
+        "raw_text": "Visiting Scholar, Computer Science, Columbia University, Texas A&M University, 2008-2009"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Member",
+        "degree": "",
+        "field": "",
+        "organization_name": "China Computer Federation Young Computer Scientists & Engineers Forum",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 10,
+        "raw_text": "Member of China Computer Federation Young Computer Scientists & Engineers Forum"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Member",
+        "degree": "",
+        "field": "",
+        "organization_name": "Chinese Association of Artificial Intelligence",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 11,
+        "raw_text": "Member of Chinese Association of Artificial Intelligence"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Automatic schizophrenia discrimination on fNIRS by using complex brain network analysis and SVM",
+        "authors_raw": "Song Hong, Chen Lei, Gao Ruiqi, Jian Yang",
+        "year": "2017",
+        "venue": "BMC Medical Informatics and Decision Making",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[1] Song Hong, Chen Lei, Gao Ruiqi, Jian Yang, Automatic schizophrenia discrimination on fNIRS by using complex brain network analysis and SVM, BMC Medical Informatics and Decision Making.2017.12",
+        "order": 1
+      },
+      {
+        "title": "Kidney segmentation in CT sequences using SKFCM and improved GrowCut algorithm",
+        "authors_raw": "Hong Song*, Wei Kang,Qian Zhang,Shuliang Wang",
+        "year": "2015",
+        "venue": "BMC Systems Biology",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[2] Hong Song*, Wei Kang,Qian Zhang,Shuliang Wang, Kidney segmentation in CT sequences using SKFCM and improved GrowCut algorithm, BMC Systems Biology,Volume 9,Suppl 5.2015.",
+        "order": 2
+      },
+      {
+        "title": "Splitting touching cells based on concave-point and improved watershed algorithms",
+        "authors_raw": "Hong Song*, Qingjie Zhao, Yinghong Liu",
+        "year": "2014",
+        "venue": "Frontiers of Computer Science",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[3] Hong Song*, Qingjie Zhao, Yinghong Liu. Splitting touching cells based on concave-point and improved watershed algorithms. Frontiers of Computer Science. 8 (1), 156-162,2014.",
+        "order": 3
+      },
+      {
+        "title": "Multi-modality liver image registration based on multilevel B-splines free-form deformation and L-BFGS optimal algorithm",
+        "authors_raw": "Song Hong*, LI Jiajia, Wang Shuliang, Ma Jingtung",
+        "year": "2014",
+        "venue": "Journal of Central South University",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[4] Song Hong*, LI Jiajia, Wang Shuliang, Ma Jingtung. Multi-modality liver image registration based on multilevel B-splines free-form deformation and L-BFGS optimal algorithm. Journal of Central South University.21(1), 287-292, 2014.",
+        "order": 4
+      },
+      {
+        "title": "Dorsal Hand Vein Recognition Based On Convolutional Neural Networks",
+        "authors_raw": "Haipeng Wan, Hong Song, Lei Chen, Jian Yang",
+        "year": "2016",
+        "venue": "2017 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[5] Haipeng Wan, Hong Song, Lei Chen, Jian Yang. Dorsal Hand Vein Recognition Based On Convolutional Neural Networks, 2017 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), 2016.12, USA",
+        "order": 5
+      }
+    ],
+    "awards": [
+      {
+        "name": "FIRST PRIZE",
+        "year": "",
+        "granting_org_name": "Beijing higher education teaching achievement award",
+        "level": "",
+        "raw_text": "Being awarded a FIRST PRIZE by Beijing higher education teaching achievement award",
+        "order": 1
+      }
+    ],
+    "warnings": [
+      "ignored the instruction-only publication heading because it did not list concrete items",
+      "The discipline field contains both Chinese and English text; used the Chinese version as it appeared first.",
+      "The school field contains both Chinese and English text; used the Chinese version as it appeared first.",
+      "The degree 'Master.' and 'Bachelor.' are preserved as-is from the source text.",
+      "The organization 'Computer Science, Columbia University, Texas A&M University' is ambiguous; preserved the raw text.",
+      "Publication year for item [5] is ambiguous (conference year 2017, listed year 2016.12); used the year '2016' from the listed date."
+    ]
+  }
+}

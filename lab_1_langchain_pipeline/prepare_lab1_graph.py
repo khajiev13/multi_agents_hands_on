@@ -18,8 +18,9 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Instructor-only live refresh from the BIT professor directory through "
-            "OCR, kg-gen graph generation, aggregation, clustering, and structured "
-            "review artifact generation. This phase stops before Neo4j insertion."
+            "OCR. This phase stops after writing raw professor OCR markdown "
+            "artifacts for manual review. No graph JSON, HTML review files, or "
+            "Neo4j insertion are produced."
         )
     )
     parser.add_argument(

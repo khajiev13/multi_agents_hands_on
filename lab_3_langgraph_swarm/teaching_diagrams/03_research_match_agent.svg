@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1720" height="1140" viewBox="0 0 1720 1140">
+<rect x="0" y="0" width="100%" height="100%" fill="#f8fafc"/>
+<rect x="20" y="20" width="1680" height="1100" rx="24" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+<text x="56" y="74" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">ResearchMatchAgent — internals &amp; topic search</text>
+<text x="56" y="110" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#475569">Same loop shape as ProfessorLookupAgent, but a different prompt and a single Cypher query over (:Professor)-[:HAS_RESEARCH_INTEREST]-&gt;(:ResearchTopic).</text>
+<path d="M 270 440.0 L 320 440.0" fill="none" stroke="#16a34a" stroke-width="2.8"/>
+<polygon points="320,440.0 309,434.0 309,446.0" fill="#16a34a"/>
+<rect x="247.0" y="417.0" width="96" height="24" rx="6" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="295.0" y="435.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">tool_calls</text>
+<path d="M 400.0 400 L 400.0 380 L 190.0 380 L 190.0 400" fill="none" stroke="#7c3aed" stroke-width="2.8" stroke-dasharray="8 6"/>
+<polygon points="190.0,400 184.0,389 196.0,389" fill="#7c3aed"/>
+<path d="M 480 440.0 L 525 440.0 L 525 520.0 L 575 520.0" fill="none" stroke="#0891b2" stroke-width="2.8"/>
+<polygon points="575,520.0 564,514.0 564,526.0" fill="#0891b2"/>
+<path d="M 480 440.0 L 540 440.0 L 540 760.0 L 575 760.0" fill="none" stroke="#ea580c" stroke-width="2.8"/>
+<polygon points="575,760.0 564,754.0 564,766.0" fill="#ea580c"/>
+<path d="M 1015 520.0 L 1090 530.0" fill="none" stroke="#16a34a" stroke-width="2.8" stroke-dasharray="8 6"/>
+<polygon points="1090,530.0 1079,524.0 1079,536.0" fill="#16a34a"/>
+<path d="M 1015 760.0 L 1090 770.0" fill="none" stroke="#ea580c" stroke-width="2.8" stroke-dasharray="8 6"/>
+<polygon points="1090,770.0 1079,764.0 1079,776.0" fill="#ea580c"/>
+<path d="M 440 1025 L 470 1025" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="470,1025 459,1019 459,1031" fill="#475569"/>
+<path d="M 850 1025 L 880 1025" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="880,1025 869,1019 869,1031" fill="#475569"/>
+<path d="M 1260 1025 L 1290 1025" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="1290,1025 1279,1019 1279,1031" fill="#475569"/>
+<rect x="60" y="140" width="1600" height="120" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="3.0"/>
+<text x="860.0" y="172.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">System prompt: recommend professors for a research direction or topic.</text>
+<text x="860.0" y="194.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Rules: call find_professors_by_topics_tool with a short list of concrete keywords before answering.</text>
+<text x="860.0" y="216.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Handoff: if the user asks about one named professor, call transfer_to_professor_lookup.</text>
+<text x="860.0" y="238.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Style: ground every answer in tool output; if the graph has no match, say so clearly.</text>
+<rect x="60" y="300" width="460" height="580" rx="18" fill="#ecfdf5" stroke="#22c55e" stroke-width="3.0" stroke-dasharray="8 6"/>
+<rect x="88" y="320" width="404" height="40" rx="18" fill="#bbf7d0" stroke="#15803d" stroke-width="3.0"/>
+<text x="290.0" y="346.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">Compiled subgraph</text>
+<rect x="110" y="400" width="160" height="80" rx="18" fill="#ecfdf5" stroke="#16a34a" stroke-width="3.0"/>
+<text x="190.0" y="434.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">llm</text>
+<text x="190.0" y="458.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">call_model</text>
+<rect x="320" y="400" width="160" height="80" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="3.0"/>
+<text x="400.0" y="434.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">tools</text>
+<text x="400.0" y="458.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">ToolNode</text>
+<rect x="90" y="530" width="400" height="110" rx="18" fill="#ffffff" stroke="#475569" stroke-width="3.0" stroke-dasharray="8 6"/>
+<text x="290.0" y="557.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">model.bind_tools([</text>
+<text x="290.0" y="579.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">  find_professors_by_topics_tool,</text>
+<text x="290.0" y="601.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">  transfer_to_professor_lookup,</text>
+<text x="290.0" y="623.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">])</text>
+<rect x="90" y="660" width="400" height="110" rx="18" fill="#fffbeb" stroke="#d97706" stroke-width="3.0" stroke-dasharray="8 6"/>
+<text x="290.0" y="687.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Tool calls emit teaching events:</text>
+<text x="290.0" y="709.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">{ kind: 'tool_call',</text>
+<text x="290.0" y="731.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">  agent: 'ResearchMatchAgent',</text>
+<text x="290.0" y="753.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">  tool: &lt;name&gt;, input: {...} }</text>
+<rect x="90" y="800" width="400" height="60" rx="18" fill="#f1f5f9" stroke="#64748b" stroke-width="3.0" stroke-dasharray="8 6"/>
+<text x="290.0" y="824.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Returns: { messages: [response],</text>
+<text x="290.0" y="846.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">           active_agent: 'ResearchMatchAgent' }</text>
+<rect x="555" y="300" width="480" height="580" rx="18" fill="#fefce8" stroke="#eab308" stroke-width="3.0" stroke-dasharray="8 6"/>
+<rect x="583" y="320" width="424" height="40" rx="18" fill="#fef9c3" stroke="#ca8a04" stroke-width="3.0"/>
+<text x="795.0" y="346.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">Bound tools (2)</text>
+<rect x="575" y="420" width="440" height="200" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="3.0"/>
+<text x="795.0" y="448.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">@tool find_professors_by_topics_tool(</text>
+<text x="795.0" y="470.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">  keywords: list[str])</text>
+<text x="795.0" y="492.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a"></text>
+<text x="795.0" y="514.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Goal: rank professors by overlap of their</text>
+<text x="795.0" y="536.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">research topics with the supplied keywords.</text>
+<text x="795.0" y="558.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a"></text>
+<text x="795.0" y="580.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Returns: { matches: [{name, url,</text>
+<text x="795.0" y="602.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">  matched_nodes, match_count}] }</text>
+<rect x="575" y="650" width="440" height="220" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="3.0"/>
+<text x="795.0" y="688.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">@tool transfer_to_professor_lookup()</text>
+<text x="795.0" y="710.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a"></text>
+<text x="795.0" y="732.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Goal: hand control back to ProfessorLookupAgent</text>
+<text x="795.0" y="754.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">when the user pivots to a single named professor.</text>
+<text x="795.0" y="776.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a"></text>
+<text x="795.0" y="798.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Returns Command(goto=..., graph=PARENT,</text>
+<text x="795.0" y="820.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">  update={ active_agent:</text>
+<text x="795.0" y="842.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">    'ProfessorLookupAgent' }).</text>
+<rect x="1070" y="300" width="590" height="580" rx="18" fill="#f0fdf4" stroke="#16a34a" stroke-width="3.0" stroke-dasharray="8 6"/>
+<rect x="1098" y="320" width="534" height="40" rx="18" fill="#dcfce7" stroke="#15803d" stroke-width="3.0"/>
+<text x="1365.0" y="346.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">Neo4jQueryService — Cypher</text>
+<rect x="1090" y="420" width="555" height="220" rx="18" fill="#ffffff" stroke="#16a34a" stroke-width="3.0"/>
+<text x="1367.5" y="430.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">MATCH (p:Professor)-[:HAS_RESEARCH_INTEREST]-&gt;(t:ResearchTopic)</text>
+<text x="1367.5" y="449.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">WITH p, t,</text>
+<text x="1367.5" y="468.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">     [k IN $keywords WHERE</text>
+<text x="1367.5" y="487.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">        toLower(t.name) CONTAINS k</text>
+<text x="1367.5" y="506.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">        OR toLower(t.normalized_name) CONTAINS k] AS hits</text>
+<text x="1367.5" y="525.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">WHERE size(hits) &gt; 0</text>
+<text x="1367.5" y="544.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">RETURN p.name AS professor_name,</text>
+<text x="1367.5" y="563.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">       p.detail_url AS detail_url,</text>
+<text x="1367.5" y="582.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">       collect(DISTINCT t.name)[0..5] AS matched_nodes,</text>
+<text x="1367.5" y="601.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">       count(DISTINCT t)              AS match_count</text>
+<text x="1367.5" y="620.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">ORDER BY match_count DESC, professor_name</text>
+<text x="1367.5" y="639.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">LIMIT 5</text>
+<rect x="1090" y="670" width="555" height="200" rx="18" fill="#ffffff" stroke="#ea580c" stroke-width="3.0"/>
+<text x="1367.5" y="689.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">(no Cypher)</text>
+<text x="1367.5" y="708.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a"></text>
+<text x="1367.5" y="727.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">return Command(</text>
+<text x="1367.5" y="746.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">  goto='ProfessorLookupAgent',</text>
+<text x="1367.5" y="765.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">  graph=Command.PARENT,</text>
+<text x="1367.5" y="784.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">  update={</text>
+<text x="1367.5" y="803.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">    'messages': [...ToolMessage],</text>
+<text x="1367.5" y="822.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">    'active_agent': 'ProfessorLookupAgent',</text>
+<text x="1367.5" y="841.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">  },</text>
+<text x="1367.5" y="860.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">)</text>
+<rect x="60" y="905" width="1600" height="40" rx="18" fill="#1e293b" stroke="#0f172a" stroke-width="3.0"/>
+<text x="860.0" y="930.95" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="600" fill="#ffffff">Example turn — "Which professors work on computer vision and multimedia content analysis?"</text>
+<rect x="60" y="960" width="380" height="130" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="3.0"/>
+<text x="250.0" y="986.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">1. llm extracts keywords:</text>
+<text x="250.0" y="1008.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">['computer vision',</text>
+<text x="250.0" y="1030.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a"> 'multimedia content']</text>
+<text x="250.0" y="1052.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">emits tool_call:</text>
+<text x="250.0" y="1074.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">find_professors_by_topics_tool(...)</text>
+<rect x="470" y="960" width="380" height="130" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="3.0"/>
+<text x="660.0" y="1008.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">2. ToolNode runs Cypher,</text>
+<text x="660.0" y="1030.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">returns ranked TopicMatch list</text>
+<text x="660.0" y="1052.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">with matched ResearchTopic nodes</text>
+<rect x="880" y="960" width="380" height="130" rx="18" fill="#ecfdf5" stroke="#16a34a" stroke-width="3.0"/>
+<text x="1070.0" y="1008.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">3. llm composes a grounded</text>
+<text x="1070.0" y="1030.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">recommendation citing matched</text>
+<text x="1070.0" y="1052.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">research topics per professor</text>
+<rect x="1290" y="960" width="370" height="130" rx="18" fill="#fffbeb" stroke="#d97706" stroke-width="3.0"/>
+<text x="1475.0" y="997.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">4. No more tool_calls → END.</text>
+<text x="1475.0" y="1019.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">active_agent = 'ResearchMatchAgent'</text>
+<text x="1475.0" y="1041.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">is remembered for the next turn</text>
+<text x="1475.0" y="1063.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">on this thread_id.</text>
+</svg>

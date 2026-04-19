@@ -2,26 +2,21 @@
 workflow_render.py - Build and render the Lab 1 workflow diagrams.
 
 This script maintains one diagram model and writes:
-  - lab_1_workflow.excalidraw
   - lab_1_workflow.svg
   - workflow_steps/step_01.svg ... workflow_steps/step_13.svg
 
-The master Excalidraw diagram is the editable artifact for the teaching flow.
 The SVG files are notebook-friendly renderings derived from the same model.
 """
 
 from __future__ import annotations
 
 import argparse
-import json
-import time
 from dataclasses import dataclass
 from pathlib import Path
 from xml.sax.saxutils import escape
 
 
 ROOT = Path(__file__).parent
-MASTER_EXCALIDRAW = ROOT / "lab_1_workflow.excalidraw"
 MASTER_SVG = ROOT / "lab_1_workflow.svg"
 STEPS_DIR = ROOT / "workflow_steps"
 
@@ -63,7 +58,6 @@ DOCS = {
     "runnable_sequence": "https://api.python.langchain.com/en/latest/core/runnables/langchain_core.runnables.base.RunnableSequence.html",
     "requests": "https://requests.readthedocs.io/en/latest/user/quickstart/",
     "bs4": "https://www.crummy.com/software/BeautifulSoup/bs4/doc/",
-    "kg_gen": "https://github.com/stair-lab/kg-gen",
     "neo4j": "https://neo4j.com/docs/python-manual/current/connect/",
     "langchain_mcp": "https://docs.langchain.com/oss/python/langchain/mcp",
     "langchain_learn": "https://docs.langchain.com/oss/python/learn",
@@ -144,7 +138,7 @@ PHASES = [
     PhaseSpec("setup", "Setup", (1, 4), 48, 268, "#f8fafc", "#94a3b8", "#334155"),
     PhaseSpec("data", "Data Acquisition", (5, 6), 344, 268, "#ecfdf5", "#34d399", "#065f46"),
     PhaseSpec("langchain", "Graph Input Prep", (7, 8), 640, 268, "#eff6ff", "#60a5fa", "#1d4ed8"),
-    PhaseSpec("kg", "Knowledge Graph Pipeline", (9, 10), 936, 268, "#f5f3ff", "#a78bfa", "#6d28d9"),
+    PhaseSpec("kg", "Typed Graph Prep", (9, 10), 936, 268, "#f5f3ff", "#a78bfa", "#6d28d9"),
     PhaseSpec("agent", "Agent Delivery", (11, 13), 1232, 400, "#fff7ed", "#fb923c", "#c2410c"),
 ]
 PHASE_BY_KEY = {phase.key: phase for phase in PHASES}
@@ -157,9 +151,9 @@ STEP_LAYOUTS = [
     (5, "data", "Crawl Listing Page", "BIT -> detail URLs", DOCS["requests"]),
     (6, "data", "Default 5-Professor Working Set", "first five links -> working set", DOCS["bs4"]),
     (7, "langchain", "Page-by-Page OCR", "image pages -> notes", DOCS["messages"]),
-    (8, "langchain", "Helper Merge Into Graph Input", "fallback + transient text", DOCS["runnable_sequence"]),
-    (9, "kg", "Parallel KG-Gen Pipelines", "one LCEL chain per professor", DOCS["kg_gen"]),
-    (10, "kg", "Verify Neo4j After Batch Load", "counts + sample facts", DOCS["neo4j"]),
+    (8, "langchain", "Merge OCR Into Review Markdown", "clean OCR text per professor", DOCS["runnable_sequence"]),
+    (9, "kg", "Parallel Structured Extraction", "one typed JSON profile per professor", DOCS["chat_openai"]),
+    (10, "kg", "Verify Typed Neo4j After Batch Load", "counts + sample facts", DOCS["neo4j"]),
     (11, "agent", "Short MCP Epilogue", "create_agent + Neo4j tools", DOCS["langchain_mcp"]),
     (12, "agent", "Appendix: Inline Gradio UI", "same agent in the notebook", DOCS["gradio"]),
     (13, "agent", "Wrap-Up", "concepts + design habits", DOCS["langchain_learn"]),
@@ -169,8 +163,8 @@ ARTIFACT_LAYOUTS: dict[int, tuple[str, int]] = {
     5: ("Professor detail URLs", 196),
     6: ("Default 5-professor set", 196),
     7: ("Page notes (debug)", 196),
-    8: ("Transient graph input", 196),
-    9: ("graph.json\ngraph.html", 196),
+    8: ("Reviewed OCR markdown", 196),
+    9: ("structured_output/*.json", 196),
     10: ("Neo4j graph store", 196),
     11: ("Answer + tool trace", 308),
 }
@@ -645,21 +639,9 @@ def build_diagram_elements() -> list[dict]:
     return elements
 
 
-def build_master_excalidraw(path: Path) -> list[dict]:
+def build_master_elements() -> list[dict]:
     elements = build_diagram_elements()
     validate_elements(elements)
-    document = {
-        "type": "excalidraw",
-        "version": 2,
-        "source": "https://openai.com/codex",
-        "elements": elements,
-        "appState": {
-            "gridSize": None,
-            "viewBackgroundColor": "#ffffff",
-        },
-        "files": {},
-    }
-    path.write_text(json.dumps(document, ensure_ascii=False, indent=2), encoding="utf-8")
     return elements
 
 
@@ -914,10 +896,7 @@ def render_svg(elements: list[dict], *, current_step: int | None) -> str:
     return "\n".join(body)
 
 
-def render_master_and_steps(excalidraw_path: Path, master_svg_path: Path, steps_dir: Path) -> None:
-    data = json.loads(excalidraw_path.read_text(encoding="utf-8"))
-    elements = [element for element in data["elements"] if not element.get("isDeleted", False)]
-    validate_elements(elements)
+def render_master_and_steps(elements: list[dict], master_svg_path: Path, steps_dir: Path) -> None:
     master_svg_path.write_text(render_svg(elements, current_step=None), encoding="utf-8")
     steps_dir.mkdir(parents=True, exist_ok=True)
     for number in range(1, 14):
@@ -926,15 +905,12 @@ def render_master_and_steps(excalidraw_path: Path, master_svg_path: Path, steps_
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Rebuild the Lab 1 Excalidraw workflow and notebook SVG assets.")
-    parser.add_argument("--excalidraw", type=Path, default=MASTER_EXCALIDRAW, help="Path to the editable Excalidraw file.")
+    parser = argparse.ArgumentParser(description="Rebuild the Lab 1 workflow SVG assets.")
     parser.add_argument("--master-svg", type=Path, default=MASTER_SVG, help="Path to the master workflow SVG.")
     parser.add_argument("--steps-dir", type=Path, default=STEPS_DIR, help="Directory for the per-step SVG files.")
     args = parser.parse_args()
 
-    build_master_excalidraw(args.excalidraw)
-    render_master_and_steps(args.excalidraw, args.master_svg, args.steps_dir)
-    print(f"Wrote {args.excalidraw}")
+    render_master_and_steps(build_master_elements(), args.master_svg, args.steps_dir)
     print(f"Wrote {args.master_svg}")
     print(f"Wrote {args.steps_dir}/step_01.svg ... step_13.svg")
 

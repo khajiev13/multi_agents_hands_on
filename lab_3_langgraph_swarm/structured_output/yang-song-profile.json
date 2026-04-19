@@ -1,0 +1,259 @@
+{
+  "metadata": {
+    "name": "YANG Song",
+    "slug": "yang-song",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b186323.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/yang-song-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "YANG Song",
+      "aliases": [
+        "YANG Song",
+        "杨松",
+        "YANG, Song"
+      ],
+      "title": "副教授",
+      "school_name": "计算机学院",
+      "discipline": "计算机科学与技术",
+      "biography_text": "",
+      "emails": [
+        "s.yang@bit.edu.cn"
+      ],
+      "phones": [
+        "18701190071"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "School of Computer Science and Technology",
+        "org_type": "school",
+        "normalized_name": "school of computer science and technology"
+      },
+      {
+        "name": "Dalian University of Technology",
+        "org_type": "university",
+        "normalized_name": "dalian university of technology"
+      },
+      {
+        "name": "Delft University of Technology",
+        "org_type": "university",
+        "normalized_name": "delft university of technology"
+      },
+      {
+        "name": "Beijing Institute of Technology",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "University of Gottingen",
+        "org_type": "university",
+        "normalized_name": "university of gottingen"
+      },
+      {
+        "name": "IEEE",
+        "org_type": "association",
+        "normalized_name": "ieee"
+      },
+      {
+        "name": "ACM",
+        "org_type": "association",
+        "normalized_name": "acm"
+      },
+      {
+        "name": "CCF",
+        "org_type": "association",
+        "normalized_name": "ccf"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "云/边缘计算 Cloud/Edge Computing",
+        "normalized_name": "cloud edge computing"
+      },
+      {
+        "name": "深度强化学习, 分布式学习 Deep Reinforcement Learning, Distributed Learning",
+        "normalized_name": "deep reinforcement learning distributed learning"
+      },
+      {
+        "name": "物联网, 网络系统 Internet of things, Networking Systems",
+        "normalized_name": "internet of things networking systems"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Bachelor",
+        "field": "",
+        "organization_name": "Dalian University of Technology",
+        "location": "China",
+        "start_text": "2004/09",
+        "end_text": "2008/07",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "2004/09-2008/07: 本科, 大连理工大学, 中国 2004/09-2008/07: Bachelor, Dalian University of Technology, China"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Master",
+        "field": "",
+        "organization_name": "Dalian University of Technology",
+        "location": "China",
+        "start_text": "2008/09",
+        "end_text": "2010/07",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "2008/09-2010/07: 硕士, 大连理工大学, 中国 2008/09-2010/07: Master, Dalian University of Technology, China."
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "PhD",
+        "field": "",
+        "organization_name": "Delft University of Technology",
+        "location": "Netherlands",
+        "start_text": "2011/01",
+        "end_text": "2015/06",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "2011/01-2015/06: 博士, 代尔夫特理工大学, 尼德兰 2011/01-2015/06: PhD, Delft University of Technology, Netherlands"
+      },
+      {
+        "kind": "employment",
+        "title": "Associate Professor",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "China",
+        "start_text": "2017/12",
+        "end_text": "now",
+        "is_current": true,
+        "order": 4,
+        "raw_text": "2017/12-至今: 副教授, 北京理工大学, 中国 2017/12-now: Associate Professor, Beijing Institute of Technology, China"
+      },
+      {
+        "kind": "employment",
+        "title": "Postdoc researcher",
+        "degree": "",
+        "field": "",
+        "organization_name": "University of Gottingen",
+        "location": "Germany",
+        "start_text": "2015/08",
+        "end_text": "2017/07",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "2015/08-2017/07: 博士后研究员, 哥廷根大学, 德国 2015/08-2017/07: Postdoc researcher, University of Gottingen, Germany"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Member",
+        "degree": "",
+        "field": "",
+        "organization_name": "IEEE",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 6,
+        "raw_text": "IEEE 会员, ACM 会员, CCF 会员 IEEE Member, ACM Member, CCF Member"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Member",
+        "degree": "",
+        "field": "",
+        "organization_name": "ACM",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 7,
+        "raw_text": "IEEE 会员, ACM 会员, CCF 会员 IEEE Member, ACM Member, CCF Member"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Member",
+        "degree": "",
+        "field": "",
+        "organization_name": "CCF",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 8,
+        "raw_text": "IEEE 会员, ACM 会员, CCF 会员 IEEE Member, ACM Member, CCF Member"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Delay-Aware Virtual Network Function Placement and Routing in Edge Clouds",
+        "authors_raw": "S. Yang, F. Li, S. Trajanovski, X. Chen, Y. Wang and X. Fu",
+        "year": "2019",
+        "venue": "IEEE Transactions on Mobile Computing",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "S. Yang, F. Li, S. Trajanovski, X. Chen, Y. Wang and X. Fu, \"Delay-Aware Virtual Network Function Placement and Routing in Edge Clouds\", IEEE Transactions on Mobile Computing, to appear, 2019",
+        "order": 1
+      },
+      {
+        "title": "Delay-Sensitive and Availability-Aware Virtual Network Function Scheduling for NFV",
+        "authors_raw": "S. Yang, F. Li, R. Yahyapour and X. Fu",
+        "year": "2019",
+        "venue": "IEEE Transactions on Services Computing",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "S. Yang, F. Li, R. Yahyapour and X. Fu, \"Delay-Sensitive and Availability-Aware Virtual Network Function Scheduling for NFV\", IEEE Transactions on Services Computing, to appear, 2019",
+        "order": 2
+      },
+      {
+        "title": "Cloudlet Placement and Task Allocation in Mobile Edge Computing",
+        "authors_raw": "S. Yang, F. Li, M. Shen, X. Chen, X. Fu and Y. Wang",
+        "year": "2019",
+        "venue": "IEEE Internet of Things Journal",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "S. Yang, F. Li, M. Shen, X. Chen, X. Fu and Y. Wang, \"Cloudlet Placement and Task Allocation in Mobile Edge Computing\", IEEE Internet of Things Journal, vol. 6, no. 3, 2019",
+        "order": 3
+      },
+      {
+        "title": "Reliable Virtual Machine Placement and Routing in Clouds",
+        "authors_raw": "S. Yang, P. Wieder, R. Yahyapour, S. Trajanovski and X. Fu",
+        "year": "2017",
+        "venue": "IEEE Transactions on Parallel and Distributed Systems (TPDS)",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "S. Yang, P. Wieder, R. Yahyapour, S. Trajanovski and X. Fu, Reliable Virtual Machine Placement and Routing in Clouds, IEEE Transactions on Parallel and Distributed Systems (TPDS), vol. 28, no. 10, pp.2965-2978, 2017.",
+        "order": 4
+      },
+      {
+        "title": "Energy-Aware Provisioning in Optical Cloud Networks",
+        "authors_raw": "S. Yang, P. Wieder, R. Yahyapour and X. Fu",
+        "year": "2017",
+        "venue": "Elsevier Journal of Computer Networks",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "S. Yang, P. Wieder, R. Yahyapour and X. Fu, Energy-Aware Provisioning in Optical Cloud Networks, Elsevier Journal of Computer Networks, Vol. 118, pp. 78-95, 2017",
+        "order": 5
+      }
+    ],
+    "awards": [
+      {
+        "name": "Outstanding graduate student",
+        "year": "2008",
+        "granting_org_name": "Dalian University of Technology",
+        "level": "",
+        "raw_text": "2008 年大连理工大学优秀毕业生 Outstanding graduate student in Dalian University of Technology in 2008",
+        "order": 1
+      }
+    ],
+    "warnings": [
+      "Ignored the instruction-only publication heading because it did not list concrete items.",
+      "Publication years extracted from the text, but 'to appear' status noted.",
+      "The 'Part-time Academic Jobs' section listed memberships, which were treated as academic_service experiences."
+    ]
+  }
+}

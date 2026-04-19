@@ -12,7 +12,7 @@ def build_model(settings: TutorSettings) -> ChatOpenAI:
         api_key=settings.lab_tutor_llm_api_key,
         temperature=0,
         max_retries=2,
-        timeout=120,
+        timeout=300,
     )
 
 

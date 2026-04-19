@@ -1,162 +1,54 @@
 from __future__ import annotations
 
 import json
-import hashlib
-import re
 from pathlib import Path
 from typing import Any
 
 try:
-    from kg_gen import KGGen
-    from kg_gen.steps._1_get_entities import get_entities
-    from kg_gen.steps._2_get_relations import get_relations
-    import dspy
-except ImportError:  # pragma: no cover - optional for Lab 2 markdown-only runs
-    KGGen = None
-    get_entities = None
-    get_relations = None
-    dspy = None
-
-try:
     from neo4j import GraphDatabase
-except ImportError:  # pragma: no cover - optional for Lab 2 markdown-only runs
+except ImportError:  # pragma: no cover - optional for markdown-only runs
     GraphDatabase = None
 
 from .config import TutorSettings
-from .ingestion_models import StructuredProfessorReview, StructuredSeedInsertionResult
-from .structured_seed import load_structured_seed_reviews, resolve_structured_seed_dir
+from .ingestion_models import StructuredGraphInsertionResult
+from .structured_profiles import StructuredProfessorProfileArtifact, normalize_lookup_text
 
 
-def require_kg_gen() -> type[KGGen]:
-    if KGGen is None or get_entities is None or get_relations is None or dspy is None:
-        raise ImportError(
-            "kg-gen is required for graph generation. Install the project dependencies "
-            "used by Lab 1 or run Lab 2 with build_graph=False."
-        )
-    return KGGen
+LAB3_STRUCTURED_OUTPUT_DIR = Path("lab_3_langgraph_swarm") / "structured_output"
+STRUCTURED_OUTPUT_FILE_SUFFIX = "-profile.json"
+DEFAULT_TYPED_GRAPH_NAME = "BIT_CSAT_TYPED"
 
 
-def require_neo4j_driver() -> type[GraphDatabase]:
-    if GraphDatabase is None:
-        raise ImportError(
-            "neo4j is required for graph-backed workflows. Install the Neo4j Python "
-            "driver to run Lab 1 or any build_graph=True flow."
-        )
-    return GraphDatabase
+def _kg_gen_removed_error() -> RuntimeError:
+    return RuntimeError(
+        "The kg-gen pipeline has been removed. Use the OCR -> structured output "
+        "flow instead: `uv run python lab_3_langgraph_swarm/build_structured_output.py` "
+        "followed by `uv run python lab_3_langgraph_swarm/prepare_lab3_graph.py`."
+    )
+
+
+def require_kg_gen() -> None:
+    raise _kg_gen_removed_error()
 
 
 def save_graph_json(graph: Any, output_path: Path) -> None:
-    payload = graph_to_payload(graph)
-    output_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    raise _kg_gen_removed_error()
 
 
 def save_graph_html(graph: Any, output_path: Path) -> None:
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    require_kg_gen().visualize(graph, str(output_path), open_in_browser=False)
+    raise _kg_gen_removed_error()
 
 
 def graph_to_payload(graph: Any) -> dict[str, Any]:
-    return {
-        "entities": sorted(str(entity) for entity in getattr(graph, "entities", [])),
-        "edges": sorted(str(edge) for edge in getattr(graph, "edges", [])),
-        "relations": sorted(
-            [list(relation) for relation in getattr(graph, "relations", [])],
-            key=lambda value: (value[0], value[1], value[2]),
-        ),
-        "entity_clusters": {
-            key: sorted(str(value) for value in values)
-            for key, values in sorted((getattr(graph, "entity_clusters", None) or {}).items())
-        }
-        or None,
-        "edge_clusters": {
-            key: sorted(str(value) for value in values)
-            for key, values in sorted((getattr(graph, "edge_clusters", None) or {}).items())
-        }
-        or None,
-    }
+    raise _kg_gen_removed_error()
 
 
 def graph_from_payload(payload: dict[str, Any]) -> Any:
-    return require_kg_gen().from_dict(payload)
+    raise _kg_gen_removed_error()
 
 
-def build_kg_generator(settings: TutorSettings) -> KGGen:
-    kg_class = require_kg_gen()
-    config = settings.require_graph_generation()
-    model_name = config["model"]
-    if "/" not in model_name:
-        model_name = f"openai/{model_name}"
-    return kg_class(
-        model=model_name,
-        api_key=config["api_key"],
-        api_base=config["base_url"],
-        temperature=0.0,
-    )
-
-
-def generate_professor_graph_with_generator(
-    *,
-    markdown_text: str,
-    kg: KGGen,
-    context: str,
-) -> Any:
-    with dspy.context(lm=kg.lm):
-        entities = get_entities(markdown_text, is_conversation=False)
-        relations = get_relations(
-            markdown_text,
-            entities,
-            is_conversation=False,
-            context=context,
-        )
-    return kg.from_dict(
-        {
-            "entities": set(entities),
-            "relations": set(tuple(relation) for relation in relations),
-            "edges": {relation[1] for relation in relations},
-        }
-    )
-
-
-def aggregate_graphs(*, kg: KGGen, graphs: list[Any]) -> Any:
-    return kg.aggregate(graphs)
-
-
-def cluster_graph(*, kg: KGGen, graph: Any, context: str) -> Any:
-    return kg.cluster(graph, context=context)
-
-
-def generate_professor_graph(
-    markdown_text: str,
-    settings: TutorSettings,
-    *,
-    context: str = "Beijing Institute of Technology professor profile",
-) -> Any:
-    kg = build_kg_generator(settings)
-    return generate_professor_graph_with_generator(
-        markdown_text=markdown_text,
-        kg=kg,
-        context=context,
-    )
-
-
-def reset_neo4j_database(settings: TutorSettings) -> None:
-    settings.require_neo4j()
-    neo4j_driver = require_neo4j_driver()
-    driver = neo4j_driver.driver(
-        settings.neo4j_uri,
-        auth=(settings.neo4j_username, settings.neo4j_password),
-    )
-    with driver.session(database=settings.neo4j_database) as neo4j_session:
-        neo4j_session.run("MATCH (n) DETACH DELETE n")
-    driver.close()
-
-
-def _normalize_rel_type(predicate: str) -> str:
-    return re.sub(
-        r"[^A-Z0-9_]",
-        "_",
-        predicate.upper().replace(" ", "_").replace("-", "_"),
-    )
+def generate_professor_graph(markdown_text: str, settings: TutorSettings, *, context: str = "") -> Any:
+    raise _kg_gen_removed_error()
 
 
 def insert_professor_graph(
@@ -167,640 +59,608 @@ def insert_professor_graph(
     professor_name: str,
     detail_url: str,
 ) -> dict[str, int]:
+    raise _kg_gen_removed_error()
+
+
+def require_neo4j_driver() -> type[GraphDatabase]:
+    if GraphDatabase is None:
+        raise ImportError(
+            "neo4j is required for graph-backed workflows. Install the Neo4j Python "
+            "driver to run Lab 1 or Lab 3."
+        )
+    return GraphDatabase
+
+
+def _open_driver(settings: TutorSettings) -> Any:
     settings.require_neo4j()
     neo4j_driver = require_neo4j_driver()
-    driver = neo4j_driver.driver(
+    return neo4j_driver.driver(
         settings.neo4j_uri,
         auth=(settings.neo4j_username, settings.neo4j_password),
     )
-    with driver.session(database=settings.neo4j_database) as neo4j_session:
-        neo4j_session.run(
-            """
-            MERGE (p:Entity {name: $professor_name})
-            SET p.graph_name = $graph_name,
-                p.professor_name = $professor_name,
-                p.detail_url = $detail_url,
-                p.source_professors =
-                    CASE
-                        WHEN p.source_professors IS NULL THEN [$professor_name]
-                        WHEN NOT $professor_name IN p.source_professors THEN p.source_professors + $professor_name
-                        ELSE p.source_professors
-                    END
-            """,
-            graph_name=graph_name,
-            professor_name=professor_name,
-            detail_url=detail_url,
+
+
+def _quote_identifier(identifier: str) -> str:
+    return f"`{identifier.replace('`', '``')}`"
+
+
+def _drop_user_schema(session: Any) -> None:
+    constraint_rows = session.run(
+        "SHOW CONSTRAINTS YIELD name RETURN name ORDER BY name"
+    ).data()
+    for row in constraint_rows:
+        session.run(f"DROP CONSTRAINT {_quote_identifier(row['name'])} IF EXISTS")
+
+    index_rows = session.run(
+        """
+        SHOW INDEXES YIELD name, type, owningConstraint
+        WHERE type <> 'LOOKUP' AND (owningConstraint IS NULL OR owningConstraint = '')
+        RETURN name
+        ORDER BY name
+        """
+    ).data()
+    for row in index_rows:
+        session.run(f"DROP INDEX {_quote_identifier(row['name'])} IF EXISTS")
+
+
+def reset_neo4j_database(
+    settings: TutorSettings,
+    *,
+    drop_schema: bool = True,
+) -> None:
+    driver = _open_driver(settings)
+    try:
+        with driver.session(database=settings.neo4j_database) as neo4j_session:
+            neo4j_session.run("MATCH (n) DETACH DELETE n")
+            if drop_schema:
+                _drop_user_schema(neo4j_session)
+    finally:
+        driver.close()
+
+
+def _ensure_constraints(session: Any) -> None:
+    statements = (
+        "CREATE CONSTRAINT professor_detail_url_unique IF NOT EXISTS FOR (p:Professor) REQUIRE p.detail_url IS UNIQUE",
+        "CREATE CONSTRAINT organization_normalized_name_unique IF NOT EXISTS FOR (o:Organization) REQUIRE o.normalized_name IS UNIQUE",
+        "CREATE CONSTRAINT research_topic_normalized_name_unique IF NOT EXISTS FOR (t:ResearchTopic) REQUIRE t.normalized_name IS UNIQUE",
+        "CREATE CONSTRAINT experience_key_unique IF NOT EXISTS FOR (e:Experience) REQUIRE e.experience_key IS UNIQUE",
+        "CREATE CONSTRAINT publication_key_unique IF NOT EXISTS FOR (p:Publication) REQUIRE p.publication_key IS UNIQUE",
+        "CREATE CONSTRAINT award_key_unique IF NOT EXISTS FOR (a:Award) REQUIRE a.award_key IS UNIQUE",
+        "CREATE INDEX professor_name_index IF NOT EXISTS FOR (p:Professor) ON (p.name)",
+        "CREATE INDEX research_topic_name_index IF NOT EXISTS FOR (t:ResearchTopic) ON (t.name)",
+        "CREATE INDEX organization_name_index IF NOT EXISTS FOR (o:Organization) ON (o.name)",
+    )
+    for statement in statements:
+        session.run(statement)
+
+
+def resolve_structured_output_dir(
+    project_root: Path,
+    structured_output_dir: Path | None = None,
+) -> Path:
+    if structured_output_dir is None:
+        return project_root / LAB3_STRUCTURED_OUTPUT_DIR
+    return (
+        structured_output_dir
+        if structured_output_dir.is_absolute()
+        else project_root / structured_output_dir
+    )
+
+
+def _slug_from_structured_output_path(path: Path) -> str:
+    return path.name.removesuffix(STRUCTURED_OUTPUT_FILE_SUFFIX)
+
+
+def _select_structured_output_paths(
+    *,
+    base_dir: Path,
+    only_slugs: list[str] | None = None,
+    limit: int | None = None,
+) -> list[Path]:
+    selected_slugs = {slug.strip() for slug in (only_slugs or []) if slug.strip()}
+    paths = sorted(base_dir.glob(f"*{STRUCTURED_OUTPUT_FILE_SUFFIX}"))
+    if selected_slugs:
+        paths = [
+            path for path in paths if _slug_from_structured_output_path(path) in selected_slugs
+        ]
+    if limit is not None:
+        paths = paths[:limit]
+    return paths
+
+
+def _load_structured_output_artifact(path: Path) -> StructuredProfessorProfileArtifact:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    return StructuredProfessorProfileArtifact.model_validate(payload)
+
+
+def load_structured_output_records(
+    *,
+    project_root: Path,
+    structured_output_dir: Path | None = None,
+    only_slugs: list[str] | None = None,
+    limit: int | None = None,
+) -> list[tuple[Path, StructuredProfessorProfileArtifact]]:
+    resolved_output_dir = resolve_structured_output_dir(project_root, structured_output_dir)
+    if not resolved_output_dir.exists():
+        raise FileNotFoundError(
+            f"Structured output directory does not exist: {resolved_output_dir}"
         )
 
-        neo4j_session.run(
-            """
-            UNWIND $entities AS entity
-            MERGE (n:Entity {name: entity})
-            SET n.graph_name = $graph_name,
-                n.source_professors =
-                    CASE
-                        WHEN n.source_professors IS NULL THEN [$professor_name]
-                        WHEN NOT $professor_name IN n.source_professors THEN n.source_professors + $professor_name
-                        ELSE n.source_professors
-                    END
-            FOREACH (_ IN CASE WHEN entity = $professor_name THEN [1] ELSE [] END |
-                SET n.professor_name = $professor_name,
-                    n.detail_url = $detail_url
-            )
-            """,
-            entities=list(graph.entities),
+    output_paths = _select_structured_output_paths(
+        base_dir=resolved_output_dir,
+        only_slugs=only_slugs,
+        limit=limit,
+    )
+    if not output_paths:
+        raise FileNotFoundError(
+            f"No structured output files were found under {resolved_output_dir}."
+        )
+    return [(path, _load_structured_output_artifact(path)) for path in output_paths]
+
+
+def _merge_organization(
+    session: Any,
+    *,
+    name: str,
+    org_type: str,
+    graph_name: str,
+) -> str | None:
+    normalized_name = normalize_lookup_text(name)
+    if not normalized_name:
+        return None
+    session.run(
+        """
+        MERGE (o:Organization {normalized_name: $normalized_name})
+        ON CREATE SET
+          o.name = $name,
+          o.org_type = $org_type,
+          o.graph_name = $graph_name
+        SET
+          o.name = CASE WHEN $name <> '' THEN $name ELSE o.name END,
+          o.org_type =
+            CASE
+              WHEN $org_type <> '' AND (o.org_type IS NULL OR o.org_type = 'unknown') THEN $org_type
+              ELSE coalesce(o.org_type, 'unknown')
+            END,
+          o.graph_name = $graph_name
+        """,
+        normalized_name=normalized_name,
+        name=name.strip(),
+        org_type=org_type.strip() or "unknown",
+        graph_name=graph_name,
+    )
+    return normalized_name
+
+
+def _merge_research_topic(
+    session: Any,
+    *,
+    name: str,
+    normalized_name: str,
+    graph_name: str,
+) -> str | None:
+    topic_key = normalize_lookup_text(normalized_name or name)
+    if not topic_key:
+        return None
+    session.run(
+        """
+        MERGE (t:ResearchTopic {normalized_name: $normalized_name})
+        ON CREATE SET
+          t.name = $name,
+          t.graph_name = $graph_name
+        SET
+          t.name = CASE WHEN $name <> '' THEN $name ELSE t.name END,
+          t.graph_name = $graph_name
+        """,
+        normalized_name=topic_key,
+        name=name.strip(),
+        graph_name=graph_name,
+    )
+    return topic_key
+
+
+def _clear_professor_subgraph(session: Any, *, detail_url: str) -> None:
+    session.run(
+        """
+        MATCH (p:Professor {detail_url: $detail_url})-[r:AFFILIATED_WITH|HAS_RESEARCH_INTEREST]->()
+        DELETE r
+        """,
+        detail_url=detail_url,
+    )
+    session.run(
+        """
+        MATCH (p:Professor {detail_url: $detail_url})-[:HAS_EXPERIENCE]->(e:Experience {professor_detail_url: $detail_url})
+        DETACH DELETE e
+        """,
+        detail_url=detail_url,
+    )
+    session.run(
+        """
+        MATCH (p:Professor {detail_url: $detail_url})-[:AUTHORED]->(pub:Publication {professor_detail_url: $detail_url})
+        DETACH DELETE pub
+        """,
+        detail_url=detail_url,
+    )
+    session.run(
+        """
+        MATCH (p:Professor {detail_url: $detail_url})-[:RECEIVED]->(award:Award {professor_detail_url: $detail_url})
+        DETACH DELETE award
+        """,
+        detail_url=detail_url,
+    )
+
+
+def _cleanup_orphan_nodes(session: Any) -> None:
+    session.run(
+        """
+        MATCH (n)
+        WHERE (n:Organization OR n:ResearchTopic OR n:Experience OR n:Publication OR n:Award)
+          AND NOT (n)--()
+        DETACH DELETE n
+        """
+    )
+
+
+def _insert_structured_artifact(
+    *,
+    session: Any,
+    artifact: StructuredProfessorProfileArtifact,
+    graph_name: str,
+) -> None:
+    metadata = artifact.metadata
+    profile = artifact.profile
+    professor = profile.professor
+    detail_url = metadata.detail_url.strip()
+    if not detail_url:
+        raise ValueError("metadata.detail_url is required")
+
+    _clear_professor_subgraph(session, detail_url=detail_url)
+
+    session.run(
+        """
+        MERGE (p:Professor {detail_url: $detail_url})
+        SET
+          p.name = $name,
+          p.aliases = $aliases,
+          p.title = $title,
+          p.school_name = $school_name,
+          p.discipline = $discipline,
+          p.biography_text = $biography_text,
+          p.emails = $emails,
+          p.phones = $phones,
+          p.websites = $websites,
+          p.locations = $locations,
+          p.slug = $slug,
+          p.source_ocr_markdown_path = $source_ocr_markdown_path,
+          p.warnings = $warnings,
+          p.graph_name = $graph_name
+        """,
+        detail_url=detail_url,
+        name=professor.name.strip() or metadata.name.strip(),
+        aliases=[value for value in professor.aliases if value.strip()],
+        title=professor.title,
+        school_name=professor.school_name,
+        discipline=professor.discipline,
+        biography_text=professor.biography_text,
+        emails=professor.emails,
+        phones=professor.phones,
+        websites=professor.websites,
+        locations=professor.locations,
+        slug=metadata.slug,
+        source_ocr_markdown_path=metadata.source_ocr_markdown_path,
+        warnings=profile.warnings,
+        graph_name=graph_name,
+    )
+
+    for organization in profile.organizations:
+        _merge_organization(
+            session,
+            name=organization.name,
+            org_type=organization.org_type,
             graph_name=graph_name,
-            professor_name=professor_name,
-            detail_url=detail_url,
         )
 
-        for subject, predicate, obj in graph.relations:
-            rel_type = _normalize_rel_type(predicate)
-            neo4j_session.run(
-                f"""
-                MATCH (s:Entity {{name: $subject}})
-                MATCH (o:Entity {{name: $object}})
-                MERGE (s)-[r:{rel_type}]->(o)
-                SET r.predicate = $predicate,
-                    r.graph_name = $graph_name,
-                    r.source_professors =
-                        CASE
-                            WHEN r.source_professors IS NULL THEN [$professor_name]
-                            WHEN NOT $professor_name IN r.source_professors THEN r.source_professors + $professor_name
-                            ELSE r.source_professors
-                        END
+    if professor.school_name.strip():
+        school_normalized_name = _merge_organization(
+            session,
+            name=professor.school_name,
+            org_type="school",
+            graph_name=graph_name,
+        )
+        if school_normalized_name:
+            session.run(
+                """
+                MATCH (p:Professor {detail_url: $detail_url})
+                MATCH (o:Organization {normalized_name: $normalized_name})
+                MERGE (p)-[r:AFFILIATED_WITH]->(o)
+                SET r.graph_name = $graph_name
                 """,
-                subject=subject,
-                object=obj,
-                predicate=predicate,
+                detail_url=detail_url,
+                normalized_name=school_normalized_name,
                 graph_name=graph_name,
-                professor_name=professor_name,
             )
 
-        node_count = neo4j_session.run("MATCH (n) RETURN count(n) AS c").single()["c"]
-        relationship_count = neo4j_session.run(
-            "MATCH ()-[r]->() RETURN count(r) AS c"
-        ).single()["c"]
-    driver.close()
-    return {"node_count": node_count, "relationship_count": relationship_count}
+    for topic in profile.research_topics:
+        topic_key = _merge_research_topic(
+            session,
+            name=topic.name,
+            normalized_name=topic.normalized_name,
+            graph_name=graph_name,
+        )
+        if topic_key is None:
+            continue
+        session.run(
+            """
+            MATCH (p:Professor {detail_url: $detail_url})
+            MATCH (t:ResearchTopic {normalized_name: $normalized_name})
+            MERGE (p)-[r:HAS_RESEARCH_INTEREST]->(t)
+            SET r.graph_name = $graph_name
+            """,
+            detail_url=detail_url,
+            normalized_name=topic_key,
+            graph_name=graph_name,
+        )
+
+    for experience in profile.experiences:
+        experience_key = f"{detail_url}|{experience.kind}|{experience.order}"
+        session.run(
+            """
+            MERGE (e:Experience {experience_key: $experience_key})
+            SET
+              e.professor_detail_url = $detail_url,
+              e.kind = $kind,
+              e.title = $title,
+              e.degree = $degree,
+              e.field = $field,
+              e.organization_name = $organization_name,
+              e.location = $location,
+              e.start_text = $start_text,
+              e.end_text = $end_text,
+              e.is_current = $is_current,
+              e.order = $order,
+              e.raw_text = $raw_text,
+              e.graph_name = $graph_name
+            """,
+            experience_key=experience_key,
+            detail_url=detail_url,
+            kind=experience.kind,
+            title=experience.title,
+            degree=experience.degree,
+            field=experience.field,
+            organization_name=experience.organization_name,
+            location=experience.location,
+            start_text=experience.start_text,
+            end_text=experience.end_text,
+            is_current=experience.is_current,
+            order=experience.order,
+            raw_text=experience.raw_text,
+            graph_name=graph_name,
+        )
+        session.run(
+            """
+            MATCH (p:Professor {detail_url: $detail_url})
+            MATCH (e:Experience {experience_key: $experience_key})
+            MERGE (p)-[r:HAS_EXPERIENCE]->(e)
+            SET r.graph_name = $graph_name
+            """,
+            detail_url=detail_url,
+            experience_key=experience_key,
+            graph_name=graph_name,
+        )
+        if experience.organization_name.strip():
+            organization_key = _merge_organization(
+                session,
+                name=experience.organization_name,
+                org_type="unknown",
+                graph_name=graph_name,
+            )
+            if organization_key:
+                session.run(
+                    """
+                    MATCH (e:Experience {experience_key: $experience_key})
+                    MATCH (o:Organization {normalized_name: $normalized_name})
+                    MERGE (e)-[r:AT]->(o)
+                    SET r.graph_name = $graph_name
+                    """,
+                    experience_key=experience_key,
+                    normalized_name=organization_key,
+                    graph_name=graph_name,
+                )
+
+    for publication in profile.publications:
+        publication_key = f"{detail_url}|{publication.order}"
+        session.run(
+            """
+            MERGE (pub:Publication {publication_key: $publication_key})
+            SET
+              pub.professor_detail_url = $detail_url,
+              pub.order = $order,
+              pub.title = $title,
+              pub.authors_raw = $authors_raw,
+              pub.year = $year,
+              pub.venue = $venue,
+              pub.publication_type = $publication_type,
+              pub.doi_or_url = $doi_or_url,
+              pub.raw_text = $raw_text,
+              pub.graph_name = $graph_name
+            """,
+            publication_key=publication_key,
+            detail_url=detail_url,
+            order=publication.order,
+            title=publication.title,
+            authors_raw=publication.authors_raw,
+            year=publication.year,
+            venue=publication.venue,
+            publication_type=publication.publication_type,
+            doi_or_url=publication.doi_or_url,
+            raw_text=publication.raw_text,
+            graph_name=graph_name,
+        )
+        session.run(
+            """
+            MATCH (p:Professor {detail_url: $detail_url})
+            MATCH (pub:Publication {publication_key: $publication_key})
+            MERGE (p)-[r:AUTHORED]->(pub)
+            SET r.graph_name = $graph_name
+            """,
+            detail_url=detail_url,
+            publication_key=publication_key,
+            graph_name=graph_name,
+        )
+
+    for award in profile.awards:
+        award_key = f"{detail_url}|{award.order}"
+        session.run(
+            """
+            MERGE (a:Award {award_key: $award_key})
+            SET
+              a.professor_detail_url = $detail_url,
+              a.order = $order,
+              a.name = $name,
+              a.year = $year,
+              a.granting_org_name = $granting_org_name,
+              a.level = $level,
+              a.raw_text = $raw_text,
+              a.graph_name = $graph_name
+            """,
+            award_key=award_key,
+            detail_url=detail_url,
+            order=award.order,
+            name=award.name,
+            year=award.year,
+            granting_org_name=award.granting_org_name,
+            level=award.level,
+            raw_text=award.raw_text,
+            graph_name=graph_name,
+        )
+        session.run(
+            """
+            MATCH (p:Professor {detail_url: $detail_url})
+            MATCH (a:Award {award_key: $award_key})
+            MERGE (p)-[r:RECEIVED]->(a)
+            SET r.graph_name = $graph_name
+            """,
+            detail_url=detail_url,
+            award_key=award_key,
+            graph_name=graph_name,
+        )
+        if award.granting_org_name.strip():
+            organization_key = _merge_organization(
+                session,
+                name=award.granting_org_name,
+                org_type="unknown",
+                graph_name=graph_name,
+            )
+            if organization_key:
+                session.run(
+                    """
+                    MATCH (a:Award {award_key: $award_key})
+                    MATCH (o:Organization {normalized_name: $normalized_name})
+                    MERGE (a)-[r:GRANTED_BY]->(o)
+                    SET r.graph_name = $graph_name
+                    """,
+                    award_key=award_key,
+                    normalized_name=organization_key,
+                    graph_name=graph_name,
+                )
 
 
 def verify_neo4j_graph(settings: TutorSettings) -> dict[str, Any]:
-    settings.require_neo4j()
-    neo4j_driver = require_neo4j_driver()
-    driver = neo4j_driver.driver(
-        settings.neo4j_uri,
-        auth=(settings.neo4j_username, settings.neo4j_password),
-    )
-    with driver.session(database=settings.neo4j_database) as neo4j_session:
-        node_count = neo4j_session.run("MATCH (n) RETURN count(n) AS c").single()["c"]
-        relationship_count = neo4j_session.run(
-            "MATCH ()-[r]->() RETURN count(r) AS c"
-        ).single()["c"]
-        distinct_professors = [
-            record["professor_name"]
-            for record in neo4j_session.run(
+    driver = _open_driver(settings)
+    try:
+        with driver.session(database=settings.neo4j_database) as neo4j_session:
+            node_count = neo4j_session.run("MATCH (n) RETURN count(n) AS c").single()["c"]
+            relationship_count = neo4j_session.run(
+                "MATCH ()-[r]->() RETURN count(r) AS c"
+            ).single()["c"]
+            distinct_professors = [
+                record["professor_name"]
+                for record in neo4j_session.run(
+                    """
+                    MATCH (p:Professor)
+                    RETURN p.name AS professor_name
+                    ORDER BY professor_name
+                    """
+                )
+            ]
+            label_rows = neo4j_session.run(
                 """
-                MATCH (n:Entity)
-                WHERE n.professor_name IS NOT NULL
-                RETURN DISTINCT n.professor_name AS professor_name
-                ORDER BY professor_name
+                CALL () {
+                  MATCH (n:Professor) RETURN 'Professor' AS label, count(n) AS count
+                  UNION ALL
+                  MATCH (n:Organization) RETURN 'Organization' AS label, count(n) AS count
+                  UNION ALL
+                  MATCH (n:ResearchTopic) RETURN 'ResearchTopic' AS label, count(n) AS count
+                  UNION ALL
+                  MATCH (n:Experience) RETURN 'Experience' AS label, count(n) AS count
+                  UNION ALL
+                  MATCH (n:Publication) RETURN 'Publication' AS label, count(n) AS count
+                  UNION ALL
+                  MATCH (n:Award) RETURN 'Award' AS label, count(n) AS count
+                }
+                RETURN label, count
                 """
-            )
-        ]
-    driver.close()
+            ).data()
+    finally:
+        driver.close()
     return {
         "node_count": node_count,
         "relationship_count": relationship_count,
         "distinct_professors": distinct_professors,
+        "label_counts": {row["label"]: row["count"] for row in label_rows},
     }
 
 
-STRUCTURED_SCHEMA_CONSTRAINT_QUERIES = (
-    "CREATE CONSTRAINT professor_professor_id IF NOT EXISTS FOR (n:Professor) REQUIRE n.professor_id IS UNIQUE",
-    "CREATE CONSTRAINT organization_org_id IF NOT EXISTS FOR (n:Organization) REQUIRE n.org_id IS UNIQUE",
-    "CREATE CONSTRAINT research_topic_topic_id IF NOT EXISTS FOR (n:ResearchTopic) REQUIRE n.topic_id IS UNIQUE",
-    "CREATE CONSTRAINT education_experience_id IF NOT EXISTS FOR (n:EducationExperience) REQUIRE n.experience_id IS UNIQUE",
-    "CREATE CONSTRAINT employment_experience_id IF NOT EXISTS FOR (n:EmploymentExperience) REQUIRE n.experience_id IS UNIQUE",
-    "CREATE CONSTRAINT academic_service_role_id IF NOT EXISTS FOR (n:AcademicServiceRole) REQUIRE n.service_id IS UNIQUE",
-    "CREATE CONSTRAINT award_award_id IF NOT EXISTS FOR (n:Award) REQUIRE n.award_id IS UNIQUE",
-    "CREATE CONSTRAINT publication_publication_id IF NOT EXISTS FOR (n:Publication) REQUIRE n.publication_id IS UNIQUE",
-)
-
-STRUCTURED_LABELS = (
-    "Professor",
-    "Organization",
-    "ResearchTopic",
-    "EducationExperience",
-    "EmploymentExperience",
-    "AcademicServiceRole",
-    "Award",
-    "Publication",
-)
-
-
-def _stable_lookup_id(prefix: str, key: str) -> str:
-    digest = hashlib.sha1(key.encode("utf-8")).hexdigest()[:12]
-    return f"{prefix}-{digest}"
-
-
-def _normalize_lookup_key(value: str) -> str:
-    return re.sub(r"[^a-z0-9\u4e00-\u9fff]+", "", value.lower())
-
-
-def _normalize_string_list(values: list[str]) -> list[str]:
-    seen: list[str] = []
-    for value in values:
-        cleaned = re.sub(r"\s+", " ", value).strip()
-        if cleaned and cleaned not in seen:
-            seen.append(cleaned)
-    return seen
-
-
-def _resolve_source_path(project_root: Path, source_file: str) -> Path:
-    source_path = Path(source_file)
-    if source_path.is_absolute():
-        return source_path
-    return project_root / source_path
-
-
-def _prepare_organization_payloads(
-    review: StructuredProfessorReview,
-) -> tuple[dict[str, dict[str, Any]], dict[str, str]]:
-    canonical_orgs: dict[str, dict[str, Any]] = {}
-    alias_to_key: dict[str, str] = {}
-    for organization in review.organizations:
-        aliases = _normalize_string_list([organization.name, *organization.aliases])
-        alias_keys = sorted(
-            {
-                alias_key
-                for alias_key in (_normalize_lookup_key(alias) for alias in aliases)
-                if alias_key
-            }
-        )
-        canonical_key = alias_keys[0] if alias_keys else _normalize_lookup_key(organization.name)
-        if not canonical_key:
-            continue
-        current = canonical_orgs.get(canonical_key)
-        if current is None:
-            current = {
-                "org_id": organization.org_id or _stable_lookup_id("org", canonical_key),
-                "name": organization.name,
-                "aliases": aliases,
-                "org_type": organization.org_type,
-                "normalized_name": canonical_key,
-            }
-        else:
-            current["aliases"] = _normalize_string_list([*current["aliases"], *aliases])
-            if current["org_type"] == "unknown" and organization.org_type != "unknown":
-                current["org_type"] = organization.org_type
-        canonical_orgs[canonical_key] = current
-        for alias_key in alias_keys:
-            alias_to_key[alias_key] = canonical_key
-    return canonical_orgs, alias_to_key
-
-
-def _resolve_organization_payload(
-    raw_name: str,
-    *,
-    canonical_orgs: dict[str, dict[str, Any]],
-    alias_to_key: dict[str, str],
-) -> dict[str, Any] | None:
-    cleaned_name = re.sub(r"\s+", " ", raw_name).strip()
-    if not cleaned_name:
-        return None
-    lookup_key = _normalize_lookup_key(cleaned_name)
-    if not lookup_key:
-        return None
-    canonical_key = alias_to_key.get(lookup_key)
-    if canonical_key is None:
-        for known_key in canonical_orgs:
-            if lookup_key == known_key or lookup_key in known_key or known_key in lookup_key:
-                canonical_key = known_key
-                break
-    if canonical_key is None:
-        canonical_key = lookup_key
-        canonical_orgs[canonical_key] = {
-            "org_id": _stable_lookup_id("org", canonical_key),
-            "name": cleaned_name,
-            "aliases": [cleaned_name],
-            "org_type": "unknown",
-            "normalized_name": canonical_key,
-        }
-        alias_to_key[lookup_key] = canonical_key
-    return canonical_orgs[canonical_key]
-
-
-def _compile_structured_review_payload(
-    *,
-    review: StructuredProfessorReview,
-    project_root: Path,
-) -> dict[str, Any]:
-    canonical_orgs, alias_to_key = _prepare_organization_payloads(review)
-    organization_payloads: dict[str, dict[str, Any]] = {}
-
-    def resolve_org_id(raw_name: str) -> str | None:
-        payload = _resolve_organization_payload(
-            raw_name,
-            canonical_orgs=canonical_orgs,
-            alias_to_key=alias_to_key,
-        )
-        if payload is None:
-            return None
-        organization_payloads[payload["org_id"]] = payload
-        return payload["org_id"]
-
-    affiliation_org_ids = [
-        org_id
-        for org_id in (
-            resolve_org_id(name) for name in review.affiliation_organization_names
-        )
-        if org_id is not None
-    ]
-
-    education_experiences = []
-    for record in review.education_experiences:
-        education_experiences.append(
-            {
-                "experience_id": record.experience_id,
-                "degree": record.degree,
-                "field": record.field,
-                "organization_name_raw": record.organization_name_raw,
-                "start_text": record.start_text,
-                "end_text": record.end_text,
-                "is_current": record.is_current,
-                "order": record.order,
-                "raw_text": record.raw_text,
-                "organization_org_id": resolve_org_id(record.organization_name_raw),
-            }
-        )
-
-    employment_experiences = []
-    for record in review.employment_experiences:
-        employment_experiences.append(
-            {
-                "experience_id": record.experience_id,
-                "role_title": record.role_title,
-                "organization_name_raw": record.organization_name_raw,
-                "location": record.location,
-                "start_text": record.start_text,
-                "end_text": record.end_text,
-                "is_current": record.is_current,
-                "order": record.order,
-                "raw_text": record.raw_text,
-                "organization_org_id": resolve_org_id(record.organization_name_raw),
-            }
-        )
-
-    academic_service_roles = []
-    for record in review.academic_service_roles:
-        academic_service_roles.append(
-            {
-                "service_id": record.service_id,
-                "role_title": record.role_title,
-                "organization_name_raw": record.organization_name_raw,
-                "service_type": record.service_type,
-                "raw_text": record.raw_text,
-                "organization_org_id": resolve_org_id(record.organization_name_raw),
-            }
-        )
-
-    awards = [
-        {
-            "award_id": record.award_id,
-            "name": record.name,
-            "category": record.category,
-            "year": record.year,
-            "granting_org_name_raw": record.granting_org_name_raw,
-            "level": record.level,
-            "raw_text": record.raw_text,
-        }
-        for record in review.awards
-    ]
-
-    publications = [
-        {
-            "publication_id": record.publication_id,
-            "title": record.title,
-            "authors_raw": record.authors_raw,
-            "year": record.year,
-            "venue": record.venue,
-            "publication_type": record.publication_type,
-            "doi_or_isbn": record.doi_or_isbn,
-            "raw_text": record.raw_text,
-        }
-        for record in review.publications
-    ]
-
-    topic_payloads: dict[str, dict[str, Any]] = {}
-    for topic in review.research_topics:
-        topic_payloads[topic.topic_id] = {
-            "topic_id": topic.topic_id,
-            "name": topic.name,
-            "normalized_name": topic.normalized_name,
-            "language": topic.language,
-        }
-
-    raw_ocr_markdown = _resolve_source_path(project_root, review.professor.source_file).read_text(
-        encoding="utf-8"
-    )
-
-    return {
-        "professor": {
-            "professor_id": review.professor.professor_id,
-            "name_local": review.professor.name_local,
-            "name_english": review.professor.name_english,
-            "aliases": list(review.professor.aliases),
-            "title": review.professor.title,
-            "emails": list(review.professor.emails),
-            "phones": list(review.professor.phones),
-            "biography_text": review.professor.biography_text,
-            "source_file": review.professor.source_file,
-            "detail_url": review.metadata.detail_url,
-            "slug": review.metadata.slug,
-            "raw_ocr_markdown": raw_ocr_markdown,
-        },
-        "organizations": sorted(
-            organization_payloads.values(),
-            key=lambda item: item["org_id"],
-        ),
-        "affiliation_org_ids": _normalize_string_list(affiliation_org_ids),
-        "research_topics": sorted(topic_payloads.values(), key=lambda item: item["topic_id"]),
-        "education_experiences": education_experiences,
-        "employment_experiences": employment_experiences,
-        "academic_service_roles": academic_service_roles,
-        "awards": awards,
-        "publications": publications,
-    }
-
-
-def _ensure_structured_constraints(neo4j_session: Any) -> None:
-    for query in STRUCTURED_SCHEMA_CONSTRAINT_QUERIES:
-        neo4j_session.run(query)
-
-
-def _upsert_structured_professor(tx: Any, payload: dict[str, Any]) -> None:
-    professor = payload["professor"]
-    tx.run(
-        """
-        MERGE (p:Professor {professor_id: $professor.professor_id})
-        SET p.name_local = $professor.name_local,
-            p.name_english = $professor.name_english,
-            p.aliases = $professor.aliases,
-            p.title = $professor.title,
-            p.emails = $professor.emails,
-            p.phones = $professor.phones,
-            p.biography_text = $professor.biography_text,
-            p.source_file = $professor.source_file,
-            p.detail_url = $professor.detail_url,
-            p.slug = $professor.slug,
-            p.raw_ocr_markdown = $professor.raw_ocr_markdown
-        """,
-        professor=professor,
-    )
-    tx.run(
-        """
-        MATCH (p:Professor {professor_id: $professor_id})-[:HAS_EDUCATION|HELD_ROLE|HAS_SERVICE_ROLE|RECEIVED|AUTHORED]->(owned)
-        DETACH DELETE owned
-        """,
-        professor_id=professor["professor_id"],
-    )
-    tx.run(
-        """
-        MATCH (p:Professor {professor_id: $professor_id})-[r:AFFILIATED_WITH|HAS_RESEARCH_INTEREST]->()
-        DELETE r
-        """,
-        professor_id=professor["professor_id"],
-    )
-    tx.run(
-        """
-        UNWIND $organizations AS org
-        MERGE (o:Organization {org_id: org.org_id})
-        SET o.aliases = reduce(
-                acc = coalesce(o.aliases, []),
-                alias IN org.aliases |
-                CASE WHEN alias IN acc THEN acc ELSE acc + alias END
-            ),
-            o.normalized_name = org.normalized_name,
-            o.org_type =
-                CASE
-                    WHEN o.org_type IS NULL OR o.org_type = 'unknown' THEN org.org_type
-                    ELSE o.org_type
-                END,
-            o.name =
-                CASE
-                    WHEN o.name IS NULL OR size(o.name) = 0 THEN org.name
-                    ELSE o.name
-                END
-        """,
-        organizations=payload["organizations"],
-    )
-    tx.run(
-        """
-        UNWIND $research_topics AS topic
-        MERGE (t:ResearchTopic {topic_id: topic.topic_id})
-        SET t.name = topic.name,
-            t.normalized_name = topic.normalized_name,
-            t.language = topic.language
-        """,
-        research_topics=payload["research_topics"],
-    )
-    tx.run(
-        """
-        MATCH (p:Professor {professor_id: $professor_id})
-        UNWIND $affiliation_org_ids AS org_id
-        MATCH (o:Organization {org_id: org_id})
-        MERGE (p)-[:AFFILIATED_WITH]->(o)
-        """,
-        professor_id=professor["professor_id"],
-        affiliation_org_ids=payload["affiliation_org_ids"],
-    )
-    tx.run(
-        """
-        MATCH (p:Professor {professor_id: $professor_id})
-        UNWIND $research_topics AS topic
-        MATCH (t:ResearchTopic {topic_id: topic.topic_id})
-        MERGE (p)-[:HAS_RESEARCH_INTEREST]->(t)
-        """,
-        professor_id=professor["professor_id"],
-        research_topics=payload["research_topics"],
-    )
-    tx.run(
-        """
-        MATCH (p:Professor {professor_id: $professor_id})
-        UNWIND $education_experiences AS item
-        MERGE (e:EducationExperience {experience_id: item.experience_id})
-        SET e.degree = item.degree,
-            e.field = item.field,
-            e.organization_name_raw = item.organization_name_raw,
-            e.start_text = item.start_text,
-            e.end_text = item.end_text,
-            e.is_current = item.is_current,
-            e.order = item.order,
-            e.raw_text = item.raw_text
-        MERGE (p)-[:HAS_EDUCATION]->(e)
-        FOREACH (_ IN CASE WHEN item.organization_org_id IS NULL THEN [] ELSE [1] END |
-            MERGE (o:Organization {org_id: item.organization_org_id})
-            MERGE (e)-[:AT]->(o)
-        )
-        """,
-        professor_id=professor["professor_id"],
-        education_experiences=payload["education_experiences"],
-    )
-    tx.run(
-        """
-        MATCH (p:Professor {professor_id: $professor_id})
-        UNWIND $employment_experiences AS item
-        MERGE (e:EmploymentExperience {experience_id: item.experience_id})
-        SET e.role_title = item.role_title,
-            e.organization_name_raw = item.organization_name_raw,
-            e.location = item.location,
-            e.start_text = item.start_text,
-            e.end_text = item.end_text,
-            e.is_current = item.is_current,
-            e.order = item.order,
-            e.raw_text = item.raw_text
-        MERGE (p)-[:HELD_ROLE]->(e)
-        FOREACH (_ IN CASE WHEN item.organization_org_id IS NULL THEN [] ELSE [1] END |
-            MERGE (o:Organization {org_id: item.organization_org_id})
-            MERGE (e)-[:AT]->(o)
-        )
-        """,
-        professor_id=professor["professor_id"],
-        employment_experiences=payload["employment_experiences"],
-    )
-    tx.run(
-        """
-        MATCH (p:Professor {professor_id: $professor_id})
-        UNWIND $academic_service_roles AS item
-        MERGE (s:AcademicServiceRole {service_id: item.service_id})
-        SET s.role_title = item.role_title,
-            s.organization_name_raw = item.organization_name_raw,
-            s.service_type = item.service_type,
-            s.raw_text = item.raw_text
-        MERGE (p)-[:HAS_SERVICE_ROLE]->(s)
-        FOREACH (_ IN CASE WHEN item.organization_org_id IS NULL THEN [] ELSE [1] END |
-            MERGE (o:Organization {org_id: item.organization_org_id})
-            MERGE (s)-[:AT]->(o)
-        )
-        """,
-        professor_id=professor["professor_id"],
-        academic_service_roles=payload["academic_service_roles"],
-    )
-    tx.run(
-        """
-        MATCH (p:Professor {professor_id: $professor_id})
-        UNWIND $awards AS item
-        MERGE (a:Award {award_id: item.award_id})
-        SET a.name = item.name,
-            a.category = item.category,
-            a.year = item.year,
-            a.granting_org_name_raw = item.granting_org_name_raw,
-            a.level = item.level,
-            a.raw_text = item.raw_text
-        MERGE (p)-[:RECEIVED]->(a)
-        """,
-        professor_id=professor["professor_id"],
-        awards=payload["awards"],
-    )
-    tx.run(
-        """
-        MATCH (p:Professor {professor_id: $professor_id})
-        UNWIND $publications AS item
-        MERGE (pub:Publication {publication_id: item.publication_id})
-        SET pub.title = item.title,
-            pub.authors_raw = item.authors_raw,
-            pub.year = item.year,
-            pub.venue = item.venue,
-            pub.publication_type = item.publication_type,
-            pub.doi_or_isbn = item.doi_or_isbn,
-            pub.raw_text = item.raw_text
-        MERGE (p)-[:AUTHORED]->(pub)
-        """,
-        professor_id=professor["professor_id"],
-        publications=payload["publications"],
-    )
-
-
-def _cleanup_structured_orphans(neo4j_session: Any) -> None:
-    neo4j_session.run("MATCH (n:Organization) WHERE NOT (n)--() DELETE n")
-    neo4j_session.run("MATCH (n:ResearchTopic) WHERE NOT (n)--() DELETE n")
-
-
-def verify_structured_neo4j_graph(settings: TutorSettings) -> dict[str, Any]:
-    settings.require_neo4j()
-    neo4j_driver = require_neo4j_driver()
-    driver = neo4j_driver.driver(
-        settings.neo4j_uri,
-        auth=(settings.neo4j_username, settings.neo4j_password),
-    )
-    with driver.session(database=settings.neo4j_database) as neo4j_session:
-        node_count = neo4j_session.run("MATCH (n) RETURN count(n) AS c").single()["c"]
-        relationship_count = neo4j_session.run(
-            "MATCH ()-[r]->() RETURN count(r) AS c"
-        ).single()["c"]
-        label_counts = {
-            label: neo4j_session.run(f"MATCH (n:{label}) RETURN count(n) AS c").single()["c"]
-            for label in STRUCTURED_LABELS
-        }
-    driver.close()
-    return {
-        "node_count": node_count,
-        "relationship_count": relationship_count,
-        "label_counts": label_counts,
-    }
-
-
-def insert_structured_seed_to_neo4j(
+def insert_structured_output_to_neo4j(
     *,
     settings: TutorSettings,
     project_root: Path | None = None,
-    seed_dir: Path | None = None,
+    structured_output_dir: Path | None = None,
     only_slugs: list[str] | None = None,
     limit: int | None = None,
     reset_database: bool = False,
-) -> StructuredSeedInsertionResult:
+    graph_name: str = DEFAULT_TYPED_GRAPH_NAME,
+) -> StructuredGraphInsertionResult:
     resolved_project_root = project_root or settings.project_root
-    settings.require_neo4j()
-    structured_reviews = load_structured_seed_reviews(
+    structured_output_records = load_structured_output_records(
         project_root=resolved_project_root,
-        seed_dir=seed_dir,
+        structured_output_dir=structured_output_dir,
         only_slugs=only_slugs,
         limit=limit,
     )
-    resolved_seed_dir = resolve_structured_seed_dir(resolved_project_root, seed_dir)
-
-    neo4j_driver = require_neo4j_driver()
-    driver = neo4j_driver.driver(
-        settings.neo4j_uri,
-        auth=(settings.neo4j_username, settings.neo4j_password),
+    resolved_output_dir = resolve_structured_output_dir(
+        resolved_project_root,
+        structured_output_dir,
     )
+
     if reset_database:
         reset_neo4j_database(settings)
 
-    inserted_professors: list[str] = []
+    driver = _open_driver(settings)
     failures: list[dict[str, str]] = []
-    with driver.session(database=settings.neo4j_database) as neo4j_session:
-        _ensure_structured_constraints(neo4j_session)
-        for _, review in structured_reviews:
-            try:
-                payload = _compile_structured_review_payload(
-                    review=review,
-                    project_root=resolved_project_root,
-                )
-                with neo4j_session.begin_transaction() as tx:
-                    _upsert_structured_professor(tx, payload)
-                    tx.commit()
-                inserted_professors.append(review.metadata.slug)
-            except Exception as exc:
-                failures.append({"slug": review.metadata.slug, "error": str(exc)})
-        _cleanup_structured_orphans(neo4j_session)
-    driver.close()
+    inserted_professors: list[str] = []
+    try:
+        with driver.session(database=settings.neo4j_database) as neo4j_session:
+            _ensure_constraints(neo4j_session)
+            for path, artifact in structured_output_records:
+                slug = artifact.metadata.slug or _slug_from_structured_output_path(path)
+                try:
+                    _insert_structured_artifact(
+                        session=neo4j_session,
+                        artifact=artifact,
+                        graph_name=graph_name,
+                    )
+                    inserted_professors.append(slug)
+                except Exception as exc:
+                    failures.append({"slug": slug or path.name, "error": str(exc)})
+            _cleanup_orphan_nodes(neo4j_session)
+    finally:
+        driver.close()
 
-    verification = verify_structured_neo4j_graph(settings)
-    return StructuredSeedInsertionResult(
-        seed_dir=str(resolved_seed_dir.relative_to(resolved_project_root)),
-        professor_count=len(structured_reviews),
+    verification = verify_neo4j_graph(settings)
+    return StructuredGraphInsertionResult(
+        output_dir=str(resolved_output_dir.relative_to(resolved_project_root)),
+        professor_count=len(structured_output_records),
         success_count=len(inserted_professors),
         failure_count=len(failures),
         failures=failures,
@@ -809,3 +669,16 @@ def insert_structured_seed_to_neo4j(
         relationship_count=verification["relationship_count"],
         label_counts=verification["label_counts"],
     )
+
+
+__all__ = [
+    "DEFAULT_TYPED_GRAPH_NAME",
+    "LAB3_STRUCTURED_OUTPUT_DIR",
+    "STRUCTURED_OUTPUT_FILE_SUFFIX",
+    "insert_structured_output_to_neo4j",
+    "load_structured_output_records",
+    "require_neo4j_driver",
+    "reset_neo4j_database",
+    "resolve_structured_output_dir",
+    "verify_neo4j_graph",
+]

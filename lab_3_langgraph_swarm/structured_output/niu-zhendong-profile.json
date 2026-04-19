@@ -1,0 +1,297 @@
+{
+  "metadata": {
+    "name": "NIU Zhendong",
+    "slug": "niu-zhendong",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113051.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/niu-zhendong-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "NIU Zhendong",
+      "aliases": [
+        "NIU Zhendong",
+        "Zhendong Niu"
+      ],
+      "title": "Professor",
+      "school_name": "China Society of Indexers",
+      "discipline": "",
+      "biography_text": "Prof. Niu received his Ph.D. in Computer Science from Beijing Institute of Technology in 1995. He was a post-doctoral researcher at University of Pittsburgh from 1996 to 1998. 1995年3月毕业于北京理工大学，获计算机应用专业博士学位。从1996到1998年在匹兹堡大学LRDC从事博士后研究。 Dr. Zhendong Niu is a professor / Vice Dean of the School of Computer Science at Beijing Institute of Technology from 2006. He is an adjunct professor at the information school of University of Pittsburgh from 2006, and co-director of BIT(Beijing Institute of Technology)-UTS (University of Technology, Sydney) data mining and service technology center from 2012. He was a researcher/adjunct faculty member at Carnegie Mellon University from 1999 to 2004; he was CTO for the China Digital Library Corp. from 2002 to 2004. 现任北京理工大学计算机学院教授、博士生导师、副院长、BIT-UTS数据挖掘与服务技术联合研究中心中方主人，兼任匹兹堡大学信息学院兼职教授。历任邮电部数据局工程师、卡内基梅隆大学计算机学院研究员和兼职研究员、中国数字图书馆公司技术总监、北京理工大学软件学院教授、博士生导师、副院长等。",
+      "emails": [
+        "zniu@bit.edu.cn"
+      ],
+      "phones": [
+        "01068915209"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "Beijing Institute of Technology",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "University of Pittsburgh",
+        "org_type": "university",
+        "normalized_name": "university of pittsburgh"
+      },
+      {
+        "name": "Carnegie Mellon University",
+        "org_type": "university",
+        "normalized_name": "carnegie mellon university"
+      },
+      {
+        "name": "China Digital Library Corp.",
+        "org_type": "company",
+        "normalized_name": "china digital library corp"
+      },
+      {
+        "name": "China Society of Indexers",
+        "org_type": "school",
+        "normalized_name": "china society of indexers"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "Information Retrieval",
+        "normalized_name": "information retrieval"
+      },
+      {
+        "name": "Software Engineering",
+        "normalized_name": "software engineering"
+      },
+      {
+        "name": "Digital Libraries & E-learning",
+        "normalized_name": "digital libraries e learning"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph.D.",
+        "field": "Computer Science",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "",
+        "start_text": "",
+        "end_text": "1995",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "Prof. Niu received his Ph.D. in Computer Science from Beijing Institute of Technology in 1995."
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Post-doctoral researcher",
+        "field": "",
+        "organization_name": "University of Pittsburgh",
+        "location": "",
+        "start_text": "1996",
+        "end_text": "1998",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "He was a post-doctoral researcher at University of Pittsburgh from 1996 to 1998."
+      },
+      {
+        "kind": "employment",
+        "title": "professor / Vice Dean",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "",
+        "start_text": "2006",
+        "end_text": "",
+        "is_current": true,
+        "order": 3,
+        "raw_text": "Dr. Zhendong Niu is a professor / Vice Dean of the School of Computer Science at Beijing Institute of Technology from 2006."
+      },
+      {
+        "kind": "employment",
+        "title": "adjunct professor",
+        "degree": "",
+        "field": "",
+        "organization_name": "University of Pittsburgh",
+        "location": "",
+        "start_text": "2006",
+        "end_text": "",
+        "is_current": true,
+        "order": 4,
+        "raw_text": "He is an adjunct professor at the information school of University of Pittsburgh from 2006"
+      },
+      {
+        "kind": "employment",
+        "title": "co-director",
+        "degree": "",
+        "field": "",
+        "organization_name": "BIT(Beijing Institute of Technology)-UTS (University of Technology, Sydney) data mining and service technology center",
+        "location": "",
+        "start_text": "2012",
+        "end_text": "",
+        "is_current": true,
+        "order": 5,
+        "raw_text": "co-director of BIT(Beijing Institute of Technology)-UTS (University of Technology, Sydney) data mining and service technology center from 2012."
+      },
+      {
+        "kind": "employment",
+        "title": "researcher/adjunct faculty member",
+        "degree": "",
+        "field": "",
+        "organization_name": "Carnegie Mellon University",
+        "location": "",
+        "start_text": "1999",
+        "end_text": "2004",
+        "is_current": false,
+        "order": 6,
+        "raw_text": "he was a researcher/adjunct faculty member at Carnegie Mellon University from 1999 to 2004"
+      },
+      {
+        "kind": "employment",
+        "title": "CTO",
+        "degree": "",
+        "field": "",
+        "organization_name": "China Digital Library Corp.",
+        "location": "",
+        "start_text": "2002",
+        "end_text": "2004",
+        "is_current": false,
+        "order": 7,
+        "raw_text": "he was CTO for the China Digital Library Corp. from 2002 to 2004."
+      },
+      {
+        "kind": "academic_service",
+        "title": "Vice-President",
+        "degree": "",
+        "field": "",
+        "organization_name": "China Society of Indexers",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 8,
+        "raw_text": "Vice-President, China Society of Indexers (中国索引学会副理事长)"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Different patterns and development characteristics of processing written logographic characters and alphabetic words: An ALE meta-analysis",
+        "authors_raw": "Linlin Zhu, YaoxinNie, Chunqi Chang, Jia-Hong Gao, Zhendong Niu*",
+        "year": "2014",
+        "venue": "Human Brain Mapping",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Linlin Zhu, YaoxinNie, Chunqi Chang, Jia-Hong Gao, Zhendong Niu*, Different patterns and development characteristics of processing written logographic characters and alphabetic words: An ALE meta-analysis, Human Brain Mapping, Volume 35, Issue 6, June 2014(SCI,2012 Impact Factor:6.878, *correspond author)",
+        "order": 1
+      },
+      {
+        "title": "Automatic construction of domain-specific sentiment lexicon based on constrained label propagation",
+        "authors_raw": "Sheng Huang,Zhendong Niu*, Chongyang Shi",
+        "year": "2014",
+        "venue": "Knowledge-Based Systems",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Sheng Huang,Zhendong Niu*, Chongyang Shi. Automatic construction of domain-specific sentiment lexicon based on constrained label propagation, Knowledge-Based Systems,Volume 56, Pages 191-200 (January 2014) (SCI, 2014 Impact Factor: 4.104, *correspond author)",
+        "order": 2
+      },
+      {
+        "title": "Temporal reliability and lateralization of the resting-stat language network",
+        "authors_raw": "Linlin Zhu#, Yang Fan#, Qihong Zou*, Jue Wang, Jia-Hong Gao, Zhendong Niu*",
+        "year": "2014",
+        "venue": "PLoS ONE",
+        "publication_type": "journal",
+        "doi_or_url": "doi:10.1371/journal.pone.0085880",
+        "raw_text": "Linlin Zhu#, Yang Fan#, Qihong Zou*, Jue Wang, Jia-Hong Gao, Zhendong Niu*, Temporal reliability and lateralization of the resting-stat language network, PLoS ONE 9(1):e85880. doi:10.1371/journal.pone.0085880, January 2014 | Volume 9 | Issue 1 | e85880(SCI, 2012 Impact Factor: 3.73, *correspond author)",
+        "order": 3
+      },
+      {
+        "title": "Interest Before Liking: Two-Step Recommendation Approaches",
+        "authors_raw": "Xiangyu Zhao,Zhendong Niu*, Wei Chen",
+        "year": "2013",
+        "venue": "Knowledge-Based Systems",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Xiangyu Zhao,Zhendong Niu*, Wei Chen. Interest Before Liking: Two-Step Recommendation Approaches, Knowledge-Based Systems, Volume 48, August 2013,Pages 46 - 56 (SCI: 2012Impact Factor: 4.104, *correspond author)",
+        "order": 4
+      },
+      {
+        "title": "A Hybrid Recommendation Algorithm Adapted in E-Learning Environments",
+        "authors_raw": "Wei Chen, Zhendong Niu*,Xiangyu Zhao, Yi Li",
+        "year": "2014",
+        "venue": "World Wide Web",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Wei Chen, Zhendong Niu*,Xiangyu Zhao, Yi Li, A Hybrid Recommendation Algorithm Adapted in E-Learning Environments, World Wide Web, March 2014, Volume 17, Issue 2, pp 271-284 (SCI, 2012 Impact Factor: 1.196, *correspond author)",
+        "order": 5
+      }
+    ],
+    "awards": [
+      {
+        "name": "Fok Ying-Tong Education Foundation for Young Teachers in the Higher Education Institutions of China",
+        "year": "2004",
+        "granting_org_name": "Fok Ying-Tong Education Foundation",
+        "level": "national",
+        "raw_text": "He received the awards of Fok Ying-Tong Education Foundation for Young Teachers in the Higher Education Institutions of China in 2004",
+        "order": 1
+      },
+      {
+        "name": "IBM Faculty Innovation Award",
+        "year": "2005",
+        "granting_org_name": "IBM",
+        "level": "international",
+        "raw_text": "IBM Faculty Innovation Award in 2005",
+        "order": 2
+      },
+      {
+        "name": "New Century Excellent Talents in University Program Awards of MOE of China",
+        "year": "2006",
+        "granting_org_name": "MOE of China",
+        "level": "national",
+        "raw_text": "New Century Excellent Talents in University Program Awards of MOE of China in 2006",
+        "order": 3
+      },
+      {
+        "name": "Best bilingual course teaching rewards (digital libraries) of MOE of China",
+        "year": "2007",
+        "granting_org_name": "MOE of China",
+        "level": "national",
+        "raw_text": "Best bilingual course teaching rewards (digital libraries) of MOE of China in 2007",
+        "order": 4
+      },
+      {
+        "name": "Excellent reform awards in education (1st class) of Beijing City Municipality",
+        "year": "2012",
+        "granting_org_name": "Beijing City Municipality",
+        "level": "municipal",
+        "raw_text": "Excellent reform awards in education (1st class) of Beijing City Municipality in 2012",
+        "order": 5
+      },
+      {
+        "name": "Foreign English teaching demonstration course (content management and digital libraries) of MOE of China",
+        "year": "2013",
+        "granting_org_name": "MOE of China",
+        "level": "national",
+        "raw_text": "Foreign English teaching demonstration course (content management and digital libraries) of MOE of China in 2013",
+        "order": 6
+      },
+      {
+        "name": "Runner-Up Best Paper Award in ACML2013",
+        "year": "2013",
+        "granting_org_name": "ACML",
+        "level": "international",
+        "raw_text": "Runner-Up Best Paper Award in ACML2013",
+        "order": 7
+      },
+      {
+        "name": "Advisor for Excellent Ph.D. Thesis award of BIT",
+        "year": "2014",
+        "granting_org_name": "BIT",
+        "level": "university",
+        "raw_text": "Advisor for Excellent Ph.D. Thesis award of BIT in 2014",
+        "order": 8
+      }
+    ],
+    "warnings": [
+      "Converted from the previous committed structured seed after repeated provider timeouts during the typed-profile rebuild."
+    ]
+  }
+}

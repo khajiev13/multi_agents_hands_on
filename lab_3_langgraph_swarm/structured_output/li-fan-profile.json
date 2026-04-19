@@ -1,0 +1,304 @@
+{
+  "metadata": {
+    "name": "LI Fan",
+    "slug": "li-fan",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113059.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/li-fan-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "LI Fan",
+      "aliases": [
+        "LI Fan",
+        "李凡",
+        "Li Fan"
+      ],
+      "title": "副教授",
+      "school_name": "计算机学院",
+      "discipline": "",
+      "biography_text": "",
+      "emails": [
+        "fli009@gmail.com",
+        "fli@bit.edu.cn"
+      ],
+      "phones": [
+        "13501059007"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "北京理工大学",
+        "org_type": "university",
+        "normalized_name": "北京理工大学"
+      },
+      {
+        "name": "计算机学院",
+        "org_type": "school",
+        "normalized_name": "计算机学院"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "无线网络",
+        "normalized_name": "无线网络"
+      },
+      {
+        "name": "移动计算",
+        "normalized_name": "移动计算"
+      },
+      {
+        "name": "计算机网络",
+        "normalized_name": "计算机网络"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "博士",
+        "field": "计算机",
+        "organization_name": "美国北卡罗来纳大学夏洛特分校 (University of North Carolina at Charlotte, Charlotte, NC, USA)",
+        "location": "",
+        "start_text": "2004/08",
+        "end_text": "2008/05",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "2004/08–2008/05, 美国北卡罗来纳大学夏洛特分校 (University of North Carolina at Charlotte, Charlotte, NC, USA)，计算机系，博士"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "硕士",
+        "field": "电子与计算机工程",
+        "organization_name": "美国特拉华大学 (University of Delaware, Newark, DE, USA)",
+        "location": "",
+        "start_text": "2001/08",
+        "end_text": "2004/01",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "2001/08–2004/01, 美国特拉华大学 (University of Delaware, Newark, DE, USA)，电子与计算机工程系，硕士"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "硕士",
+        "field": "电子与信息工程",
+        "organization_name": "华中科技大学",
+        "location": "",
+        "start_text": "1998/09",
+        "end_text": "2001/07",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "1998/09–2001/07, 华中科技大学，电子与信息工程系，硕士"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "学士",
+        "field": "电子与信息工程",
+        "organization_name": "华中科技大学",
+        "location": "",
+        "start_text": "1994/09",
+        "end_text": "1998/07",
+        "is_current": false,
+        "order": 4,
+        "raw_text": "1994/09–1998/07, 华中科技大学，电子与信息工程系，学士"
+      },
+      {
+        "kind": "employment",
+        "title": "副教授",
+        "degree": "",
+        "field": "",
+        "organization_name": "北京理工大学, 计算机学院",
+        "location": "",
+        "start_text": "2008/05",
+        "end_text": "至今",
+        "is_current": true,
+        "order": 5,
+        "raw_text": "2008/05 至今, 北京理工大学, 计算机学院, 副教授"
+      },
+      {
+        "kind": "employment",
+        "title": "助教&助研",
+        "degree": "",
+        "field": "",
+        "organization_name": "美国北卡罗来纳大学夏洛特分校 (University of North Carolina at Charlotte, Charlotte, NC, USA), 计算机系",
+        "location": "Charlotte, NC, USA",
+        "start_text": "2005/08",
+        "end_text": "2008/05",
+        "is_current": false,
+        "order": 6,
+        "raw_text": "2005/08-2008/05, 美国北卡罗来纳大学夏洛特分校 (University of North Carolina at Charlotte, Charlotte, NC, USA), 计算机系, 助教&助研"
+      },
+      {
+        "kind": "employment",
+        "title": "助教&助教",
+        "degree": "",
+        "field": "",
+        "organization_name": "美国特拉华大学 (University of Delaware, Newark, DE, USA), 电子与计算机工程系",
+        "location": "Newark, DE, USA",
+        "start_text": "2001/08",
+        "end_text": "2004/01",
+        "is_current": false,
+        "order": 7,
+        "raw_text": "2001/08-2004/01, 美国特拉华大学 (University of Delaware, Newark, DE, USA), 电子与计算机工程系, 助教&助教"
+      },
+      {
+        "kind": "academic_service",
+        "title": "会员",
+        "degree": "",
+        "field": "",
+        "organization_name": "IEEE",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 8,
+        "raw_text": "IEEE 会员"
+      },
+      {
+        "kind": "academic_service",
+        "title": "会员",
+        "degree": "",
+        "field": "",
+        "organization_name": "ACM",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 9,
+        "raw_text": "ACM 会员"
+      },
+      {
+        "kind": "academic_service",
+        "title": "会员",
+        "degree": "",
+        "field": "",
+        "organization_name": "计算机学会",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 10,
+        "raw_text": "计算机学会会员"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Reliable Topology Design in Time-Evolving Delay-Tolerant Networks with Unreliable Links",
+        "authors_raw": "Fan Li, Siyuan Chen, Minsu Huang, Zhiyuan Yin, Chao Zhang, and Yu Wang",
+        "year": "",
+        "venue": "IEEE Transactions on Mobile Computing",
+        "publication_type": "journal",
+        "doi_or_url": "10.1109/TMC.2014.2345392",
+        "raw_text": "[1] Fan Li, Siyuan Chen, Minsu Huang, Zhiyuan Yin, Chao Zhang, and Yu Wang, \"Reliable Topology Design in Time-Evolving Delay-Tolerant Networks with Unreliable Links\", *IEEE Transactions on Mobile Computing*, vol.PP, no.99, pp.1,1 doi: 10.1109/TMC.2014.2345392. (SCI, IF: 2.912, CCFA)",
+        "order": 1
+      },
+      {
+        "title": "SEBAR: Social Energy BAsed Routing Scheme for Mobile Social Delay Tolerant Networks",
+        "authors_raw": "Fan Li, Hong Jiang, Yu Wang, Xin Li, Mingzhong Wang, Tabouche Abdeldjalil",
+        "year": "2013",
+        "venue": "Proceedings of the 32nd IEEE International Performance Computing and Communications Conference (IPCCC 2013)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[2] Fan Li, Hong Jiang, Yu Wang, Xin Li, Mingzhong Wang, Tabouche Abdeldjalil, \"SEBAR: Social Energy BAsed Routing Scheme for Mobile Social Delay Tolerant Networks\", in Proceedings of the 32nd IEEE International Performance Computing and Communications Conference (IPCCC 2013), San Diego, California, December 2013. (Best Paper Award, CCF C)",
+        "order": 2
+      },
+      {
+        "title": "Efficient Topology Design in Time-Evolving and Energy-Harvesting Wireless Sensor Networks",
+        "authors_raw": "Fan Li, Siyuan Chen, Shaojie Tang, Xiao He, Yu Wang",
+        "year": "2013",
+        "venue": "Proceedings of The 10th IEEE International Conference on Mobile Ad-hoc and Sensor Systems (MASS 2013)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[3] Fan Li, Siyuan Chen, Shaojie Tang, Xiao He, Yu Wang, \"Efficient Topology Design in Time-Evolving and Energy-Harvesting Wireless Sensor Networks\", in Proceedings of The 10th IEEE International Conference on Mobile Ad-hoc and Sensor Systems (MASS 2013), Hangzhou, China, October 2013. (Best Paper Award, CCF C)",
+        "order": 3
+      },
+      {
+        "title": "Modeling Data Dissemination in Online Social Networks: A Geographical Perspective on Bounding Network Traffic Load",
+        "authors_raw": "Cheng Wang, Shaojie Tang, Lei Yang, Yi Guo, Fan Li, Changjun Jiang",
+        "year": "2014",
+        "venue": "Proceedings of The 15th ACM International Symposium on Mobile Ad Hoc Networking and Computing (ACM MOBIHOC 2014)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[4] Cheng Wang, Shaojie Tang, Lei Yang, Yi Guo, Fan Li, Changjun Jiang, \"Modeling Data Dissemination in Online Social Networks: A Geographical Perspective on Bounding Network Traffic Load\" in Proceedings of The 15th ACM International Symposium on Mobile Ad Hoc Networking and Computing (ACM MOBIHOC 2014), Philadelphia, PA, USA, August 2014. (Best Paper Award, CCF B)",
+        "order": 4
+      },
+      {
+        "title": "L2P2: Location-aware Location Privacy Protection for Location-based Services",
+        "authors_raw": "Yu Wang, Dingbang Xu, Xiao He, Chao Zhang, Fan Li, and Bin Xu",
+        "year": "2012",
+        "venue": "Proceedings of IEEE 31st Conference on Computer Communications (INFOCOM)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[5] Yu Wang, Dingbang Xu, Xiao He, Chao Zhang, Fan Li, and Bin Xu, \"L2P2: Location-aware Location Privacy Protection for Location-based Services\", in Proceedings of IEEE 31st Conference on Computer Communications (INFOCOM), Orlando, Florida, March 2012. (CCF A)",
+        "order": 5
+      },
+      {
+        "title": "Circular Sailing Routing for Wireless Networks",
+        "authors_raw": "Fan Li, Yu Wang",
+        "year": "2008",
+        "venue": "proceedings of 27th IEEE International Conference on Computer Communications (IEEE INFOCOM 2008)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[6] Fan Li, Yu Wang, \"Circular Sailing Routing for Wireless Networks\", in proceedings of 27th IEEE International Conference on Computer Communications (IEEE INFOCOM 2008), Phoenix, Arizona, April, 2008, pp1345-1354. (CCFA)",
+        "order": 6
+      }
+    ],
+    "awards": [
+      {
+        "name": "IEEE 国际性能计算和通信会议 IPCCC 2013 唯一最佳论文奖",
+        "year": "2013",
+        "granting_org_name": "IEEE 国际性能计算和通信会议 IPCCC",
+        "level": "international",
+        "raw_text": "IEEE 国际性能计算和通信会议 IPCCC 2013 唯一最佳论文奖(Best Paper Award, International Performance Computing and Communications Conference), San Diego, CA, USA, 2013",
+        "order": 1
+      },
+      {
+        "name": "IEEE 国际移动自组织网络和传感器系统会议 MASS 2013 理论方向最佳论文奖",
+        "year": "2013",
+        "granting_org_name": "IEEE 国际移动自组织网络和传感器系统会议 MASS",
+        "level": "international",
+        "raw_text": "IEEE 国际移动自组织网络和传感器系统会议 MASS 2013 理论方向最佳论文奖(Best Paper Award, IEEE International Conference on Mobile Ad hoc and Sensor Systems), Hangzhou, China, 2013",
+        "order": 2
+      },
+      {
+        "name": "ACM 国际移动自组织网络和计算会议 ACM MOBIHOC 2014 唯一最佳论文奖",
+        "year": "2014",
+        "granting_org_name": "ACM 国际移动自组织网络和计算会议 ACM MOBIHOC",
+        "level": "international",
+        "raw_text": "ACM 国际移动自组织网络和计算会议 ACM MOBIHOC 2014 唯一最佳论文奖(Best Paper Award, International Symposium on Mobile Ad Hoc Networking and Computing), Philadelphia, PA, USA, 2014",
+        "order": 3
+      },
+      {
+        "name": "第一届全国高校物联网应用创新大赛华北赛区一等奖",
+        "year": "",
+        "granting_org_name": "第一届全国高校物联网应用创新大赛",
+        "level": "national",
+        "raw_text": "第一届全国高校物联网应用创新大赛华北赛区一等奖",
+        "order": 4
+      },
+      {
+        "name": "国际移动 Ad-hoc 网络(MANIAC Challenge)比赛最佳性能奖",
+        "year": "2007",
+        "granting_org_name": "国际移动 Ad-hoc 网络(MANIAC Challenge)比赛",
+        "level": "international",
+        "raw_text": "国际移动 Ad-hoc 网络(MANIAC Challenge)比赛最佳性能奖 (Best Performance Award), Washington, DC, 2007",
+        "order": 5
+      },
+      {
+        "name": "国际移动 Ad-hoc 网络(MANIAc Challenge)比赛最佳陈述奖",
+        "year": "2007",
+        "granting_org_name": "国际移动 Ad-hoc 网络(MANIAc Challenge)比赛",
+        "level": "international",
+        "raw_text": "国际移动 Ad-hoc 网络(MANIAc Challenge)比赛最佳陈述奖 (Best Presentation Award), Washington, DC, 2007",
+        "order": 6
+      }
+    ],
+    "warnings": [
+      "Converted from the previous committed structured seed after repeated provider timeouts during the typed-profile rebuild."
+    ]
+  }
+}

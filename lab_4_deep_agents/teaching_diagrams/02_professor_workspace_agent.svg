@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1720" height="1180" viewBox="0 0 1720 1180">
+<rect x="0" y="0" width="100%" height="100%" fill="#f8fafc"/>
+<rect x="20" y="20" width="1680" height="1140" rx="24" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+<text x="56" y="74" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">ProfessorWorkspaceAgent — internals &amp; runtime workspace</text>
+<text x="56" y="110" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#475569">System prompt + built-in file tools + one custom helper + one subagent dispatcher, all rooted in lab_4_deep_agents/sandbox/.</text>
+<path d="M 270 460.0 L 320 460.0" fill="none" stroke="#4f46e5" stroke-width="2.8"/>
+<polygon points="320,460.0 309,454.0 309,466.0" fill="#4f46e5"/>
+<rect x="247.0" y="437.0" width="96" height="24" rx="6" fill="#ffffff" stroke="#4f46e5" stroke-width="1.4"/>
+<text x="295.0" y="455.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">tool_calls</text>
+<path d="M 400.0 420 L 400.0 400 L 190.0 400 L 190.0 420" fill="none" stroke="#7c3aed" stroke-width="2.8" stroke-dasharray="8 6"/>
+<polygon points="190.0,420 184.0,409 196.0,409" fill="#7c3aed"/>
+<path d="M 480 440.0 L 540 440.0 L 540 485.0 L 575 485.0" fill="none" stroke="#0891b2" stroke-width="2.8"/>
+<polygon points="575,485.0 564,479.0 564,491.0" fill="#0891b2"/>
+<path d="M 480 460.0 L 550 460.0 L 550 665.0 L 575 665.0" fill="none" stroke="#2563eb" stroke-width="2.8"/>
+<polygon points="575,665.0 564,659.0 564,671.0" fill="#2563eb"/>
+<path d="M 480 480.0 L 560 480.0 L 560 835.0 L 575 835.0" fill="none" stroke="#dc2626" stroke-width="2.8"/>
+<polygon points="575,835.0 564,829.0 564,841.0" fill="#dc2626"/>
+<path d="M 1115 485.0 L 1140 485.0 L 1140 485.0 L 1170 485.0" fill="none" stroke="#0891b2" stroke-width="2.8" stroke-dasharray="8 6"/>
+<polygon points="1170,485.0 1159,479.0 1159,491.0" fill="#0891b2"/>
+<path d="M 1115 665.0 L 1140 665.0 L 1140 665.0 L 1170 665.0" fill="none" stroke="#2563eb" stroke-width="2.8" stroke-dasharray="8 6"/>
+<polygon points="1170,665.0 1159,659.0 1159,671.0" fill="#2563eb"/>
+<path d="M 1115 835.0 L 1140 835.0 L 1140 835.0 L 1170 835.0" fill="none" stroke="#dc2626" stroke-width="2.8" stroke-dasharray="8 6"/>
+<polygon points="1170,835.0 1159,829.0 1159,841.0" fill="#dc2626"/>
+<path d="M 440 1065.0 L 470 1065.0" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="470,1065.0 459,1059.0 459,1071.0" fill="#475569"/>
+<path d="M 850 1065.0 L 880 1065.0" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="880,1065.0 869,1059.0 869,1071.0" fill="#475569"/>
+<path d="M 1260 1065.0 L 1290 1065.0" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="1290,1065.0 1279,1059.0 1279,1071.0" fill="#475569"/>
+<rect x="60" y="140" width="1600" height="150" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="3.0"/>
+<text x="860.0" y="167.75" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f172a">System prompt (MAIN_SYSTEM_PROMPT) — rules:</text>
+<text x="860.0" y="188.75" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f172a">• Work only inside the runtime workspace.</text>
+<text x="860.0" y="209.75" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f172a">• Broad question → start with professors.md.   Named-professor question → open one dossier only if needed.</text>
+<text x="860.0" y="230.75" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f172a">• If the user asks to add a professor from an official BIT CSAT detail URL → delegate to AddProfessorSubagent.</text>
+<text x="860.0" y="251.75" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f172a">• When the subagent returns status=added → call rebuild_professors_index_tool, then reply with a short confirmation.</text>
+<text x="860.0" y="272.75" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f172a">• Recover silently from file-tool errors; only return the final useful answer.</text>
+<rect x="60" y="320" width="460" height="600" rx="18" fill="#eff6ff" stroke="#60a5fa" stroke-width="3.0" stroke-dasharray="8 6"/>
+<rect x="88" y="340" width="404" height="40" rx="18" fill="#bfdbfe" stroke="#2563eb" stroke-width="3.0"/>
+<text x="290.0" y="366.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">Compiled deep agent</text>
+<rect x="110" y="420" width="160" height="80" rx="18" fill="#eef2ff" stroke="#4f46e5" stroke-width="3.0"/>
+<text x="190.0" y="454.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">model</text>
+<text x="190.0" y="478.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">(LLM call)</text>
+<rect x="320" y="420" width="160" height="80" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="3.0"/>
+<text x="400.0" y="454.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">tools</text>
+<text x="400.0" y="478.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">(ToolNode)</text>
+<rect x="90" y="540" width="400" height="240" rx="18" fill="#ffffff" stroke="#475569" stroke-width="3.0" stroke-dasharray="8 6"/>
+<text x="290.0" y="560.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">create_deep_agent(</text>
+<text x="290.0" y="579.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">  model               = build_model(settings),</text>
+<text x="290.0" y="598.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">  tools               = [rebuild_professors_index_tool],</text>
+<text x="290.0" y="617.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">  system_prompt       = MAIN_SYSTEM_PROMPT,</text>
+<text x="290.0" y="636.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">  backend             = LocalShellBackend(</text>
+<text x="290.0" y="655.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">                          root_dir=runtime_root,</text>
+<text x="290.0" y="674.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">                          virtual_mode=False,</text>
+<text x="290.0" y="693.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">                          env=SHELL_ENV),</text>
+<text x="290.0" y="712.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">  subagents           = [add_professor_subagent],</text>
+<text x="290.0" y="731.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">  checkpointer        = InMemorySaver(),</text>
+<text x="290.0" y="750.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">  name='ProfessorWorkspaceAgent',</text>
+<text x="290.0" y="769.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">)</text>
+<rect x="90" y="800" width="400" height="100" rx="18" fill="#fffbeb" stroke="#d97706" stroke-width="3.0" stroke-dasharray="8 6"/>
+<text x="290.0" y="834.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">Returns: { messages: [response],</text>
+<text x="290.0" y="854.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">           files: {…}, todos: […] }</text>
+<text x="290.0" y="874.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">thread_id keeps it across turns.</text>
+<rect x="555" y="320" width="580" height="600" rx="18" fill="#fefce8" stroke="#eab308" stroke-width="3.0" stroke-dasharray="8 6"/>
+<rect x="583" y="340" width="524" height="40" rx="18" fill="#fef9c3" stroke="#ca8a04" stroke-width="3.0"/>
+<text x="845.0" y="366.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">Tools the model can call</text>
+<rect x="575" y="400" width="540" height="170" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="3.0"/>
+<text x="845.0" y="429.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">Built-in file tools (Deep Agents bundle)</text>
+<text x="845.0" y="449.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"></text>
+<text x="845.0" y="469.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">• ls(path)             • read_file(path, offset, limit)</text>
+<text x="845.0" y="489.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">• write_file(path, …)  • edit_file(path, old, new)</text>
+<text x="845.0" y="509.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">• glob('**/*.md')      • grep(pattern, glob, output)</text>
+<text x="845.0" y="529.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"></text>
+<text x="845.0" y="549.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">All paths are relative to runtime_root.</text>
+<rect x="575" y="585" width="540" height="160" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="3.0"/>
+<text x="845.0" y="609.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">@tool rebuild_professors_index_tool()</text>
+<text x="845.0" y="629.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"></text>
+<text x="845.0" y="649.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">Reads every professors/*.md, builds one summary line</text>
+<text x="845.0" y="669.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">per dossier with build_cached_summary_line, and rewrites</text>
+<text x="845.0" y="689.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">professors.md sorted case-insensitively.</text>
+<text x="845.0" y="709.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"></text>
+<text x="845.0" y="729.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">Returns: { index_path, professor_count, preview }</text>
+<rect x="575" y="760" width="540" height="150" rx="18" fill="#fee2e2" stroke="#dc2626" stroke-width="3.0"/>
+<text x="845.0" y="799.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">Subagent dispatcher: AddProfessorSubagent</text>
+<text x="845.0" y="819.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"></text>
+<text x="845.0" y="839.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">Auto-generated from subagents=[…]. Calling it hands off</text>
+<text x="845.0" y="859.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">the task with its own system prompt and the /skills/ tool,</text>
+<text x="845.0" y="879.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">then merges the subagent's final reply back into messages.</text>
+<rect x="1170" y="320" width="490" height="600" rx="18" fill="#f0fdf4" stroke="#16a34a" stroke-width="3.0" stroke-dasharray="8 6"/>
+<rect x="1198" y="340" width="434" height="40" rx="18" fill="#dcfce7" stroke="#15803d" stroke-width="3.0"/>
+<text x="1415.0" y="366.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">Runtime workspace (root_dir)</text>
+<rect x="1190" y="400" width="460" height="380" rx="18" fill="#ffffff" stroke="#16a34a" stroke-width="3.0"/>
+<text x="1420.0" y="471.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">lab_4_deep_agents/sandbox/</text>
+<text x="1420.0" y="490.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">├── professors.md            ← compact index</text>
+<text x="1420.0" y="509.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">├── professors/</text>
+<text x="1420.0" y="528.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">│    ├── che-haiying.md      ← starter dossiers</text>
+<text x="1420.0" y="547.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">│    ├── cheng-cheng.md</text>
+<text x="1420.0" y="566.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">│    ├── …</text>
+<text x="1420.0" y="585.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">│    └── tang-haijing.md     ← added at runtime</text>
+<text x="1420.0" y="604.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">├── skills/</text>
+<text x="1420.0" y="623.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">│    └── add-professor-from-url/</text>
+<text x="1420.0" y="642.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">│         ├── SKILL.md</text>
+<text x="1420.0" y="661.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">│         └── scripts/add_professor_from_url.py</text>
+<text x="1420.0" y="680.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">└── incoming/                ← subagent OCR cache</text>
+<text x="1420.0" y="699.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">     ├── &lt;slug&gt;-ocr.md</text>
+<text x="1420.0" y="718.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">     └── &lt;slug&gt;-profile.json</text>
+<rect x="1190" y="800" width="460" height="100" rx="18" fill="#ecfdf5" stroke="#16a34a" stroke-width="3.0" stroke-dasharray="8 6"/>
+<text x="1420.0" y="834.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">LocalShellBackend(virtual_mode=False)</text>
+<text x="1420.0" y="854.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">so every read_file/write_file hits the</text>
+<text x="1420.0" y="874.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">real filesystem, not state['files'].</text>
+<rect x="60" y="940" width="1600" height="40" rx="18" fill="#1e293b" stroke="#0f172a" stroke-width="3.0"/>
+<text x="860.0" y="965.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#ffffff">Example turn — "Which professors should I look at for human-computer interaction?"</text>
+<rect x="60" y="1000" width="380" height="130" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="3.0"/>
+<text x="250.0" y="1039.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">1. model reads system_prompt</text>
+<text x="250.0" y="1059.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"> + last user message</text>
+<text x="250.0" y="1079.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"> → emits tool_call:</text>
+<text x="250.0" y="1099.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">read_file('professors.md')</text>
+<rect x="470" y="1000" width="380" height="130" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="3.0"/>
+<text x="660.0" y="1039.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">2. ToolNode runs read_file →</text>
+<text x="660.0" y="1059.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"> returns the index lines.</text>
+<text x="660.0" y="1079.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"> model picks the matching</text>
+<text x="660.0" y="1099.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"> names from one short read.</text>
+<rect x="880" y="1000" width="380" height="130" rx="18" fill="#eef2ff" stroke="#4f46e5" stroke-width="3.0"/>
+<text x="1070.0" y="1039.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">3. model composes the answer</text>
+<text x="1070.0" y="1059.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"> from the index alone — no</text>
+<text x="1070.0" y="1079.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"> dossier read needed for a</text>
+<text x="1070.0" y="1099.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"> broad topic question.</text>
+<rect x="1290" y="1000" width="380" height="130" rx="18" fill="#fffbeb" stroke="#d97706" stroke-width="3.0"/>
+<text x="1480.0" y="1039.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">4. AIMessage has no tool_calls</text>
+<text x="1480.0" y="1059.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"> → END. State persisted under</text>
+<text x="1480.0" y="1079.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"> the same thread_id so the</text>
+<text x="1480.0" y="1099.9" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a"> next turn keeps context.</text>
+</svg>

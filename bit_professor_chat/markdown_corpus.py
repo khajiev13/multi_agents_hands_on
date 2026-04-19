@@ -15,6 +15,8 @@ from langchain_core.documents import Document
 from langchain_openai import OpenAIEmbeddings
 
 from .config import TutorSettings
+from .corpus_paths import resolve_professor_corpus_dir
+from .ingestion_models import ProfessorDossier, ProfessorListing
 from .rerank_client import JinaStyleReranker
 
 
@@ -22,6 +24,32 @@ SECTION_PATTERN = re.compile(r"^##\s+(.+)$", re.M)
 TITLE_PATTERN = re.compile(r"^#\s+(.+)$", re.M)
 DETAIL_URL_PATTERN = re.compile(r"^-\s*detail_url:\s*(.+?)\s*$", re.M)
 PAGE_COUNT_PATTERN = re.compile(r"^-\s*page_count:\s*(\d+)\s*$", re.M)
+HTML_TAG_PATTERN = re.compile(
+    r"</?(?:"
+    r"html|body|head|title|meta|link|style|script|div|span|p|br|hr|img|a|table|thead|tbody|tfoot|tr|td|th|ul|ol|li|dl|dt|dd|h[1-6]|strong|em|b|i|u|sup|sub|section|article|header|footer|main|nav|aside"
+    r")(?:\s+[^>]*)?\s*/?>",
+    re.I,
+)
+OCR_TOKEN_PATTERN = re.compile(r"\b\d+text\b", re.I)
+BRACE_RUN_PATTERN = re.compile(r"[{}]{4,}")
+FLOAT_REPETITION_PATTERN = re.compile(r"\b(?:1\.0(?:\s+|$)){3,}", re.I)
+ALNUM_OR_CJK_PATTERN = re.compile(r"[A-Za-z0-9\u4e00-\u9fff]")
+
+VALIDATION_CHECK_KEYS = (
+    "detail_url_matches",
+    "name_matches",
+    "has_basic_information",
+    "has_any_section",
+    "minimum_clean_content",
+    "no_blocked_artifacts",
+)
+
+BLOCKED_ARTIFACT_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
+    ("ocr_token", OCR_TOKEN_PATTERN),
+    ("html_tag", HTML_TAG_PATTERN),
+    ("brace_run", BRACE_RUN_PATTERN),
+    ("float_repetition", FLOAT_REPETITION_PATTERN),
+)
 
 
 def slugify_name(name: str) -> str:
@@ -114,6 +142,26 @@ def parse_markdown_sections(markdown_text: str) -> dict[str, list[str]]:
     return sections
 
 
+def clean_quality_line(line: str) -> str:
+    cleaned = HTML_TAG_PATTERN.sub(" ", line)
+    cleaned = OCR_TOKEN_PATTERN.sub(" ", cleaned)
+    cleaned = BRACE_RUN_PATTERN.sub(" ", cleaned)
+    cleaned = FLOAT_REPETITION_PATTERN.sub(" ", cleaned)
+    cleaned = re.sub(r"[*_`]+", " ", cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip(" -:;,.|")
+    if not cleaned or not ALNUM_OR_CJK_PATTERN.search(cleaned):
+        return ""
+    return cleaned
+
+
+def detect_blocked_artifacts(text: str) -> list[str]:
+    detected: list[str] = []
+    for label, pattern in BLOCKED_ARTIFACT_PATTERNS:
+        if pattern.search(text):
+            detected.append(label)
+    return detected
+
+
 def read_markdown(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
@@ -150,6 +198,101 @@ class MarkdownValidation:
     status: str
     notes: list[str] = field(default_factory=list)
     discovered_names: list[str] = field(default_factory=list)
+    quality_notes: list[str] = field(default_factory=list)
+    checks: dict[str, bool] = field(default_factory=dict)
+    blocked_artifacts: list[str] = field(default_factory=list)
+
+
+def _finalize_validation(
+    *,
+    notes: list[str],
+    quality_notes: list[str],
+    discovered_names: list[str],
+    checks: dict[str, bool],
+    blocked_artifacts: list[str],
+) -> MarkdownValidation:
+    combined_notes = [*notes, *quality_notes]
+    status = "valid" if not combined_notes else "invalid"
+    return MarkdownValidation(
+        status=status,
+        notes=combined_notes,
+        discovered_names=discovered_names,
+        quality_notes=quality_notes,
+        checks=checks,
+        blocked_artifacts=blocked_artifacts,
+    )
+
+
+def validate_professor_dossier(
+    *,
+    dossier: ProfessorDossier,
+    listing: ProfessorListing,
+    rendered_markdown: str | None = None,
+) -> MarkdownValidation:
+    from .markdown_render import render_professor_markdown
+
+    notes: list[str] = []
+    quality_notes: list[str] = []
+    discovered_names = [dossier.title.strip()] if dossier.title.strip() else []
+    actual_detail_url = dossier.detail_url.strip()
+    basic_information_lines = [
+        clean_quality_line(line) for line in dossier.basic_information.bullets
+    ]
+    basic_information_lines = [line for line in basic_information_lines if line]
+    section_lines = [
+        clean_quality_line(line)
+        for section in dossier.sections
+        for line in section.bullets
+    ]
+    section_lines = [line for line in section_lines if line]
+    blocked_artifacts = detect_blocked_artifacts(
+        rendered_markdown or render_professor_markdown(dossier)
+    )
+    has_matching_name = bool(discovered_names) and names_similar(
+        listing.name, discovered_names[0]
+    )
+
+    if actual_detail_url != listing.detail_url:
+        notes.append(
+            f"detail_url mismatch: expected {listing.detail_url}, found {actual_detail_url or 'missing'}"
+        )
+
+    if discovered_names and not has_matching_name:
+        notes.append(
+            f"name mismatch: expected {listing.name}, found {', '.join(discovered_names[:3])}"
+        )
+    elif not discovered_names:
+        notes.append("no readable professor title found in the synthesized dossier")
+
+    if not basic_information_lines:
+        quality_notes.append("missing Basic Information section content")
+
+    if not dossier.sections or not section_lines:
+        quality_notes.append("missing at least one non-empty dossier section")
+
+    if len([*basic_information_lines, *section_lines]) < 3:
+        quality_notes.append("not enough clean dossier bullets: found fewer than 3")
+
+    if blocked_artifacts:
+        quality_notes.append(
+            "blocked artifact patterns detected: " + ", ".join(blocked_artifacts)
+        )
+
+    checks = {
+        "detail_url_matches": actual_detail_url == listing.detail_url,
+        "name_matches": has_matching_name,
+        "has_basic_information": bool(basic_information_lines),
+        "has_any_section": bool(dossier.sections and section_lines),
+        "minimum_clean_content": len([*basic_information_lines, *section_lines]) >= 3,
+        "no_blocked_artifacts": not blocked_artifacts,
+    }
+    return _finalize_validation(
+        notes=notes,
+        quality_notes=quality_notes,
+        discovered_names=discovered_names,
+        checks=checks,
+        blocked_artifacts=blocked_artifacts,
+    )
 
 
 def validate_professor_markdown(
@@ -159,29 +302,79 @@ def validate_professor_markdown(
     expected_detail_url: str,
 ) -> MarkdownValidation:
     notes: list[str] = []
+    quality_notes: list[str] = []
     sections = parse_markdown_sections(markdown_text)
     discovered_names = extract_name_candidates(markdown_text, sections)
     actual_detail_url = extract_detail_url(markdown_text)
+    basic_information_lines = [
+        clean_quality_line(line) for line in sections.get("Basic Information", [])
+    ]
+    basic_information_lines = [line for line in basic_information_lines if line]
+    section_lines = [
+        clean_quality_line(line)
+        for section_name, lines in sections.items()
+        if section_name not in {"Basic Information", "Source Pages", "Uncertain or Illegible Text"}
+        for line in lines
+    ]
+    section_lines = [line for line in section_lines if line]
+    populated_sections = [
+        section_name
+        for section_name, lines in sections.items()
+        if section_name not in {"Basic Information", "Source Pages", "Uncertain or Illegible Text"}
+        and any(clean_quality_line(line) for line in lines)
+    ]
+    clean_content_lines = [
+        cleaned
+        for section_name, lines in sections.items()
+        if section_name not in {"Source Pages", "Uncertain or Illegible Text"}
+        for cleaned in (clean_quality_line(line) for line in lines)
+        if cleaned
+    ]
+    blocked_artifacts = detect_blocked_artifacts(markdown_text)
+    has_matching_name = bool(discovered_names) and any(
+        names_similar(expected_name, candidate) for candidate in discovered_names
+    )
 
     if actual_detail_url != expected_detail_url:
         notes.append(
             f"detail_url mismatch: expected {expected_detail_url}, found {actual_detail_url or 'missing'}"
         )
 
-    if discovered_names and not any(
-        names_similar(expected_name, candidate) for candidate in discovered_names
-    ):
+    if discovered_names and not has_matching_name:
         notes.append(
             f"name mismatch: expected {expected_name}, found {', '.join(discovered_names[:3])}"
         )
     elif not discovered_names:
         notes.append("no readable professor name found in the markdown header or basic information")
 
-    status = "valid" if not notes else "invalid"
-    return MarkdownValidation(
-        status=status,
+    if not basic_information_lines:
+        quality_notes.append("missing Basic Information section content")
+
+    if not populated_sections or not section_lines:
+        quality_notes.append("missing at least one non-empty dossier section")
+
+    if len(clean_content_lines) < 3:
+        quality_notes.append("not enough clean content bullets outside Source Pages: found fewer than 3")
+
+    if blocked_artifacts:
+        quality_notes.append(
+            "blocked artifact patterns detected: " + ", ".join(blocked_artifacts)
+        )
+
+    checks = {
+        "detail_url_matches": actual_detail_url == expected_detail_url,
+        "name_matches": has_matching_name,
+        "has_basic_information": bool(basic_information_lines),
+        "has_any_section": bool(populated_sections and section_lines),
+        "minimum_clean_content": len(clean_content_lines) >= 3,
+        "no_blocked_artifacts": not blocked_artifacts,
+    }
+    return _finalize_validation(
         notes=notes,
+        quality_notes=quality_notes,
         discovered_names=discovered_names,
+        checks=checks,
+        blocked_artifacts=blocked_artifacts,
     )
 
 
@@ -195,6 +388,7 @@ class ProfessorDossierMetadata:
     research_interests: list[str]
     validation_status: str
     validation_notes: list[str]
+    validation_checks: dict[str, bool]
     aliases: list[str]
     available_sections: list[str]
 
@@ -282,6 +476,7 @@ def build_dossier_metadata(
         research_interests=sections.get("Research Interests", []),
         validation_status=validation.status,
         validation_notes=validation.notes,
+        validation_checks=validation.checks,
         aliases=aliases,
         available_sections=list(sections.keys()),
     )
@@ -299,7 +494,7 @@ def discover_professor_markdown_paths(
     project_root: Path,
     professor_dir: Path | None = None,
 ) -> list[str]:
-    search_dir = professor_dir or (project_root / "professors")
+    search_dir = resolve_professor_corpus_dir(project_root, professor_dir)
     if not search_dir.exists():
         raise ValueError(
             f"Professor markdown directory not found at {search_dir}. "
@@ -524,7 +719,15 @@ class ProfessorMarkdownRepository:
                 "ingestion workflow first."
             )
         payload = json.loads(settings.corpus_index_path.read_text(encoding="utf-8"))
-        dossiers = [ProfessorDossierMetadata(**row) for row in payload]
+        dossiers = [
+            ProfessorDossierMetadata(
+                **{
+                    **row,
+                    "validation_checks": row.get("validation_checks", {}),
+                }
+            )
+            for row in payload
+        ]
         return cls(project_root=project_root, settings=settings, dossiers=dossiers)
 
     def list_professors(
@@ -729,6 +932,8 @@ __all__ = [
     "build_dossier_metadata",
     "build_document_ids",
     "build_embedding_model",
+    "clean_quality_line",
+    "detect_blocked_artifacts",
     "deslugify_professor_slug",
     "discover_professor_markdown_paths",
     "extract_detail_url",
@@ -739,5 +944,6 @@ __all__ = [
     "parse_markdown_sections",
     "rebuild_markdown_corpus",
     "slugify_name",
+    "validate_professor_dossier",
     "validate_professor_markdown",
 ]

@@ -1,0 +1,330 @@
+{
+  "metadata": {
+    "name": "CHE Haiying",
+    "slug": "che-haiying",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121632.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/che-haiying-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "CHE Haiying",
+      "aliases": [
+        "CHE Haiying",
+        "车海莺",
+        "Che Haiying"
+      ],
+      "title": "Assistant Professor",
+      "school_name": "School of Software",
+      "discipline": "Software Engineering",
+      "biography_text": "",
+      "emails": [
+        "chrisie@bit.edu.cn"
+      ],
+      "phones": [
+        "17710161972"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "School of Software",
+        "org_type": "school",
+        "normalized_name": "school of software"
+      },
+      {
+        "name": "Beijing Institute of Technology (BIT)",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "University of Science and Technology",
+        "org_type": "university",
+        "normalized_name": "university of science and technology"
+      },
+      {
+        "name": "Stevens Institute of Technology, School of System and Enterprise",
+        "org_type": "school",
+        "normalized_name": "stevens institute of technology school of system and enterprise"
+      },
+      {
+        "name": "Karlsruhe Institute of Technology, Institute of Applied Informatics and Formal Description Methods (AIFB), School of Economic Engineering",
+        "org_type": "school",
+        "normalized_name": "karlsruhe institute of technology institute of applied informatics and formal description methods school of economic engineering"
+      },
+      {
+        "name": "Germany and Austria branch Western Returned Scholars Association",
+        "org_type": "association",
+        "normalized_name": "germany and austria branch western returned scholars association"
+      },
+      {
+        "name": "Chinese Society Of Optimisation And Overall Planning And Economical Mathematics, industrial engineering branch",
+        "org_type": "association",
+        "normalized_name": "chinese society of optimisation and overall planning and economical mathematics industrial engineering branch"
+      },
+      {
+        "name": "SAP University Alliance expert Committee",
+        "org_type": "association",
+        "normalized_name": "sap university alliance expert committee"
+      },
+      {
+        "name": "China Economic Association members and scholars in Germany",
+        "org_type": "association",
+        "normalized_name": "china economic association members and scholars in germany"
+      },
+      {
+        "name": "International Conference on Signal and Information Processing, Networking and Computers",
+        "org_type": "conference",
+        "normalized_name": "international conference on signal and information processing networking and computers"
+      },
+      {
+        "name": "Journal of Beijing Institute of Technology",
+        "org_type": "journal",
+        "normalized_name": "journal of beijing institute of technology"
+      },
+      {
+        "name": "IEEE, International Conference on Automation and Logistics (ICAL)",
+        "org_type": "conference",
+        "normalized_name": "ieee international conference on automation and logistics"
+      },
+      {
+        "name": "42th Hawaii International Conference on System Sciences (HICSS)",
+        "org_type": "conference",
+        "normalized_name": "hawaii international conference on system sciences"
+      }
+    ],
+    "research_topics": [],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph.D.",
+        "field": "Management Science and Engineering",
+        "organization_name": "Beijing Institute of Technology (BIT)",
+        "location": "China",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "Ph.D., Management Science and Engineering, Beijing Institute of Technology (BIT), China,"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Bachelor",
+        "field": "Applied Mathematics and Computer Software",
+        "organization_name": "University of Science and Technology",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "Bachelor, Applied Mathematics and Computer Software, University of Science and Technology"
+      },
+      {
+        "kind": "employment",
+        "title": "Visiting Scholar",
+        "degree": "",
+        "field": "",
+        "organization_name": "Stevens Institute of Technology, School of System and Enterprise",
+        "location": "USA",
+        "start_text": "2015.12",
+        "end_text": "2016.6",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "Visiting Scholar, Stevens Institute of Technology, School of System and Enterprise, USA, 2015.12-2016.6"
+      },
+      {
+        "kind": "employment",
+        "title": "Assistant Professor",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing Institute of Technology, School of Software",
+        "location": "",
+        "start_text": "2008",
+        "end_text": "2015",
+        "is_current": false,
+        "order": 4,
+        "raw_text": "Assistant Professor, Beijing Institute of Technology, School of Software, 2008-2015"
+      },
+      {
+        "kind": "employment",
+        "title": "Post doctor",
+        "degree": "",
+        "field": "",
+        "organization_name": "Karlsruhe Institute of Technology, Institute of Applied Informatics and Formal Description Methods (AIFB), School of Economic Engineering",
+        "location": "Germany",
+        "start_text": "2006",
+        "end_text": "2008",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "Post doctor, Karlsruhe Institute of Technology, Institute of Applied Informatics and Formal Description Methods (AIFB), School of Economic Engineering, Germany, 2006-2008 (DAAD-German Academic Exchange Service Excellence Program scholarship)"
+      },
+      {
+        "kind": "employment",
+        "title": "Assistant Professor",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing Institute of Technology, School of Software",
+        "location": "",
+        "start_text": "2004",
+        "end_text": "2006",
+        "is_current": false,
+        "order": 6,
+        "raw_text": "Assistant Professor, Beijing Institute of Technology, School of Software 2004-2006"
+      },
+      {
+        "kind": "academic_service",
+        "title": "member of a council",
+        "degree": "",
+        "field": "",
+        "organization_name": "Germany and Austria branch Western Returned Scholars Association",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 7,
+        "raw_text": "Germany and Austria branch Western Returned Scholars Association, member of a council"
+      },
+      {
+        "kind": "academic_service",
+        "title": "member of a council",
+        "degree": "",
+        "field": "",
+        "organization_name": "Chinese Society Of Optimisation And Overall Planning And Economical Mathematics, industrial engineering branch",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 8,
+        "raw_text": "Chinese Society Of Optimisation And Overall Planning And Economical Mathematics, industrial engineering branch, member of a council"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Member",
+        "degree": "",
+        "field": "",
+        "organization_name": "SAP University Alliance expert Committee",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 9,
+        "raw_text": "SAP University Alliance expert Committee Member"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Member",
+        "degree": "",
+        "field": "",
+        "organization_name": "China Economic Association members and scholars in Germany",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 10,
+        "raw_text": "Member of China Economic Association members and scholars in Germany"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Time drift detection in Process Mining",
+        "authors_raw": "Haiying Che, Quentin Machu and Yangguang Zhou",
+        "year": "2015",
+        "venue": "International Conference on Signal and Information Processing, Networking and Computers",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Haiying Che, Quentin Machu and Yangguang Zhou “Time drift detection in Process Mining” International Conference on Signal and Information Processing, Networking and Computers, October 17-18, 2015, Beijing",
+        "order": 1
+      },
+      {
+        "title": "Research and realization of music recommender algorithm based on Hybrid Collaborative Filtering",
+        "authors_raw": "Haiying Che and Zishi Wang",
+        "year": "2015",
+        "venue": "International Conference on Signal and Information Processing, Networking and Computers",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Haiying Che and Zishi Wang “Research and realization of music recommender algorithm based on Hybrid Collaborative Filtering\" International Conference on Signal and Information Processing, Networking and Computers, October 17-18, 2015, Beijing",
+        "order": 2
+      },
+      {
+        "title": "Mobile Business Process Modeling Using High Level Petri Nets",
+        "authors_raw": "Haiying Che, Huiying Gao and Yanbing Ju",
+        "year": "2014",
+        "venue": "Journal of Beijing Institute of Technology",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Haiying Che, Huiying Gao and Yanbing Ju \"Mobile Business Process Modeling Using High Level Petri Nets\", 2014 Journal of Beijing Institute of Technology",
+        "order": 3
+      },
+      {
+        "title": "Anomalies in Business Process Models for Mobile Scenarios with Location Constraints",
+        "authors_raw": "Haiying Che and Michael Decker",
+        "year": "2010",
+        "venue": "IEEE, International Conference on Automation and Logistics (ICAL)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Haiying Che and Michael Decker, \"Anomalies in Business Process Models for Mobile Scenarios with Location Constraints\", 2010 IEEE, International Conference on Automation and Logistics (ICAL), August 16-20, Hongkong/Macau",
+        "order": 4
+      },
+      {
+        "title": "Web Service Composition Based on XML Nets",
+        "authors_raw": "Haiying Che, Yu Li, Andreas Oberweis and Wolfried Stucky",
+        "year": "2009",
+        "venue": "42th Hawaii International Conference on System Sciences (HICSS)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Haiying Che, Yu Li, Andreas Oberweis and Wolfried Stucky, \"Web Service Composition Based on XML Nets\", 42th Hawaii International Conference on System Sciences (HICSS), January 5-8, 2009, Hawaii, U.S.A.",
+        "order": 5
+      }
+    ],
+    "awards": [
+      {
+        "name": "IBM Excellent Teacher Prize",
+        "year": "2015",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "2015 IBM Excellent Teacher Prize",
+        "order": 1
+      },
+      {
+        "name": "Excellent Graduate Teaching Team",
+        "year": "2015",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "2015 Excellent Graduate Teaching Team",
+        "order": 2
+      },
+      {
+        "name": "IBM excellent Course \"Big data analysis\"",
+        "year": "2014",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "2014 IBM excellent Course \"Big data analysis\"",
+        "order": 3
+      },
+      {
+        "name": "IBM visiting scholar researching in business Intelligence",
+        "year": "2011",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "2011 IBM visiting scholar researching in business Intelligence;",
+        "order": 4
+      },
+      {
+        "name": "DAAD 2006 Elite scholarship",
+        "year": "2006",
+        "granting_org_name": "DAAD",
+        "level": "",
+        "raw_text": "DAAD 2006 Elite scholarship (DAAD: German Academic Exchange Service);",
+        "order": 5
+      }
+    ],
+    "warnings": [
+      "Ignored the instruction-only publication heading because it did not list concrete items.",
+      "Publication 2 title was split across lines in the OCR; combined based on context.",
+      "No explicit current employment status found; all listed employment periods have end dates.",
+      "The 'University of Science and Technology' in the education section is ambiguous and not fully specified."
+    ]
+  }
+}

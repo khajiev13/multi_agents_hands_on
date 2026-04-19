@@ -1,0 +1,225 @@
+{
+  "metadata": {
+    "name": "MAO Xianling",
+    "slug": "mao-xianling",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113052.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/mao-xianling-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "MAO Xianling",
+      "aliases": [
+        "MAO Xianling",
+        "毛先玲",
+        "Mao Xianling",
+        "Xian-Ling Mao"
+      ],
+      "title": "讲师 - Assistant Professor",
+      "school_name": "School of Compute Science",
+      "discipline": "Compute Science",
+      "biography_text": "Dr. Xian-Ling Mao is now an assistant professor in Beijing Institute of Technology. He obtained the doctorate degree from School of Electronics Engineering and Computer Science, Peking University. He also visited National University of Singapore for one year. Now, he is the reviewer of EMNLP and China Science etc. Xian-Ling Mao has a broad interest in real world problems related to natural languages, text information, social networks, web application, scientific literature, and multimedia. Xian-Ling's research focuses on Natural Language Processing, Information Retrieval, Machine Learning and Artificial Intelligence. More specifically, he is now conducting research into Topic modeling, Learn to Hashing and Question Answering. Till now, he has published around 20 papers in various venues including AAAI, IJCAI, TKDE, EMNLP, CIKM and COLING etc.",
+      "emails": [
+        "maoxl@bit.edu.cn"
+      ],
+      "phones": [
+        "15120054899"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "Beijing Institute of Technology",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "Peking University",
+        "org_type": "university",
+        "normalized_name": "peking university"
+      },
+      {
+        "name": "National University of Singapore",
+        "org_type": "university",
+        "normalized_name": "national university of singapore"
+      },
+      {
+        "name": "EMNLP",
+        "org_type": "conference",
+        "normalized_name": "emnlp"
+      },
+      {
+        "name": "China Science",
+        "org_type": "journal",
+        "normalized_name": "china science"
+      },
+      {
+        "name": "AAAI",
+        "org_type": "conference",
+        "normalized_name": "aaai"
+      },
+      {
+        "name": "IJCAI",
+        "org_type": "conference",
+        "normalized_name": "ijcai"
+      },
+      {
+        "name": "TKDE",
+        "org_type": "journal",
+        "normalized_name": "tkde"
+      },
+      {
+        "name": "CIKM",
+        "org_type": "conference",
+        "normalized_name": "cikm"
+      },
+      {
+        "name": "COLING",
+        "org_type": "conference",
+        "normalized_name": "coling"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "机器学习",
+        "normalized_name": "machine learning"
+      },
+      {
+        "name": "数据挖掘",
+        "normalized_name": "data mining"
+      },
+      {
+        "name": "深度学习",
+        "normalized_name": "deep learning"
+      },
+      {
+        "name": "Natural Language Processing",
+        "normalized_name": "natural language processing"
+      },
+      {
+        "name": "Information Retrieval",
+        "normalized_name": "information retrieval"
+      },
+      {
+        "name": "Artificial Intelligence",
+        "normalized_name": "artificial intelligence"
+      },
+      {
+        "name": "Topic modeling",
+        "normalized_name": "topic modeling"
+      },
+      {
+        "name": "Learn to Hashing",
+        "normalized_name": "learn to hashing"
+      },
+      {
+        "name": "Question Answering",
+        "normalized_name": "question answering"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "doctorate",
+        "field": "",
+        "organization_name": "Peking University",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "He obtained the doctorate degree from School of Electronics Engineering and Computer Science, Peking University."
+      },
+      {
+        "kind": "academic_service",
+        "title": "visited",
+        "degree": "",
+        "field": "",
+        "organization_name": "National University of Singapore",
+        "location": "",
+        "start_text": "",
+        "end_text": "one year",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "He also visited National University of Singapore for one year."
+      },
+      {
+        "kind": "academic_service",
+        "title": "reviewer",
+        "degree": "",
+        "field": "",
+        "organization_name": "EMNLP and China Science",
+        "location": "",
+        "start_text": "Now",
+        "end_text": "",
+        "is_current": true,
+        "order": 3,
+        "raw_text": "Now, he is the reviewer of EMNLP and China Science etc."
+      }
+    ],
+    "publications": [
+      {
+        "title": "S2JSD-LSH: A Locality-Sensitive Hashing Schema for Probability Distributions",
+        "authors_raw": "Xian-Ling Mao, Yi-Jing Hao, Yi-Jing Hao, Liqiang Nie, Heyuan Huang, Guihua Wen",
+        "year": "2017",
+        "venue": "AAAI 2017",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Xian-Ling Mao, Yi-Jing Hao, Yi-Jing Hao, Liqiang Nie, Heyuan Huang, Guihua Wen; S2JSD-LSH: A Locality-Sensitive Hashing Schema for Probability Distributions; *AAAI 2017*",
+        "order": 1
+      },
+      {
+        "title": "A Novel Fast Framework for Topic Labeling Based on Similarity-preserved Hashing",
+        "authors_raw": "Xian-Ling Mao, Yi-Jing Hao, Qiang Zhou, Wenqing Yuan, Liner Yang, Heyan Huang",
+        "year": "2016",
+        "venue": "COLING, 2016",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Xian-Ling Mao, Yi-Jing Hao, Qiang Zhou, Wenqing Yuan, Liner Yang, Heyan Huang; A Novel Fast Framework for Topic Labeling Based on Similarity-preserved Hashing; *COLING, 2016*",
+        "order": 2
+      },
+      {
+        "title": "I Know What You Want to Express: Sentence Element Inference by Incorporating External Knowledge Base",
+        "authors_raw": "Xiaochi Wei, Heyan Huang, Liqiang Nie, Hanwang Zhang, Xian-Ling Mao, Tat-Seng Chua",
+        "year": "2016",
+        "venue": "TKDE, 2016",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Xiaochi Wei, Heyan Huang, Liqiang Nie, Hanwang Zhang, Xian-Ling Mao, Tat-Seng Chua; I Know What You Want to Express: Sentence Element Inference by Incorporating External Knowledge Base; *TKDE, 2016*",
+        "order": 3
+      },
+      {
+        "title": "Hierarchical Topic Integration Through Semi-supervised hierarchical Topic Modeling",
+        "authors_raw": "Xian-Ling Mao, Jing He, Hongfei Yan, Xiaoming Li",
+        "year": "2012",
+        "venue": "CIKM, 2012",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Xian-Ling Mao, Jing He, Hongfei Yan, Xiaoming Li; Hierarchical Topic Integration Through Semi-supervised hierarchical Topic Modeling; *CIKM, 2012*",
+        "order": 4
+      },
+      {
+        "title": "SSHLDA: A Semi-Supervised Hierarchical Topic Model",
+        "authors_raw": "Xian-Ling Mao, Zhao-Yan Ming, Tat-Seng Chua, Si Li, Hongfei Yan and Xiaoming Li",
+        "year": "2012",
+        "venue": "EMNLP, 2012",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Xian-Ling Mao, Zhao-Yan Ming, Tat-Seng Chua, Si Li, Hongfei Yan and Xiaoming Li; SSHLDA: A Semi-Supervised Hierarchical Topic Model; *EMNLP, 2012*",
+        "order": 5
+      }
+    ],
+    "awards": [],
+    "warnings": [
+      "Ignored the instruction-only publication heading because it did not list concrete items.",
+      "Publication venue 'TKDE' is assumed to be a journal based on common knowledge, but this is not explicitly stated in the OCR.",
+      "The discipline field contains a typo ('Compute Science') as per the OCR.",
+      "The school name field contains a typo ('School of Compute Science') as per the OCR.",
+      "The experience item for 'visited National University of Singapore' is categorized as academic_service due to lack of explicit employment or education context.",
+      "The experience item for 'reviewer of EMNLP and China Science etc.' is categorized as academic_service.",
+      "The biography text includes research interests which are also listed separately; both are captured.",
+      "The publication list includes duplicate author 'Yi-Jing Hao' in item 1 as per the raw text."
+    ]
+  }
+}

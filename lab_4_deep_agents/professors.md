@@ -1,0 +1,46 @@
+# BIT CSAT Professors
+
+- Che Haiying: Name: CHE Haiying, Aliases: 车海莺, Che Haiying, Title: Assistant Professor
+- Cheng Cheng: 人机交互, 虚拟环境, 虚拟制造
+- Filippo Fabrocini: Cognitive Science, Artificial Intelligence, Logic Programming
+- Gao Guangyu: Computer Vision, Multimedia, Big Data & Cloud Computing
+- Gao Yang: 机器学习, 数据挖掘, 自动问答系统
+- Huang Heyan: 机器翻译, Machine Translation, 自然语言处理
+- Huang Yonggang: 多媒体信息检索与安全, 机器翻译, 云计算
+- Jin Fusheng: Software Architecture Design, Embedded System, Software Security
+- Li Dongni: Intelligent Optimization, Big Data Processing and Analysis in Industry, Industrial Internet
+- Li Fan: 无线网络, 移动计算, 计算机网络
+- Li Jianwu: 图像处理, Image Processing, 机器学习
+- Li Kan: 机器学习, Machine Learning, 数据挖掘
+- Li Xin: Artificial Intelligence, Machine Learning, Deep Reinforcement Learning
+- Li Yugang: 高性能计算, 图像处理, 生物信息
+- Liang Wei: 计算机视觉, 人机交互, Name: LIANG Wei
+- Liu Hui: LLM-based Software Development, Machine Learning and Data Mining, Software Testing and validation
+- Lu Yao: 图像/视频处理, Image and Video Processing, 人工智能与模式识别
+- Lv Kun: 机器学习 Machine Learning, 信息安全 Information Security, 云计算技术 Cloud Computing Technology
+- Mao Xianling: 机器学习, 数据挖掘, 深度学习
+- Niu Zhendong: Information Retrieval, Software Engineering, Digital Libraries & E-learning
+- Shang Jianyun: 大数据搜索与挖掘, 自然语言处理, 数据可视化,可视计算
+- Shen Meng: 网络虚拟化(network virtualization), 无线网络与移动计算 (wireless network and mobile computing), 前沿通信技术 (emerging communication technologies)
+- Shi Feng: 多核处理器体系结构, Architecture of Chip Multi-Processors, 专用集成电路设计
+- Shi Shumin: 自然语言处理, 社会计算, 模糊语义计算及应用
+- Song Hong: 图像处理与机器学习, 医学影像分析, Name: SONG Hong
+- Song Tian: Network Architecture and Protocol, Network and Information Security, Microprocessor and System Architecture
+- Tang Haijing: Name: TANG Haijing, project evaluation experts, Beijing municipal science and technology commission, Advisor, Beijing Environment Exchange
+- Tian Donghai: Software Security 软件安全, Android Security Android 系统安全, Big Data Security 大数据安全
+- Wang Juan: 计算机体系结构, 嵌入式计算, Embedded Systems
+- Wang Quanyu: 移动互联网 Mobile Internet, 机器人技术 Robot Technology, 人机交互 Human Computer Interaction
+- Wang Shuliang: Spatial data mining, Data field, Big data
+- Wang Yizhuo: Computer Architecture, Parallel Programming, Big Data Computing
+- Wei Jin: High Performance Computing, Embedded Computing, Parallel Computing
+- Yan Bo: 数据挖掘 Data Mining, 大数据 Big Data, 云计算 Cloud Computing
+- Yang Song: 云/边缘计算 Cloud/Edge Computing, 深度强化学习, 分布式学习 Deep Reinforcement Learning, Distributed Learning, 物联网, 网络系统 Internet of things, Networking Systems
+- Yu Yue: 虚拟现实, Virtual Reality, 计算机仿真
+- Yuan Hanning: 数据挖掘, 推荐系统, 机器学习
+- Zhang Huaping: 大数据搜索与挖掘 Big Data Search and Mining, 自然语言处理 Natural Language Processing, 信息检索与安全 Information Retrieval and Security
+- Zhang Wenyao: 科学可视化 Scientific Visualization, 计算机图形学 Computer Graphics, 媒体计算 Media Computing
+- Zhao Fengnian: Gamification of Software Systems, Educational Games, Digital Game Based Learning
+- Zhao Qingjie: 图像与视频处理, 目标识别与跟踪, 视频大数据检索
+- Zheng Hong: Computer Networks & Distributed Systems, High-Perfonance Computing, Machine Learning
+- Zheng Jun: 网络与信息安全 Network and Information Security, 云计算技术 Cloud Computing Technology, 人工智能 Artificial Intelligence
+- Zhu Liehuang: 密码算法与安全协议, Cryptography Algorithms and Secure Protocols, Name: ZHU Liehuang

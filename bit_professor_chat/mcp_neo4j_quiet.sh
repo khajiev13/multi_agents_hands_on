@@ -4,7 +4,7 @@ set -eu
 
 SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
 PROJECT_ROOT="$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)"
-LOG_DIR="$PROJECT_ROOT/artifacts/logs"
+LOG_DIR="$PROJECT_ROOT/logs"
 
 mkdir -p "$LOG_DIR"
 

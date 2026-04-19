@@ -1,0 +1,327 @@
+{
+  "metadata": {
+    "name": "LI Xin",
+    "slug": "li-xin",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b186322.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/li-xin-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "LI Xin",
+      "aliases": [
+        "LI Xin",
+        "礼欣",
+        "Xin LI"
+      ],
+      "title": "Associate Professor",
+      "school_name": "School of Computer Science",
+      "discipline": "Computer Science",
+      "biography_text": "Dr. Xin Li has received the B.Sc. and M.S. degrees in computer science from Jilin University of China and the PhD degree in computer science in 2009 from Hong Kong Baptist University. She was a postdoctoral teaching fellow in the Department of Computer Science, Hong Kong Baptist University, from 2009 to 2010. She is currently an associate professor in School of Computer Science, Beijing Institute of Technology. She was also a (senior) visiting scholar at University of Technology Sydney and University of Waterloo in 2018 and 2007 respectively. She has published papers in internationally renowned conferences and journals, e.g., IJCAI, AAAI, ICML, ECML-PKDD, IEEE Transaction SMC Part B, TKDE, TNNLS, ACM TOIS. Her current research interests include Artificial Intelligence, Machine Learning, Deep Reinforcement Learning, as well as their applications to health care and robotics.",
+      "emails": [
+        "xinli@bit.edu.cn"
+      ],
+      "phones": [
+        "13911406307"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "School of Computer Science",
+        "org_type": "school",
+        "normalized_name": "school of computer science"
+      },
+      {
+        "name": "Beijing Institute of Technology",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "Jilin University",
+        "org_type": "university",
+        "normalized_name": "jilin university"
+      },
+      {
+        "name": "Hong Kong Baptist University",
+        "org_type": "university",
+        "normalized_name": "hong kong baptist university"
+      },
+      {
+        "name": "HKBU",
+        "org_type": "university",
+        "normalized_name": "hkbu"
+      },
+      {
+        "name": "University of Waterloo",
+        "org_type": "university",
+        "normalized_name": "university of waterloo"
+      },
+      {
+        "name": "The IEEE Intelligent Informatics Bulletin",
+        "org_type": "journal",
+        "normalized_name": "the ieee intelligent informatics bulletin"
+      },
+      {
+        "name": "University of Technology Sydney",
+        "org_type": "university",
+        "normalized_name": "university of technology sydney"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "Artificial Intelligence",
+        "normalized_name": "artificial intelligence"
+      },
+      {
+        "name": "Machine Learning",
+        "normalized_name": "machine learning"
+      },
+      {
+        "name": "Deep Reinforcement Learning",
+        "normalized_name": "deep reinforcement learning"
+      },
+      {
+        "name": "health care",
+        "normalized_name": "health care"
+      },
+      {
+        "name": "robotics",
+        "normalized_name": "robotics"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph.D.",
+        "field": "Computer Science",
+        "organization_name": "Hong Kong Baptist University",
+        "location": "Hong Kong",
+        "start_text": "",
+        "end_text": "2009",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "Ph. D. in Computer Science from Hong Kong Baptist University, Hong Kong, graduation: 2009."
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "M.Sc.",
+        "field": "Computer Science",
+        "organization_name": "Jilin University",
+        "location": "China",
+        "start_text": "",
+        "end_text": "July, 2004",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "M. Sc. in Computer Science from Jilin University, China, graduation: July, 2004."
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "B.Sc.",
+        "field": "Computer Science",
+        "organization_name": "Jilin University",
+        "location": "",
+        "start_text": "",
+        "end_text": "July, 2001",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "B. Sc. in Computer Science from Jilin University, graduation: July, 2001."
+      },
+      {
+        "kind": "employment",
+        "title": "Assistant Professor",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "",
+        "start_text": "07/2016",
+        "end_text": "present",
+        "is_current": true,
+        "order": 4,
+        "raw_text": "07/2016-- present Assistant Professor, School of Computer Science, Beijing Institute of Technology"
+      },
+      {
+        "kind": "employment",
+        "title": "Assistant Professor",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "",
+        "start_text": "11/2010",
+        "end_text": "06/2016",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "11/2010-- 06/2016 Assistant Professor, School of Computer Science, Beijing Institute of Technology"
+      },
+      {
+        "kind": "employment",
+        "title": "Post-Doctoral Teaching fellow",
+        "degree": "",
+        "field": "",
+        "organization_name": "HKBU",
+        "location": "Hong Kong SAR, China",
+        "start_text": "08/2009",
+        "end_text": "06/2010",
+        "is_current": false,
+        "order": 6,
+        "raw_text": "08/2009-- 06/2010 Post-Doctoral Teaching fellow, Department of Computer Science, HKBU, Hong Kong SAR, China."
+      },
+      {
+        "kind": "employment",
+        "title": "Research Assistant",
+        "degree": "",
+        "field": "",
+        "organization_name": "HKBU",
+        "location": "Hong Kong SAR, China",
+        "start_text": "05/2007",
+        "end_text": "08/2009",
+        "is_current": false,
+        "order": 7,
+        "raw_text": "05/2007-- 08/2009 Research Assistant, Department of Computer Science, HKBU, Hong Kong SAR, China."
+      },
+      {
+        "kind": "employment",
+        "title": "Visiting Scholar",
+        "degree": "",
+        "field": "",
+        "organization_name": "University of Waterloo",
+        "location": "Canada",
+        "start_text": "05/2007",
+        "end_text": "06/2007",
+        "is_current": false,
+        "order": 8,
+        "raw_text": "05/2007--- 06/2007 Visiting Scholar in the David R. Cheriton School of Computer Science, Faculty of Mathematics, University of Waterloo, Canada."
+      },
+      {
+        "kind": "academic_service",
+        "title": "Assistant Managing Editor",
+        "degree": "",
+        "field": "",
+        "organization_name": "The IEEE Intelligent Informatics Bulletin",
+        "location": "",
+        "start_text": "01/2010",
+        "end_text": "12/2018",
+        "is_current": false,
+        "order": 9,
+        "raw_text": "01/2010 --- 12/2018 Assistant Managing Editor, The IEEE Intelligent Informatics Bulletin"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Universal Value Iteration Networks: When Spatially-invariant is Not Universal",
+        "authors_raw": "Li Zhang, Xin Li, etc.",
+        "year": "2020",
+        "venue": "the 34th AAAI Conference on Artificial Intelligence",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Li Zhang, Xin Li, etc., \"Universal Value Iteration Networks: When Spatially-invariant is Not Universal\", the 34th AAAI Conference on Artificial Intelligence (To appear), NYC, Feb. 2020.",
+        "order": 1
+      },
+      {
+        "title": "Structural Representation Learning for User Alignment Across Social Networks",
+        "authors_raw": "Li Liu; Xin Li; William Cheung; Lejian Liao",
+        "year": "2019",
+        "venue": "IEEE Transactions on Knowledge and Data Engineering",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Li Liu; Xin Li; William Cheung; Lejian Liao, \"Structural Representation Learning for User Alignment Across Social Networks\", *IEEE Transactions on Knowledge and Data Engineering*, in Press, 2019.",
+        "order": 2
+      },
+      {
+        "title": "A Vectorized Relational Graph Convolutional Network for Multi-Relational Network Alignment",
+        "authors_raw": "Rui Ye, Xin Li*, et al.",
+        "year": "2019",
+        "venue": "Proceedings of the 28th International Joint Conference on Artificial Intelligence (IJCAI)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Rui Ye, Xin Li*, et al. \"A Vectorized Relational Graph Convolutional Network for Multi-Relational Network Alignment\", in Proceedings of the 28th International Joint Conference on Artificial Intelligence (IJCAI), Pages: 4135-4141, Aug., 2019, Macao, China.",
+        "order": 3
+      },
+      {
+        "title": "Inferring Continuous Latent Preference on Transition Intervals for Next Point-of-Interest Recommendation",
+        "authors_raw": "Jing He, Xin Li*, Lejian Liao, et al.",
+        "year": "2018",
+        "venue": "ECML/PKDD",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Jing He, Xin Li*, Lejian Liao, et al. \"Inferring Continuous Latent Preference on Transition Intervals for Next Point-of-Interest Recommendation\", *ECML/PKDD* (2) 2018: 741-756, Sept. 2018, Dublin, Ireland.",
+        "order": 4
+      },
+      {
+        "title": "Non-translational Alignment for Multi-relational Networks",
+        "authors_raw": "Shengnan Li, Xin Li*, et al.",
+        "year": "2018",
+        "venue": "Proceedings of the 27th International Joint Conference on Artificial Intelligence (IJCAI)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Shengnan Li, Xin Li*, et al. \"Non-translational Alignment for Multi-relational Networks\", in Proceedings of the 27th International Joint Conference on Artificial Intelligence (IJCAI), Pages: 4180-4186, Aug., 2018, Stockholm, Sweden.",
+        "order": 5
+      },
+      {
+        "title": "A Structural Representation Learning for Multi-relational Networks",
+        "authors_raw": "Lin Liu, Xin Li*, William K. Cheung, Chengcheng Xu",
+        "year": "2017",
+        "venue": "Proceedings of the 26th International Joint Conference on Artificial Intelligence (IJCAI)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Lin Liu, Xin Li*, William K. Cheung, Chengcheng Xu, \"A Structural Representation Learning for Multi-relational Networks\", in Proceedings of the 26th International Joint Conference on Artificial Intelligence (IJCAI), Pages: 4047-4053, Aug., 2017, Melbourne, Australia.",
+        "order": 6
+      },
+      {
+        "title": "Category-aware Next Point-of-Interest Recommendation via Listwise Bayesian Personalized Ranking",
+        "authors_raw": "Jing He, Xin Li*, Léjian Liao",
+        "year": "2017",
+        "venue": "Proceedings of the 26th International Joint Conference on Artificial Intelligence (IJCAI)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Jing He, Xin Li*, Léjian Liao, \"Category-aware Next Point-of-Interest Recommendation via Listwise Bayesian Personalized Ranking\", in Proceedings of the 26th International Joint Conference on Artificial Intelligence (IJCAI), Pages: 1837-1843, Aug., 2017, Melbourne, Australia.",
+        "order": 7
+      },
+      {
+        "title": "Aligning Users Across Social Networks Using Network Embedding",
+        "authors_raw": "Li Liu, William K. Cheung, Xin Li*, Léjian Liao",
+        "year": "2016",
+        "venue": "Proceedings of the 25th International Joint Conference on Artificial Intelligence (IJCAI)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Li Liu, William K. Cheung, Xin Li*, Léjian Liao, \"Aligning Users Across Social Networks Using Network Embedding\", in Proceedings of the 25th International Joint Conference on Artificial Intelligence (IJCAI), July, 2016, New City, USA.",
+        "order": 8
+      },
+      {
+        "title": "Inferring A Personalized Next Point-of-Interest Recommendation Model with Latent Behavior Patterns",
+        "authors_raw": "Jing He, Xin Li*, Léjian Liao, Dandan Song, William K. Cheung",
+        "year": "2016",
+        "venue": "Proceedings of AAAI Conference on Artificial Intelligence (AAAI)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Jing He, Xin Li*, Léjian Liao, Dandan Song, William K. Cheung, Inferring A Personalized Next Point-of-Interest Recommendation Model with Latent Behavior Patterns, in Proceedings of AAAI Conference on Artificial Intelligence (AAAI), Pages: 137-143, February, 2016, Phoenix, Arizona USA.",
+        "order": 9
+      },
+      {
+        "title": "A Novel Orthogonal NMF-Based Belief Compression for POMDPs",
+        "authors_raw": "Xin Li*, William K. Cheung, Jiming Liu, Zhili Wu",
+        "year": "2007",
+        "venue": "Proceedings of 24th International Conference on Machine Learning (ICML)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Xin Li*, William K. Cheung, Jiming Liu, Zhili Wu, \"A Novel Orthogonal NMF-Based Belief Compression for POMDPs\", in Proceedings of 24th International Conference on Machine Learning (ICML), Pages: 537 -544 Corvallis, OR, US, 2007.",
+        "order": 10
+      }
+    ],
+    "awards": [],
+    "warnings": [
+      "Ignored the instruction-only publication heading 'Please list 5 representative publications'.",
+      "The biography text contains a mention of a visiting scholar role at University of Technology Sydney in 2018, but no corresponding experience item was found in the structured 'Working Experience' or 'Part-time Academic Jobs' sections. It was not extracted.",
+      "The biography text mentions 'associate professor' as current title, but the structured 'Working Experience' lists 'Assistant Professor' from 2016-present. The title from the biography is used for the professor.title field.",
+      "The biography text mentions a postdoctoral teaching fellow role from 2009-2010, which is also listed in the structured 'Working Experience' section. The structured entry was used.",
+      "The biography text mentions a (senior) visiting scholar at University of Waterloo in 2007, which is also listed in the structured 'Working Experience' section. The structured entry was used.",
+      "The biography text mentions a PhD degree in 2009, which is also listed in the structured 'Educational Background' section. The structured entry was used.",
+      "The biography text mentions B.Sc. and M.S. degrees from Jilin University, which are also listed in the structured 'Educational Background' section. The structured entries were used.",
+      "The organization 'HKBU' is assumed to be the same as 'Hong Kong Baptist University' but kept separate as the raw text differs.",
+      "The organization 'University of Technology Sydney' was only mentioned in the biography text, not in a structured experience section. It was added to the organizations list."
+    ]
+  }
+}

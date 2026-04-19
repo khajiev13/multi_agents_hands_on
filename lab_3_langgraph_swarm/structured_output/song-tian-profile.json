@@ -1,0 +1,233 @@
+{
+  "metadata": {
+    "name": "SONG Tian",
+    "slug": "song-tian",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113067.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/song-tian-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "SONG Tian",
+      "aliases": [
+        "SONG Tian",
+        "茅天",
+        "Song Tian"
+      ],
+      "title": "副教授",
+      "school_name": "计算机学院",
+      "discipline": "计算机科学与技术",
+      "biography_text": "",
+      "emails": [
+        "songtian@bit.edu.cn"
+      ],
+      "phones": [
+        "010-68913536"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "清华大学计算机系",
+        "org_type": "school",
+        "normalized_name": "tsinghua university department of computer science and technology"
+      },
+      {
+        "name": "Tsinghua University",
+        "org_type": "university",
+        "normalized_name": "tsinghua university"
+      },
+      {
+        "name": "Washington University in St. Louis",
+        "org_type": "university",
+        "normalized_name": "washington university in st louis"
+      },
+      {
+        "name": "北京理工大学计算机学院",
+        "org_type": "school",
+        "normalized_name": "beijing institute of technology school of computer science"
+      },
+      {
+        "name": "Beijing Institute of Technology",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "IEEE",
+        "org_type": "association",
+        "normalized_name": "ieee"
+      },
+      {
+        "name": "ACM",
+        "org_type": "association",
+        "normalized_name": "acm"
+      },
+      {
+        "name": "CCF",
+        "org_type": "association",
+        "normalized_name": "ccf"
+      },
+      {
+        "name": "Stanford University",
+        "org_type": "university",
+        "normalized_name": "stanford university"
+      },
+      {
+        "name": "ACM Symposium on Architectures for Netw. & Comm.",
+        "org_type": "conference",
+        "normalized_name": "acm symposium on architectures for networking and communications"
+      },
+      {
+        "name": "ACM COMPUTER COMMUNICATION REVIEW",
+        "org_type": "journal",
+        "normalized_name": "acm computer communication review"
+      },
+      {
+        "name": "Peer-to-Peer Networking and Applications",
+        "org_type": "journal",
+        "normalized_name": "peer to peer networking and applications"
+      },
+      {
+        "name": "International Conference on Computer Communications and Networks",
+        "org_type": "conference",
+        "normalized_name": "international conference on computer communications and networks"
+      },
+      {
+        "name": "IEEE Conference on Computer Communications",
+        "org_type": "conference",
+        "normalized_name": "ieee conference on computer communications"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "Network Architecture and Protocol",
+        "normalized_name": "network architecture and protocol"
+      },
+      {
+        "name": "Network and Information Security",
+        "normalized_name": "network and information security"
+      },
+      {
+        "name": "Microprocessor and System Architecture",
+        "normalized_name": "microprocessor and system architecture"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph.D.",
+        "field": "Computer Science and Technology",
+        "organization_name": "Tsinghua University",
+        "location": "",
+        "start_text": "2002.9",
+        "end_text": "2008.1",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "2002.9 - 2008.1 清华大学计算机系获博士学位 (Tsinghua University, Ph.D. from Department of Computer Science and Technology)."
+      },
+      {
+        "kind": "education",
+        "title": "Visiting Scholar",
+        "degree": "",
+        "field": "",
+        "organization_name": "Washington University in St. Louis",
+        "location": "",
+        "start_text": "2011.9",
+        "end_text": "2013.7",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "2011.9 - 2013.7 华盛顿大学计算机科学与工程系访问学者 (Visiting Scholar, Washington University in St. Louis, Department of Computer Science and Engineering)"
+      },
+      {
+        "kind": "employment",
+        "title": "",
+        "degree": "",
+        "field": "",
+        "organization_name": "北京理工大学计算机学院",
+        "location": "",
+        "start_text": "2008.1",
+        "end_text": "至今",
+        "is_current": true,
+        "order": 3,
+        "raw_text": "2008.1 至今北京理工大学计算机学院 (2008.1 Till now, Beijing Institute of Technology)"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Fine-grained power scaling algorithms for energy efficient routers",
+        "authors_raw": "",
+        "year": "2014",
+        "venue": "ACM Symposium on Architectures for Netw. & Comm. (ANCS)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Fine-grained power scaling algorithms for energy efficient routers, ACM Symposium on Architectures for Netw. & Comm. (ANCS) 2014.10",
+        "order": 1
+      },
+      {
+        "title": "A Frequency Adjustment Architecture for Energy Efficient Router",
+        "authors_raw": "",
+        "year": "2012",
+        "venue": "ACM COMPUTER COMMUNICATION REVIEW",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "A Frequency Adjustment Architecture for Energy Efficient Router,ACM COMPUTER COMMUNICATION REVIEW, 2012.10",
+        "order": 2
+      },
+      {
+        "title": "File-aware P2P Traffic Classification: an Aid to Network Management",
+        "authors_raw": "",
+        "year": "2012",
+        "venue": "Peer-to-Peer Networking and Applications",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "File-aware P2P Traffic Classification: an Aid to Network Management, Peer-to-Peer Networking and Applications, Oct. 2012",
+        "order": 3
+      },
+      {
+        "title": "Scalable NDN Forwarding: Concepts, Issues, and Principles",
+        "authors_raw": "",
+        "year": "2012",
+        "venue": "Proceedings of the 21th International Conference on Computer Communications and Networks (ICCCN)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Scalable NDN Forwarding: Concepts, Issues, and Principles, Proceedings of the 21th International Conference on Computer Communications and Networks (ICCCN), Munich, Germany, July 30-Aug.2 2012.Best Paper Award",
+        "order": 4
+      },
+      {
+        "title": "A Memory Efficient Multiple Pattern Matching Architecture for Network Security",
+        "authors_raw": "",
+        "year": "2008",
+        "venue": "Proceedings of the 27th IEEE Conference on Computer Communications (INFOCOM)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "A Memory Efficient Multiple Pattern Matching Architecture for Network Security, Proceedings of the 27th IEEE Conference on Computer Communications (INFOCOM), Phoenix, AZ, USA, Apr. 15-17 2008. pp.673-681.",
+        "order": 5
+      }
+    ],
+    "awards": [
+      {
+        "name": "Gold Medal in 2012 NetFPGA Design Competition (Clean Slate Program) at Stanford University",
+        "year": "2012",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "2012.8, Gold Medalin 2012 NetFPGA Design Competition (Clean Slate Program) at Stanford University.",
+        "order": 1
+      },
+      {
+        "name": "Best Paper Award",
+        "year": "2012",
+        "granting_org_name": "ICCCN",
+        "level": "",
+        "raw_text": "2012. 8, Best Paper Awardin ICCCN 2012",
+        "order": 2
+      }
+    ],
+    "warnings": [
+      "Ignored the instruction-only publication heading because it did not list concrete items.",
+      "The 'Visiting Scholar' experience is categorized as 'education' based on the section heading 'Educational Background', but its role is a title. The raw text is preserved.",
+      "The 'IEEE/ACM Member, CCF Advanced Member' entry under '学术兼职(Part-time Academic Jobs)' was not parsed into an experience due to ambiguous organization and role separation.",
+      "Publication [4] includes 'Best Paper Award' in its raw text, which is already captured as a separate award."
+    ]
+  }
+}

@@ -22,13 +22,13 @@ Use only database evidence returned by the tools. If the graph does not contain 
 say that clearly instead of guessing.
 
 Current graph conventions:
-- Most nodes use the label `Entity`.
-- The primary text field is `name`.
-- Root professor nodes carry `professor_name` and `detail_url`.
-- Nodes and relationships may carry `source_professors`, which list the professor
-  dossiers that contributed the fact.
-- Relationship types are normalized uppercase versions of the original predicate.
-- The original natural-language predicate is also stored on each relationship as `predicate`.
+- Professors use the label `Professor` with fields like `name`, `aliases`, `detail_url`,
+  `title`, `school_name`, `discipline`, `emails`, and `phones`.
+- Related typed labels include `Organization`, `ResearchTopic`, `Experience`,
+  `Publication`, and `Award`.
+- Common relationship types include `AFFILIATED_WITH`, `HAS_RESEARCH_INTEREST`,
+  `HAS_EXPERIENCE`, `AUTHORED`, `RECEIVED`, `AT`, and `GRANTED_BY`.
+- This is a typed professor graph, not a generic `Entity` graph.
 
 Working style:
 1. Inspect the schema first when the shape of the graph is uncertain.

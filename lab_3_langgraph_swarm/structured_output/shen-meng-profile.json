@@ -1,0 +1,248 @@
+{
+  "metadata": {
+    "name": "SHEN Meng",
+    "slug": "shen-meng",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113070.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/shen-meng-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "SHEN Meng",
+      "aliases": [
+        "SHEN Meng",
+        "沈蒙",
+        "Meng SHEN"
+      ],
+      "title": "讲师(Assistant Professor)",
+      "school_name": "计算机(Computer Science)",
+      "discipline": "计算机科学与技术 (Computer science & technology)",
+      "biography_text": "本人于 2009 年和 2014 年分别在山东大学和清华大学获得工学学士和博士学位，均为计算机科学与技术专业。 Dr. Meng SHEN received a B.Eng degree from Shandong University, Jinan, China in 2009, and a Ph.D degree from Tsinghua University, Beijing, China in 2014, all in Computer Science and Technology. 曾作为访问学者访问英国埃塞克斯大学，美国麻省州立大学，西班牙加泰罗尼亚理工大学。 Dr. Meng SHEN was a visiting scholar at University of Essex, UK, University of Massachusetts at Amherst, US, and Universitat Politècnica de Catalunya (UPC), Spain. IEEE 会员, ACM 会员, CCF 会员。担任 IEEE TPDS, IEEE Network Magazine, IEEE Globecom 等多个国际期刊和会议审稿人。 IEEE Member, ACM member, CCF (China Computer Federation) Member. Serve as reviewers for multiple international conferences, journals and transactions such as IEEE TPDS, IEEE Network Magazine, IEEE Globecom.",
+      "emails": [
+        "shenmeng@bit.edu.cn"
+      ],
+      "phones": [
+        "15210362001"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "计算机(Computer Science)",
+        "org_type": "school",
+        "normalized_name": "computer science"
+      },
+      {
+        "name": "Shandong University",
+        "org_type": "university",
+        "normalized_name": "shandong university"
+      },
+      {
+        "name": "Tsinghua University",
+        "org_type": "university",
+        "normalized_name": "tsinghua university"
+      },
+      {
+        "name": "University of Essex",
+        "org_type": "university",
+        "normalized_name": "university of essex"
+      },
+      {
+        "name": "University of Massachusetts at Amherst",
+        "org_type": "university",
+        "normalized_name": "university of massachusetts at amherst"
+      },
+      {
+        "name": "Universitat Politècnica de Catalunya (UPC)",
+        "org_type": "university",
+        "normalized_name": "universitat polit cnica de catalunya upc"
+      },
+      {
+        "name": "IEEE",
+        "org_type": "association",
+        "normalized_name": "ieee"
+      },
+      {
+        "name": "ACM",
+        "org_type": "association",
+        "normalized_name": "acm"
+      },
+      {
+        "name": "CCF (China Computer Federation)",
+        "org_type": "association",
+        "normalized_name": "ccf china computer federation"
+      },
+      {
+        "name": "IEEE TPDS, IEEE Network Magazine, IEEE Globecom",
+        "org_type": "unknown",
+        "normalized_name": "ieee tpds ieee network magazine ieee globecom"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "网络虚拟化(network virtualization)",
+        "normalized_name": "network virtualization"
+      },
+      {
+        "name": "无线网络与移动计算 (wireless network and mobile computing)",
+        "normalized_name": "wireless network and mobile computing"
+      },
+      {
+        "name": "前沿通信技术 (emerging communication technologies)",
+        "normalized_name": "emerging communication technologies"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "B.Eng",
+        "field": "Computer Science and Technology",
+        "organization_name": "Shandong University",
+        "location": "Jinan, China",
+        "start_text": "",
+        "end_text": "2009",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "Dr. Meng SHEN received a B.Eng degree from Shandong University, Jinan, China in 2009, and a Ph.D degree from Tsinghua University, Beijing, China in 2014, all in Computer Science and Technology."
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph.D",
+        "field": "Computer Science and Technology",
+        "organization_name": "Tsinghua University",
+        "location": "Beijing, China",
+        "start_text": "",
+        "end_text": "2014",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "Dr. Meng SHEN received a B.Eng degree from Shandong University, Jinan, China in 2009, and a Ph.D degree from Tsinghua University, Beijing, China in 2014, all in Computer Science and Technology."
+      },
+      {
+        "kind": "employment",
+        "title": "visiting scholar",
+        "degree": "",
+        "field": "",
+        "organization_name": "University of Essex",
+        "location": "UK",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "Dr. Meng SHEN was a visiting scholar at University of Essex, UK, University of Massachusetts at Amherst, US, and Universitat Politècnica de Catalunya (UPC), Spain."
+      },
+      {
+        "kind": "employment",
+        "title": "visiting scholar",
+        "degree": "",
+        "field": "",
+        "organization_name": "University of Massachusetts at Amherst",
+        "location": "US",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 4,
+        "raw_text": "Dr. Meng SHEN was a visiting scholar at University of Essex, UK, University of Massachusetts at Amherst, US, and Universitat Politècnica de Catalunya (UPC), Spain."
+      },
+      {
+        "kind": "employment",
+        "title": "visiting scholar",
+        "degree": "",
+        "field": "",
+        "organization_name": "Universitat Politècnica de Catalunya (UPC)",
+        "location": "Spain",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "Dr. Meng SHEN was a visiting scholar at University of Essex, UK, University of Massachusetts at Amherst, US, and Universitat Politècnica de Catalunya (UPC), Spain."
+      },
+      {
+        "kind": "academic_service",
+        "title": "reviewer",
+        "degree": "",
+        "field": "",
+        "organization_name": "IEEE TPDS, IEEE Network Magazine, IEEE Globecom",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 6,
+        "raw_text": "Serve as reviewers for multiple international conferences, journals and transactions such as IEEE TPDS, IEEE Network Magazine, IEEE Globecom."
+      }
+    ],
+    "publications": [
+      {
+        "title": "A Model Approach to the Estimation of Peer-to-Peer Traffic Matrices",
+        "authors_raw": "Ke Xu, Meng Shen, Yong Cui, et al.",
+        "year": "2014",
+        "venue": "IEEE Transactions on Parallel and Distributed Systems (TPDS)",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[1] Ke Xu, Meng Shen, Yong Cui, et al., \"A Model Approach to the Estimation of Peer-to-Peer Traffic Matrices,\" IEEE Transactions on Parallel and Distributed Systems (TPDS), vol. 25, no. 5, pp. 1101-1111, May 2014. (SCI, IF: 1.792)",
+        "order": 1
+      },
+      {
+        "title": "Towards Efficient Virtual Network Embedding Across Multiple Network Domains",
+        "authors_raw": "Meng Shen, Ke Xu, Kun Yang, et al.",
+        "year": "2014",
+        "venue": "IEEE/ACM IWQoS",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[2] Meng Shen, Ke Xu, Kun Yang, et al., \"Towards Efficient Virtual Network Embedding Across Multiple Network Domains,\" IEEE/ACM IWQoS 2014.",
+        "order": 2
+      },
+      {
+        "title": "Routing On Demand: Toward the Energy-Aware Traffic Engineering with OSPF",
+        "authors_raw": "Meng Shen, Hongying Liu, Ke Xu, et al.",
+        "year": "2012",
+        "venue": "IFIP/TC6 Networking",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[3] Meng Shen, Hongying Liu, Ke Xu, et al., \"Routing On Demand: Toward the Energy-Aware Traffic Engineering with OSPF,\" IFIP/TC6 Networking, pp. 232-246, May 2012.",
+        "order": 3
+      },
+      {
+        "title": "A Model Approach to Estimate Peer-to-Peer Traffic Matrices",
+        "authors_raw": "Ke Xu, Meng Shen, and Mingjiang Ye",
+        "year": "2011",
+        "venue": "IEEE INFOCOM",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[4] Ke Xu, Meng Shen, and Mingjiang Ye, \"A Model Approach to Estimate Peer-to-Peer Traffic Matrices,\" IEEE INFOCOM, pp. 676-684, April 2011.",
+        "order": 4
+      },
+      {
+        "title": "One More Weight is Enough: Toward the Optimal Traffic Engineering with OSPF",
+        "authors_raw": "Ke Xu, Hongying Liu, Jiangchuan Liu, and Meng Shen",
+        "year": "2011",
+        "venue": "IEEE ICDCS",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[5] Ke Xu, Hongying Liu, Jiangchuan Liu, and Meng Shen, \"One More Weight is Enough: Toward the Optimal Traffic Engineering with OSPF,\" IEEE ICDCS, pp. 836-846, June 2011.",
+        "order": 5
+      }
+    ],
+    "awards": [
+      {
+        "name": "Outstanding Graduate Award",
+        "year": "2014",
+        "granting_org_name": "Dept. Computer Science, Tsinghua University",
+        "level": "",
+        "raw_text": "2014 年清华大学计算机系优秀毕业生 Outstanding Graduate Award of Dept. Computer Science, Tsinghua University, 2014",
+        "order": 1
+      }
+    ],
+    "warnings": [
+      "The OCR contains a stray line '姓名(Name): - 职称(title): - 2013中 - 大会' which appears to be noise and was ignored.",
+      "The professor's name is listed as '沈蒙 (Meng SHEN)' in the OCR, but the listing metadata uses 'SHEN Meng'. Both forms have been added as aliases.",
+      "The school name is given as '计算机(Computer Science)' and the discipline as '计算机科学与技术 (Computer science & technology)'. The discipline field contains both Chinese and English text.",
+      "The academic service entry for reviewer lists multiple venues as a single organization string. This has been preserved as-is.",
+      "The education entries do not specify start years, only end years.",
+      "The visiting scholar employment entries do not specify start or end dates.",
+      "The award 'Outstanding Graduate Award' does not specify a level.",
+      "Publication entries do not contain DOIs or URLs."
+    ]
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "metadata": {
+    "name": "GAO Guangyu",
+    "slug": "gao-guangyu",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121634.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/gao-guangyu-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "GAO Guangyu",
+      "aliases": [
+        "GAO Guangyu",
+        "高广宇",
+        "Gao Guangyu"
+      ],
+      "title": "讲师",
+      "school_name": "软件学院（School of Software）",
+      "discipline": "软件工程(Software Engineering)",
+      "biography_text": "",
+      "emails": [
+        "guangyu.ryan@gmail.com",
+        "guangyugao@bit.edu.cn"
+      ],
+      "phones": [
+        "18911129899"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "School of Software",
+        "org_type": "school",
+        "normalized_name": "school of software"
+      },
+      {
+        "name": "National University of Singapore",
+        "org_type": "university",
+        "normalized_name": "national university of singapore"
+      },
+      {
+        "name": "Beijing University Of Posts and Telecommunications",
+        "org_type": "university",
+        "normalized_name": "beijing university of posts and telecommunications"
+      },
+      {
+        "name": "Zhengzhou University",
+        "org_type": "university",
+        "normalized_name": "zhengzhou university"
+      },
+      {
+        "name": "Beijing Institute of Technology",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "IEEE Trans. On Multimedia, Neurocomputing etc.",
+        "org_type": "journal",
+        "normalized_name": "ieee trans on multimedia neurocomputing etc"
+      },
+      {
+        "name": "IEEE, ACM and CCF",
+        "org_type": "association",
+        "normalized_name": "ieee acm and ccf"
+      },
+      {
+        "name": "CRC Press, Taylor & Francis Group",
+        "org_type": "company",
+        "normalized_name": "crc press taylor francis group"
+      },
+      {
+        "name": "IEEE Transactions on Circuits and Video Technology",
+        "org_type": "journal",
+        "normalized_name": "ieee transactions on circuits and video technology"
+      },
+      {
+        "name": "IEEE Transactions on Multimedia",
+        "org_type": "journal",
+        "normalized_name": "ieee transactions on multimedia"
+      },
+      {
+        "name": "Journal of Computer Science and Technology",
+        "org_type": "journal",
+        "normalized_name": "journal of computer science and technology"
+      },
+      {
+        "name": "Journal of Multimedia Tools and Applications",
+        "org_type": "journal",
+        "normalized_name": "journal of multimedia tools and applications"
+      },
+      {
+        "name": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "org_type": "journal",
+        "normalized_name": "ieee transactions on pattern analysis and machine intelligence"
+      },
+      {
+        "name": "Pacific-Rim Conference on Multimedia",
+        "org_type": "conference",
+        "normalized_name": "pacific rim conference on multimedia"
+      },
+      {
+        "name": "IEEE International Conference on Ubiquitous Intelligence and Computing",
+        "org_type": "conference",
+        "normalized_name": "ieee international conference on ubiquitous intelligence and computing"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "Computer Vision",
+        "normalized_name": "computer vision"
+      },
+      {
+        "name": "Multimedia",
+        "normalized_name": "multimedia"
+      },
+      {
+        "name": "Big Data & Cloud Computing",
+        "normalized_name": "big data cloud computing"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Joint PhD.",
+        "field": "Electro. and Computer Eng.",
+        "organization_name": "National University of Singapore",
+        "location": "",
+        "start_text": "2012/7",
+        "end_text": "2013/4",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "2012/7-2013/4 National University of Singapore(Electro. and Computer Eng.) Joint PhD."
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "PhD.",
+        "field": "Computer Science",
+        "organization_name": "Beijing University Of Posts and Telecommunications",
+        "location": "",
+        "start_text": "2007/9",
+        "end_text": "2013/7",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "2007/9-2013/7 Beijing University Of Posts and Telecommunications(Computer Science) PhD."
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Bachelor",
+        "field": "Computer Science and Technology",
+        "organization_name": "Zhengzhou University",
+        "location": "",
+        "start_text": "2003/9",
+        "end_text": "2007/6",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "2003/9-2007/6 Zhengzhou University(Computer Science and Technology) Bachelor"
+      },
+      {
+        "kind": "employment",
+        "title": "",
+        "degree": "",
+        "field": "",
+        "organization_name": "School of Software, Beijing Institute of Technology",
+        "location": "",
+        "start_text": "2013/10",
+        "end_text": "Present",
+        "is_current": true,
+        "order": 4,
+        "raw_text": "2013/10-Present School of Software, Beijing Institute of Technology"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Reviewer",
+        "degree": "",
+        "field": "",
+        "organization_name": "IEEE Trans. On Multimedia, Neurocomputing etc.",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "Reviewer of IEEE Trans. On Multimedia, Neurocomputing etc."
+      },
+      {
+        "kind": "academic_service",
+        "title": "Member",
+        "degree": "",
+        "field": "",
+        "organization_name": "IEEE, ACM and CCF",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 6,
+        "raw_text": "Member of IEEE, ACM and CCF."
+      }
+    ],
+    "publications": [
+      {
+        "title": "Video Summarization: Structure Parsing and Content Extraction",
+        "authors_raw": "G. Gao and C. H. Liu",
+        "year": "2015",
+        "venue": "CRC Press, Taylor & Francis Group",
+        "publication_type": "book",
+        "doi_or_url": "",
+        "raw_text": "G. Gao and C. H. Liu \"Video Summarization: Structure Parsing and Content Extraction\", Publisher: CRC Press, Taylor & Francis Group (2015). Language: English, ISBN-10: 1482235773, ISBN-13: 978-1482235777.",
+        "order": 1
+      },
+      {
+        "title": "Cast2Face: Assigning Character Names onto Faces in Movie with Actor-Character Correspondence",
+        "authors_raw": "Guangyu Gao, Mengdi Xu, Jialie Shen, Huadong Ma and Shuicheng Yan",
+        "year": "2015",
+        "venue": "IEEE Transactions on Circuits and Video Technology (TCSVT)",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Guangyu Gao, Mengdi Xu, Jialie Shen, Huadong Ma and Shuicheng Yan. Cast2Face: Assigning Character Names onto Faces in Movie with Actor-Character Correspondence. IEEE Transactions on Circuits and Video Technology (TCSVT). 2015.",
+        "order": 2
+      },
+      {
+        "title": "Adaptive Learning for Celebrity Identification with Video Context",
+        "authors_raw": "Chao Xiong, Guangyu Gao(Equal Contribution), Zhengjun Zha, Shuicheng Yan, Huadong Ma, Tae-Kyun Kim",
+        "year": "2014",
+        "venue": "IEEE Transactions on Multimedia (TMM)",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Chao Xiong, Guangyu Gao(Equal Contribution), Zhengjun Zha, Shuicheng Yan, Huadong Ma, Tae-Kyun Kim. Adaptive Learning for Celebrity Identification with Video Context. IEEE Transactions on Multimedia (TMM). 2014.",
+        "order": 3
+      },
+      {
+        "title": "Movie Scene Recognition Using Panoramic Frame and Representative Feature Patches",
+        "authors_raw": "Guangyu Gao, Huadong Ma",
+        "year": "2014",
+        "venue": "Journal of Computer Science and Technology",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Guangyu Gao, Huadong Ma. Movie Scene Recognition Using Panoramic Frame and Representative Feature Patches. Journal of Computer Science and Technology. Journal of Computer Science and Technology 2014.",
+        "order": 4
+      },
+      {
+        "title": "To Accelerate Shot Boundary Detection by Reducing Detection Region and Scope",
+        "authors_raw": "Guangyu Gao and Huadong Ma",
+        "year": "2014",
+        "venue": "Journal of Multimedia Tools and Applications (MTAP)",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Guangyu Gao and Huadong Ma. To Accelerate Shot Boundary Detection by Reducing Detection Region and Scope. Journal of Multimedia Tools and Applications (MTAP). 2014.",
+        "order": 5
+      },
+      {
+        "title": "Batch-Orthogonal Locality-Sensitive Hashing for Angular Similarity",
+        "authors_raw": "Jianqiu Ji, Shuicheng Yan, Jianmin Li, Guangyu Gao, Qi Tian and Bo Zhang",
+        "year": "2014",
+        "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Jianqiu Ji, Shuicheng Yan, Jianmin Li, Guangyu Gao, Qi Tian and Bo Zhang. Batch-Orthogonal Locality-Sensitive Hashing for Angular Similarity. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI). 2014.",
+        "order": 6
+      },
+      {
+        "title": "A Robust Vedio Text Extraction and Recognition Approach using OCR Feedback Information",
+        "authors_raw": "Guangyu Gao, He Zhang, Hongting Chen",
+        "year": "2015",
+        "venue": "Pacific-Rim Conference on Multimedia",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Guangyu Gao, He Zhang, Hongting Chen. A Robust Vedio Text Extraction and Recognition Approach using OCR Feedback Information. Pacific-Rim Conference on Multimedia 2015.",
+        "order": 7
+      },
+      {
+        "title": "The Future of Smart Dressing Mirror",
+        "authors_raw": "Guangyu Gao, Chenchen Bai, Wei Zheng and Chi Harold Liu",
+        "year": "2015",
+        "venue": "IEEE International Conference on Ubiquitous Intelligence and Computing (UIC 2015)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Guangyu Gao, Chenchen Bai, Wei Zheng and Chi Harold Liu. The Future of Smart Dressing Mirror. In the 12th IEEE International Conference on Ubiquitous Intelligence and Computing (UIC 2015).",
+        "order": 8
+      }
+    ],
+    "awards": [
+      {
+        "name": "Electronic Information& Science Tech. Prize",
+        "year": "2011",
+        "granting_org_name": "Chinese Institute of Electronics",
+        "level": "The 1st Prize",
+        "raw_text": "传媒业务协同处理关键技术及应用 2011 年度中国电子学会电子信息科学技术奖一等奖",
+        "order": 1
+      }
+    ],
+    "warnings": [
+      "Ignored the instruction-only publication heading '请列举5篇左右代表性论文或著作。(Please list 5 representative publications)' as it did not list concrete items.",
+      "The award raw text contains both Chinese and English descriptions; the English description was used for the name and granting organization, but the year was taken from the Chinese text.",
+      "The professor's title is listed as '讲师' and 'Lecture' (likely a translation error for 'Lecturer'). The Chinese value '讲师' is used.",
+      "The employment experience lacks a specific job title; only the organization is recorded.",
+      "The academic service entries for 'Reviewer' and 'Member' have organization names taken directly from the raw text, which may contain lists (e.g., 'IEEE, ACM and CCF')."
+    ]
+  }
+}

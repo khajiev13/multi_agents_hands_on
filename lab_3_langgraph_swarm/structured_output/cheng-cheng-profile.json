@@ -1,0 +1,253 @@
+{
+  "metadata": {
+    "name": "CHENG Cheng",
+    "slug": "cheng-cheng",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113065.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/cheng-cheng-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "CHENG Cheng",
+      "aliases": [
+        "CHENG Cheng",
+        "程成",
+        "Cheng Cheng"
+      ],
+      "title": "副教授",
+      "school_name": "计算机",
+      "discipline": "计算机科学与技术",
+      "biography_text": "",
+      "emails": [
+        "guoguocheng@vip.sina.com",
+        "cc@bit.edu.cn"
+      ],
+      "phones": [
+        "13011008553"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "Institute of Software, Chinese Academy of Sciences",
+        "org_type": "laboratory",
+        "normalized_name": "institute of software chinese academy of sciences"
+      },
+      {
+        "name": "Department of Computer Science, Shandong University",
+        "org_type": "school",
+        "normalized_name": "department of computer science shandong university"
+      },
+      {
+        "name": "Department of Computer Science, Nankai University",
+        "org_type": "school",
+        "normalized_name": "department of computer science nankai university"
+      },
+      {
+        "name": "Department of Computer Science and Technology, Beijing Institute of Technology",
+        "org_type": "school",
+        "normalized_name": "department of computer science and technology beijing institute of technology"
+      },
+      {
+        "name": "Hainan zhongshang Futures Exchange",
+        "org_type": "company",
+        "normalized_name": "hainan zhongshang futures exchange"
+      },
+      {
+        "name": "TianLong photoelectric company",
+        "org_type": "company",
+        "normalized_name": "tianlong photoelectric company"
+      },
+      {
+        "name": "QingQi Motorcycle group company",
+        "org_type": "company",
+        "normalized_name": "qingqi motorcycle group company"
+      },
+      {
+        "name": "China Computer Science Federation Technical Committee on Human-Computer Interaction",
+        "org_type": "association",
+        "normalized_name": "china computer science federation technical committee on human computer interaction"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "人机交互",
+        "normalized_name": "human computer interaction"
+      },
+      {
+        "name": "虚拟环境",
+        "normalized_name": "virtual environments"
+      },
+      {
+        "name": "虚拟制造",
+        "normalized_name": "virtual manufacturing"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph.D.",
+        "field": "Human Computer Interaction",
+        "organization_name": "Institute of Software, Chinese Academy of Sciences",
+        "location": "Beijing, China",
+        "start_text": "1999/9",
+        "end_text": "2003/2",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "1999/9-2003/2: - Human Computer Interaction, Ph.D. degree of Computer Science at the Institute of Software, Chinese Academy of Sciences, Beijing, China;"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Master",
+        "field": "Computer graphics and CAD",
+        "organization_name": "Department of Computer Science, Shandong University",
+        "location": "Jinan, China",
+        "start_text": "1996/9",
+        "end_text": "1999/7",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "1996/9-1999/7: - Computer graphics and CAD, Master degree of Computer Science at the Department of Computer Science, Shandong University, Jinan, China;"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Bachelor",
+        "field": "Control Theory",
+        "organization_name": "Department of Computer Science, Nankai University",
+        "location": "Tianjin, China",
+        "start_text": "1984/9",
+        "end_text": "1988/7",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "1984/9-1988/7: - Control Theory, Bachelor degree at the Department of Computer Science, Nankai University, Tianjin, China;"
+      },
+      {
+        "kind": "employment",
+        "title": "Associate Professor",
+        "degree": "",
+        "field": "",
+        "organization_name": "Department of Computer Science and Technology, Beijing Institute of Technology",
+        "location": "",
+        "start_text": "2003/3",
+        "end_text": "now",
+        "is_current": true,
+        "order": 4,
+        "raw_text": "2003/3-now: - Associate Professor in the Department of Computer Science and Technology, Beijing Institute of Technology;"
+      },
+      {
+        "kind": "employment",
+        "title": "Computer system engineer",
+        "degree": "",
+        "field": "",
+        "organization_name": "Hainan zhongshang Futures Exchange",
+        "location": "",
+        "start_text": "1994/7",
+        "end_text": "1996/7",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "1994/7-1996/7: - Computer system engineer in Hainan zhongshang Futures Exchange;"
+      },
+      {
+        "kind": "employment",
+        "title": "Computer engineer and system developer",
+        "degree": "",
+        "field": "",
+        "organization_name": "TianLong photoelectric company",
+        "location": "",
+        "start_text": "1992/7",
+        "end_text": "1994/7",
+        "is_current": false,
+        "order": 6,
+        "raw_text": "1992/7-1994/7: - Computer engineer and system developer in TianLong photoelectric company;"
+      },
+      {
+        "kind": "employment",
+        "title": "Mechanical and electronic engineer",
+        "degree": "",
+        "field": "",
+        "organization_name": "QingQi Motorcycle group company",
+        "location": "Jinan, China",
+        "start_text": "1988/7",
+        "end_text": "1992/7",
+        "is_current": false,
+        "order": 7,
+        "raw_text": "1988/7-1992/7: - Mechanical and electronic engineer in QingQi Motorcycle group company, Jinan, China;"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Member",
+        "degree": "",
+        "field": "",
+        "organization_name": "China Computer Science Federation Technical Committee on Human-Computer Interaction",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 8,
+        "raw_text": "Member of China Computer Science Federation Technical Committee on Human-Computer Interaction."
+      }
+    ],
+    "publications": [
+      {
+        "title": "Human Knowledge Acquisition from 3D Interaction in Virtual Environments",
+        "authors_raw": "CHENG Cheng, Jiang Ru,Dong Xuemei",
+        "year": "2012",
+        "venue": "SCIENCE CHINA Information Sciences",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[1] CHENG Cheng, Jiang Ru,Dong Xuemei, Human Knowledge Acquisition from 3D Interaction in Virtual Environments, SCIENCE CHINA Information Sciences, Vol.55 No.7, Jul.2012, pp.1528-1540.",
+        "order": 1
+      },
+      {
+        "title": "Temporal Assembly Model for Virtual Environment",
+        "authors_raw": "Cheng Cheng, Junmin Deng, Danjie Chen",
+        "year": "2008",
+        "venue": "Proceeding of International Conference on Human System Interaction 2008",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[2] Cheng Cheng, Junmin Deng, Danjie Chen, Temporal Assembly Model for Virtual Environment, Proceeding of International Conference on Human System Interaction 2008, Krakow, Poland, May 25-27, 2008,948-953.",
+        "order": 2
+      },
+      {
+        "title": "The Construction of Feature-Matching Perception in Virtual Assembly",
+        "authors_raw": "CHENG Cheng, WANG Hongan, DAI Guozhong",
+        "year": "2003",
+        "venue": "Journal of Computer Science & Technology",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[3] CHENG Cheng, WANG Hongan, DAI Guozhong, The Construction of Feature-Matching Perception in Virtual Assembly, Journal of Computer Science & Technology, Vol.18, No.2, 2003, 163-171.",
+        "order": 3
+      },
+      {
+        "title": "Research on Perception mechanism for Virtual Assembly",
+        "authors_raw": "CHENG Cheng",
+        "year": "2002",
+        "venue": "Journal of Software (Chinese)",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[4] CHENG Cheng, Research on Perception mechanism for Virtual Assembly, Journal of Software (Chinese), No.12, Vol. 13, 2002, 2324-2330.",
+        "order": 4
+      },
+      {
+        "title": "Research on Construction of Face Mating Perception in Virtual Assembly",
+        "authors_raw": "Cheng Cheng",
+        "year": "2002",
+        "venue": "Journal of Computer Research and Development (Chinese)",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[5] Cheng Cheng, Research on Construction of Face Mating Perception in Virtual Assembly, Journal of Computer Research and Development (Chinese), Vol.39, No.10,2002, 1331-1336.",
+        "order": 5
+      }
+    ],
+    "awards": [],
+    "warnings": [
+      "Ignored the instruction-only publication heading '发表文章 (Publishing) 请列举5篇左右代表性论文或著作。' as it did not list concrete items.",
+      "The professor's discipline is listed as '计算机科学与技术' in Chinese and 'Computer Science & Technology' in English. The Chinese version is used as the canonical value.",
+      "The professor's title is listed as '副教授' in Chinese and 'Associate Professor' in English. The Chinese version is used as the canonical value.",
+      "The professor's school is listed as '计算机' in Chinese and 'Computer Science' in English. The Chinese version is used as the canonical value.",
+      "The academic service role 'Member of China Computer Science Federation Technical Committee on Human-Computer Interaction.' is listed in English, with a Chinese translation provided on a separate line. Only the English line is used for the raw_text."
+    ]
+  }
+}

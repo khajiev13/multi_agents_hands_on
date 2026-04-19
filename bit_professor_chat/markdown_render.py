@@ -11,8 +11,9 @@ def render_professor_markdown(dossier: ProfessorDossier) -> str:
     lines = [
         f"# {dossier.title.strip()}",
         f"- detail_url: {dossier.detail_url.strip()}",
-        f"- page_count: {len(dossier.source_page_urls)}",
     ]
+    if dossier.source_page_urls:
+        lines.append(f"- page_count: {len(dossier.source_page_urls)}")
 
     basic_information = _clean_lines(dossier.basic_information.bullets)
     if basic_information:
@@ -32,11 +33,12 @@ def render_professor_markdown(dossier: ProfessorDossier) -> str:
         lines.extend(["", "## Uncertain or Illegible Text"])
         lines.extend(f"- {line}" for line in uncertain_lines)
 
-    lines.extend(["", "## Source Pages"])
-    lines.extend(
-        f"- page {page_number}: {url}"
-        for page_number, url in enumerate(dossier.source_page_urls, start=1)
-    )
+    if dossier.source_page_urls:
+        lines.extend(["", "## Source Pages"])
+        lines.extend(
+            f"- page {page_number}: {url}"
+            for page_number, url in enumerate(dossier.source_page_urls, start=1)
+        )
     return "\n".join(lines).strip()
 
 

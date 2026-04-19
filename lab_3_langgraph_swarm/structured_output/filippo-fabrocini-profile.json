@@ -1,0 +1,279 @@
+{
+  "metadata": {
+    "name": "FILIPPO Fabrocini",
+    "slug": "filippo-fabrocini",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121633.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/filippo-fabrocini-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "FILIPPO Fabrocini",
+      "aliases": [
+        "FILIPPO Fabrocini",
+        "Filippo Fabrocini"
+      ],
+      "title": "Prof.",
+      "school_name": "School of Software",
+      "discipline": "Software Engineering",
+      "biography_text": "",
+      "emails": [
+        "filippo.fabrocini@gmail.com"
+      ],
+      "phones": [
+        "+86-159-10236957"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "School of Software",
+        "org_type": "school",
+        "normalized_name": "school of software"
+      },
+      {
+        "name": "EMC",
+        "org_type": "company",
+        "normalized_name": "emc"
+      },
+      {
+        "name": "IBM",
+        "org_type": "company",
+        "normalized_name": "ibm"
+      },
+      {
+        "name": "Gregorian University",
+        "org_type": "university",
+        "normalized_name": "gregorian university"
+      },
+      {
+        "name": "IBM Research",
+        "org_type": "company",
+        "normalized_name": "ibm research"
+      },
+      {
+        "name": "Universidad Catolica Andres Bello",
+        "org_type": "university",
+        "normalized_name": "universidad catolica andres bello"
+      },
+      {
+        "name": "Franco Angeli",
+        "org_type": "unknown",
+        "normalized_name": "franco angeli"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "Cognitive Science",
+        "normalized_name": "cognitive science"
+      },
+      {
+        "name": "Artificial Intelligence",
+        "normalized_name": "artificial intelligence"
+      },
+      {
+        "name": "Logic Programming",
+        "normalized_name": "logic programming"
+      },
+      {
+        "name": "Machine Learning",
+        "normalized_name": "machine learning"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph.D.",
+        "field": "Philosophy",
+        "organization_name": "",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "Ph.D. (Philosophy)"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "M.A.",
+        "field": "Cognitive Science",
+        "organization_name": "",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "M.A. (Cognitive Science)"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "M.A.",
+        "field": "Philosophy - Specialization: Mathematical Logic",
+        "organization_name": "",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "M.A. (Philosophy - Specialization: Mathematical Logic)"
+      },
+      {
+        "kind": "employment",
+        "title": "",
+        "degree": "",
+        "field": "",
+        "organization_name": "EMC",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 4,
+        "raw_text": "EMC"
+      },
+      {
+        "kind": "employment",
+        "title": "",
+        "degree": "",
+        "field": "",
+        "organization_name": "IBM",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "IBM"
+      },
+      {
+        "kind": "employment",
+        "title": "",
+        "degree": "",
+        "field": "",
+        "organization_name": "Gregorian University",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 6,
+        "raw_text": "Gregorian University"
+      },
+      {
+        "kind": "employment",
+        "title": "",
+        "degree": "",
+        "field": "",
+        "organization_name": "IBM Research",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 7,
+        "raw_text": "IBM Research"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Using Classification to Guide Knowledge Acquisition and Refinement in Real-World Domains",
+        "authors_raw": "L. Di Pace, F. Fabrocini",
+        "year": "1990",
+        "venue": "Cybernetics and Systems ’90, Proceedings of the Tenth European Meeting on Cybernetics and System Research",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "L. Di Pace, F. Fabrocini, “Using Classification to Guide Knowledge Acquisition and Refinement in Real-World Domains”; in Cybernetics and Systems ’90, Proceedings of the Tenth European Meeting on Cybernetics and System Research, 1990.",
+        "order": 1
+      },
+      {
+        "title": "Learning from Observation in Noisy Environments via Integration of EBL and SBL Techniques",
+        "authors_raw": "L. Di Pace, Filippo Fabrocini",
+        "year": "1990",
+        "venue": "Proceedings of the Ninth European Conference on Artificial Intelligence, ECAI",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "L. Di Pace, Filippo Fabrocini, “Learning from Observation in Noisy Environments via Integration of EBL and SBL Techniques”; in Proceedings of the Ninth European Conference on Artificial Intelligence, ECAI, 1990.",
+        "order": 2
+      },
+      {
+        "title": "Shift of Bias in Leaning from Drug Compounds",
+        "authors_raw": "L. Di Pace, F. Fabrocini, G. Bolis",
+        "year": "1991",
+        "venue": "Proceedings of the European Working Session on Learning, EWSL",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "L. Di Pace, F. Fabrocini, G. Bolis, “Shift of Bias in Leaning from Drug Compounds”; inProceedings of the European Working Session on Learning, EWSL, 1991.",
+        "order": 3
+      },
+      {
+        "title": "A Machine Leaning Tool for Computer-Aided Molecular Design",
+        "authors_raw": "G. Bolis, L. Di Pace, F. Fabrocini",
+        "year": "1991",
+        "venue": "Proceedings of the IEEE International Conference on Tools for Artificial Intelligence",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "G. Bolis, L. Di Pace, F. Fabrocini, “A Machine Leaning Tool for Computer-Aided Molecular Design”; in Proceedings of the IEEE International Conference on Tools for Artificial Intelligence, 1991.",
+        "order": 4
+      },
+      {
+        "title": "A Machine Leaning Approach to Computer-Aided Molecular Design",
+        "authors_raw": "G. Bolis, L. Di Pace, F. Fabrocini",
+        "year": "1991",
+        "venue": "International Journal of Computer-Aided Molecular Design, 5",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "G. Bolis, L. Di Pace, F. Fabrocini, “A Machine Leaning Approach to Computer-Aided Molecular Design”; in International Journal of Computer-Aided Molecular Design, 5, 1991.",
+        "order": 5
+      },
+      {
+        "title": "Il labirinto e lo specchio. Tecniche e problemi della logica moderna",
+        "authors_raw": "F. Fabrocini",
+        "year": "1998",
+        "venue": "Franco Angeli",
+        "publication_type": "book",
+        "doi_or_url": "",
+        "raw_text": "F. Fabrocini, *Il labirinto e lo specchio. Tecniche e problemi della logica moderna*, Roma, Franco Angeli, 1998",
+        "order": 6
+      }
+    ],
+    "awards": [
+      {
+        "name": "IBM Outstanding Technical Award",
+        "year": "1991",
+        "granting_org_name": "IBM",
+        "level": "",
+        "raw_text": "IBM Outstanding Technical Award (1991)",
+        "order": 1
+      },
+      {
+        "name": "IBM Outstanding Technical Award",
+        "year": "1987",
+        "granting_org_name": "IBM",
+        "level": "",
+        "raw_text": "IBM Outstanding Technical Award (1987)",
+        "order": 2
+      },
+      {
+        "name": "Honor Medal",
+        "year": "",
+        "granting_org_name": "Universidad Catolica Andres Bello",
+        "level": "",
+        "raw_text": "Universidad Catolica Andres Bello - Honor Medal",
+        "order": 3
+      },
+      {
+        "name": "Bellarmino Prize - Best Doctoral Thesis",
+        "year": "",
+        "granting_org_name": "Gregorian University",
+        "level": "",
+        "raw_text": "Gregorian University Bellarmino Prize - Best Doctoral Thesis",
+        "order": 4
+      }
+    ],
+    "warnings": [
+      "ignored the instruction-only publication heading because it did not list concrete items",
+      "education and employment entries lack dates and specific titles; only raw text is preserved",
+      "publication venue 'Franco Angeli' is ambiguous; treated as publisher for book",
+      "professor name in listing metadata is 'FILIPPO Fabrocini' but OCR uses 'Filippo Fabrocini'; both forms added as aliases"
+    ]
+  }
+}

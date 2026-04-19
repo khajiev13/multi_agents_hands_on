@@ -1,0 +1,321 @@
+{
+  "metadata": {
+    "name": "LI Jianwu",
+    "slug": "li-jianwu",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113058.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/li-jianwu-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "LI Jianwu",
+      "aliases": [
+        "LI Jianwu",
+        "李建武",
+        "Li Jianwu"
+      ],
+      "title": "副教授",
+      "school_name": "计算机学院",
+      "discipline": "计算机科学与技术",
+      "biography_text": "Jianwu Li received the B.S., M.Eng. and Ph.D. degrees from Tianjin University, China, in 1997, 2000 and 2003, respectively. He visited Columbia University as a visiting scholar from 2013, 11 to 2014, 11.",
+      "emails": [
+        "ljw@bit.edu.cn"
+      ],
+      "phones": [
+        "01068912434"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "计算机学院",
+        "org_type": "school",
+        "normalized_name": "计算机学院"
+      },
+      {
+        "name": "天津大学数学系",
+        "org_type": "school",
+        "normalized_name": "天津大学数学系"
+      },
+      {
+        "name": "天津大学系统工程研究所",
+        "org_type": "laboratory",
+        "normalized_name": "天津大学系统工程研究所"
+      },
+      {
+        "name": "美国哥伦比亚大学",
+        "org_type": "university",
+        "normalized_name": "美国哥伦比亚大学"
+      },
+      {
+        "name": "北京理工大学计算机学院",
+        "org_type": "school",
+        "normalized_name": "北京理工大学计算机学院"
+      },
+      {
+        "name": "中国计算机学会",
+        "org_type": "association",
+        "normalized_name": "中国计算机学会"
+      },
+      {
+        "name": "IEEE Transactions on Evolutionary Computation",
+        "org_type": "journal",
+        "normalized_name": "ieee transactions on evolutionary computation"
+      },
+      {
+        "name": "Applied Soft Computing",
+        "org_type": "journal",
+        "normalized_name": "applied soft computing"
+      },
+      {
+        "name": "Knowledge-based Systems",
+        "org_type": "journal",
+        "normalized_name": "knowledge based systems"
+      },
+      {
+        "name": "Journal of Electromagnetic Waves and Applications",
+        "org_type": "journal",
+        "normalized_name": "journal of electromagnetic waves and applications"
+      },
+      {
+        "name": "Chinese Journal of Electronics",
+        "org_type": "journal",
+        "normalized_name": "chinese journal of electronics"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "图像处理",
+        "normalized_name": "图像处理"
+      },
+      {
+        "name": "Image Processing",
+        "normalized_name": "image processing"
+      },
+      {
+        "name": "机器学习",
+        "normalized_name": "机器学习"
+      },
+      {
+        "name": "Machine Learning",
+        "normalized_name": "machine learning"
+      },
+      {
+        "name": "模式识别",
+        "normalized_name": "模式识别"
+      },
+      {
+        "name": "Pattern Recognition",
+        "normalized_name": "pattern recognition"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "理学学士学位",
+        "field": "数学",
+        "organization_name": "天津大学数学系",
+        "location": "",
+        "start_text": "",
+        "end_text": "1997",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "1997 年在天津大学数学系获理学学士学位"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "工学硕士学位",
+        "field": "系统工程",
+        "organization_name": "天津大学系统工程研究所",
+        "location": "",
+        "start_text": "",
+        "end_text": "2000",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "2000 年在天津大学系统工程研究所获工学硕士学位"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "工学博士学位",
+        "field": "系统工程",
+        "organization_name": "天津大学系统工程研究所",
+        "location": "",
+        "start_text": "",
+        "end_text": "2003",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "2003 年在天津大学系统工程研究所工学博士学位"
+      },
+      {
+        "kind": "education",
+        "title": "访问学者",
+        "degree": "",
+        "field": "",
+        "organization_name": "美国哥伦比亚大学",
+        "location": "",
+        "start_text": "2013, 11",
+        "end_text": "2014, 11",
+        "is_current": false,
+        "order": 4,
+        "raw_text": "2013 年 11 月至 2014 年 11 月在美国哥伦比亚大学做访问学者"
+      },
+      {
+        "kind": "employment",
+        "title": "",
+        "degree": "",
+        "field": "",
+        "organization_name": "北京理工大学计算机学院",
+        "location": "",
+        "start_text": "2003",
+        "end_text": "",
+        "is_current": true,
+        "order": 5,
+        "raw_text": "2003 年至今，北京理工大学计算机学院"
+      },
+      {
+        "kind": "academic_service",
+        "title": "高级会员",
+        "degree": "",
+        "field": "",
+        "organization_name": "中国计算机学会",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 6,
+        "raw_text": "中国计算机学会高级会员"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Reviewer",
+        "degree": "",
+        "field": "",
+        "organization_name": "IEEE Transactions on Evolutionary Computation",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 7,
+        "raw_text": "Reviewer: IEEE Transactions on Evolutionary Computation, Applied Soft Computing, Knowledge-based Systems, Journal of Electromagnetic Waves and Applications, Chinese Journal of Electronics"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Reviewer",
+        "degree": "",
+        "field": "",
+        "organization_name": "Applied Soft Computing",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 8,
+        "raw_text": "Reviewer: IEEE Transactions on Evolutionary Computation, Applied Soft Computing, Knowledge-based Systems, Journal of Electromagnetic Waves and Applications, Chinese Journal of Electronics"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Reviewer",
+        "degree": "",
+        "field": "",
+        "organization_name": "Knowledge-based Systems",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 9,
+        "raw_text": "Reviewer: IEEE Transactions on Evolutionary Computation, Applied Soft Computing, Knowledge-based Systems, Journal of Electromagnetic Waves and Applications, Chinese Journal of Electronics"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Reviewer",
+        "degree": "",
+        "field": "",
+        "organization_name": "Journal of Electromagnetic Waves and Applications",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 10,
+        "raw_text": "Reviewer: IEEE Transactions on Evolutionary Computation, Applied Soft Computing, Knowledge-based Systems, Journal of Electromagnetic Waves and Applications, Chinese Journal of Electronics"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Reviewer",
+        "degree": "",
+        "field": "",
+        "organization_name": "Chinese Journal of Electronics",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 11,
+        "raw_text": "Reviewer: IEEE Transactions on Evolutionary Computation, Applied Soft Computing, Knowledge-based Systems, Journal of Electromagnetic Waves and Applications, Chinese Journal of Electronics"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Leaming kemel subspace for face recognition",
+        "authors_raw": "Jianwu Li, Wangli Hao, Xiao Zhang",
+        "year": "2015",
+        "venue": "Neurocomputing",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "1) Jianwu Li, Wangli Hao, Xiao Zhang, Leaming kemel subspace for face recognition, Neurocomputing, 2015, 151(3), 1187-1197.",
+        "order": 1
+      },
+      {
+        "title": "Fast iterative contourlet thresholding for compressed sensing MRI",
+        "authors_raw": "Wangli Hao, Jianwu Li, Xiaobo Qu, Zhengchao Dong",
+        "year": "2013",
+        "venue": "Electronics Letters",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "2) Wangli Hao, Jianwu Li, Xiaobo Qu, Zhengchao Dong. Fast iterative contourlet thresholding for compressed sensing MRI. Electronics Letters, 2013, 49(19), 1206-1208. (Corresponding Author)",
+        "order": 2
+      },
+      {
+        "title": "Community Detection in Complex Networks Using Extended Compact Genetic Algorithm",
+        "authors_raw": "Jianwu Li, Yulong Song",
+        "year": "2013",
+        "venue": "Soft Computing",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "3) Jianwu Li, Yulong Song, Community Detection in Complex Networks Using Extended Compact Genetic Algorithm, Soft Computing, 17(6),2013:925-937.",
+        "order": 3
+      },
+      {
+        "title": "Relation Regularized Subspace Recommending for Related Scientific Articles",
+        "authors_raw": "Qing Zhang, Jianwu Li, Zhiping Zhang, Li Wang",
+        "year": "2012",
+        "venue": "CIKM2012",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "4) Qing Zhang, Jianwu Li, Zhiping Zhang, Li Wang. Relation Regularized Subspace Recommending for Related Scientific Articles. CIKM2012,2503-2506. (Corresponding Author)",
+        "order": 4
+      },
+      {
+        "title": "Finding Pre-Images via Evolution Strategies",
+        "authors_raw": "Jianwu Li, Lu Su, Cheng Cheng",
+        "year": "2011",
+        "venue": "Applied Soft Computing",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "5) Jianwu Li, Lu Su, Cheng Cheng. Finding Pre-Images via Evolution Strategies. Applied Soft Computing, 2011, 11: 4183-4194.",
+        "order": 5
+      }
+    ],
+    "awards": [],
+    "warnings": [
+      "Ignored the instruction-only publication heading because it did not list concrete items.",
+      "Publication 1 title contains apparent OCR error 'Leaming kemel'.",
+      "Publication 4 venue 'CIKM2012' is ambiguous but treated as conference.",
+      "Publication 2 and 4 note 'Corresponding Author' but not captured in schema.",
+      "Education experience for visiting scholar includes a title from the source text.",
+      "Employment experience at Beijing Institute of Technology has no explicit title.",
+      "Multiple reviewer roles listed in one line; split into separate academic_service items.",
+      "Biography text includes English summary; used as provided."
+    ]
+  }
+}

@@ -1,0 +1,302 @@
+{
+  "metadata": {
+    "name": "SHANG Jianyun",
+    "slug": "shang-jianyun",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121637.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/shang-jianyun-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "SHANG Jianyun",
+      "aliases": [
+        "SHANG Jianyun",
+        "商建云",
+        "Shang Jianyun"
+      ],
+      "title": "高级工程师",
+      "school_name": "软件学院",
+      "discipline": "Computer Science and technology",
+      "biography_text": "",
+      "emails": [
+        "shangjia@bit.edu.cn"
+      ],
+      "phones": [
+        "010-68918271"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "School of Software",
+        "org_type": "school",
+        "normalized_name": "school of software"
+      },
+      {
+        "name": "Beijing Institute of Technology",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "Zhejiang University",
+        "org_type": "university",
+        "normalized_name": "zhejiang university"
+      },
+      {
+        "name": "University of Texas in Dallas",
+        "org_type": "university",
+        "normalized_name": "university of texas in dallas"
+      },
+      {
+        "name": "Tokyo University of Technology",
+        "org_type": "university",
+        "normalized_name": "tokyo university of technology"
+      },
+      {
+        "name": "North Computer Institute",
+        "org_type": "unknown",
+        "normalized_name": "north computer institute"
+      },
+      {
+        "name": "Beijing Fujitsu System Engineering Company",
+        "org_type": "company",
+        "normalized_name": "beijing fujitsu system engineering company"
+      },
+      {
+        "name": "Fujitsu Shitsuoka Lab",
+        "org_type": "laboratory",
+        "normalized_name": "fujitsu shitsuoka lab"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "大数据搜索与挖掘",
+        "normalized_name": "big data search and mining"
+      },
+      {
+        "name": "自然语言处理",
+        "normalized_name": "natural language processing"
+      },
+      {
+        "name": "数据可视化,可视计算",
+        "normalized_name": "data visualization visual computing"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph.D.",
+        "field": "",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "",
+        "start_text": "",
+        "end_text": "2003",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "Ph.D. in Beijing Institute of Technology, 2003."
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "M.S.",
+        "field": "",
+        "organization_name": "Zhejiang University",
+        "location": "",
+        "start_text": "",
+        "end_text": "1989",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "M.S. in Zhejiang University 1989."
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "B.S.",
+        "field": "",
+        "organization_name": "Zhejiang University",
+        "location": "",
+        "start_text": "",
+        "end_text": "1986",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "B.S. in Zhejiang University 1986."
+      },
+      {
+        "kind": "employment",
+        "title": "Senior Engineer",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "",
+        "start_text": "September 2003",
+        "end_text": "Now",
+        "is_current": true,
+        "order": 4,
+        "raw_text": "September 2003-Now: Beijing Institute of Technology. Senior Engineer of Software School."
+      },
+      {
+        "kind": "employment",
+        "title": "Scholar Researcher",
+        "degree": "",
+        "field": "",
+        "organization_name": "University of Texas in Dallas",
+        "location": "",
+        "start_text": "November 2012",
+        "end_text": "November 2013",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "November 2012-November 2013: Scholar Researcher in University of Texas in Dallas"
+      },
+      {
+        "kind": "employment",
+        "title": "Research Specialist",
+        "degree": "",
+        "field": "",
+        "organization_name": "Tokyo University of Technology",
+        "location": "",
+        "start_text": "October 2005",
+        "end_text": "March 2006",
+        "is_current": false,
+        "order": 6,
+        "raw_text": "October 2005-March 2006: Tokyo University of Technology. Research Specialist."
+      },
+      {
+        "kind": "employment",
+        "title": "Research Specialist Staff",
+        "degree": "",
+        "field": "",
+        "organization_name": "North Computer Institute",
+        "location": "",
+        "start_text": "November 2000",
+        "end_text": "April 2003",
+        "is_current": false,
+        "order": 7,
+        "raw_text": "November 2000-April 2003: North Computer Institute. Research Specialist Staff."
+      },
+      {
+        "kind": "employment",
+        "title": "Consulting Manager",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing Fujitsu System Engineering Company",
+        "location": "",
+        "start_text": "October1993",
+        "end_text": "March 2000",
+        "is_current": false,
+        "order": 8,
+        "raw_text": "October1993-March2000:Beijing Fujitsu System Engineering Company. Consulting Manager."
+      },
+      {
+        "kind": "employment",
+        "title": "Research Staff",
+        "degree": "",
+        "field": "",
+        "organization_name": "Fujitsu Shitsuoka Lab",
+        "location": "",
+        "start_text": "November 1996",
+        "end_text": "November 1997",
+        "is_current": false,
+        "order": 9,
+        "raw_text": "November 1996-November 1997: Fujitsu Shitsuoka Lab. Research Staff."
+      },
+      {
+        "kind": "academic_service",
+        "title": "Government procurement evaluation experts",
+        "degree": "",
+        "field": "",
+        "organization_name": "",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 10,
+        "raw_text": "Government procurement evaluation experts"
+      },
+      {
+        "kind": "academic_service",
+        "title": "National Certification and Accreditation Laboratory evaluation experts",
+        "degree": "",
+        "field": "",
+        "organization_name": "",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 11,
+        "raw_text": "National Certification and Accreditation Laboratory evaluation experts"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Automatic Text Summarization Research Based on Topic Model and Information Entropy",
+        "authors_raw": "Yan Li, Hua-ping Zhang, Yan-Ping Zhao, Jian-Yun Shang",
+        "year": "2014",
+        "venue": "Computer Science",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Yan Li, Hua-ping Zhang, Yan-Ping Zhao, Jian-Yun Shang Automatic Text Summarization Research Based on Topic Model and Information Entropy. Computer Science. 2014(11) 298-301.",
+        "order": 1
+      },
+      {
+        "title": "Microblog Computing Centered on Web Entities",
+        "authors_raw": "Hua-ping Zhang, Jian-Yun Shang, Yan-Ping Zhao",
+        "year": "2014",
+        "venue": "Complex Systems and Complexity Science",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Hua-ping Zhang, Jian-Yun Shang, Yan-Ping Zhao Microblog Computing Centered on Web Entities. Complex Systems and Complexity Science. 2014: 85-90",
+        "order": 2
+      },
+      {
+        "title": "An Efficient Dictionary Mechanism Based on Double-Byte",
+        "authors_raw": "Lei Yang, Jian-Yun Shang, Yan-Ping Zhao",
+        "year": "2007",
+        "venue": "ICADL 2007",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Lei Yang, Jian-Yun Shang, Yan-Ping Zhao An Efficient Dictionary Mechanism Based on Double-Byte. ICADL 2007: 420-423 Lecture Notes in Computer Science.SCI(9751168)",
+        "order": 3
+      },
+      {
+        "title": "An effective Algorithm of Erasing Linux File",
+        "authors_raw": "Shang Jianyun, Lan Wenhong",
+        "year": "2008",
+        "venue": "The 19th Conference on Computer Technology and Application and Computer Education of the University",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Shang Jianyun, Lan Wenhong: An effective Algorithm of Erasing Linux File. The 19th Conference on Computer Technology and Application and Computer Education of the University 200808",
+        "order": 4
+      },
+      {
+        "title": "An Improved Algorithm of Feature Selection Based on Word Frequency",
+        "authors_raw": "Shang Jianyun, Wang Guofeng",
+        "year": "2008",
+        "venue": "Conference of Intelligence System Engineering of China",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Shang Jianyun, Wang Guofeng: An Improved Algorithm of Feature Selection Based on Word Frequency. Conference of Intelligence System Engineering of China 2008.",
+        "order": 5
+      }
+    ],
+    "awards": [
+      {
+        "name": "Second Prize of Zhejiang Science and Technology Award",
+        "year": "1992",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "1992 - Second Prize of Zhejiang Science and Technology Award - \"NMR nonlinear isolation and parameter optimization under environmental random motivation\"",
+        "order": 1
+      }
+    ],
+    "warnings": [
+      "Ignored the instruction-only publication heading because it did not list concrete items.",
+      "The 'School' field contains both Chinese and English names; used the Chinese version for school_name.",
+      "The 'Discipline' field contains both Chinese and English names; used the Chinese version for discipline.",
+      "The 'Part-time Academic Jobs' section lists roles without clear host organizations; created academic_service items with empty organization_name.",
+      "Publication 3 includes 'SCI(9751168)' which may be an identifier, but it's not a clear DOI or URL; left doi_or_url empty.",
+      "Publication 4 year '200808' is ambiguous; used '2008' as the year.",
+      "The 'Personal Resume (Biography)' section heading is present but contains no text; biography_text left empty."
+    ]
+  }
+}

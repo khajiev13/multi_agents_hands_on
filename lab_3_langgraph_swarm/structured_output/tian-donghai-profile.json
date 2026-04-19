@@ -1,0 +1,225 @@
+{
+  "metadata": {
+    "name": "TIAN Donghai",
+    "slug": "tian-donghai",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121639.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/tian-donghai-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "TIAN Donghai",
+      "aliases": [
+        "TIAN Donghai",
+        "田东海",
+        "Tian Donghai"
+      ],
+      "title": "讲师",
+      "school_name": "软件学院",
+      "discipline": "软件工程",
+      "biography_text": "",
+      "emails": [
+        "dhai@bit.edu.cn"
+      ],
+      "phones": [
+        "68914832"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "软件学院",
+        "org_type": "school",
+        "normalized_name": "software school"
+      },
+      {
+        "name": "北京理工大学计算机学院",
+        "org_type": "school",
+        "normalized_name": "beijing institute of technology school of computer science"
+      },
+      {
+        "name": "美国宾夕法尼亚州立大学",
+        "org_type": "university",
+        "normalized_name": "pennsylvania state university"
+      },
+      {
+        "name": "北京理工大学软件学院信息安全系",
+        "org_type": "school",
+        "normalized_name": "beijing institute of technology school of software information security department"
+      },
+      {
+        "name": "China Scholarship Council",
+        "org_type": "funder",
+        "normalized_name": "china scholarship council"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "Software Security 软件安全",
+        "normalized_name": "software security"
+      },
+      {
+        "name": "Android Security Android 系统安全",
+        "normalized_name": "android security"
+      },
+      {
+        "name": "Big Data Security 大数据安全",
+        "normalized_name": "big data security"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph.D.",
+        "field": "",
+        "organization_name": "北京理工大学计算机学院",
+        "location": "",
+        "start_text": "2007年9月",
+        "end_text": "2012年3月",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "2007年9月-2012年3月,北京理工大学计算机学院博士研究生"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "",
+        "field": "",
+        "organization_name": "美国宾夕法尼亚州立大学",
+        "location": "",
+        "start_text": "2009年8月",
+        "end_text": "2011年8月",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "2009年8月-2011年8月,美国宾夕法尼亚州立大学联合培养博士研究生"
+      },
+      {
+        "kind": "employment",
+        "title": "Research Assistant",
+        "degree": "",
+        "field": "",
+        "organization_name": "美国宾夕法尼亚州立大学",
+        "location": "",
+        "start_text": "2009年8月",
+        "end_text": "2011年8月",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "2009年8月-2011年8月,美国宾夕法尼亚州立大学Research Assistant"
+      },
+      {
+        "kind": "employment",
+        "title": "讲师",
+        "degree": "",
+        "field": "",
+        "organization_name": "北京理工大学软件学院信息安全系",
+        "location": "",
+        "start_text": "2012年3月",
+        "end_text": "至今",
+        "is_current": true,
+        "order": 4,
+        "raw_text": "2012年3月-至今,北京理工大学软件学院信息安全系讲师"
+      },
+      {
+        "kind": "employment",
+        "title": "Visiting Researcher",
+        "degree": "",
+        "field": "",
+        "organization_name": "美国宾夕法尼亚州立大学",
+        "location": "",
+        "start_text": "2015年2月",
+        "end_text": "2015年5月",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "2015年2月-2015年5月,美国宾夕法尼亚州立大学Visiting Researcher"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Krui ser: Semi-synchronized Non-blocking Concurrent Kernel Heap Buffer Overflow Monitoring",
+        "authors_raw": "DonghaiTian, Qiang Zeng, Dinghao Wu, Peng Liu, Changzhen Hu",
+        "year": "2012",
+        "venue": "Proceedings of the 19th Network and Distributed System Security Symposium (NDSS)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[1] DonghaiTian, Qiang Zeng, Dinghao Wu, Peng Liu, Changzhen Hu. Krui ser: Semi-synchronized Non-blocking Concurrent Kernel Heap Buffer Overflow Monitoring. In Proceedings of the 19th Network and Distributed System Security Symposium (NDSS), 2012. (Top Security Conference)",
+        "order": 1
+      },
+      {
+        "title": "Practical Protection of Kernel Integrity for Commodity OS from Untrusted Extensions",
+        "authors_raw": "Xi Xiong, DonghaiTian, Peng Liu",
+        "year": "2011",
+        "venue": "Proceedings of the 18th Network and Distributed System Security Symposium (NDSS)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[2] Xi Xiong, DonghaiTian, Peng Liu. Practical Protection of Kernel Integrity for Commodity OS from Untrusted Extensions. In Proceedings of the 18th Network and Distributed System Security Symposium (NDSS), 2011. (Top Security Conference)",
+        "order": 2
+      },
+      {
+        "title": "iCruiser: An Improved Approach for Concurrent Heap Buffer Overflow Monitoring",
+        "authors_raw": "DonghaiTian, Xuanya Li, Mo Chen, Changzhen Hu",
+        "year": "2014",
+        "venue": "IEICE TRANSACTIONS on Information and Systems",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[3] DonghaiTian, Xuanya Li, Mo Chen, Changzhen Hu. iCruiser: An Improved Approach for Concurrent Heap Buffer Overflow Monitoring. IEICE TRANSACTIONS on Information and Systems (SCI Journal), 2014.",
+        "order": 3
+      },
+      {
+        "title": "Defeating Buffer Overflow Attacks via Virtualization",
+        "authors_raw": "DonghaiTian, Xi Xiong, Changzhen Hu, Peng Liu",
+        "year": "2014",
+        "venue": "Computers & Electrical Engineering",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[4] DonghaiTian, Xi Xiong, Changzhen Hu, Peng Liu. Defeating Buffer Overflow Attacks via Virtualization. Computers & Electrical Engineering (SCI Journal), 2014.",
+        "order": 4
+      },
+      {
+        "title": "A Virtualization-based Approach for Application Whitelisting",
+        "authors_raw": "DonghaiTian, JingfengXue, Changzhen Hu, Xuanya Li",
+        "year": "2014",
+        "venue": "IEICE TRANSACTIONS on Information and Systems",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[5] DonghaiTian, JingfengXue, Changzhen Hu, Xuanya Li. A Virtualization-based Approach for Application Whitelisting. IEICE TRANSACTIONS on Information and Systems (SCI Journal). 2014.",
+        "order": 5
+      },
+      {
+        "title": "OPKH: A Lightweight Online Approach to Protecting Kernel Hooks in Kernel Modules",
+        "authors_raw": "TianDonghai, Li Xuanya, Changzhen Hu, Yan Huaizhi",
+        "year": "2013",
+        "venue": "China Communications",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[6] TianDonghai, Li Xuanya, Changzhen Hu, Yan Huaizhi. OPKH: A Lightweight Online Approach to Protecting Kernel Hooks in Kernel Modules. China Communications (SCI Journal), 2013.",
+        "order": 6
+      }
+    ],
+    "awards": [
+      {
+        "name": "Memorial Award for Beijing Olympic Work",
+        "year": "2008",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "Memorial Award for Beijing Olympic Work in 2008",
+        "order": 1
+      },
+      {
+        "name": "CSC (China Scholarship Council) Scholarship",
+        "year": "2009-2011",
+        "granting_org_name": "China Scholarship Council",
+        "level": "",
+        "raw_text": "Awarded CSC (China Scholarship Council) Scholarship from 2009 to 2011",
+        "order": 2
+      }
+    ],
+    "warnings": [
+      "Ignored the instruction-only publication heading because it did not list concrete items.",
+      "Publication [5] year was extracted from a separate line.",
+      "The English title 'Assistant Professor' appears in the header but the Chinese title '讲师' is used as the primary title.",
+      "The English education and work experience lines appear to be duplicates of the Chinese lines and were not added as separate experiences.",
+      "The degree field 'Ph.D. of Engineering' was not extracted as the Chinese line '博士研究生' does not specify a field."
+    ]
+  }
+}

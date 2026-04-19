@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1720" height="1140" viewBox="0 0 1720 1140">
+<rect x="0" y="0" width="100%" height="100%" fill="#f8fafc"/>
+<rect x="20" y="20" width="1680" height="1100" rx="24" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+<text x="56" y="74" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">ProfessorLookupAgent — internals &amp; Neo4j queries</text>
+<text x="56" y="110" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#475569">System prompt + bound tools + the Cypher each tool runs against the Lab 3 typed graph.</text>
+<path d="M 270 440.0 L 320 440.0" fill="none" stroke="#4f46e5" stroke-width="2.8"/>
+<polygon points="320,440.0 309,434.0 309,446.0" fill="#4f46e5"/>
+<rect x="247.0" y="417.0" width="96" height="24" rx="6" fill="#ffffff" stroke="#4f46e5" stroke-width="1.4"/>
+<text x="295.0" y="435.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">tool_calls</text>
+<path d="M 400.0 400 L 400.0 380 L 190.0 380 L 190.0 400" fill="none" stroke="#7c3aed" stroke-width="2.8" stroke-dasharray="8 6"/>
+<polygon points="190.0,400 184.0,389 196.0,389" fill="#7c3aed"/>
+<path d="M 480 440.0 L 520 440.0 L 520 455.0 L 575 455.0" fill="none" stroke="#0891b2" stroke-width="2.8"/>
+<polygon points="575,455.0 564,449.0 564,461.0" fill="#0891b2"/>
+<path d="M 480 440.0 L 530 440.0 L 530 620.0 L 575 620.0" fill="none" stroke="#0891b2" stroke-width="2.8"/>
+<polygon points="575,620.0 564,614.0 564,626.0" fill="#0891b2"/>
+<path d="M 480 440.0 L 540 440.0 L 540 790.0 L 575 790.0" fill="none" stroke="#ea580c" stroke-width="2.8"/>
+<polygon points="575,790.0 564,784.0 564,796.0" fill="#ea580c"/>
+<path d="M 1015 455.0 L 1090 460.0" fill="none" stroke="#16a34a" stroke-width="2.8" stroke-dasharray="8 6"/>
+<polygon points="1090,460.0 1079,454.0 1079,466.0" fill="#16a34a"/>
+<path d="M 1015 620.0 L 1090 655.0" fill="none" stroke="#16a34a" stroke-width="2.8" stroke-dasharray="8 6"/>
+<polygon points="1090,655.0 1079,649.0 1079,661.0" fill="#16a34a"/>
+<path d="M 1015 790.0 L 1090 855.0" fill="none" stroke="#ea580c" stroke-width="2.8" stroke-dasharray="8 6"/>
+<polygon points="1090,855.0 1079,849.0 1079,861.0" fill="#ea580c"/>
+<path d="M 440 1025 L 470 1025" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="470,1025 459,1019 459,1031" fill="#475569"/>
+<path d="M 850 1025 L 880 1025" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="880,1025 869,1019 869,1031" fill="#475569"/>
+<path d="M 1260 1025 L 1290 1025" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="1290,1025 1279,1019 1279,1031" fill="#475569"/>
+<rect x="60" y="140" width="1600" height="120" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="3.0"/>
+<text x="860.0" y="172.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">System prompt: handle named-professor questions.</text>
+<text x="860.0" y="194.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Rules: call resolve_professor_tool first. If exactly one match, call get_professor_facts_tool before answering.</text>
+<text x="860.0" y="216.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Handoff: if the user asks for topic-based recommendations, call transfer_to_research_match.</text>
+<text x="860.0" y="238.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Style: ground every answer in tool output; never answer from prior knowledge.</text>
+<rect x="60" y="300" width="460" height="580" rx="18" fill="#eff6ff" stroke="#60a5fa" stroke-width="3.0" stroke-dasharray="8 6"/>
+<rect x="88" y="320" width="404" height="40" rx="18" fill="#bfdbfe" stroke="#2563eb" stroke-width="3.0"/>
+<text x="290.0" y="346.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">Compiled subgraph</text>
+<rect x="110" y="400" width="160" height="80" rx="18" fill="#eef2ff" stroke="#4f46e5" stroke-width="3.0"/>
+<text x="190.0" y="434.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">llm</text>
+<text x="190.0" y="458.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">call_model</text>
+<rect x="320" y="400" width="160" height="80" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="3.0"/>
+<text x="400.0" y="434.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">tools</text>
+<text x="400.0" y="458.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">ToolNode</text>
+<rect x="90" y="530" width="400" height="130" rx="18" fill="#ffffff" stroke="#475569" stroke-width="3.0" stroke-dasharray="8 6"/>
+<text x="290.0" y="556.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">model.bind_tools([</text>
+<text x="290.0" y="578.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">  resolve_professor_tool,</text>
+<text x="290.0" y="600.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">  get_professor_facts_tool,</text>
+<text x="290.0" y="622.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">  transfer_to_research_match,</text>
+<text x="290.0" y="644.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">])</text>
+<rect x="90" y="690" width="400" height="90" rx="18" fill="#fffbeb" stroke="#d97706" stroke-width="3.0" stroke-dasharray="8 6"/>
+<text x="290.0" y="718.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Each tool call also emits a teaching event:</text>
+<text x="290.0" y="740.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">{ kind: 'tool_call', agent: 'ProfessorLookupAgent',</text>
+<text x="290.0" y="762.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">  tool: &lt;name&gt;, input: {...} }</text>
+<rect x="90" y="800" width="400" height="60" rx="18" fill="#f1f5f9" stroke="#64748b" stroke-width="3.0" stroke-dasharray="8 6"/>
+<text x="290.0" y="824.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Returns: { messages: [response],</text>
+<text x="290.0" y="846.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">           active_agent: 'ProfessorLookupAgent' }</text>
+<rect x="555" y="300" width="480" height="580" rx="18" fill="#fefce8" stroke="#eab308" stroke-width="3.0" stroke-dasharray="8 6"/>
+<rect x="583" y="320" width="424" height="40" rx="18" fill="#fef9c3" stroke="#ca8a04" stroke-width="3.0"/>
+<text x="795.0" y="346.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">Bound tools (3)</text>
+<rect x="575" y="380" width="440" height="150" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="3.0"/>
+<text x="795.0" y="405.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">@tool resolve_professor_tool(name_hint: str)</text>
+<text x="795.0" y="427.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a"></text>
+<text x="795.0" y="449.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Goal: turn a fuzzy name into a ranked</text>
+<text x="795.0" y="471.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">list of Professor matches.</text>
+<text x="795.0" y="493.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a"></text>
+<text x="795.0" y="515.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Returns: { matches: [{name, url, score}] }</text>
+<rect x="575" y="545" width="440" height="150" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="3.0"/>
+<text x="795.0" y="570.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">@tool get_professor_facts_tool(professor_name: str)</text>
+<text x="795.0" y="592.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a"></text>
+<text x="795.0" y="614.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Goal: fetch grounded facts for one professor —</text>
+<text x="795.0" y="636.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">orgs, topics, experiences, publications.</text>
+<text x="795.0" y="658.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a"></text>
+<text x="795.0" y="680.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Returns: { facts: [{source, target, predicate}] }</text>
+<rect x="575" y="710" width="440" height="160" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="3.0"/>
+<text x="795.0" y="729.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">@tool transfer_to_research_match()</text>
+<text x="795.0" y="751.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a"></text>
+<text x="795.0" y="773.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Goal: hand control to ResearchMatchAgent.</text>
+<text x="795.0" y="795.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Returns Command(goto=..., graph=PARENT,</text>
+<text x="795.0" y="817.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">update={ active_agent: 'ResearchMatchAgent' }).</text>
+<text x="795.0" y="839.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a"></text>
+<text x="795.0" y="861.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Not a Neo4j call — pure routing.</text>
+<rect x="1070" y="300" width="590" height="580" rx="18" fill="#f0fdf4" stroke="#16a34a" stroke-width="3.0" stroke-dasharray="8 6"/>
+<rect x="1098" y="320" width="534" height="40" rx="18" fill="#dcfce7" stroke="#15803d" stroke-width="3.0"/>
+<text x="1365.0" y="346.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">Neo4jQueryService — Cypher</text>
+<rect x="1090" y="380" width="555" height="160" rx="18" fill="#ffffff" stroke="#16a34a" stroke-width="3.0"/>
+<text x="1367.5" y="398.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">MATCH (p:Professor)</text>
+<text x="1367.5" y="417.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">WITH p, [v IN [p.name] + p.aliases</text>
+<text x="1367.5" y="436.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">        WHERE trim(v) &lt;&gt; ''] AS names</text>
+<text x="1367.5" y="455.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">WHERE any(v IN names</text>
+<text x="1367.5" y="474.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">         WHERE toLower(v) CONTAINS $needle)</text>
+<text x="1367.5" y="493.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">RETURN p.name, p.detail_url,</text>
+<text x="1367.5" y="512.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">       &lt;exact|prefix|contains&gt; AS score</text>
+<text x="1367.5" y="531.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">ORDER BY score LIMIT 5</text>
+<rect x="1090" y="555" width="555" height="200" rx="18" fill="#ffffff" stroke="#16a34a" stroke-width="3.0"/>
+<text x="1367.5" y="578.2" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" fill="#0f172a">MATCH (p:Professor) WHERE p.name = $name</text>
+<text x="1367.5" y="596.2" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" fill="#0f172a">CALL (p) {</text>
+<text x="1367.5" y="614.2" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" fill="#0f172a">  MATCH (p)-[:AFFILIATED_WITH]-&gt;(o:Organization)         RETURN ...</text>
+<text x="1367.5" y="632.2" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" fill="#0f172a">  UNION ALL MATCH (p)-[:HAS_RESEARCH_INTEREST]-&gt;(t)      RETURN ...</text>
+<text x="1367.5" y="650.2" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" fill="#0f172a">  UNION ALL MATCH (p)-[:HAS_EXPERIENCE]-&gt;(e)             RETURN ...</text>
+<text x="1367.5" y="668.2" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" fill="#0f172a">  UNION ALL MATCH (p)-[:AUTHORED]-&gt;(pub)                 RETURN ...</text>
+<text x="1367.5" y="686.2" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" fill="#0f172a">  UNION ALL MATCH (p)-[:RECEIVED]-&gt;(a)                   RETURN ...</text>
+<text x="1367.5" y="704.2" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" fill="#0f172a">  UNION ALL UNWIND p.emails / p.phones / p.websites      RETURN ...</text>
+<text x="1367.5" y="722.2" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" fill="#0f172a">}</text>
+<text x="1367.5" y="740.2" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" fill="#0f172a">RETURN source_name, target_name, relationship_type LIMIT 18</text>
+<rect x="1090" y="770" width="555" height="170" rx="18" fill="#ffffff" stroke="#ea580c" stroke-width="3.0"/>
+<text x="1367.5" y="793.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">(no Cypher)</text>
+<text x="1367.5" y="812.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a"></text>
+<text x="1367.5" y="831.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">return Command(</text>
+<text x="1367.5" y="850.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">  goto='ResearchMatchAgent',</text>
+<text x="1367.5" y="869.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">  graph=Command.PARENT,</text>
+<text x="1367.5" y="888.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">  update={'messages': [...ToolMessage],</text>
+<text x="1367.5" y="907.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">          'active_agent': 'ResearchMatchAgent'},</text>
+<text x="1367.5" y="926.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">)</text>
+<rect x="60" y="905" width="1600" height="40" rx="18" fill="#1e293b" stroke="#0f172a" stroke-width="3.0"/>
+<text x="860.0" y="930.95" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="600" fill="#ffffff">Example turn — "What are CHENG Cheng's research interests?"</text>
+<rect x="60" y="960" width="380" height="130" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="3.0"/>
+<text x="250.0" y="997.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">1. llm sees question →</text>
+<text x="250.0" y="1019.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">emits tool_call:</text>
+<text x="250.0" y="1041.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">resolve_professor_tool(</text>
+<text x="250.0" y="1063.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">  name_hint='CHENG Cheng')</text>
+<rect x="470" y="960" width="380" height="130" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="3.0"/>
+<text x="660.0" y="986.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">2. ToolNode runs Cypher,</text>
+<text x="660.0" y="1008.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">returns 1 match →</text>
+<text x="660.0" y="1030.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">llm emits next tool_call:</text>
+<text x="660.0" y="1052.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">get_professor_facts_tool(</text>
+<text x="660.0" y="1074.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">  professor_name='CHENG Cheng')</text>
+<rect x="880" y="960" width="380" height="130" rx="18" fill="#eef2ff" stroke="#4f46e5" stroke-width="3.0"/>
+<text x="1070.0" y="997.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">3. ToolNode returns facts:</text>
+<text x="1070.0" y="1019.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">research interests,</text>
+<text x="1070.0" y="1041.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">organizations, publications →</text>
+<text x="1070.0" y="1063.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">llm composes grounded answer</text>
+<rect x="1290" y="960" width="370" height="130" rx="18" fill="#fffbeb" stroke="#d97706" stroke-width="3.0"/>
+<text x="1475.0" y="986.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">4. AIMessage has</text>
+<text x="1475.0" y="1008.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">no tool_calls →</text>
+<text x="1475.0" y="1030.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">route_after_model returns END.</text>
+<text x="1475.0" y="1052.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">active_agent stays</text>
+<text x="1475.0" y="1074.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">'ProfessorLookupAgent'.</text>
+</svg>

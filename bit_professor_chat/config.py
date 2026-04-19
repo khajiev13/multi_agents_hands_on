@@ -72,9 +72,6 @@ class TutorSettings:
     llm_api_key: str
     llm_base_url: str
     llm_model: str
-    graph_api_key: str | None = None
-    graph_base_url: str | None = None
-    graph_model: str | None = None
     ocr_api_key: str | None = None
     ocr_base_url: str | None = None
     ocr_model: str | None = None
@@ -143,18 +140,6 @@ class TutorSettings:
             llm_api_key=llm_api_key or "",
             llm_base_url=llm_base_url or "",
             llm_model=llm_model or "",
-            graph_api_key=(
-                _first_env("BIT_PROF_GRAPH_API_KEY", "LAB_TUTOR_GRAPH_API_KEY")
-                or llm_api_key
-            ),
-            graph_base_url=(
-                _first_env("BIT_PROF_GRAPH_BASE_URL", "LAB_TUTOR_GRAPH_BASE_URL")
-                or llm_base_url
-            ),
-            graph_model=(
-                _first_env("BIT_PROF_GRAPH_MODEL", "LAB_TUTOR_GRAPH_MODEL")
-                or llm_model
-            ),
             ocr_api_key=(
                 _first_env("BIT_PROF_OCR_API_KEY", "LAB_TUTOR_LLM_API_KEY") or llm_api_key
             ),
@@ -212,28 +197,6 @@ class TutorSettings:
     def lab_tutor_llm_model(self) -> str:
         return self.llm_model
 
-    def require_graph_generation(self) -> dict[str, Any]:
-        missing = [
-            name
-            for name, value in {
-                "BIT_PROF_GRAPH_API_KEY": self.graph_api_key,
-                "BIT_PROF_GRAPH_BASE_URL": self.graph_base_url,
-                "BIT_PROF_GRAPH_MODEL": self.graph_model,
-            }.items()
-            if not value
-        ]
-        if missing:
-            missing_list = ", ".join(sorted(missing))
-            raise ValueError(
-                "Graph generation configuration is required for kg-gen extraction. "
-                f"Missing: {missing_list}"
-            )
-        return {
-            "api_key": self.graph_api_key,
-            "base_url": self.graph_base_url,
-            "model": self.graph_model,
-        }
-
     @property
     def chroma_dir(self) -> Path:
         configured = self.vector_dir or str(self.project_root / "artifacts" / "lab2" / "chroma")
@@ -247,8 +210,8 @@ class TutorSettings:
         return self.project_root / "artifacts" / "lab2"
 
     @property
-    def structured_seed_dir(self) -> Path:
-        return self.project_root / "lab_3_langgraph_swarm" / "structured_seed"
+    def structured_output_dir(self) -> Path:
+        return self.project_root / "lab_3_langgraph_swarm" / "structured_output"
 
     @property
     def corpus_index_path(self) -> Path:

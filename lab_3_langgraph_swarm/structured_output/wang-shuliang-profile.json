@@ -1,0 +1,313 @@
+{
+  "metadata": {
+    "name": "WANG Shuliang",
+    "slug": "wang-shuliang",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b121630.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/wang-shuliang-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "WANG Shuliang",
+      "aliases": [
+        "WANG Shuliang",
+        "王树良",
+        "Wang Shuliang"
+      ],
+      "title": "教授",
+      "school_name": "软件学院 School of Software",
+      "discipline": "Software Engineering",
+      "biography_text": "",
+      "emails": [
+        "slwang2011@bit.edu.cn"
+      ],
+      "phones": [
+        "010 6891 4976"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "软件学院 School of Software",
+        "org_type": "school",
+        "normalized_name": "software school of software"
+      },
+      {
+        "name": "Wuhan University",
+        "org_type": "university",
+        "normalized_name": "wuhan university"
+      },
+      {
+        "name": "The Hong Kong Polytechnic University",
+        "org_type": "university",
+        "normalized_name": "the hong kong polytechnic university"
+      },
+      {
+        "name": "The University of Pittsburgh",
+        "org_type": "university",
+        "normalized_name": "the university of pittsburgh"
+      },
+      {
+        "name": "International Journal of Granular Computing, Rough Sets and Intelligent Systems",
+        "org_type": "journal",
+        "normalized_name": "international journal of granular computing rough sets and intelligent systems"
+      },
+      {
+        "name": "International Journal of Systems Science",
+        "org_type": "journal",
+        "normalized_name": "international journal of systems science"
+      },
+      {
+        "name": "International Journal of Data Mining and Data Warehousing",
+        "org_type": "journal",
+        "normalized_name": "international journal of data mining and data warehousing"
+      },
+      {
+        "name": "Lecture Notes in Artificial Intelligence",
+        "org_type": "journal",
+        "normalized_name": "lecture notes in artificial intelligence"
+      },
+      {
+        "name": "China",
+        "org_type": "government",
+        "normalized_name": "china"
+      },
+      {
+        "name": "IEEE International Granular Computing Society",
+        "org_type": "association",
+        "normalized_name": "ieee international granular computing society"
+      },
+      {
+        "name": "IGI Global, USA",
+        "org_type": "company",
+        "normalized_name": "igi global usa"
+      },
+      {
+        "name": "IBM-the Ministry of Education, China",
+        "org_type": "company",
+        "normalized_name": "ibm the ministry of education china"
+      },
+      {
+        "name": "CitiCorp Software and Technology Services",
+        "org_type": "company",
+        "normalized_name": "citicorp software and technology services"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "Spatial data mining",
+        "normalized_name": "spatial data mining"
+      },
+      {
+        "name": "Data field",
+        "normalized_name": "data field"
+      },
+      {
+        "name": "Big data",
+        "normalized_name": "big data"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph.D.",
+        "field": "",
+        "organization_name": "Wuhan University, The Hong Kong Polytechnic University",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "Ph.D. Wuhan University, The Hong Kong Polytechnic University"
+      },
+      {
+        "kind": "employment",
+        "title": "Visiting Professor",
+        "degree": "",
+        "field": "",
+        "organization_name": "The University of Pittsburgh",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "Visiting Professor, The University of Pittsburgh"
+      },
+      {
+        "kind": "employment",
+        "title": "Postdoctoral Fellow",
+        "degree": "",
+        "field": "",
+        "organization_name": "The Hong Kong Polytechnic University",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "Postdoctoral Fellow, The Hong Kong Polytechnic University"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Membership of Editorial Board",
+        "degree": "",
+        "field": "",
+        "organization_name": "International Journal of Granular Computing, Rough Sets and Intelligent Systems",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 4,
+        "raw_text": "Membership of Editorial Board, [1] International Journal of Granular Computing, Rough Sets and Intelligent Systems"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Guest Editor",
+        "degree": "",
+        "field": "",
+        "organization_name": "International Journal of Systems Science",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "Guest Editor [1] International Journal of Systems Science,"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Guest Editor",
+        "degree": "",
+        "field": "",
+        "organization_name": "International Journal of Data Mining and Data Warehousing",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 6,
+        "raw_text": "[2] International Journal of Data Mining and Data Warehousing"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Guest Editor",
+        "degree": "",
+        "field": "",
+        "organization_name": "Lecture Notes in Artificial Intelligence",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 7,
+        "raw_text": "[3] Lecture Notes in Artificial Intelligence"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Theories and Applications of Spatial Data mining",
+        "authors_raw": "Li Deren, Shuliang Wang, Li Deyi",
+        "year": "2015",
+        "venue": "Springer",
+        "publication_type": "book",
+        "doi_or_url": "",
+        "raw_text": "Li Deren, Shuliang Wang, Li Deyi, 2015, Theories and Applications of Spatial Data mining (Berlin: Springer)",
+        "order": 1
+      },
+      {
+        "title": "Spatial data mining: a perspective of big data",
+        "authors_raw": "Shuliang Wang, Hanning Yuan",
+        "year": "2014",
+        "venue": "International Journal of Data Warehousing and Mining",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Shuliang Wang, Hanning Yuan, 2014, Spatial data mining: a perspective of big data, International Journal of Data Warehousing and Mining, 10(4):50-70",
+        "order": 2
+      },
+      {
+        "title": "Automatic quantitative analysis and localization of protein expression with GDF",
+        "authors_raw": "Shuliang Wang, Ying Li, Wenchen Tu, Peng Wang",
+        "year": "2014",
+        "venue": "International Journal of Data Mining and Bioinformatics",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Shuliang Wang, Ying Li, Wenchen Tu, Peng Wang, 2014, Automatic quantitative analysis and localization of protein expression with GDF, International Journal of Data Mining and Bioinformatics, 10(3): 300-314",
+        "order": 3
+      },
+      {
+        "title": "HASTA: a hierarchical-grid clustering algorithm with data field",
+        "authors_raw": "Shuliang Wang, Chen Yasen",
+        "year": "2014",
+        "venue": "International Journal of Data Warehousing and Mining",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Shuliang Wang, Chen Yasen, 2014, HASTA: a hierarchical-grid clustering algorithm with data field, International Journal of Data Warehousing and Mining, 10(2): 39-54",
+        "order": 4
+      },
+      {
+        "title": "Data Field for Hierarchical Clustering",
+        "authors_raw": "Wang Shuliang, Gan Wenyan, Li Deyi, Li Deren",
+        "year": "2011",
+        "venue": "International Journal of Data Warehousing and Mining",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Wang Shuliang, Gan Wenyan, Li Deyi, Li Deren, 2011, Data Field for Hierarchical Clustering, International Journal of Data Warehousing and Mining, 7(4), 43-63",
+        "order": 5
+      }
+    ],
+    "awards": [
+      {
+        "name": "The Fifth Chinese Excellent Publications Award (Books)",
+        "year": "2015",
+        "granting_org_name": "China",
+        "level": "",
+        "raw_text": "2015, The Fifth Chinese Excellent Publications Award (Books), China",
+        "order": 1
+      },
+      {
+        "name": "Outstanding Contribution Award",
+        "year": "2013",
+        "granting_org_name": "IEEE International Granular Computing Society",
+        "level": "",
+        "raw_text": "2013, Outstanding Contribution Award, IEEE International Granular Computing Society",
+        "order": 2
+      },
+      {
+        "name": "the Fifth Annual InfoSci®-Journals Excellence in Research Awards",
+        "year": "2012",
+        "granting_org_name": "IGI Global, USA",
+        "level": "",
+        "raw_text": "2012, the Fifth Annual InfoSci®-Journals Excellence in Research Awards, IGI Global, USA",
+        "order": 3
+      },
+      {
+        "name": "Service Science and Management, 2010 Boutique Course",
+        "year": "2010",
+        "granting_org_name": "IBM-the Ministry of Education, China",
+        "level": "",
+        "raw_text": "2010, Service Science and Management, 2010 Boutique Course, IBM-the Ministry of Education, China.",
+        "order": 4
+      },
+      {
+        "name": "Citi Excellent Teachers",
+        "year": "2007",
+        "granting_org_name": "CitiCorp Software and Technology Services",
+        "level": "",
+        "raw_text": "2007, Citi Excellent Teachers, awarded by CitiCorp Software and Technology Services",
+        "order": 5
+      },
+      {
+        "name": "the National Best Ph.D. Dissertation Award",
+        "year": "2005",
+        "granting_org_name": "China",
+        "level": "",
+        "raw_text": "2005, the National Best Ph.D. Dissertation Award in China",
+        "order": 6
+      }
+    ],
+    "warnings": [
+      "The education entry 'Ph.D. Wuhan University, The Hong Kong Polytechnic University' is ambiguous; it is treated as a single organization name.",
+      "The academic service entries for Guest Editor are split across multiple lines; each journal is treated as a separate organization.",
+      "The publication venue for item 1 is inferred as 'Springer' from the parenthetical, but the raw text includes '(Berlin: Springer)'.",
+      "The phone number '010 6891 4976' is extracted from a line that also contains research interests; only the phone number is captured.",
+      "The biography section heading '个人简历(Biography)' is present but contains no text, so biography_text is empty."
+    ]
+  }
+}

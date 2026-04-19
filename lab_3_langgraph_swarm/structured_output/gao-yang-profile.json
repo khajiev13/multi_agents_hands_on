@@ -1,0 +1,190 @@
+{
+  "metadata": {
+    "name": "GAO Yang",
+    "slug": "gao-yang",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113064.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/gao-yang-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "GAO Yang",
+      "aliases": [
+        "GAO Yang",
+        "高扬",
+        "Gao Yang"
+      ],
+      "title": "讲师",
+      "school_name": "计算机学院",
+      "discipline": "计算机科学与技术",
+      "biography_text": "",
+      "emails": [
+        "gyang@bit.edu.cn"
+      ],
+      "phones": [
+        "18513999926"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "计算机学院",
+        "org_type": "school",
+        "normalized_name": "computer school"
+      },
+      {
+        "name": "School of Computer Science & Technology",
+        "org_type": "school",
+        "normalized_name": "school of computer science technology"
+      },
+      {
+        "name": "Queensland University of Technology (QUT)",
+        "org_type": "university",
+        "normalized_name": "queensland university of technology"
+      },
+      {
+        "name": "Beijing Institute of Technology(BIT)",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "IEEE Transactions on Knowledge and Data Engineering",
+        "org_type": "journal",
+        "normalized_name": "ieee transactions on knowledge and data engineering"
+      },
+      {
+        "name": "International Conference on World Wide Web Companion(WWW)",
+        "org_type": "conference",
+        "normalized_name": "international conference on world wide web companion"
+      },
+      {
+        "name": "International Conference on Web Information Systems Engineering (WISE)",
+        "org_type": "conference",
+        "normalized_name": "international conference on web information systems engineering"
+      },
+      {
+        "name": "IEEE the 13th International Conference on Data Mining Workshops (ICDMW)",
+        "org_type": "conference",
+        "normalized_name": "ieee international conference on data mining workshops"
+      },
+      {
+        "name": "Pacific-Asia Conference on Knowledge Discovery and Data Mining, PAKDD",
+        "org_type": "conference",
+        "normalized_name": "pacific asia conference on knowledge discovery and data mining"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "机器学习",
+        "normalized_name": "machine learning"
+      },
+      {
+        "name": "数据挖掘",
+        "normalized_name": "data mining"
+      },
+      {
+        "name": "自动问答系统",
+        "normalized_name": "auto question answering system"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph.D",
+        "field": "",
+        "organization_name": "Queensland University of Technology (QUT)",
+        "location": "",
+        "start_text": "2011.11",
+        "end_text": "2015.5",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "2011.11-2015.5 昆士兰科技大学博士 Queensland University of Technology (QUT) Ph.D"
+      },
+      {
+        "kind": "employment",
+        "title": "Postdoc",
+        "degree": "",
+        "field": "",
+        "organization_name": "Queensland University of Technology (QUT)",
+        "location": "",
+        "start_text": "2015.2",
+        "end_text": "2015.9",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "2015.2-2015.9 昆士兰科技大学博士后 Queensland University of Technology (QUT) Postdoc"
+      },
+      {
+        "kind": "employment",
+        "title": "Lecture",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing Institute of Technology(BIT)",
+        "location": "",
+        "start_text": "2015.11",
+        "end_text": "",
+        "is_current": true,
+        "order": 3,
+        "raw_text": "2015.11-北京理工大学讲师 Beijing Institute of Technology(BIT) Lecture"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Pattern-based topics for document modelling in information filtering",
+        "authors_raw": "Gao, Yang, Xu, Yue, Li, Yufeng",
+        "year": "2015",
+        "venue": "IEEE Transactions on Knowledge and Data Engineering",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "(1)Gao, Yang, Xu, Yue, Li, Yufeng, Pattern-based topics for document modelling in information filtering, IEEE Transactions on Knowledge and Data Engineering, 2015, 24(6): 1629-1642.",
+        "order": 1
+      },
+      {
+        "title": "A topic based document relevance ranking model",
+        "authors_raw": "Gao, Yang, Xu, Yue, Li, Yufeng",
+        "year": "2014",
+        "venue": "the 23rd International Conference on World Wide Web Companion(WWW)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "(2)Gao, Yang, Xu, Yue, Li, Yufeng, A topic based document relevance ranking model, the 23rd International Conference on World Wide Web Companion(WWW), 271-272, Seoul, 2014.4.7-2014.4.11.",
+        "order": 2
+      },
+      {
+        "title": "Topical Pattern Based Document Modelling and Relevance Ranking",
+        "authors_raw": "Gao, Yang, Xu, Yue, Li, Yufeng",
+        "year": "2014",
+        "venue": "15th International Conference on Web Information Systems Engineering (WISE)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "(3)Gao, Yang, Xu, Yue, Li, Yufeng, Topical Pattern Based Document Modelling and Relevance Ranking, 15th International Conference on Web Information Systems Engineering (WISE), 186-201, 2014.10.12-2014.10.14.",
+        "order": 3
+      },
+      {
+        "title": "Pattern-based Topic Models for Information Filtering",
+        "authors_raw": "Gao, Yang, Xu, Yue, Li, Yufeng",
+        "year": "2013",
+        "venue": "2013 IEEE the 13th International Conference on Data Mining Workshops (ICDMW)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "(4)Gao, Yang, Xu, Yue, Li, Yufeng, Pattern-based Topic Models for Information Filtering, 2013 IEEE the 13th International Conference on Data Mining Workshops (ICDMW), 2013.12.7-2013.12.10.",
+        "order": 4
+      },
+      {
+        "title": "A two-stage approach for generating topic models",
+        "authors_raw": "Gao, Yang, Xu, Yue, Li, Yufeng, Liu, Bin",
+        "year": "2013",
+        "venue": "17th Pacific-Asia Conference on Knowledge Discovery and Data Mining, PAKDD 2013",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "(5)Gao, Yang, Xu, Yue, Li, Yufeng, Liu, Bin, A two-stage approach for generating topic models, 17th Pacific-Asia Conference on Knowledge Discovery and Data Mining, PAKDD 2013, 221-232, 2013.4.14-2013.4.17.",
+        "order": 5
+      }
+    ],
+    "awards": [],
+    "warnings": [
+      "ignored the instruction-only publication heading because it did not list concrete items",
+      "title 'Lecture' in experience may be a translation of 'Lecturer' but kept as source text",
+      "superscript affiliations (a,b,c) in publication author lists were removed from authors_raw as per rule to keep raw text close to source but not reconstruct patterns"
+    ]
+  }
+}

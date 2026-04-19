@@ -6,9 +6,11 @@ __pycache__/
 .qlpreview/
 .render_check/
 artifacts/
+logs/
 .claude/
 .claude-design/
 .playwright-mcp/
+lab_4_deep_agents/sandbox/
 *.pyc
 AGENT.md
 images-merged.md

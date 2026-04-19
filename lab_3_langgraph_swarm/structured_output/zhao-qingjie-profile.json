@@ -1,0 +1,186 @@
+{
+  "metadata": {
+    "name": "ZHAO Qingjie",
+    "slug": "zhao-qingjie",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113081.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/zhao-qingjie-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "Zhao Qingjie",
+      "aliases": [
+        "赵清杰",
+        "Zhao Qingjie",
+        "ZHAO Qingjie"
+      ],
+      "title": "教授",
+      "school_name": "计算机学院",
+      "discipline": "计算机应用技术",
+      "biography_text": "",
+      "emails": [
+        "zhaoqj@bit.edu.cn"
+      ],
+      "phones": [],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "计算机学院",
+        "org_type": "school",
+        "normalized_name": "computer science and technology"
+      },
+      {
+        "name": "Tsinghua University",
+        "org_type": "university",
+        "normalized_name": "tsinghua university"
+      },
+      {
+        "name": "Beijing Institute of Technology",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "University of Essex",
+        "org_type": "university",
+        "normalized_name": "university of essex"
+      },
+      {
+        "name": "China Computer Federation",
+        "org_type": "association",
+        "normalized_name": "china computer federation"
+      },
+      {
+        "name": "Chinese Association of Automation",
+        "org_type": "association",
+        "normalized_name": "chinese association of automation"
+      },
+      {
+        "name": "China Association of Artificial Intelligence",
+        "org_type": "association",
+        "normalized_name": "china association of artificial intelligence"
+      },
+      {
+        "name": "IEEE",
+        "org_type": "association",
+        "normalized_name": "ieee"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "图像与视频处理",
+        "normalized_name": "image and video processing"
+      },
+      {
+        "name": "目标识别与跟踪",
+        "normalized_name": "object recognition and tracking"
+      },
+      {
+        "name": "视频大数据检索",
+        "normalized_name": "video bigdata retrieval"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph.D.",
+        "field": "computer science and technology",
+        "organization_name": "Tsinghua University",
+        "location": "",
+        "start_text": "",
+        "end_text": "2003",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "于 2003 年在清华大学计算机系获得博士学位"
+      },
+      {
+        "kind": "employment",
+        "title": "",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "",
+        "start_text": "2003",
+        "end_text": "now",
+        "is_current": true,
+        "order": 2,
+        "raw_text": "从 2003 年至今，在北京理工大学计算机学院工作。"
+      },
+      {
+        "kind": "employment",
+        "title": "Visiting Fellow",
+        "degree": "",
+        "field": "",
+        "organization_name": "University of Essex",
+        "location": "U.K.",
+        "start_text": "2008",
+        "end_text": "2009",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "2008-2009，在英国 Essex 大学客座访问。"
+      }
+    ],
+    "publications": [
+      {
+        "title": "An image-based near-duplicate video retrieval and localization using improved Edit distance",
+        "authors_raw": "Hao Liu, Qingjie Zhao, Hao Wang, Peng Lv & Yanming Chen",
+        "year": "2016",
+        "venue": "Multimedia Tools and Applications",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Hao Liu, Qingjie Zhao, Hao Wang, Peng Lv & Yanming Chen, An image-based near-duplicate video retrieval and localization using improved Edit distance, Multimedia Tools and Applications, 2016, online",
+        "order": 1
+      },
+      {
+        "title": "Tracking Non-Rigid Target via Dynamic Discriminative Geodesic Active Contours",
+        "authors_raw": "Lv, Peng; Zhao, Qing-Jei; Gu, Dong-Bing",
+        "year": "2016",
+        "venue": "Journal of Information Science and Engineering",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Lv, Peng; Zhao, Qing-Jei; Gu, Dong-Bing, Tracking Non-Rigid Target via Dynamic Discriminative Geodesic Active Contours, Journal of Information Science and Engineering, vol.32, no. 4, 903-930, 2016",
+        "order": 2
+      },
+      {
+        "title": "Combined discriminative global and generative local models for visual tracking",
+        "authors_raw": "Liujun Zhao; Qingjie Zhao; Yanming Chen; Peng Lv",
+        "year": "2016",
+        "venue": "Journal of Electronic Imaging",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Liujun Zhao; Qingjie Zhao; Yanming Chen; Peng Lv; Combined discriminative global and generative local models for visual tracking, Journal of Electronic Imaging, 25(2), 2016.",
+        "order": 3
+      },
+      {
+        "title": "Distributed Multi-Target Tracking Based on the K-MTSFC Algorithm in Camera Networks",
+        "authors_raw": "Yanming Chen; Qingjie Zhao; Zhulin An; Peng Lv; Liujun Zhao",
+        "year": "2016",
+        "venue": "IEEE Sensors Journal",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Yanming Chen; Qingjie Zhao; Zhulin An; Peng Lv; Liujun Zhao, Distributed Multi-Target Tracking Based on the K-MTSFC Algorithm in Camera Networks, Source: IEEE Sensors Journal, v 16, n.13, p 5481-90, 1 July 2016",
+        "order": 4
+      },
+      {
+        "title": "A Real-Time Active Pedestrian Tracking System Inspired by the Human Visual System",
+        "authors_raw": "Wang Xuyia, Zhao Qingjie, Wang Bo, et al.",
+        "year": "2016",
+        "venue": "Cognitive Computation",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Wang Xuyia, Zhao Qingjie, Wang Bo, et al. A Real-Time Active Pedestrian Tracking System Inspired by the Human Visual System. Cognitive Computation, 2016, vol.8, no.1, 39-51.",
+        "order": 5
+      }
+    ],
+    "awards": [],
+    "warnings": [
+      "Ignored the instruction-only publication heading '请列举5篇左右代表性论文或著作。(Please list 5 representative publications)' as it did not list concrete items.",
+      "The professor's title is listed as '教授 Professor'. Using the Chinese canonical value '教授'.",
+      "The school and discipline are listed in both Chinese and English. Using the Chinese canonical values.",
+      "The academic service roles (e.g., '中国计算机学会高级会员') are listed but not mapped to experiences as they lack clear start/end dates or host organizations distinct from the association name. They are added as organizations.",
+      "The biography section contains text that is a duplicate of the education and work experience sections, so it is not extracted as separate biography_text.",
+      "The 'Members of - China Computer Federation, Chinese Association of Automation, China Association of Artificial Intelligence and IEEE' line is treated as a summary of the academic service list and used to populate organization names."
+    ]
+  }
+}

@@ -1,0 +1,311 @@
+{
+  "metadata": {
+    "name": "WANG Quanyu",
+    "slug": "wang-quanyu",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113076.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/wang-quanyu-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "WANG Quanyu",
+      "aliases": [
+        "WANG Quanyu",
+        "王全玉",
+        "Wang Quanyu"
+      ],
+      "title": "Associate Professor",
+      "school_name": "School of Computer Science and Technology",
+      "discipline": "Computer Science and Technology",
+      "biography_text": "",
+      "emails": [
+        "wangquanyu@bit.edu.cn"
+      ],
+      "phones": [
+        "86-10-68914322"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "School of Computer Science and Technology",
+        "org_type": "school",
+        "normalized_name": "school of computer science and technology"
+      },
+      {
+        "name": "Beijing University of Aeronautics and Astronautics",
+        "org_type": "university",
+        "normalized_name": "beijing university of aeronautics and astronautics"
+      },
+      {
+        "name": "Harbin Shipbuilding Engineering Institute",
+        "org_type": "university",
+        "normalized_name": "harbin shipbuilding engineering institute"
+      },
+      {
+        "name": "Harbin Institute of Technology",
+        "org_type": "university",
+        "normalized_name": "harbin institute of technology"
+      },
+      {
+        "name": "Harbin Chengxin SciTech Developing Co.",
+        "org_type": "company",
+        "normalized_name": "harbin chengxin scitech developing co"
+      },
+      {
+        "name": "Harbin Engineering University",
+        "org_type": "university",
+        "normalized_name": "harbin engineering university"
+      },
+      {
+        "name": "Beijing Institute of Technology",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "China Computer Federation",
+        "org_type": "association",
+        "normalized_name": "china computer federation"
+      },
+      {
+        "name": "Virtual Reality and Visualization Technology Committee",
+        "org_type": "association",
+        "normalized_name": "virtual reality and visualization technology committee"
+      },
+      {
+        "name": "IEEE",
+        "org_type": "association",
+        "normalized_name": "ieee"
+      },
+      {
+        "name": "Department of Aeronautics and Astronautics",
+        "org_type": "government",
+        "normalized_name": "department of aeronautics and astronautics"
+      },
+      {
+        "name": "China North Industries Group Corporation",
+        "org_type": "company",
+        "normalized_name": "china north industries group corporation"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "移动互联网 Mobile Internet",
+        "normalized_name": "mobile internet"
+      },
+      {
+        "name": "机器人技术 Robot Technology",
+        "normalized_name": "robot technology"
+      },
+      {
+        "name": "人机交互 Human Computer Interaction",
+        "normalized_name": "human computer interaction"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Bachelor's Degree",
+        "field": "",
+        "organization_name": "Beijing University of Aeronautics and Astronautics",
+        "location": "",
+        "start_text": "",
+        "end_text": "1991",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "Bachelor's Degree, Beijing University of Aeronautics and Astronautics, 1991"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Master's Degree",
+        "field": "",
+        "organization_name": "Harbin Shipbuilding Engineering Institute",
+        "location": "",
+        "start_text": "",
+        "end_text": "1994",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "Master's Degree, Harbin Shipbuilding Engineering Institute, 1994"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "PhD",
+        "field": "",
+        "organization_name": "Harbin Institute of Technology",
+        "location": "",
+        "start_text": "",
+        "end_text": "1997",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "PhD, Harbin Institute of Technology, 1997"
+      },
+      {
+        "kind": "employment",
+        "title": "Engineer",
+        "degree": "",
+        "field": "",
+        "organization_name": "Harbin Chengxin SciTech Developing Co.",
+        "location": "",
+        "start_text": "1997",
+        "end_text": "",
+        "is_current": false,
+        "order": 4,
+        "raw_text": "1997, Engineer, Harbin Chengxin SciTech Developing Co."
+      },
+      {
+        "kind": "employment",
+        "title": "Postdoctoral Fellow",
+        "degree": "",
+        "field": "Control Theory",
+        "organization_name": "Harbin Engineering University",
+        "location": "",
+        "start_text": "1999",
+        "end_text": "",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "1999, Postdoctoral Fellow, Control Theory, Harbin Engineering University"
+      },
+      {
+        "kind": "employment",
+        "title": "Associate Professor",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "",
+        "start_text": "2002",
+        "end_text": "",
+        "is_current": true,
+        "order": 6,
+        "raw_text": "2002, Associate Professor, Beijing Institute of Technology"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Senior member",
+        "degree": "",
+        "field": "",
+        "organization_name": "China Computer Federation",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 7,
+        "raw_text": "Senior member of China Computer Federation"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Member",
+        "degree": "",
+        "field": "",
+        "organization_name": "Virtual Reality and Visualization Technology Committee",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 8,
+        "raw_text": "Member of Virtual Reality and Visualization Technology Committee"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Member",
+        "degree": "",
+        "field": "",
+        "organization_name": "IEEE",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 9,
+        "raw_text": "IEEE Member"
+      }
+    ],
+    "publications": [
+      {
+        "title": "An Energy-efficient Routing Protocol for Wireless Sensor Networks",
+        "authors_raw": "Xin Liu, Quanyu Wang, Xuliang Jin",
+        "year": "2008",
+        "venue": "Proceedings of the 7th World Congress on Intelligent Control and Automation",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Xin Liu, Quanyu Wang, Xuliang Jin, An Energy-efficient Routing Protocol for Wireless Sensor Networks, Proceedings of the 7th World Congress on Intelligent Control and Automation June 25-27, 2008, Chongqing, China, pp.1728-1733",
+        "order": 1
+      },
+      {
+        "title": "A New Internet Architecture for Robot Remote Control",
+        "authors_raw": "Quanyu WANG, Siyin LIU, Zhe WANG",
+        "year": "2006",
+        "venue": "2006 IEEE/RSJ INTERNATIONAL CONFERENCE ON Intelligent Robots and Systems",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Quanyu WANG, Siyin LIU, Zhe WANG. A New Internet Architecture for Robot Remote Control. 2006 IEEE/RSJ INTERNATIONAL CONFERENCE ON Intelligent Robots and Systems October 9-14, 2006, Beijing, China.",
+        "order": 2
+      },
+      {
+        "title": "BITBot-A Modelling and Simulation Platform for Robots",
+        "authors_raw": "Quanyu WANG, Bin LU, Xin LIU",
+        "year": "2008",
+        "venue": "IEEE-RAS International Conference on Humanoids Robots, Humanoids'08",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Quanyu WANG, Bin LU, Xin LIU,BITBot-A Modelling and Simulation Platform for Robots,IEEE-RAS International Conference on Humanoids Robots, Humanoids'08, Daejeon, Korea, December 1-3, 2008, pp469-474",
+        "order": 3
+      },
+      {
+        "title": "An Internet Robot Tele-operating System",
+        "authors_raw": "WANG Quanyu, CAO Haifang, LIU Xin",
+        "year": "2008",
+        "venue": "International Conference on Robotics, Automation & MechatronicsIEEE CIS-RAM 2008",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "WANG Quanyu, CAO Haifang, LIU Xin, An Internet Robot Tele-operating System,International Conference on Robotics, Automation & MechatronicsIEEE CIS-RAM 2008, Chengdu, China",
+        "order": 4
+      },
+      {
+        "title": "Position/Attitude Resolving Simulation of a Shooting Device in a Projection System",
+        "authors_raw": "Wang Quanyu, Mi Qing, Shen Pengyang, Liu Xin",
+        "year": "2010",
+        "venue": "(ICCASM2010)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Wang Quanyu, Mi Qing, Shen Pengyang, Liu Xin, Position/Attitude Resolving Simulation of a Shooting Device in a Projection System,(ICCASM2010)V15,pp244-247",
+        "order": 5
+      }
+    ],
+    "awards": [
+      {
+        "name": "Second-class Science and Technology Progress Award",
+        "year": "",
+        "granting_org_name": "Department of Aeronautics and Astronautics",
+        "level": "",
+        "raw_text": "Second-class Science and Technology Progress Award from Department of Aeronautics and Astronautics",
+        "order": 1
+      },
+      {
+        "name": "Third-class Science and Technology Progress Award",
+        "year": "",
+        "granting_org_name": "China North Industries Group Corporation",
+        "level": "",
+        "raw_text": "Third-class Science and Technology Progress Award from China North Industries Group Corporation",
+        "order": 2
+      },
+      {
+        "name": "First-class Science and Technology Award",
+        "year": "",
+        "granting_org_name": "Beijing Institute of Technology",
+        "level": "",
+        "raw_text": "First-class Science and Technology Award from Beijing Institute of Technology",
+        "order": 3
+      }
+    ],
+    "warnings": [
+      "The 'Personal Resume (Biography)' section heading was present but contained no text.",
+      "The 'Working Experience' section contained a narrative sentence ('1997年入职...') which was not parsed as a structured experience item. Only the listed bullet points were used.",
+      "The 'Part-time Academic Jobs' section listed roles but no explicit dates or organizations. Organizations were inferred from the role descriptions where possible.",
+      "Award years were not provided in the source text.",
+      "The education entries list only end years (degree conferral). Start years are not provided.",
+      "The employment entry for 'Associate Professor, Beijing Institute of Technology' is marked as current because the narrative mentions ongoing work and no end date is given."
+    ]
+  }
+}

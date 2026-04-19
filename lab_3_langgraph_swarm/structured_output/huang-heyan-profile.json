@@ -1,0 +1,414 @@
+{
+  "metadata": {
+    "name": "HUANG Heyan",
+    "slug": "huang-heyan",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113063.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/huang-heyan-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "HUANG Heyan",
+      "aliases": [
+        "HUANG Heyan",
+        "黄河燕",
+        "Huang Heyan"
+      ],
+      "title": "Professor",
+      "school_name": "School of Computer Science & Technology",
+      "discipline": "",
+      "biography_text": "",
+      "emails": [
+        "fengchong@hotmail.com"
+      ],
+      "phones": [
+        "010-68918674"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "School of Computer Science & Technology",
+        "org_type": "school",
+        "normalized_name": "school of computer science technology"
+      },
+      {
+        "name": "Beijing Institute of Technology",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "Beijing Engineering Research Center of Massive Language Information Processing and Cloud Computing Application",
+        "org_type": "university",
+        "normalized_name": "beijing engineering research center of massive language information processing and cloud computing application"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "机器翻译",
+        "normalized_name": "机器翻译"
+      },
+      {
+        "name": "Machine Translation",
+        "normalized_name": "machine translation"
+      },
+      {
+        "name": "自然语言处理",
+        "normalized_name": "自然语言处理"
+      },
+      {
+        "name": "Natural Language Processing",
+        "normalized_name": "natural language processing"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph.D.",
+        "field": "",
+        "organization_name": "Institute of Computing Technology, Chinese Academy of Sciences",
+        "location": "",
+        "start_text": "1986.2",
+        "end_text": "1989.3",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "1986.2-1989.3 | Ph.D., Institute of Computing Technology, Chinese Academy of Sciences"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "M.S.",
+        "field": "",
+        "organization_name": "School of Computer Science, National University of Defense Technology",
+        "location": "",
+        "start_text": "1983.8",
+        "end_text": "1986.1",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "1983.8-1986.1 | M.S., School of Computer Science, National University of Defense Technology"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "B.S.",
+        "field": "",
+        "organization_name": "School of Computer Science, Wuhan Technical University of Surveying and Mapping",
+        "location": "",
+        "start_text": "1979.9",
+        "end_text": "1983.7",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "1979.9-1983.7 | B.S., School of Computer Science, Wuhan Technical University of Surveying and Mapping"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "EMBA",
+        "field": "",
+        "organization_name": "Guanghua School of Management, Peking University",
+        "location": "",
+        "start_text": "1999.7",
+        "end_text": "2000.5",
+        "is_current": false,
+        "order": 4,
+        "raw_text": "1999.7-2000.5 | EMBA, Guanghua School of Management, Peking University"
+      },
+      {
+        "kind": "employment",
+        "title": "Assistant Researcher",
+        "degree": "",
+        "field": "",
+        "organization_name": "Institute of Computing Technology, Chinese Academy of Sciences",
+        "location": "",
+        "start_text": "1989.3",
+        "end_text": "1994.6",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "1989.3-1994.6 | Assistant Researcher, Institute of Computing Technology, Chinese Academy of Sciences"
+      },
+      {
+        "kind": "employment",
+        "title": "Associate Researcher",
+        "degree": "",
+        "field": "",
+        "organization_name": "Institute of Computing Technology, Chinese Academy of Sciences",
+        "location": "",
+        "start_text": "1994.7",
+        "end_text": "1995.9",
+        "is_current": false,
+        "order": 6,
+        "raw_text": "1994.7-1995.9 | Associate Researcher, Institute of Computing Technology, Chinese Academy of Sciences"
+      },
+      {
+        "kind": "employment",
+        "title": "Researcher",
+        "degree": "",
+        "field": "",
+        "organization_name": "Institute of Computing Technology, Chinese Academy of Sciences",
+        "location": "",
+        "start_text": "1995.10",
+        "end_text": "1997.6",
+        "is_current": false,
+        "order": 7,
+        "raw_text": "1995.10-1997.6 | Researcher, Institute of Computing Technology, Chinese Academy of Sciences"
+      },
+      {
+        "kind": "employment",
+        "title": "Deputy Director & Researcher",
+        "degree": "",
+        "field": "",
+        "organization_name": "Research Center of Computer & Language Information Engineering, Chinese Academy of Sciences",
+        "location": "",
+        "start_text": "1997.6",
+        "end_text": "2001.11",
+        "is_current": false,
+        "order": 8,
+        "raw_text": "1997.6-2001.11 | Deputy Director & Researcher, Research Center of Computer & Language Information Engineering, Chinese Academy of Sciences"
+      },
+      {
+        "kind": "employment",
+        "title": "Director & Researcher",
+        "degree": "",
+        "field": "",
+        "organization_name": "Research Center of Computer & Language Information Engineering, Chinese Academy of Sciences",
+        "location": "",
+        "start_text": "2001.12",
+        "end_text": "2008.12",
+        "is_current": false,
+        "order": 9,
+        "raw_text": "2001.12-2008.12 | Director & Researcher, Research Center of Computer & Language Information Engineering, Chinese Academy of Sciences"
+      },
+      {
+        "kind": "employment",
+        "title": "Dean, Professor & Ph.D Supervisor",
+        "degree": "",
+        "field": "",
+        "organization_name": "School of Computer Science & Technology, Beijing Institute of Technology",
+        "location": "",
+        "start_text": "2008.12",
+        "end_text": "present",
+        "is_current": true,
+        "order": 10,
+        "raw_text": "2008.12-present | Dean, Professor & Ph.D Supervisor, School of Computer Science & Technology, Beijing Institute of Technology"
+      },
+      {
+        "kind": "employment",
+        "title": "Director",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing Engineering Research Center of Massive Language Information Processing and Cloud Computing Application",
+        "location": "",
+        "start_text": "2010.5",
+        "end_text": "present",
+        "is_current": true,
+        "order": 11,
+        "raw_text": "2010.5-present | Director, Beijing Engineering Research Center of Massive Language Information Processing and Cloud Computing Application"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Vice-President",
+        "degree": "",
+        "field": "",
+        "organization_name": "China Software Industry Association",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 12,
+        "raw_text": "Vice-President, China Software Industry Association"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Vice-President",
+        "degree": "",
+        "field": "",
+        "organization_name": "Chinese Association for Artificial Intelligence",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 13,
+        "raw_text": "Vice-President, Chinese Association for Artificial Intelligence"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Vice-President",
+        "degree": "",
+        "field": "",
+        "organization_name": "Chinese Information Processing Society of China",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 14,
+        "raw_text": "Vice-President, Chinese Information Processing Society of China"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Expert",
+        "degree": "",
+        "field": "",
+        "organization_name": "National High Technology Research and Development Program-863",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 15,
+        "raw_text": "Expert, National High Technology Research and Development Program-863"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Expert",
+        "degree": "",
+        "field": "",
+        "organization_name": "National Natural Science Foundation of China",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 16,
+        "raw_text": "Expert, National Natural Science Foundation of China"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Committee Member",
+        "degree": "",
+        "field": "",
+        "organization_name": "Committee of Computer Teaching, Ministry of Education",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 17,
+        "raw_text": "Committee Member, Committee of Computer Teaching, Ministry of Education"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Committee Member",
+        "degree": "",
+        "field": "",
+        "organization_name": "Committee of the Academic Degrees of Beijing",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 18,
+        "raw_text": "Committee Member, Committee of the Academic Degrees of Beijing"
+      }
+    ],
+    "publications": [
+      {
+        "title": "I Know What You Want to Express: Sentence Element InfERENCE by Incorporating External Knowledge Base",
+        "authors_raw": "Xiaochi Wei, Heyan Huang*, Liqiang Nie, Hanwang Zhang, Xian-Ling Mao, Tat-Seng Chua",
+        "year": "2017",
+        "venue": "IEEE Transactions on Knowledge & Data Engineering(KDE)",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "1. Xiaochi Wei, Heyan Huang*, Liqiang Nie, Hanwang Zhang, Xian-Ling Mao, Tat-Seng Chua, I Know What You Want to Express: Sentence Element InfERENCE by Incorporating External Knowledge Base, IEEE Transactions on Knowledge & Data Engineering(KDE), 29(2): 344-358, 2017",
+        "order": 1
+      },
+      {
+        "title": "CSE: Conceptual Sentence Embeddings based on Attention Model",
+        "authors_raw": "Yashen Wang, Heyan Huang*, Chong Feng, Qiang Zhou, Jiahui Gu, Xiong Gao",
+        "year": "2016",
+        "venue": "ACL 2016",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "2、Yashen Wang, Heyan Huang*, Chong Feng, Qiang Zhou, Jiahui Gu, Xiong Gao, CSE: Conceptual Sentence Embeddings based on Attention Model, ACL 2016, (1): 505-515, 2016",
+        "order": 2
+      },
+      {
+        "title": "A novel unsupervised method for new word extraction",
+        "authors_raw": "Lili Mei, Heyan Huang*, Xiaochi Wei, Xianling Mao",
+        "year": "2016",
+        "venue": "SCIENCE CHINA Information Sciences",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "3、Lili Mei, Heyan Huang*, Xiaochi Wei, Xianling Mao, A novel unsupervised method for new word extraction, SCIENCE CHINA Information Sciences, 59(9): 92102-1-11, 2016",
+        "order": 3
+      },
+      {
+        "title": "Re-Ranking Voting-Based Answers by Discarding User Behavior Biases",
+        "authors_raw": "Xiaochi Wei, Heyan Huang*, Chin-Yew Lin, Xin Xin, Xianling Mao, Shangguang Wang",
+        "year": "2015",
+        "venue": "IJCAI 2015",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "4、Xiaochi Wei, Heyan Huang*, Chin-Yew Lin, Xin Xin, Xianling Mao, Shangguang Wang, Re-Ranking Voting-Based Answers by Discarding User Behavior Biases, IJCAI 2015; 2380-2386, 2015",
+        "order": 4
+      },
+      {
+        "title": "Lifetime Lexical Variation in Social Media",
+        "authors_raw": "Lizi Liao, Jing Jiang, Ying Ding, Heyan Huang*, Ee-Peng Lim",
+        "year": "2014",
+        "venue": "AAAI 2014",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "5、Lizi Liao, Jing Jiang, Ying Ding, Heyan Huang*, Ee-Peng Lim, Lifetime Lexical Variation in Social Media, AAAI 2014; 1643-1649, 2014",
+        "order": 5
+      }
+    ],
+    "awards": [
+      {
+        "name": "First Prize of National Award for Progress in Science and Technology",
+        "year": "1995",
+        "granting_org_name": "National Award for Progress in Science and Technology",
+        "level": "First Prize",
+        "raw_text": "First Prize of National Award for Progress in Science and Technology (1995)",
+        "order": 1
+      },
+      {
+        "name": "Second Prize of National Award for Progress in Science and Technology",
+        "year": "2015",
+        "granting_org_name": "National Award for Progress in Science and Technology",
+        "level": "Second Prize",
+        "raw_text": "Second Prize of National Award for Progress in Science and Technology (2015)",
+        "order": 2
+      },
+      {
+        "name": "First Prize of Beijing Science and Technology Award",
+        "year": "2016",
+        "granting_org_name": "Beijing Science and Technology Award",
+        "level": "First Prize",
+        "raw_text": "First Prize of Beijing Science and Technology Award (2016)",
+        "order": 3
+      },
+      {
+        "name": "Third Prize of Beijing Science and Technology Award",
+        "year": "2014、2010",
+        "granting_org_name": "Beijing Science and Technology Award",
+        "level": "Third Prize",
+        "raw_text": "Third Prize of Beijing Science and Technology Award (2014、2010) etc.",
+        "order": 4
+      },
+      {
+        "name": "National Outstanding Scientific and Technological Worker",
+        "year": "2014",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "National Outstanding Scientific and Technological Worker (2014)",
+        "order": 5
+      },
+      {
+        "name": "Outstanding Youth of Chinese State Organs",
+        "year": "1998",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "Outstanding Youth of Chinese State Organs (1998)",
+        "order": 6
+      },
+      {
+        "name": "Winner of Special Government Allowances of the State Council",
+        "year": "1997",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "Winner of Special Government Allowances of the State Council (1997) etc.",
+        "order": 7
+      }
+    ],
+    "warnings": [
+      "Converted from the previous committed structured seed after repeated provider timeouts during the typed-profile rebuild."
+    ]
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "metadata": {
+    "name": "SHI Feng",
+    "slug": "shi-feng",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113069.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/shi-feng-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "SHI Feng",
+      "aliases": [
+        "石峰",
+        "ShiFeng",
+        "SHI Feng"
+      ],
+      "title": "教授",
+      "school_name": "计算机学院",
+      "discipline": "计算机体系结构",
+      "biography_text": "",
+      "emails": [
+        "bitsf@bit.edu.cn"
+      ],
+      "phones": [
+        "13910413487"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "计算机学院",
+        "org_type": "school",
+        "normalized_name": "计算机学院"
+      },
+      {
+        "name": "School of Computer Science & Technology",
+        "org_type": "school",
+        "normalized_name": "school of computer science technology"
+      },
+      {
+        "name": "北京大学物理系",
+        "org_type": "school",
+        "normalized_name": "北京大学物理系"
+      },
+      {
+        "name": "Beijing Institute of Technology",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "吉林农业大学",
+        "org_type": "university",
+        "normalized_name": "吉林农业大学"
+      },
+      {
+        "name": "北京理工大学计算机学院",
+        "org_type": "school",
+        "normalized_name": "北京理工大学计算机学院"
+      },
+      {
+        "name": "NCRE(National Computer Rank Examination) Committee",
+        "org_type": "association",
+        "normalized_name": "ncre national computer rank examination committee"
+      },
+      {
+        "name": "BIT Academic Committee",
+        "org_type": "association",
+        "normalized_name": "bit academic committee"
+      },
+      {
+        "name": "Info. & Elec. Divisions of BIT Academy",
+        "org_type": "association",
+        "normalized_name": "info elec divisions of bit academy"
+      },
+      {
+        "name": "Elsevier",
+        "org_type": "company",
+        "normalized_name": "elsevier"
+      },
+      {
+        "name": "Chinese Science Bulletin (科学通报-英文版)",
+        "org_type": "journal",
+        "normalized_name": "chinese science bulletin 科学通报 英文版"
+      },
+      {
+        "name": "Proceedings -Design, Automation and Test in Europe. DATE’09",
+        "org_type": "conference",
+        "normalized_name": "proceedings design automation and test in europe date 09"
+      },
+      {
+        "name": "2009 11th IEEE International Conference on High Performance Computing and Communications. HPCC’09",
+        "org_type": "conference",
+        "normalized_name": "2009 11th ieee international conference on high performance computing and communications hpcc 09"
+      },
+      {
+        "name": "Proc. 28th IEEE International Real-Time Systems Symposium. RTSS 2007",
+        "org_type": "conference",
+        "normalized_name": "proc 28th ieee international real time systems symposium rtss 2007"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "多核处理器体系结构",
+        "normalized_name": "多核处理器体系结构"
+      },
+      {
+        "name": "Architecture of Chip Multi-Processors",
+        "normalized_name": "architecture of chip multi processors"
+      },
+      {
+        "name": "专用集成电路设计",
+        "normalized_name": "专用集成电路设计"
+      },
+      {
+        "name": "ASIC Design",
+        "normalized_name": "asic design"
+      },
+      {
+        "name": "并行与高性能计算",
+        "normalized_name": "并行与高性能计算"
+      },
+      {
+        "name": "Parallel & High Performance Computation",
+        "normalized_name": "parallel high performance computation"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "理学学士",
+        "field": "",
+        "organization_name": "北京大学物理系",
+        "location": "",
+        "start_text": "1979.9",
+        "end_text": "1983.7",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "1979.9-1983.7 北京大学物理系理学学士"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph.D.",
+        "field": "computer science",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "",
+        "start_text": "1996.4",
+        "end_text": "1999.4",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "1996.4-1999.4 北京理工大学计算机应用技术专业博士"
+      },
+      {
+        "kind": "employment",
+        "title": "",
+        "degree": "",
+        "field": "",
+        "organization_name": "吉林农业大学",
+        "location": "",
+        "start_text": "1983.7",
+        "end_text": "1996.4",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "1983.7~1996.4 吉林农业大学"
+      },
+      {
+        "kind": "employment",
+        "title": "Teacher",
+        "degree": "",
+        "field": "",
+        "organization_name": "北京理工大学计算机学院",
+        "location": "",
+        "start_text": "1977.4",
+        "end_text": "现在",
+        "is_current": true,
+        "order": 4,
+        "raw_text": "1977.4-现在北京理工大学计算机学院"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Member",
+        "degree": "",
+        "field": "",
+        "organization_name": "NCRE(National Computer Rank Examination) Committee",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "Member of NCRE(National Computer Rank Examination) Committee"
+      }
+    ],
+    "publications": [
+      {
+        "title": "3D floorplanning of flow-power and area-efficient Network-on-Chip architecture",
+        "authors_raw": "Licheng Xue, Feng Shi, Weixing Ji, Haroon-Ur-Rashid Khan",
+        "year": "2011",
+        "venue": "Microprocessors and Microsystems, Elsevier",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[1] Licheng Xue, Feng Shi, Weixing Ji, Haroon-Ur-Rashid Khan, 3D floorplanning of flow-power and area-efficient Network-on-Chip architecture. Microprocessors and Microsystems, Elsevier. Volume 35, Issue 5, July 2011, Pages 484-495, SCI",
+        "order": 1
+      },
+      {
+        "title": "Computationally efficient locality-aware interconnection topology for multi-processor system-on-chip(MP-SoC)",
+        "authors_raw": "Haroon-Ur-Rashid Khan, SHI Feng, Ji WeiXing, GAO YuJin, WANG YiZhuo, LIU CaiXia, DENG Ning, LI JiaXin",
+        "year": "2010",
+        "venue": "Chinese Science Bulletin (科学通报-英文版)",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[2] Haroon-Ur-Rashid Khan, SHI Feng, Ji WeiXing, GAO YuJin, WANG YiZhuo, LIU CaiXia, DENG Ning, LI JiaXin, Computationally efficient locality-aware interconnection topology for multi-processor system-on-chip(MP-SoC). Chinese Science Bulletin (科学通报-英文版). October 2010. Vol.55 No.29. p3363-3371. SCI.",
+        "order": 2
+      },
+      {
+        "title": "Group-caching for NoC based multicore cache coherent systems",
+        "authors_raw": "Wang Zuo, Shi Feng, Zuo Qi, Ji Weixing, Li Jiaxin, Deng Ning, Xue Licheng, Tan Yuan, Qiao Baojun",
+        "year": "2009",
+        "venue": "Proceedings -Design, Automation and Test in Europe. DATE’09",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[3] Wang Zuo, Shi Feng, Zuo Qi, Ji Weixing, Li Jiaxin, Deng Ning, Xue Licheng, Tan Yuan, Qiao Baojun, Group-caching for NoC based multicore cache coherent systems. Proceedings -Design, Automation and Test in Europe. DATE’09. p755-760. 2009. EI",
+        "order": 3
+      },
+      {
+        "title": "Performance of triplet based interconnection strategy for multi-core on-chip processors",
+        "authors_raw": "Khan, H-U-R., Shi Feng, Jia Xilin, Bai Ziru",
+        "year": "2009",
+        "venue": "2009 11th IEEE International Conference on High Performance Computing and Communications. HPCC’09",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[4] Khan, H-U-R., Shi Feng, Jia Xilin, Bai Ziru. Performance of triplet based interconnection strategy for multi-core on-chip processors. 2009 11th IEEE International Conference on High Performance Computing and Communications. HPCC’09. p163-70. 2009. EI",
+        "order": 4
+      },
+      {
+        "title": "Performance evaluation of a self-maintained memory module",
+        "authors_raw": "Ji Weixing, Shi Feng, Qiao Baojun, Zuo Qi, Liu Caixia",
+        "year": "2007",
+        "venue": "Proc. 28th IEEE International Real-Time Systems Symposium. RTSS 2007",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[5] Ji Weixing, Shi Feng, Qiao Baojun, Zuo Qi, Liu Caixia. Performance evaluation of a self-maintained memory module. Proc. 28th IEEE International Real-Time Systems Symposium. RTSS 2007. p254-263. 2007. EI",
+        "order": 5
+      }
+    ],
+    "awards": [
+      {
+        "name": "Member of BIT Academic Committee",
+        "year": "",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "Member of BIT Academic Committee",
+        "order": 1
+      },
+      {
+        "name": "Vice-chairman of Info. & Elec. Divisions of BIT Academy",
+        "year": "",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "Vice-chairman of Info. & Elec. Divisions of BIT Academy",
+        "order": 2
+      }
+    ],
+    "warnings": [
+      "The professor's name appears in multiple forms (石峰, ShiFeng, SHI Feng). All have been added as aliases.",
+      "The school name appears in both Chinese and English. The Chinese version is used for the primary school_name field.",
+      "The discipline appears in both Chinese and English. The Chinese version is used for the primary discipline field.",
+      "Research interests are listed in both Chinese and English. Both versions have been added as separate research topics.",
+      "The education entry 'Student in the Phys. Dept. of Beijing Universit, Received B.Sc.' is incomplete. The degree '理学学士' was extracted from the Chinese text.",
+      "The employment entry '1977.4-现在北京理工大学计算机学院' has a start date (1977.4) that precedes the earlier employment end date (1996.4). The raw text has been preserved.",
+      "The 'Teacher' title for the current employment is derived from the English description 'Teacher in School of Computer Science & Technology of Beijing Institute of Technology'.",
+      "The 'Member of BIT Academic Committee' and 'Vice-chairman of Info. & Elec. Divisions of BIT Academy' are listed under '所获荣誉:(Awards)' but appear to be academic service roles. They have been placed in the awards list as per the source section heading.",
+      "Publication venues include publisher names (e.g., 'Elsevier') and conference names. These have been added as organizations with appropriate types.",
+      "The publication list includes indexing labels (SCI, EI). These have not been extracted as separate fields."
+    ]
+  }
+}

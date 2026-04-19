@@ -1,0 +1,172 @@
+{
+  "metadata": {
+    "name": "WANG Yizhuo",
+    "slug": "wang-yizhuo",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113077.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/wang-yizhuo-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "WANG Yizhuo",
+      "aliases": [
+        "WANG Yizhuo",
+        "王一拙",
+        "Wang Yizhuo"
+      ],
+      "title": "Assistant Professor",
+      "school_name": "计算机学院 - Computer Science",
+      "discipline": "计算机",
+      "biography_text": "Yizhuo Wang received the Ph.D. degree in computer science from Beijing Institute of Technology, China, in 2005. He was a visiting scholar at University of California, Irvine from 2010 to 2011. He is a member of ACM, IEEE and CCF.",
+      "emails": [
+        "frankwyz@bit.edu.cn"
+      ],
+      "phones": [
+        "13691139519"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "计算机学院 - Computer Science",
+        "org_type": "school",
+        "normalized_name": "计算机学院 computer science"
+      },
+      {
+        "name": "School of Computer Science",
+        "org_type": "school",
+        "normalized_name": "school of computer science"
+      },
+      {
+        "name": "Beijing Institute of Technology",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "University of California, Irvine",
+        "org_type": "university",
+        "normalized_name": "university of california irvine"
+      },
+      {
+        "name": "ACM",
+        "org_type": "association",
+        "normalized_name": "acm"
+      },
+      {
+        "name": "IEEE",
+        "org_type": "association",
+        "normalized_name": "ieee"
+      },
+      {
+        "name": "CCF",
+        "org_type": "association",
+        "normalized_name": "ccf"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "Computer Architecture",
+        "normalized_name": "computer architecture"
+      },
+      {
+        "name": "Parallel Programming",
+        "normalized_name": "parallel programming"
+      },
+      {
+        "name": "Big Data Computing",
+        "normalized_name": "big data computing"
+      },
+      {
+        "name": "Embedded Computing",
+        "normalized_name": "embedded computing"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph.D.",
+        "field": "computer science",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "",
+        "start_text": "",
+        "end_text": "2005",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "Yizhuo Wang received the Ph.D. degree in computer science from Beijing Institute of Technology, China, in 2005."
+      },
+      {
+        "kind": "academic_service",
+        "title": "visiting scholar",
+        "degree": "",
+        "field": "",
+        "organization_name": "University of California, Irvine",
+        "location": "",
+        "start_text": "2010",
+        "end_text": "2011",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "He was a visiting scholar at University of California, Irvine from 2010 to 2011."
+      }
+    ],
+    "publications": [
+      {
+        "title": "An Adaptive and Hierarchical Task Scheduling Scheme for Multi-core Clusters",
+        "authors_raw": "Yizhuo Wang, Yang Zhang, Yan Su, Xiaojun Wang, Xu Chen, Weixing Ji, Feng Shi",
+        "year": "2014",
+        "venue": "Parallel Computing",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Yizhuo Wang, Yang Zhang, Yan Su, Xiaojun Wang, Xu Chen, Weixing Ji, Feng Shi. An Adaptive and Hierarchical Task Scheduling Scheme for Multi-core Clusters. *Parallel Computing*, 40 (2014), pp. 611-627.",
+        "order": 1
+      },
+      {
+        "title": "A Work-Stealing Scheduling Framework Supporting Fault Tolerance",
+        "authors_raw": "Yizhuo Wang, Weixing Ji, Feng Shi, Qi Zuo",
+        "year": "2013",
+        "venue": "Proc. of Design, Automation & Test in Europe (DATE)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Yizhuo Wang, Weixing Ji, Feng Shi, Qi Zuo. A Work-Stealing Scheduling Framework Supporting Fault Tolerance. Proc. of Design, Automation & Test in Europe (DATE), 2013.",
+        "order": 2
+      },
+      {
+        "title": "Fault Tolerant Scheduling for Parallel Loops on Shared Memory Systems",
+        "authors_raw": "Yizhuo Wang, Rosario Cammarota, Alexandru Nicolau",
+        "year": "2015",
+        "venue": "Journal of Information Science and Engineering",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Yizhuo Wang, Rosario Cammarota, Alexandru Nicolau. Fault Tolerant Scheduling for Parallel Loops on Shared Memory Systems. Journal of Information Science and Engineering, 31(6): 1937-1959, 2015.",
+        "order": 3
+      },
+      {
+        "title": "Fault tolerant self-scheduling scheme for parallel loops on shared memory systems",
+        "authors_raw": "Yizhuo Wang, Alexandru Nicolau, Rosario Cammarota and Alexander V. Veidenbaum",
+        "year": "2012",
+        "venue": "Proc. of IEEE International Conference on High Performance Computing (HiPC)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Yizhuo Wang, Alexandru Nicolau, Rosario Cammarota and Alexander V. Veidenbaum. Fault tolerant self-scheduling scheme for parallel loops on shared memory systems. Proc. of IEEE International Conference on High Performance Computing (HiPC), 2012.",
+        "order": 4
+      },
+      {
+        "title": "Task Parallel Implementation of Matrix Multiplication on Multi-socket Multi-core Architectures",
+        "authors_raw": "Yizhuo Wang, Weixing Ji, Xu Chen, Sensen Hu",
+        "year": "2015",
+        "venue": "Proc. of International Conference on Algorithms and Architectures for Parallel Processing (ICAPPP)",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Yizhuo Wang, Weixing Ji, Xu Chen, Sensen Hu. Task Parallel Implementation of Matrix Multiplication on Multi-socket Multi-core Architectures. Proc. of International Conference on Algorithms and Architectures for Parallel Processing (ICAPPP), 2015.",
+        "order": 5
+      }
+    ],
+    "awards": [],
+    "warnings": [
+      "Ignored the instruction-only publication heading '请列举5篇左右代表性论文或著作。(Please list 5 representative publications)' as it did not list concrete items.",
+      "The school name appears in two forms ('计算机学院 - Computer Science' and 'School of Computer Science'). Both have been captured as separate organization entries.",
+      "The 'Part-time Academic Jobs' section lists memberships (ACM, IEEE, CCF) but does not specify a role title beyond 'member'. These are captured as organizations, not as separate experiences.",
+      "The 'visiting scholar' experience is categorized as 'academic_service' as it is listed under a section that could be interpreted as academic service/affiliation, though it is not explicitly a 'part-time job'."
+    ]
+  }
+}

@@ -1,0 +1,373 @@
+{
+  "metadata": {
+    "name": "LI Dongni",
+    "slug": "li-dongni",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b148285.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/li-dongni-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "LI Dongni",
+      "aliases": [
+        "李冬妮",
+        "LI Dongni"
+      ],
+      "title": "Associate Professor",
+      "school_name": "School of Computer Science",
+      "discipline": "Computer Application Technology",
+      "biography_text": "",
+      "emails": [
+        "ldn@bit.edu.cn"
+      ],
+      "phones": [
+        "010-68914361"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "School of Computer Science",
+        "org_type": "school",
+        "normalized_name": "school of computer science"
+      },
+      {
+        "name": "Northeastern University",
+        "org_type": "university",
+        "normalized_name": "northeastern university"
+      },
+      {
+        "name": "Cornell University",
+        "org_type": "university",
+        "normalized_name": "cornell university"
+      },
+      {
+        "name": "AJMSA",
+        "org_type": "journal",
+        "normalized_name": "ajmsa"
+      },
+      {
+        "name": "Virtual Simulation Experiment Resources Construction Committee, Alliance of Emerging Education for Information Technologies",
+        "org_type": "association",
+        "normalized_name": "virtual simulation experiment resources construction committee alliance of emerging education for information technologies"
+      },
+      {
+        "name": "Logistics Systems Engineering Committee, Systems Engineering Society of China",
+        "org_type": "association",
+        "normalized_name": "logistics systems engineering committee systems engineering society of china"
+      },
+      {
+        "name": "Inner Mongolia Manufacturing Information Technology Program",
+        "org_type": "government",
+        "normalized_name": "inner mongolia manufacturing information technology program"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "Intelligent Optimization",
+        "normalized_name": "intelligent optimization"
+      },
+      {
+        "name": "Big Data Processing and Analysis in Industry",
+        "normalized_name": "big data processing and analysis in industry"
+      },
+      {
+        "name": "Industrial Internet",
+        "normalized_name": "industrial internet"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "BSc",
+        "field": "",
+        "organization_name": "Northeastern University",
+        "location": "",
+        "start_text": "1996.09",
+        "end_text": "2000.07",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "1996.09-2000.07, Northeastern University, BSc"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "MSc",
+        "field": "",
+        "organization_name": "Northeastern University",
+        "location": "",
+        "start_text": "2000.09",
+        "end_text": "2002.01",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "2000.09-2002.01, Northeastern University, MSc"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Ph.D",
+        "field": "",
+        "organization_name": "Northeastern University",
+        "location": "",
+        "start_text": "2002.03",
+        "end_text": "2005.03",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "2002.03-2005.03, Northeastern University, Ph.D"
+      },
+      {
+        "kind": "employment",
+        "title": "Lecturer",
+        "degree": "",
+        "field": "",
+        "organization_name": "School of Computer Science, BIT",
+        "location": "",
+        "start_text": "2005.04",
+        "end_text": "2008.06",
+        "is_current": false,
+        "order": 4,
+        "raw_text": "2005.04-2008.06, Lecturer, School of Computer Science, BIT"
+      },
+      {
+        "kind": "employment",
+        "title": "Postdoc",
+        "degree": "",
+        "field": "",
+        "organization_name": "Cornell University",
+        "location": "",
+        "start_text": "2010.01",
+        "end_text": "2011.01",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "2010.01-2011.01, Postdoc, Cornell University"
+      },
+      {
+        "kind": "employment",
+        "title": "Associate Professor",
+        "degree": "",
+        "field": "",
+        "organization_name": "School of Computer Science, BIT",
+        "location": "",
+        "start_text": "2008.07",
+        "end_text": "present",
+        "is_current": true,
+        "order": 6,
+        "raw_text": "2008.07-present, Associate Professor, School of Computer Science, BIT"
+      },
+      {
+        "kind": "employment",
+        "title": "Ph.D. Advisor",
+        "degree": "",
+        "field": "",
+        "organization_name": "School of Computer Science, BIT",
+        "location": "",
+        "start_text": "2015.07",
+        "end_text": "present",
+        "is_current": true,
+        "order": 7,
+        "raw_text": "2015.07-present, Ph.D. Advisor, School of Computer Science, BIT"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Editor",
+        "degree": "",
+        "field": "",
+        "organization_name": "AJMSA",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 8,
+        "raw_text": "Editor of AJMSA"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Secretary-General",
+        "degree": "",
+        "field": "",
+        "organization_name": "Virtual Simulation Experiment Resources Construction Committee, Alliance of Emerging Education for Information Technologies",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 9,
+        "raw_text": "Secretary-General of Virtual Simulation Experiment Resources Construction Committee, Alliance of Emerging Education for Information Technologies"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Member",
+        "degree": "",
+        "field": "",
+        "organization_name": "Logistics Systems Engineering Committee, Systems Engineering Society of China",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 10,
+        "raw_text": "Member of Logistics Systems Engineering Committee, Systems Engineering Society of China"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Consultant",
+        "degree": "",
+        "field": "",
+        "organization_name": "Inner Mongolia Manufacturing Information Technology Program",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 11,
+        "raw_text": "Consultant of Inner Mongolia Manufacturing Information Technology Program"
+      }
+    ],
+    "publications": [
+      {
+        "title": "A Hyperheuristic approach for intercell scheduling with single processing machines and batch processing machines",
+        "authors_raw": "Dongni Li*, Miao Li, Xianwen Meng, and Yumia Tian",
+        "year": "2015",
+        "venue": "IEEE Transactions on Systems, Man, and Cybernetics: Systems",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Dongni Li*, Miao Li, Xianwen Meng, and Yumia Tian. A Hyperheuristic approach for intercell scheduling with single processing machines and batch processing machines [J]. IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2015, 45(2): 315-325 (IF: 2.378)",
+        "order": 1
+      },
+      {
+        "title": "Dynamic parts scheduling in multiple job shop cells considering intercell moves and flexible routes",
+        "authors_raw": "Dongni Li*, Yan Wang, Guangxue Xiao, and Jiafu Tang",
+        "year": "2013",
+        "venue": "Computers & Operations Research",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Dongni Li*, Yan Wang, Guangxue Xiao, and Jiafu Tang. Dynamic parts scheduling in multiple job shop cells considering intercell moves and flexible routes [J]. Computers & Operations Research, 2013, 5: 2007-2023 (IF: 2.016)",
+        "order": 2
+      },
+      {
+        "title": "The evolution of production systems from Industry 2.0 through Industry 4.0",
+        "authors_raw": "Yong Yin, Kathryn E. Stecke and Dongni Li*",
+        "year": "2018",
+        "venue": "International Journal of Production Research",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Yong Yin, Kathryn E. Stecke and Dongni Li*. The evolution of production systems from Industry 2.0 through Industry 4.0 [J]. International Journal of Production Research, 2018, 56(1-2):848-861.",
+        "order": 3
+      },
+      {
+        "title": "A Hybrid Evolutionary Hyper-Heuristic Approach for Intercell Scheduling Considering Transportation Capacity",
+        "authors_raw": "Dongni Li*, Rongxin Zhan, Dan Zheng, Miao Li and Ikou Kaku",
+        "year": "2016",
+        "venue": "IEEE Transactions on Automation Science & Engineering",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Dongni Li*, Rongxin Zhan, Dan Zheng, Miao Li and Ikou Kaku. A Hybrid Evolutionary Hyper-Heuristic Approach for Intercell Scheduling Considering Transportation Capacity [J]. IEEE Transactions on Automation Science & Engineering, 2016, 13(2):1072-1089.",
+        "order": 4
+      },
+      {
+        "title": "Automatic Design of Intercell Scheduling Heuristics",
+        "authors_raw": "Dongni Li*, Rongxin Zhan, Shaofeng Du, Xuhui Wu and Shuai Wang",
+        "year": "2019",
+        "venue": "IEEE Transactions on Automation Science and Engineering",
+        "publication_type": "journal",
+        "doi_or_url": "10.1109/TASE.2019.2895369",
+        "raw_text": "Dongni Li*, Rongxin Zhan, Shaofeng Du, Xuhui Wu and Shuai Wang. Automatic Design of Intercell Scheduling Heuristics [J]. IEEE Transactions on Automation Science and Engineering, DOI 10.1109/TASE.2019.2895369, 2019.",
+        "order": 5
+      }
+    ],
+    "awards": [
+      {
+        "name": "National Teaching Achievement Award, Second prize",
+        "year": "2018",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "National Teaching Achievement Award, Second prize, 2018",
+        "order": 1
+      },
+      {
+        "name": "\"Challenge Cup\" National College Student Curricular Academic Science and Technology Works Competition, Highest prize",
+        "year": "2013",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "\"Challenge Cup\" National College Student Curricular Academic Science and Technology Works Competition, Highest prize, 2013",
+        "order": 2
+      },
+      {
+        "name": "\"Challenge Cup\" National College Student Curricular Academic Science and Technology Works Competition, Second prize",
+        "year": "2015",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "\"Challenge Cup\" National College Student Curricular Academic Science and Technology Works Competition, Second prize, 2015",
+        "order": 3
+      },
+      {
+        "name": "Progressive Innovation Award of \"Challenge Cup\" National College Student Curricular Academic Science and Technology Works Competition",
+        "year": "2015",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "Progressive Innovation Award of \"Challenge Cup\" National College Student Curricular Academic Science and Technology Works Competition, 2015",
+        "order": 4
+      },
+      {
+        "name": "Outstanding Instructor of \"Challenge Cup\" National College Student Curricular Academic Science and Technology Works Competition",
+        "year": "2015",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "Outstanding Instructor of \"Challenge Cup\" National College Student Curricular Academic Science and Technology Works Competition, 2015",
+        "order": 5
+      },
+      {
+        "name": "Excellence Achievements of National Engineering Master's Practice Program",
+        "year": "2015",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "Excellence Achievements of National Engineering Master's Practice Program, 2015",
+        "order": 6
+      },
+      {
+        "name": "Beijing Teaching Achievement Award, First prize",
+        "year": "2017",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "Beijing Teaching Achievement Award, First prize, 2017",
+        "order": 7
+      },
+      {
+        "name": "Teaching Competition for Young College Teachers of Beijing, Second prize",
+        "year": "2015",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "Teaching Competition for Young College Teachers of Beijing, Second prize, 2015",
+        "order": 8
+      },
+      {
+        "name": "Best Demonstration Award of Teaching Competition for Young College Teachers of Beijing",
+        "year": "2015",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "Best Demonstration Award of Teaching Competition for Young College Teachers of Beijing, 2015",
+        "order": 9
+      },
+      {
+        "name": "\"Challenge Cup\" Capital College Student Curricular Academic Science and Technology Works Competition, First prize",
+        "year": "2013, 2015",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "\"Challenge Cup\" Capital College Student Curricular Academic Science and Technology Works Competition, First prize, 2013, 2015",
+        "order": 10
+      },
+      {
+        "name": "Pioneer of Teacher Morality of Beijing",
+        "year": "2015",
+        "granting_org_name": "",
+        "level": "",
+        "raw_text": "Pioneer of Teacher Morality of Beijing, 2015",
+        "order": 11
+      }
+    ],
+    "warnings": [
+      "Ignored the instruction-only publication heading because it did not list concrete items.",
+      "Publication venue 'Computers & Operations Research' has an ambiguous volume/issue number '5'.",
+      "Publication year for item 2 is ambiguous; using '2013' from the raw text.",
+      "Publication year for item 5 is ambiguous; using '2019' from the raw text."
+    ]
+  }
+}

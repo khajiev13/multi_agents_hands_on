@@ -1,0 +1,300 @@
+{
+  "metadata": {
+    "name": "YU Yue",
+    "slug": "yu-yue",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113080.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/yu-yue-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "YU Yue",
+      "aliases": [
+        "YU Yue",
+        "余月",
+        "Yu Yue"
+      ],
+      "title": "讲师",
+      "school_name": "计算机学院",
+      "discipline": "计算机应用技术",
+      "biography_text": "",
+      "emails": [
+        "yuyue@bit.edu.cn"
+      ],
+      "phones": [
+        "010-68914776"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "计算机学院",
+        "org_type": "school",
+        "normalized_name": "计算机学院"
+      },
+      {
+        "name": "School of Computer Science and Technology",
+        "org_type": "school",
+        "normalized_name": "school of computer science and technology"
+      },
+      {
+        "name": "法国里尔中央理工大学",
+        "org_type": "university",
+        "normalized_name": "法国里尔中央理工大学"
+      },
+      {
+        "name": "Ecole Centrale de Lille in France (Financed by CSC)",
+        "org_type": "university",
+        "normalized_name": "ecole centrale de lille in france financed by csc"
+      },
+      {
+        "name": "北京航空航天大学",
+        "org_type": "university",
+        "normalized_name": "北京航空航天大学"
+      },
+      {
+        "name": "Laboratory of Automatic, Data-processing & Signal (LAGIS, CNRS) Beihang University",
+        "org_type": "laboratory",
+        "normalized_name": "laboratory of automatic data processing signal lagis cnrs beihang university"
+      },
+      {
+        "name": "State Key Laboratory of Virtual Reality Technology and System, China Beihang University School of Automation Science and Electrical Engineering, China",
+        "org_type": "laboratory",
+        "normalized_name": "state key laboratory of virtual reality technology and system china beihang university school of automation science and electrical engineering china"
+      },
+      {
+        "name": "北京理工大学",
+        "org_type": "university",
+        "normalized_name": "北京理工大学"
+      },
+      {
+        "name": "Beijing Institute of Technology",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "CCF",
+        "org_type": "association",
+        "normalized_name": "ccf"
+      },
+      {
+        "name": "China Computer Federation",
+        "org_type": "association",
+        "normalized_name": "china computer federation"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "虚拟现实",
+        "normalized_name": "虚拟现实"
+      },
+      {
+        "name": "Virtual Reality",
+        "normalized_name": "virtual reality"
+      },
+      {
+        "name": "计算机仿真",
+        "normalized_name": "计算机仿真"
+      },
+      {
+        "name": "Computer Simulation",
+        "normalized_name": "computer simulation"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "博士",
+        "field": "自动化、信息工程与信号及图像处理",
+        "organization_name": "法国里尔中央理工大学",
+        "location": "",
+        "start_text": "2010/9",
+        "end_text": "2013/9",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "2010/9-2013/9, 法国里尔中央理工大学, 自动化、信息工程与信号及图像处理, 博士"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "硕士",
+        "field": "导航、制导与控制",
+        "organization_name": "北京航空航天大学",
+        "location": "",
+        "start_text": "2007/9",
+        "end_text": "2010/3",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "2007/9-2010/3, 北京航空航天大学, 导航、制导与控制, 硕士"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "学士",
+        "field": "自动控制与信息技术",
+        "organization_name": "北京航空航天大学",
+        "location": "",
+        "start_text": "2003/9",
+        "end_text": "2007/7",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "2003/9-2007/7, 北京航空航天大学, 自动控制与信息技术, 学士"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Doctor",
+        "field": "",
+        "organization_name": "Ecole Centrale de Lille in France (Financed by CSC)",
+        "location": "",
+        "start_text": "2010.09",
+        "end_text": "2013.09",
+        "is_current": false,
+        "order": 4,
+        "raw_text": "2010.09—2013.09 Ecole Centrale de Lille in France (Financed by CSC), Doctor"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Master",
+        "field": "",
+        "organization_name": "Laboratory of Automatic, Data-processing & Signal (LAGIS, CNRS) Beihang University",
+        "location": "",
+        "start_text": "2007.09",
+        "end_text": "2010.03",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "2007.09—2010.03 Laboratory of Automatic, Data-processing & Signal (LAGIS, CNRS) Beihang University, Master"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Bachelor",
+        "field": "",
+        "organization_name": "State Key Laboratory of Virtual Reality Technology and System, China Beihang University School of Automation Science and Electrical Engineering, China",
+        "location": "",
+        "start_text": "2003.09",
+        "end_text": "2007.07",
+        "is_current": false,
+        "order": 6,
+        "raw_text": "2003.09—2007.07 State Key Laboratory of Virtual Reality Technology and System, China Beihang University, Bachelor School of Automation Science and Electrical Engineering, China"
+      },
+      {
+        "kind": "employment",
+        "title": "",
+        "degree": "",
+        "field": "",
+        "organization_name": "北京理工大学",
+        "location": "",
+        "start_text": "2014",
+        "end_text": "至今",
+        "is_current": true,
+        "order": 7,
+        "raw_text": "2014-至今 北京理工大学"
+      },
+      {
+        "kind": "employment",
+        "title": "",
+        "degree": "",
+        "field": "",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "",
+        "start_text": "2014",
+        "end_text": "now",
+        "is_current": true,
+        "order": 8,
+        "raw_text": "2014-now Beijing Institute of Technology"
+      },
+      {
+        "kind": "academic_service",
+        "title": "会员, 虚拟现实与可视化技术专业委员会委员",
+        "degree": "",
+        "field": "",
+        "organization_name": "CCF",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 9,
+        "raw_text": "CCF 会员, CCF 虚拟现实与可视化技术专业委员会委员"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Member, Member of VR and Visualization Committee",
+        "degree": "",
+        "field": "",
+        "organization_name": "China Computer Federation",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 10,
+        "raw_text": "CCF Member, Member of VR and Visualization Committee of China Computer Federation"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Modeling and Simulation of Over- taking Behavior Involving Environment",
+        "authors_raw": "Yue Yu, Abdelkader El Kamel and Guanghong Gong",
+        "year": "2014",
+        "venue": "Advances in Engineering Software",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Yue Yu, Abdelkader El Kamel and Guanghong Gong. Modeling and Simulation of Over- taking Behavior Involving Environment. Advances in Engineering Software, vol. 67, pages 10-21, 2014.",
+        "order": 1
+      },
+      {
+        "title": "Multi-Agent based Modeling and Simulation of Microscopic Traffic in Virtual Reality System",
+        "authors_raw": "Yue Yu, Abdelkader El Kamel and Guanghong Gong",
+        "year": "2014",
+        "venue": "Simulation Modelling Practice and Theory",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "Yue Yu, Abdelkader El Kamel and Guanghong Gong. Multi-Agent based Modeling and Simulation of Microscopic Traffic in Virtual Reality System. Simulation Modelling Practice and Theory, 2014, 45: 62-79.",
+        "order": 2
+      },
+      {
+        "title": "Modeling Intelligent Vehicle Agent in Virtual Reality Traffic Simulation System",
+        "authors_raw": "Yue Yu, Abdelkader El Kamel and Guanghong Gong",
+        "year": "2013",
+        "venue": "2013 2th International Conference on Systems and Computer Science",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Yue Yu, Abdelkader El Kamel and Guanghong Gong. Modeling Intelligent Vehicle Agent in Virtual Reality Traffic Simulation System. In 2013 2th International Conference on Systems and Computer Science, pages 274-279, Villeneuve d'Ascq, France, August 2013.",
+        "order": 3
+      },
+      {
+        "title": "Modeling overtaking behavior in virtual reality traffic simulation system",
+        "authors_raw": "Yue Yu, Abdelkader El Kamel and Guanghong Gong",
+        "year": "2013",
+        "venue": "2013 9th Asian Control Conference",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Yue Yu, Abdelkader El Kamel and Guanghong Gong. Modeling overtaking behavior in virtual reality traffic simulation system. In 2013 9th Asian Control Conference, Istanbul, Turkey, June 2013.",
+        "order": 4
+      },
+      {
+        "title": "Multi-Agent based Architecture for Virtual Reality Intelligent Simulation System of Vehicles",
+        "authors_raw": "Yue Yu, Abdelkader El Kamel and Guanghong Gong",
+        "year": "2013",
+        "venue": "2013 10th IEEE International Conference on Networking, Sensing and Control",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "Yue Yu, Abdelkader El Kamel and Guanghong Gong. Multi-Agent based Architecture for Virtual Reality Intelligent Simulation System of Vehicles. In 2013 10th IEEE International Conference on Networking, Sensing and Control, pages 597-602, Evry, France, April 2013.",
+        "order": 5
+      }
+    ],
+    "awards": [],
+    "warnings": [
+      "The professor's name appears in multiple forms (余月, Yu Yue, YU Yue). The listing metadata name 'YU Yue' is used as the primary name.",
+      "The '个人简历(Biography)' heading is present but contains no text, so biography_text is empty.",
+      "The education and employment sections contain duplicate entries in Chinese and English. Both have been included as separate experience items.",
+      "The academic service entries contain duplicate roles in Chinese and English. Both have been included as separate experience items.",
+      "The discipline field '计算机应用技术' is taken from the Chinese line; the English line 'Computer Application' is not used as it is a partial translation.",
+      "The school name '计算机学院' is taken from the Chinese line; the English line 'School of Computer Science and Technology' is treated as a separate organization.",
+      "The phone number '010-68914776' is listed next to a research interest; it has been extracted as a phone number.",
+      "The publication list is numbered and appears complete; all items have been extracted."
+    ]
+  }
+}

@@ -2,11 +2,9 @@
 workflow_render.py - Build and render the Lab 2 workflow diagrams.
 
 This script maintains one diagram model and writes:
-  - lab_2_workflow.excalidraw
   - lab_2_workflow.svg
   - workflow_steps/step_01.svg ... workflow_steps/step_14.svg
 
-The master Excalidraw diagram is the editable artifact for the teaching flow.
 The SVG files are notebook-friendly renderings derived from the same model.
 Lab 2 builds a Chroma collection from local markdown, then queries it with a
 supervisor over retrieval-first worker agents and one add-by-URL ingestion worker.
@@ -15,16 +13,13 @@ supervisor over retrieval-first worker agents and one add-by-URL ingestion worke
 from __future__ import annotations
 
 import argparse
-import json
 import re
-import time
 from dataclasses import dataclass
 from pathlib import Path
 from xml.sax.saxutils import escape
 
 
 ROOT = Path(__file__).parent
-MASTER_EXCALIDRAW = ROOT / "lab_2_workflow.excalidraw"
 MASTER_SVG = ROOT / "lab_2_workflow.svg"
 STEPS_DIR = ROOT / "workflow_steps"
 
@@ -814,21 +809,9 @@ def build_diagram_elements() -> list[dict]:
     return sorted(elements, key=element_layer_key)
 
 
-def build_master_excalidraw(path: Path) -> list[dict]:
+def build_master_elements() -> list[dict]:
     elements = build_diagram_elements()
     validate_elements(elements)
-    document = {
-        "type": "excalidraw",
-        "version": 2,
-        "source": "https://openai.com/codex",
-        "elements": elements,
-        "appState": {
-            "gridSize": None,
-            "viewBackgroundColor": "#ffffff",
-        },
-        "files": {},
-    }
-    path.write_text(json.dumps(document, ensure_ascii=False, indent=2), encoding="utf-8")
     return elements
 
 
@@ -1096,10 +1079,7 @@ def render_svg(elements: list[dict], *, current_step: int | None) -> str:
     return "\n".join(body)
 
 
-def render_master_and_steps(excalidraw_path: Path, master_svg_path: Path, steps_dir: Path) -> None:
-    data = json.loads(excalidraw_path.read_text(encoding="utf-8"))
-    elements = [element for element in data["elements"] if not element.get("isDeleted", False)]
-    validate_elements(elements)
+def render_master_and_steps(elements: list[dict], master_svg_path: Path, steps_dir: Path) -> None:
     master_svg_path.write_text(render_svg(elements, current_step=None), encoding="utf-8")
     steps_dir.mkdir(parents=True, exist_ok=True)
     for number in range(1, 15):
@@ -1108,15 +1088,12 @@ def render_master_and_steps(excalidraw_path: Path, master_svg_path: Path, steps_
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Rebuild the Lab 2 workflow diagram and notebook SVG assets.")
-    parser.add_argument("--excalidraw", type=Path, default=MASTER_EXCALIDRAW, help="Path to the editable Excalidraw file.")
+    parser = argparse.ArgumentParser(description="Rebuild the Lab 2 workflow SVG assets.")
     parser.add_argument("--master-svg", type=Path, default=MASTER_SVG, help="Path to the master workflow SVG.")
     parser.add_argument("--steps-dir", type=Path, default=STEPS_DIR, help="Directory for the per-step SVG files.")
     args = parser.parse_args()
 
-    build_master_excalidraw(args.excalidraw)
-    render_master_and_steps(args.excalidraw, args.master_svg, args.steps_dir)
-    print(f"Wrote {args.excalidraw}")
+    render_master_and_steps(build_master_elements(), args.master_svg, args.steps_dir)
     print(f"Wrote {args.master_svg}")
     print(f"Wrote {args.steps_dir}/step_01.svg ... step_14.svg")
 

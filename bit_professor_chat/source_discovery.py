@@ -77,6 +77,20 @@ def collect_professor_links(
     return collected
 
 
+def find_professor_listing_by_detail_url(
+    detail_url: str,
+    *,
+    session: requests.Session,
+    listing_url: str = LISTING_URL,
+) -> ProfessorListing | None:
+    normalized_detail_url = detail_url.strip()
+    listing_pages = discover_listing_pages(listing_url, session)
+    for listing in collect_professor_links(listing_pages, session):
+        if listing.detail_url.strip() == normalized_detail_url:
+            return listing
+    return None
+
+
 def extract_image_urls(detail_url: str, session: requests.Session) -> list[str]:
     soup = fetch_soup(detail_url, session)
     image_urls: list[str] = []

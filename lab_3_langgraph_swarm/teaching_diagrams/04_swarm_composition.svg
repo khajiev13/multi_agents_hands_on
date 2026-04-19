@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1720" height="1180" viewBox="0 0 1720 1180">
+<rect x="0" y="0" width="100%" height="100%" fill="#f8fafc"/>
+<rect x="20" y="20" width="1680" height="1140" rx="24" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+<text x="56" y="74" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">Swarm composition — handoffs, active_agent, and same-thread memory</text>
+<text x="56" y="110" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#475569">create_swarm wires the two specialists into one parent graph; a handoff returns Command(graph=PARENT) which atomically swaps the active_agent in checkpointed state.</text>
+<path d="M 290 510.0 L 360 510.0" fill="none" stroke="#4f46e5" stroke-width="2.8"/>
+<polygon points="360,510.0 349,504.0 349,516.0" fill="#4f46e5"/>
+<path d="M 480.0 470 L 480.0 450 L 210.0 450 L 210.0 470" fill="none" stroke="#7c3aed" stroke-width="2.8" stroke-dasharray="8 6"/>
+<polygon points="210.0,470 204.0,459 216.0,459" fill="#7c3aed"/>
+<path d="M 1170 510.0 L 1240 510.0" fill="none" stroke="#16a34a" stroke-width="2.8"/>
+<polygon points="1240,510.0 1229,504.0 1229,516.0" fill="#16a34a"/>
+<path d="M 1360.0 470 L 1360.0 450 L 1090.0 450 L 1090.0 470" fill="none" stroke="#7c3aed" stroke-width="2.8" stroke-dasharray="8 6"/>
+<polygon points="1090.0,470 1084.0,459 1096.0,459" fill="#7c3aed"/>
+<path d="M 750 385.0 L 970 385.0" fill="none" stroke="#ea580c" stroke-width="2.8"/>
+<polygon points="970,385.0 959,379.0 959,391.0" fill="#ea580c"/>
+<path d="M 970 690.0 L 750 690.0" fill="none" stroke="#ea580c" stroke-width="2.8"/>
+<polygon points="750,690.0 761,684.0 761,696.0" fill="#ea580c"/>
+<path d="M 320 205.0 L 380 205.0" fill="none" stroke="#1971c2" stroke-width="2.8"/>
+<polygon points="380,205.0 369,199.0 369,211.0" fill="#1971c2"/>
+<rect x="282.0" y="182.0" width="136" height="24" rx="6" fill="#ffffff" stroke="#1971c2" stroke-width="1.4"/>
+<text x="350.0" y="200.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">invoke / stream</text>
+<path d="M 1140 205.0 L 1200 205.0" fill="none" stroke="#ea580c" stroke-width="2.8"/>
+<polygon points="1200,205.0 1189,199.0 1189,211.0" fill="#ea580c"/>
+<rect x="1082.0" y="182.0" width="176" height="24" rx="6" fill="#ffffff" stroke="#ea580c" stroke-width="1.4"/>
+<text x="1170.0" y="200.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">reads + writes state</text>
+<path d="M 560 270 L 560 320 L 420.0 320 L 420.0 350" fill="none" stroke="#2563eb" stroke-width="2.8"/>
+<polygon points="420.0,350 414.0,339 426.0,339" fill="#2563eb"/>
+<rect x="414.0" y="297.0" width="152" height="24" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
+<text x="490.0" y="315.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">goto active_agent</text>
+<path d="M 960 270 L 960 320 L 1300.0 320 L 1300.0 350" fill="none" stroke="#16a34a" stroke-width="2.8"/>
+<polygon points="1300.0,350 1294.0,339 1306.0,339" fill="#16a34a"/>
+<rect x="1054.0" y="297.0" width="152" height="24" rx="6" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="1130.0" y="315.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">goto active_agent</text>
+<path d="M 440 980 L 470 980" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="470,980 459,974 459,986" fill="#475569"/>
+<path d="M 910 980 L 940 980" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="940,980 929,974 929,986" fill="#475569"/>
+<path d="M 1320 980 L 1350 980" fill="none" stroke="#475569" stroke-width="2.8"/>
+<polygon points="1350,980 1339,974 1339,986" fill="#475569"/>
+<rect x="60" y="140" width="260" height="130" rx="18" fill="#e7f5ff" stroke="#1971c2" stroke-width="3.0"/>
+<text x="190.0" y="177.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Student</text>
+<text x="190.0" y="199.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a"></text>
+<text x="190.0" y="221.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">config = { configurable:</text>
+<text x="190.0" y="243.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">  { thread_id: 'lab3-xyz' } }</text>
+<rect x="380" y="140" width="760" height="130" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="3.0"/>
+<text x="760.0" y="166.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">create_swarm(</text>
+<text x="760.0" y="188.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">  [ ProfessorLookupAgent, ResearchMatchAgent ],</text>
+<text x="760.0" y="210.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">  default_active_agent='ProfessorLookupAgent',</text>
+<text x="760.0" y="232.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">  state_schema=Lab3State,</text>
+<text x="760.0" y="254.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">)</text>
+<rect x="1200" y="140" width="460" height="130" rx="18" fill="#fffbeb" stroke="#d97706" stroke-width="3.0"/>
+<text x="1430.0" y="166.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">.compile(checkpointer=InMemorySaver())</text>
+<text x="1430.0" y="188.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a"></text>
+<text x="1430.0" y="210.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">thread_id  →  StateSnapshot {</text>
+<text x="1430.0" y="232.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">  messages:     [ ... ],</text>
+<text x="1430.0" y="254.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">  active_agent: '&lt;one specialist&gt;' }</text>
+<rect x="60" y="330" width="720" height="460" rx="18" fill="#eff6ff" stroke="#60a5fa" stroke-width="3.0" stroke-dasharray="8 6"/>
+<rect x="90" y="350" width="660" height="70" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="3.0"/>
+<text x="420.0" y="379.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600" fill="#0f172a">ProfessorLookupAgent</text>
+<text x="420.0" y="405.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600" fill="#0f172a">(compiled subgraph)</text>
+<rect x="130" y="470" width="160" height="80" rx="18" fill="#eef2ff" stroke="#4f46e5" stroke-width="3.0"/>
+<text x="210.0" y="517.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600" fill="#0f172a">llm</text>
+<rect x="360" y="470" width="240" height="80" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="3.0"/>
+<text x="480.0" y="516.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">tools (ToolNode)</text>
+<rect x="90" y="600" width="660" height="180" rx="18" fill="#ffffff" stroke="#475569" stroke-width="3.0" stroke-dasharray="8 6"/>
+<text x="420.0" y="637.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">Bound tools:</text>
+<text x="420.0" y="656.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">• resolve_professor_tool   — Cypher:</text>
+<text x="420.0" y="675.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">    MATCH (:Professor) WHERE alias CONTAINS …</text>
+<text x="420.0" y="694.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">• get_professor_facts_tool — Cypher:</text>
+<text x="420.0" y="713.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">    MATCH (p)-[*]-&gt;(...) UNION ALL ...</text>
+<text x="420.0" y="732.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">• transfer_to_research_match — handoff:</text>
+<text x="420.0" y="751.55" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">    Command(goto, graph=PARENT)</text>
+<rect x="940" y="330" width="720" height="460" rx="18" fill="#ecfdf5" stroke="#22c55e" stroke-width="3.0" stroke-dasharray="8 6"/>
+<rect x="970" y="350" width="660" height="70" rx="18" fill="#bbf7d0" stroke="#15803d" stroke-width="3.0"/>
+<text x="1300.0" y="379.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600" fill="#0f172a">ResearchMatchAgent</text>
+<text x="1300.0" y="405.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600" fill="#0f172a">(compiled subgraph)</text>
+<rect x="1010" y="470" width="160" height="80" rx="18" fill="#ecfdf5" stroke="#16a34a" stroke-width="3.0"/>
+<text x="1090.0" y="517.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600" fill="#0f172a">llm</text>
+<rect x="1240" y="470" width="240" height="80" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="3.0"/>
+<text x="1360.0" y="516.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">tools (ToolNode)</text>
+<rect x="970" y="600" width="660" height="180" rx="18" fill="#ffffff" stroke="#475569" stroke-width="3.0" stroke-dasharray="8 6"/>
+<text x="1300.0" y="647.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">Bound tools:</text>
+<text x="1300.0" y="666.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">• find_professors_by_topics_tool — Cypher:</text>
+<text x="1300.0" y="685.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">    MATCH (:Professor)-[:HAS_RESEARCH_INTEREST]</text>
+<text x="1300.0" y="704.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">          -&gt;(:ResearchTopic)</text>
+<text x="1300.0" y="723.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">• transfer_to_professor_lookup — handoff:</text>
+<text x="1300.0" y="742.05" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">    Command(goto, graph=PARENT)</text>
+<rect x="790" y="380" width="140" height="110" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="3.0" stroke-dasharray="8 6"/>
+<text x="860.0" y="407.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">transfer_to_research_match</text>
+<text x="860.0" y="429.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">→ Command(goto='ResearchMatchAgent',</text>
+<text x="860.0" y="451.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">   graph=PARENT,</text>
+<text x="860.0" y="473.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">   update={ active_agent: 'ResearchMatchAgent' })</text>
+<rect x="790" y="660" width="140" height="110" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="3.0" stroke-dasharray="8 6"/>
+<text x="860.0" y="687.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">transfer_to_professor_lookup</text>
+<text x="860.0" y="709.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">→ Command(goto='ProfessorLookupAgent',</text>
+<text x="860.0" y="731.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">   graph=PARENT,</text>
+<text x="860.0" y="753.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">   update={ active_agent: 'ProfessorLookupAgent' })</text>
+<rect x="60" y="830" width="1600" height="44" rx="18" fill="#1e293b" stroke="#0f172a" stroke-width="3.0"/>
+<text x="860.0" y="858.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#ffffff">Same-thread memory: how active_agent persists across turns</text>
+<rect x="60" y="890" width="380" height="180" rx="18" fill="#eef2ff" stroke="#4f46e5" stroke-width="3.0"/>
+<text x="250.0" y="941.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Turn 1 — start</text>
+<text x="250.0" y="963.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a"></text>
+<text x="250.0" y="985.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">active_agent = 'ProfessorLookupAgent'</text>
+<text x="250.0" y="1007.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">messages = [ HumanMessage('which profs match</text>
+<text x="250.0" y="1029.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">             computer vision?') ]</text>
+<rect x="470" y="890" width="440" height="180" rx="18" fill="#ecfdf5" stroke="#16a34a" stroke-width="3.0"/>
+<text x="690.0" y="930.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Turn 1 — after handoff</text>
+<text x="690.0" y="952.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a"></text>
+<text x="690.0" y="974.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">active_agent = 'ResearchMatchAgent'</text>
+<text x="690.0" y="996.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">messages += [ AIMessage(tool_calls=[transfer_to_…]),</text>
+<text x="690.0" y="1018.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">              ToolMessage('Successfully transferred…'),</text>
+<text x="690.0" y="1040.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">              AIMessage(&lt;grounded answer&gt;) ]</text>
+<rect x="940" y="890" width="380" height="180" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="3.0"/>
+<text x="1130.0" y="919.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Turn 2 — same thread_id</text>
+<text x="1130.0" y="941.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a"></text>
+<text x="1130.0" y="963.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">Swarm reads checkpoint → starts at</text>
+<text x="1130.0" y="985.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">ResearchMatchAgent (no supervisor needed).</text>
+<text x="1130.0" y="1007.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">If user pivots to one named professor,</text>
+<text x="1130.0" y="1029.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">ResearchMatchAgent calls</text>
+<text x="1130.0" y="1051.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">transfer_to_professor_lookup.</text>
+<rect x="1350" y="890" width="310" height="180" rx="18" fill="#fffbeb" stroke="#d97706" stroke-width="3.0"/>
+<text x="1505.0" y="941.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">New thread_id ⇒ fresh state.</text>
+<text x="1505.0" y="963.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a"></text>
+<text x="1505.0" y="985.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">default_active_agent kicks in:</text>
+<text x="1505.0" y="1007.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">the conversation begins again at</text>
+<text x="1505.0" y="1029.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#0f172a">ProfessorLookupAgent with empty messages.</text>
+</svg>

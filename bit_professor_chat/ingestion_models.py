@@ -2,27 +2,9 @@ from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
-from typing import Any, Literal
+from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field
-
-
-class OCRBlock(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-
-    heading_original: str | None = None
-    heading_english: str | None = None
-    role: Literal["identity", "section", "continuation", "footer", "uncertain"]
-    lines: list[str] = Field(default_factory=list)
-
-
-class OCRPage(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-
-    page_number: int
-    image_url: str
-    blocks: list[OCRBlock] = Field(default_factory=list)
-    uncertain_lines: list[str] = Field(default_factory=list)
 
 
 class DossierSection(BaseModel):
@@ -43,21 +25,6 @@ class ProfessorDossier(BaseModel):
     sections: list[DossierSection] = Field(default_factory=list)
     uncertain_lines: list[str] = Field(default_factory=list)
     warnings: list[str] = Field(default_factory=list)
-
-
-@dataclass(frozen=True)
-class OCRVisibleBlock:
-    heading_text: str
-    block_role: str
-    content_lines: list[str] = field(default_factory=list)
-
-
-@dataclass(frozen=True)
-class OCRPageExtraction:
-    page_number: int
-    image_url: str
-    blocks: list[OCRVisibleBlock] = field(default_factory=list)
-    uncertain_lines: list[str] = field(default_factory=list)
 
 
 @dataclass(frozen=True)
@@ -249,152 +216,6 @@ class ProfessorCorpusPartition:
         return len(self.invalid_cached)
 
 
-class ProfessorArtifactMetadata(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-
-    name: str
-    detail_url: str
-    slug: str
-    page_count: int
-    image_urls: list[str] = Field(default_factory=list)
-    artifact_namespace: str
-    source_file: str
-
-
-class StructuredProfessorRecord(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-
-    professor_id: str = ""
-    name_local: str = ""
-    name_english: str = ""
-    aliases: list[str] = Field(default_factory=list)
-    title: str = ""
-    emails: list[str] = Field(default_factory=list)
-    phones: list[str] = Field(default_factory=list)
-    biography_text: str = ""
-    source_file: str = ""
-
-
-class StructuredOrganizationRecord(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-
-    org_id: str = ""
-    name: str
-    aliases: list[str] = Field(default_factory=list)
-    org_type: Literal[
-        "school",
-        "university",
-        "association",
-        "conference",
-        "journal",
-        "funder",
-        "company",
-        "unknown",
-    ] = "unknown"
-
-
-class StructuredResearchTopicRecord(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-
-    topic_id: str = ""
-    name: str
-    normalized_name: str = ""
-    language: str = ""
-
-
-class StructuredEducationExperienceRecord(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-
-    experience_id: str = ""
-    degree: str = ""
-    field: str = ""
-    organization_name_raw: str = ""
-    start_text: str = ""
-    end_text: str = ""
-    is_current: bool = False
-    order: int = 0
-    raw_text: str = ""
-
-
-class StructuredEmploymentExperienceRecord(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-
-    experience_id: str = ""
-    role_title: str = ""
-    organization_name_raw: str = ""
-    location: str = ""
-    start_text: str = ""
-    end_text: str = ""
-    is_current: bool = False
-    order: int = 0
-    raw_text: str = ""
-
-
-class StructuredAcademicServiceRoleRecord(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-
-    service_id: str = ""
-    role_title: str = ""
-    organization_name_raw: str = ""
-    service_type: Literal[
-        "reviewer",
-        "member",
-        "committee",
-        "chair",
-        "vice_president",
-        "expert",
-        "unknown",
-    ] = "unknown"
-    raw_text: str = ""
-
-
-class StructuredAwardRecord(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-
-    award_id: str = ""
-    name: str
-    category: str = ""
-    year: str = ""
-    granting_org_name_raw: str = ""
-    level: str = ""
-    raw_text: str = ""
-
-
-class StructuredPublicationRecord(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-
-    publication_id: str = ""
-    title: str
-    authors_raw: str = ""
-    year: str = ""
-    venue: str = ""
-    publication_type: Literal["journal", "conference", "book", "unknown"] = "unknown"
-    doi_or_isbn: str = ""
-    raw_text: str = ""
-
-
-class StructuredProfessorReview(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-
-    metadata: ProfessorArtifactMetadata
-    professor: StructuredProfessorRecord
-    organizations: list[StructuredOrganizationRecord] = Field(default_factory=list)
-    affiliation_organization_names: list[str] = Field(default_factory=list)
-    research_topics: list[StructuredResearchTopicRecord] = Field(default_factory=list)
-    education_experiences: list[StructuredEducationExperienceRecord] = Field(
-        default_factory=list
-    )
-    employment_experiences: list[StructuredEmploymentExperienceRecord] = Field(
-        default_factory=list
-    )
-    academic_service_roles: list[StructuredAcademicServiceRoleRecord] = Field(
-        default_factory=list
-    )
-    awards: list[StructuredAwardRecord] = Field(default_factory=list)
-    publications: list[StructuredPublicationRecord] = Field(default_factory=list)
-    warnings: list[str] = Field(default_factory=list)
-
-
 @dataclass(frozen=True)
 class ProfessorPreInsertionResult:
     name: str
@@ -406,11 +227,6 @@ class ProfessorPreInsertionResult:
     error: str | None = None
     stage_statuses: dict[str, bool] = field(default_factory=dict)
     artifact_paths: dict[str, str] = field(default_factory=dict)
-    page_graph_count: int = 0
-    aggregate_entity_count: int = 0
-    aggregate_relation_count: int = 0
-    clustered_entity_count: int = 0
-    clustered_relation_count: int = 0
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -427,9 +243,6 @@ class ProfessorPreInsertionBatchResult:
     stage_counts: dict[str, int] = field(default_factory=dict)
     failures: list[dict[str, Any]] = field(default_factory=list)
     results: list[ProfessorPreInsertionResult] = field(default_factory=list)
-    corpus_artifact_paths: dict[str, str] = field(default_factory=dict)
-    insertion_status: str = "to_be_implemented"
-    next_stage: str = "structured_json -> typed Cypher -> Neo4j schema insertion"
 
     def to_dict(self) -> dict[str, Any]:
         payload = asdict(self)
@@ -438,22 +251,24 @@ class ProfessorPreInsertionBatchResult:
 
 
 @dataclass(frozen=True)
-class StructuredSeedExportResult:
+class StructuredOutputBuildResult:
     artifact_namespace: str
-    seed_dir: str
+    input_dir: str
+    output_dir: str
     professor_count: int = 0
     success_count: int = 0
     failure_count: int = 0
+    skipped_count: int = 0
     failures: list[dict[str, Any]] = field(default_factory=list)
-    exported_professors: list[str] = field(default_factory=list)
+    built_professors: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
 
 @dataclass(frozen=True)
-class StructuredSeedInsertionResult:
-    seed_dir: str
+class StructuredGraphInsertionResult:
+    output_dir: str
     professor_count: int = 0
     success_count: int = 0
     failure_count: int = 0

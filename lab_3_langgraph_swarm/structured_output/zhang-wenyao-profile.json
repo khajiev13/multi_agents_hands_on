@@ -1,0 +1,208 @@
+{
+  "metadata": {
+    "name": "ZHANG Wenyao",
+    "slug": "zhang-wenyao",
+    "detail_url": "https://isc.bit.edu.cn/schools/csat/knowingprofessors5/b113066.htm",
+    "source_ocr_markdown_path": "artifacts/lab1-pre-insertion-review/zhang-wenyao-ocr.md"
+  },
+  "profile": {
+    "professor": {
+      "name": "ZHANG Wenyao",
+      "aliases": [
+        "ZHANG Wenyao",
+        "张文耀",
+        "Zhang Wen Yao"
+      ],
+      "title": "副教授 Associate Professor",
+      "school_name": "计算机学院",
+      "discipline": "计算机科学与技术",
+      "biography_text": "",
+      "emails": [
+        "zhwenyao@bit.edu.cn"
+      ],
+      "phones": [
+        "13691358026"
+      ],
+      "websites": [],
+      "locations": []
+    },
+    "organizations": [
+      {
+        "name": "计算机学院",
+        "org_type": "school",
+        "normalized_name": "computer college"
+      },
+      {
+        "name": "School of Computer Science",
+        "org_type": "school",
+        "normalized_name": "school of computer science"
+      },
+      {
+        "name": "Institute of Software, Chinese Academy of Sciences",
+        "org_type": "laboratory",
+        "normalized_name": "institute of software chinese academy of sciences"
+      },
+      {
+        "name": "Beijing Institute of Technology",
+        "org_type": "university",
+        "normalized_name": "beijing institute of technology"
+      },
+      {
+        "name": "Jiangxi Normal University",
+        "org_type": "university",
+        "normalized_name": "jiangxi normal university"
+      }
+    ],
+    "research_topics": [
+      {
+        "name": "科学可视化 Scientific Visualization",
+        "normalized_name": "scientific visualization"
+      },
+      {
+        "name": "计算机图形学 Computer Graphics",
+        "normalized_name": "computer graphics"
+      },
+      {
+        "name": "媒体计算 Media Computing",
+        "normalized_name": "media computing"
+      }
+    ],
+    "experiences": [
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Doctor of Engineering",
+        "field": "Computer Applications",
+        "organization_name": "Institute of Software, Chinese Academy of Sciences",
+        "location": "",
+        "start_text": "1999.3",
+        "end_text": "Mar., 2003",
+        "is_current": false,
+        "order": 1,
+        "raw_text": "1999.3-2003.3 - 中国科学院软件研究所，计算机应用，工学博士"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Master of Engineering",
+        "field": "Pattern Recognition and Intelligent System",
+        "organization_name": "Beijing Institute of Technology",
+        "location": "",
+        "start_text": "1996.6",
+        "end_text": "Feb., 1999",
+        "is_current": false,
+        "order": 2,
+        "raw_text": "1996.6-1999.2 - 北京理工大学，模式识别与智能系统，工学硕士"
+      },
+      {
+        "kind": "education",
+        "title": "",
+        "degree": "Bachelor of Science",
+        "field": "Computer Science Education",
+        "organization_name": "Jiangxi Normal University",
+        "location": "",
+        "start_text": "1992.9",
+        "end_text": "Jun., 1996",
+        "is_current": false,
+        "order": 3,
+        "raw_text": "1992.9-1996.7 - Jiangxi Normal University Bachelor of Science, Computer Science Education"
+      },
+      {
+        "kind": "employment",
+        "title": "教师",
+        "degree": "",
+        "field": "",
+        "organization_name": "School of Computer Science, Beijing Institute of Technology",
+        "location": "",
+        "start_text": "2003.3",
+        "end_text": "Now",
+        "is_current": true,
+        "order": 4,
+        "raw_text": "2003.3-至今, 北京理工大学计算机学院, 教师"
+      },
+      {
+        "kind": "academic_service",
+        "title": "Member",
+        "degree": "",
+        "field": "",
+        "organization_name": "",
+        "location": "",
+        "start_text": "",
+        "end_text": "",
+        "is_current": false,
+        "order": 5,
+        "raw_text": "CCF/ACM Member"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Multiresolution streamline placement based on control grids.",
+        "authors_raw": "W. Zhang, J. Ning, M. Zhang, Y. Pei, B. Liu, and B. Sun.",
+        "year": "2014",
+        "venue": "Integrated Computer-Aided Engineering",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[1] W. Zhang, J. Ning, M. Zhang, Y. Pei, B. Liu, and B. Sun. Multiresolution streamline placement based on control grids. *Integrated Computer-Aided Engineering*, Vol.21, No.1, pp. 47-57, 2014.",
+        "order": 1
+      },
+      {
+        "title": "A Feature-emphasized Clustering Method for 2D Vector Field.",
+        "authors_raw": "M. Guan, W. Zhang, N. Zheng, Z. Liu.",
+        "year": "2014",
+        "venue": "2014 IEEE International Conference on Systems, Man, and Cybernetics",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[2] M. Guan, W. Zhang, N. Zheng, Z. Liu. A Feature-emphasized Clustering Method for 2D Vector Field. *2014 IEEE International Conference on Systems, Man, and Cybernetics*, 743-747, 2014.",
+        "order": 2
+      },
+      {
+        "title": "A Streamline Illumination Method for 3D Flow Fields.",
+        "authors_raw": "W. Zhang, Yuezhu Pei, Beichen Liu, Mengyuan Guan.",
+        "year": "2013",
+        "venue": "2013 Seventh International Conference on Image and Graphics",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[3] W. Zhang, Yuezhu Pei, Beichen Liu, Mengyuan Guan. A Streamline Illumination Method for 3D Flow Fields. *2013 Seventh International Conference on Image and Graphics*, 252-257, 2013.",
+        "order": 3
+      },
+      {
+        "title": "Parallel Streamline Placement for 2D Flow Fields.",
+        "authors_raw": "W. Zhang, Y. Wang, J. Zhan, B. Liu, and J. Ning.",
+        "year": "2013",
+        "venue": "IEEE Transactions on Visualization and Computer Graphics",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[4] W. Zhang, Y. Wang, J. Zhan, B. Liu, and J. Ning. Parallel Streamline Placement for 2D Flow Fields. *IEEE Transactions on Visualization and Computer Graphics*, Vol.19, No.7, pp. 1185-1198, 2013.",
+        "order": 4
+      },
+      {
+        "title": "Topology-driven Streamline Seeding for 2D Vector Field Visualization.",
+        "authors_raw": "W. Zhang and J. Deng.",
+        "year": "2009",
+        "venue": "2009 IEEE International Conference on Systems, Man and Cybernetics",
+        "publication_type": "conference",
+        "doi_or_url": "",
+        "raw_text": "[5] W. Zhang and J. Deng. Topology-driven Streamline Seeding for 2D Vector Field Visualization. *2009 IEEE International Conference on Systems, Man and Cybernetics*, Vol. 1, pp 4901-4905, 2009.",
+        "order": 5
+      },
+      {
+        "title": "Explosive Field Visualization Based on Image Fusion.",
+        "authors_raw": "W. Zhang and L. Jiang.",
+        "year": "2009",
+        "venue": "Journal of Beijing Institute of Technology (English Edition)",
+        "publication_type": "journal",
+        "doi_or_url": "",
+        "raw_text": "[6] W. Zhang and L. Jiang. Explosive Field Visualization Based on Image Fusion. *Journal of Beijing Institute of Technology* (English Edition), Vol. 18, No. 2, pp 136-140, 2009.",
+        "order": 6
+      }
+    ],
+    "awards": [],
+    "warnings": [
+      "The 'Faulty' in the English work experience line appears to be an OCR error for 'Faculty' but was not used.",
+      "The academic service 'CCF/ACM Member' lacks a clear organization name; title was set to 'Member'.",
+      "The discipline field contains both Chinese and English text; the Chinese text was used as the canonical value.",
+      "The school name field contains both Chinese and English text; the Chinese text was used as the canonical value.",
+      "The education entry for the Bachelor's degree was reconstructed from two separate OCR lines."
+    ]
+  }
+}
