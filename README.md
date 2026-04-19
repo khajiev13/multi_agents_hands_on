@@ -8,25 +8,52 @@ This README is written for students working through the labs. The professor data
 
 ## Start Here
 
-1. Install the project environment:
-
-```bash
-uv sync
-```
-
-2. Copy the example environment file:
+1. Copy the example environment file:
 
 ```bash
 cp .env.example .env
 ```
 
-3. Launch Jupyter when you are ready to work through the notebooks:
+2. Install the project environment.
+
+Recommended: use `uv`, which will create and sync the repo-local `.venv` for you:
+
+```bash
+uv sync
+```
+
+If you do not have `uv`, use one of these short fallbacks:
+
+Plain Python 3.11:
+
+```bash
+python3.11 -m venv .venv
+source .venv/bin/activate
+python -m pip install -U pip
+pip install -e .
+```
+
+Miniconda:
+
+```bash
+conda create -n agents-tutorial python=3.11 -y
+conda activate agents-tutorial
+pip install -U pip
+pip install -e .
+```
+
+3. Open the repo in VS Code and select the notebook kernel from the environment you just created:
+
+- `./.venv/bin/python` for the `uv` or plain-venv path
+- the `agents-tutorial` interpreter for the conda path
+
+4. Launch Jupyter when you are ready to work through the notebooks:
 
 ```bash
 uv run jupyter lab
 ```
 
-4. Start Neo4j if you are doing Lab 1 or Lab 3:
+5. Start Neo4j if you are doing Lab 1 or Lab 3:
 
 ```bash
 docker compose up -d neo4j
